@@ -153,6 +153,7 @@
 }
 
 .header-social-link {
+  padding-inline: 5%;
   aspect-ratio: 1;
   background-color: var(--color-lightblue);
   border-radius: 10px;
@@ -162,7 +163,7 @@
 }
 
 .header-social-link img {
-  width: 43%;
+  width: 100%;
   aspect-ratio: 1;
 }
 
@@ -924,6 +925,10 @@
     );
     min-width: 0;
     flex-shrink: 0;
+  }
+
+  .header-social-link {
+    padding-inline: 3%;
   }
 
   .header-burger-btn {
@@ -1805,10 +1810,12 @@
     color: var(--color-primary);
     background-color: var(--color-lightblue);
     border-radius: 10px;
-    flex-grow: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
   }
 
   .header-menu-social-link {
+    padding-inline: 3%;
     flex-shrink: 0;
     aspect-ratio: 1;
     background-color: var(--color-lightblue);
@@ -1819,8 +1826,7 @@
   }
 
   .header-menu-social-link img {
-    width: 43%;
-    aspect-ratio: 1;
+    width: 100%;
   }
 
   .footer {
