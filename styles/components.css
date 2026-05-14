@@ -998,6 +998,7 @@
 
   .header-nav-list {
     flex-direction: column;
+    align-items: flex-start;
     gap: clamp(
       calc(14px * 580 / 640),
       calc(100vw * 14 / 640),
@@ -1047,6 +1048,7 @@
       calc(100vw * 14 / 640),
       calc(14px * 1024 / 640)
     );
+    align-items: start;
   }
 
   .header-nav-list-main > li > a {
