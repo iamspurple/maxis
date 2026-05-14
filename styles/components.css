@@ -1598,6 +1598,19 @@
     );
   }
 
+  .header-nav-list > li > a {
+    padding: clamp(
+        calc(20px * 320 / 375),
+        calc(100vw * 20 / 375),
+        calc(20px * 580 / 375)
+      )
+      clamp(
+        calc(24px * 320 / 375),
+        calc(100vw * 24 / 375),
+        calc(24px * 580 / 375)
+      );
+  }
+
   .header-nav-list-main {
     font-size: clamp(
       calc(16px * 320 / 375),
@@ -1792,7 +1805,7 @@
     color: var(--color-primary);
     background-color: var(--color-lightblue);
     border-radius: 10px;
-    width: 100%;
+    flex-grow: 0;
   }
 
   .header-menu-social-link {
