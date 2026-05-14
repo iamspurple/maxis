@@ -622,6 +622,9 @@
 }
 
 .modal-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: clamp(
     calc(40px * 1025 / 1400),
     calc(100vw * 40 / 1400),
