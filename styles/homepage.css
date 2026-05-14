@@ -19,6 +19,7 @@
 .hero-wrapper {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .hero-content {
@@ -1565,6 +1566,8 @@
 }
 
 .faq {
+  position: relative;
+  z-index: 10;
   padding-block: clamp(
       calc(90px * 1025 / 1400),
       calc(100vw * 90 / 1400),
@@ -1734,7 +1737,7 @@
 .consult {
   background-color: transparent;
   position: relative;
-  z-index: 2;
+  z-index: 20;
   margin-top: calc(((100vw - 11vw) / 4) * (-1));
 }
 

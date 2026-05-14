@@ -376,6 +376,10 @@
   padding-block: calc((100vw - 11vw) / 4 + max(90px, 6.42vw)) max(40px, 2.85vw);
 }
 
+.footer a {
+  width: fit-content;
+}
+
 .footer::before {
   content: "";
   display: inline-block;
@@ -415,6 +419,8 @@
   flex-direction: column;
   gap: max(40px, 2.85vw);
   color: white;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-content {
@@ -1268,7 +1274,6 @@
   }
 
   .footer {
-    z-index: -1;
     padding-top: calc(
       (100vw - 8vw) +
         clamp(
