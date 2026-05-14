@@ -1015,6 +1015,9 @@
 
   .header-nav-list > li {
     width: 100%;
+    /* Убирает лишнюю высоту от inline-block (.dropdown) внутри li: line box / baseline */
+    display: flex;
+    flex-direction: column;
   }
 
   .header-nav-list > li > a {
@@ -1051,6 +1054,12 @@
     align-items: start;
   }
 
+  .header-nav-list-main > li {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
   .header-nav-list-main > li > a {
     background-color: var(--color-lightblue);
     border-radius: 10px;
@@ -1077,6 +1086,8 @@
     background-color: #f7f8fa;
     width: 100%;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
   }
 
   .dropbtn {
@@ -1153,6 +1164,7 @@
 
   .dropdown-content-wrapper > * {
     overflow: hidden;
+    min-height: 0;
   }
 
   .dropdown.active .dropdown-content-wrapper {
@@ -1628,9 +1640,9 @@
 
   .header-nav-list-main > li > a {
     padding: clamp(
-      calc(12px * 320 / 375),
-      calc(100vw * 12 / 375),
-      calc(12px * 580 / 375)
+      calc(20px * 320 / 375),
+      calc(100vw * 20 / 375),
+      calc(20px * 580 / 375)
     );
   }
 
