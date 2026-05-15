@@ -36,7 +36,11 @@
   align-items: center;
   gap: 8px;
   color: var(--color-primary);
-  font-size: clamp(0.75rem, 1.15vw, 1.5rem);
+  font-size: clamp(
+    calc(16px * 1025 / 1400),
+    calc(100vw * 16 / 1400),
+    calc(16px * 2560 / 1400)
+  );
   font-weight: 700;
 }
 
@@ -46,12 +50,20 @@
 }
 
 .hero-title {
-  font-size: clamp(2rem, 3.4vw, 4rem);
+  font-size: clamp(
+    calc(48px * 1025 / 1400),
+    calc(100vw * 48 / 1400),
+    calc(48px * 2560 / 1400)
+  );
 }
 
 .hero-description {
   font-weight: 500;
-  font-size: clamp(1rem, 1.42vw, 1.7rem);
+  font-size: clamp(
+    calc(20px * 1025 / 1400),
+    calc(100vw * 20 / 1400),
+    calc(20px * 2560 / 1400)
+  );
   line-height: 140%;
   color: var(--color-gray);
   max-width: 48%;
@@ -62,18 +74,37 @@
   color: white;
   background-color: var(--color-primary);
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.75rem;
-  font-size: clamp(1rem, 1.42vw, 1.7rem);
+  font-size: clamp(
+    calc(20px * 1025 / 1400),
+    calc(100vw * 20 / 1400),
+    calc(20px * 2560 / 1400)
+  );
   font-weight: 700;
   line-height: 140%;
-  padding: clamp(1rem, 1.5vw, 2rem) clamp(1.5rem, 2.28vw, 2.7rem);
+  padding: clamp(
+      calc(20px * 1025 / 1400),
+      calc(100vw * 20 / 1400),
+      calc(20px * 2560 / 1400)
+    )
+    clamp(
+      calc(30px * 1025 / 1400),
+      calc(100vw * 30 / 1400),
+      calc(30px * 2560 / 1400)
+    );
   border-radius: 1rem;
 }
 
 .hero-button::before {
   content: "";
   display: inline-block;
-  width: 1.5rem;
+  width: clamp(
+    calc(20px * 1025 / 1400),
+    calc(100vw * 20 / 1400),
+    calc(20px * 2560 / 1400)
+  );
   aspect-ratio: 1;
   background: url(/assets/icons/plus.svg) center/contain no-repeat;
 }
@@ -301,7 +332,7 @@
 }
 
 .achievements-content {
-  max-width: 32%;
+  max-width: 35%;
   display: flex;
   flex-direction: column;
   gap: clamp(
@@ -372,18 +403,30 @@
 
 .achievements-title {
   color: white;
-  font-size: clamp(1.5rem, 2.28vw, 3.5rem);
+  font-size: clamp(
+    calc(30px * 1025 / 1400),
+    calc(100vw * 30 / 1400),
+    calc(30px * 2560 / 1400)
+  );
   max-width: 75%;
 }
 
 .achievements-text {
-  font-size: clamp(1rem, 1.28vw, 2rem);
+  font-size: clamp(
+    calc(20px * 1025 / 1400),
+    calc(100vw * 20 / 1400),
+    calc(20px * 2560 / 1400)
+  );
   color: var(--color-white65);
 }
 
 .achievements-statistic {
   display: flex;
-  gap: min(26px, 1.85vw);
+  gap: clamp(
+    calc(26px * 1025 / 1400),
+    calc(100vw * 26 / 1400),
+    calc(26px * 2560 / 1400)
+  );
   justify-content: space-between;
 }
 
@@ -417,7 +460,22 @@
 .achievements-statistic-item .wrapper {
   width: 100%;
   height: 100%;
-  padding: clamp(1.5rem, 2.28vw, 3rem) clamp(1.5rem, 3.2vw, 4rem);
+  padding-block: clamp(
+      calc(32px * 1025 / 1400),
+      calc(100vw * 32 / 1400),
+      calc(32px * 2560 / 1400)
+    )
+    clamp(
+      calc(45px * 1025 / 1400),
+      calc(100vw * 45 / 1400),
+      calc(45px * 2560 / 1400)
+    );
+
+  padding-inline: clamp(
+    calc(45px * 1025 / 1400),
+    calc(100vw * 45 / 1400),
+    calc(45px * 2560 / 1400)
+  );
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -436,9 +494,22 @@
 .achievements-statistic-item .wrapper::before {
   content: "";
   display: inline-block;
-  width: max(36px, 2.5vw);
+  width: clamp(
+    calc(36px * 1025 / 1400),
+    calc(100vw * 36 / 1400),
+    calc(36px * 2560 / 1400)
+  );
+  height: clamp(
+    calc(36px * 1025 / 1400),
+    calc(100vw * 36 / 1400),
+    calc(36px * 2560 / 1400)
+  );
   aspect-ratio: 1;
-  margin-bottom: 12px;
+  margin-bottom: clamp(
+    calc(12px * 1025 / 1400),
+    calc(100vw * 12 / 1400),
+    calc(12px * 2560 / 1400)
+  );
 }
 
 .achievements-statistic-item:nth-of-type(1) .wrapper::before {
@@ -498,7 +569,11 @@
 
 .achievements-statistic-item dd {
   color: var(--color-white65);
-  font-size: clamp(0.875rem, 1.42vw, 1.25rem);
+  font-size: clamp(
+    calc(20px * 1025 / 1400),
+    calc(100vw * 20 / 1400),
+    calc(20px * 2560 / 1400)
+  );
   text-wrap: nowrap;
 }
 
@@ -584,7 +659,11 @@
 .solutions-subtitle::before {
   content: "";
   display: inline-block;
-  width: 1.5rem;
+  width: clamp(
+    calc(24px * 1025 / 1400),
+    calc(100vw * 24 / 1400),
+    calc(24px * 2560 / 1400)
+  );
   aspect-ratio: 1;
   background: url(/assets/icons/stonks.svg) center/contain no-repeat;
 }
@@ -1306,6 +1385,7 @@
 .about-certificates-slider-item {
   flex-shrink: 0;
   width: max(231px, 16.5vw);
+  height: max(330px, 23.57vw);
   aspect-ratio: 0.7;
   border-radius: 8px;
   overflow: hidden;
@@ -2655,6 +2735,7 @@
 
   .about-certificates-slider-item {
     width: max(287px, 44vw);
+    height: max(406px, 63vw);
   }
 
   .articles {

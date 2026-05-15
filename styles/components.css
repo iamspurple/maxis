@@ -154,6 +154,7 @@
 
 .header-social-link {
   padding-inline: 5%;
+  padding-block: 5%;
   aspect-ratio: 1;
   background-color: var(--color-lightblue);
   border-radius: 10px;
