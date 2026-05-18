@@ -2293,7 +2293,7 @@
     position: absolute;
     top: auto;
     bottom: 0;
-    object-position: 88% 50%;
+    object-position: 86% 50%;
     height: 100vw;
   }
 
@@ -3559,7 +3559,8 @@
   }
 
   .solutions-item.offer {
-    aspect-ratio: 0.56;
+    aspect-ratio: 0.48;
+    height: calc((100vw - 10.6vw) / 0.48);
     gap: clamp(
       calc(26px * 320 / 375),
       calc(100vw * 26 / 375),
