@@ -31,7 +31,7 @@ const toggleActive = () => {
 
 /**
  * @param {Element | null} root
- * @param {{ list: string; track?: string; btnBack: string; btnFwd: string }} selectors — относительно root
+ * @param {{ list: string; item: string; track?: string; btnBack: string; btnFwd: string }} selectors — относительно root
  */
 const initHorizontalSlider = (root, selectors) => {
   if (!root) return;
@@ -49,25 +49,32 @@ const initHorizontalSlider = (root, selectors) => {
   const scrollEndEpsilon = 2;
 
   function getSlideWidth() {
-    const items = list.querySelectorAll("li");
+    const items = list.querySelectorAll(selectors.item);
     if (!items.length) return 0;
-    if (items.length === 1) return items[0].getBoundingClientRect().width;
-    return (
-      items[1].getBoundingClientRect().left -
-      items[0].getBoundingClientRect().left
-    );
+    const item = items[0];
+    const marginRight =
+      parseFloat(window.getComputedStyle(item).marginRight) || 0;
+    return item.getBoundingClientRect().width + marginRight;
+  }
+
+  function getMaxOffset() {
+    const items = list.querySelectorAll(selectors.item);
+    const lastItem = items[items.length - 1];
+    const lastMarginRight = lastItem
+      ? parseFloat(window.getComputedStyle(lastItem).marginRight) || 0
+      : 0;
+    return Math.max(0, list.scrollWidth + lastMarginRight - track.clientWidth);
   }
 
   function getMaxIndex() {
     const slideWidth = getSlideWidth();
     if (!slideWidth) return 0;
-    const maxOffset = Math.max(0, list.scrollWidth - track.clientWidth);
-    return Math.max(0, Math.ceil(maxOffset / slideWidth));
+    return Math.max(0, Math.ceil(getMaxOffset() / slideWidth));
   }
 
   function updateSlider() {
     const slideWidth = getSlideWidth();
-    const maxOffset = Math.max(0, list.scrollWidth - track.clientWidth);
+    const maxOffset = getMaxOffset();
     let offset = Math.min(currentIndex * slideWidth, maxOffset);
     if (maxOffset > 0 && maxOffset - offset <= scrollEndEpsilon) {
       offset = maxOffset;
@@ -82,7 +89,7 @@ const initHorizontalSlider = (root, selectors) => {
 
   btnFwd.addEventListener("click", () => {
     const slideWidth = getSlideWidth();
-    const maxOffset = Math.max(0, list.scrollWidth - track.clientWidth);
+    const maxOffset = getMaxOffset();
     const offset = Math.min(currentIndex * slideWidth, maxOffset);
     if (maxOffset > 0 && offset >= maxOffset - scrollEndEpsilon) return;
     if (currentIndex < getMaxIndex()) {
@@ -104,6 +111,7 @@ const initHorizontalSlider = (root, selectors) => {
   });
 
   updateSlider();
+  console.log(getSlideWidth());
 };
 
 const initFaqAccordion = () => {
@@ -158,12 +166,52 @@ const initModal = () => {
   });
 };
 
+const initStickyHeaderBottom = () => {
+  const headerTop = document.querySelector(".header-top");
+  const headerBottom = document.querySelector(".header-bottom");
+  if (!headerTop || !headerBottom) return;
+
+  const spacer = document.createElement("div");
+  spacer.style.display = "none";
+  headerBottom.insertAdjacentElement("afterend", spacer);
+
+  let isSticky = false;
+
+  function update() {
+    if (window.innerWidth <= 1024) {
+      if (isSticky) {
+        headerBottom.classList.remove("sticky");
+        spacer.style.display = "none";
+        isSticky = false;
+      }
+      return;
+    }
+
+    const shouldBeSticky = headerTop.getBoundingClientRect().bottom <= 0;
+
+    if (shouldBeSticky && !isSticky) {
+      spacer.style.height = headerBottom.offsetHeight + "px";
+      spacer.style.display = "block";
+      headerBottom.classList.add("sticky");
+      isSticky = true;
+    } else if (!shouldBeSticky && isSticky) {
+      headerBottom.classList.remove("sticky");
+      spacer.style.display = "none";
+      isSticky = false;
+    }
+  }
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   toggleActive();
   initFaqAccordion();
 
   initHorizontalSlider(document.querySelector(".about-team-slider-wrapper"), {
     list: ".about-team-slider-list",
+    item: ".about-team-slider-item",
     track: ".about-team-slider",
     btnBack: ".about-team-slider-btn.backward",
     btnFwd: ".about-team-slider-btn.forward",
@@ -171,6 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initHorizontalSlider(document.querySelector(".about-certificates-content"), {
     list: ".about-certificates-slider-list",
+    item: ".about-certificates-slider-item",
     track: ".about-certificates-slider",
     btnBack: ".about-certificates-slider-btn.backward",
     btnFwd: ".about-certificates-slider-btn.forward",
@@ -178,6 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initHorizontalSlider(document.querySelector(".articles-wrapper"), {
     list: ".articles-slider-list",
+    item: ".articles-slider-item",
     track: ".articles-slider",
     btnBack: ".articles-slider-btn.backward",
     btnFwd: ".articles-slider-btn.forward",
@@ -186,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderBurger();
   getHeaderHeight();
   initModal();
+  initStickyHeaderBottom();
 });
 
 window.addEventListener("resize", () => {

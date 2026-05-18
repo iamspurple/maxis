@@ -326,13 +326,18 @@
 .achievements-wrapper {
   display: flex;
   justify-content: space-between;
+  gap: clamp(
+    calc(63px * 1025 / 1400),
+    calc(100vw * 63 / 1400),
+    calc(63px * 2560 / 1400)
+  );
   align-items: stretch;
   position: relative;
   z-index: 10;
 }
 
 .achievements-content {
-  max-width: 35%;
+  max-width: 32%;
   display: flex;
   flex-direction: column;
   gap: clamp(
@@ -404,29 +409,32 @@
 .achievements-title {
   color: white;
   font-size: clamp(
-    calc(30px * 1025 / 1400),
-    calc(100vw * 30 / 1400),
-    calc(30px * 2560 / 1400)
+    calc(32px * 1025 / 1400),
+    calc(100vw * 32 / 1400),
+    calc(32px * 2560 / 1400)
   );
   max-width: 75%;
+  line-height: 120%;
 }
 
 .achievements-text {
   font-size: clamp(
-    calc(20px * 1025 / 1400),
-    calc(100vw * 20 / 1400),
-    calc(20px * 2560 / 1400)
+    calc(18px * 1025 / 1400),
+    calc(100vw * 18 / 1400),
+    calc(18px * 2560 / 1400)
   );
   color: var(--color-white65);
 }
 
 .achievements-statistic {
+  flex-grow: 1;
+  flex-shrink: 0;
   display: flex;
-  gap: clamp(
-    calc(26px * 1025 / 1400),
-    calc(100vw * 26 / 1400),
-    calc(26px * 2560 / 1400)
-  );
+  /* gap: clamp(
+    calc(22px * 1025 / 1400),
+    calc(100vw * 22 / 1400),
+    calc(22px * 2560 / 1400)
+  ); */
   justify-content: space-between;
 }
 
@@ -715,6 +723,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 50%;
+}
+
+.solutions-item-icon.square {
+  padding-inline: 0;
+  width: 6.5vw;
 }
 
 .solutions-item-icon img {
@@ -724,8 +738,8 @@
   object-position: center;
 }
 
-.solutions-item-icon.square {
-  padding-inline: 0;
+.solutions-item-icon.square img {
+  width: 80%;
 }
 
 @media screen and (max-width: 1280px) {
@@ -735,12 +749,16 @@
 
   .solutions-item-icon {
     height: 4.5vw;
-    padding-inline: clamp(calc(18px * 1025 / 1400), calc(100vw * 18 / 1400));
+    padding-inline: clamp(
+      calc(18px * 1025 / 1400),
+      calc(100vw * 18 / 1400),
+      calc(18px * 2560 / 1400)
+    );
   }
-}
 
-.solutions-item-icon.square {
-  aspect-ratio: 1;
+  .solutions-item-icon.square {
+    width: 4.5vw;
+  }
 }
 
 .solutions-item-name {
@@ -774,6 +792,7 @@
 }
 
 .solutions-item.offer {
+  overflow: hidden;
   grid-column: 1 / -1;
   background-color: var(--color-primary);
   position: relative;
@@ -818,8 +837,8 @@
 
 .solutions-item-image {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -3px;
+  right: -3px;
   width: auto;
   height: 145%;
   object-fit: cover;
@@ -1083,11 +1102,12 @@
 
 .about-team-slider-wrapper {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr auto;
   row-gap: max(40px, 2.85vw);
 }
 
 .about-title {
+  max-width: 45%;
   color: white;
   margin-left: 5.5vw;
 }
@@ -1405,14 +1425,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.about-certificates-slider-end-spacer {
-  flex: 0 0 auto;
-  width: 5.5vw;
-  min-width: max(27px, 1.9vw);
-  align-self: stretch;
-  pointer-events: none;
 }
 
 .about-certificates-image {
@@ -1797,7 +1809,9 @@
   );
   line-height: 170%;
   max-width: 65%;
-  transition: padding-block 0.3s ease;
+  transition:
+    padding-top 0.3s ease,
+    padding-bottom 0.3s ease;
 }
 
 @media screen and (max-width: 1280px) {
@@ -1807,7 +1821,12 @@
 }
 
 .faq-item.open > .faq-item-content > .faq-item-text {
-  padding-block: clamp(
+  padding-top: clamp(
+    calc(24px * 1025 / 1400),
+    calc(100vw * 24 / 1400),
+    calc(24px * 2560 / 1400)
+  );
+  padding-bottom: clamp(
     calc(24px * 1025 / 1400),
     calc(100vw * 24 / 1400),
     calc(24px * 2560 / 1400)
@@ -2483,14 +2502,15 @@
       calc(26px * 1024 / 640)
     );
     gap: clamp(
-      calc(120px * 580 / 640),
-      calc(100vw * 120 / 640),
-      calc(120px * 1024 / 640)
+      calc(40px * 580 / 640),
+      calc(100vw * 40 / 640),
+      calc(40px * 1024 / 640)
     );
   }
 
   .solutions-item-image {
-    height: 100%;
+    height: 130%;
+    right: -12%;
   }
 
   .solutions-item-content {
@@ -2498,6 +2518,14 @@
       calc(16px * 580 / 640),
       calc(100vw * 16 / 640),
       calc(16px * 1024 / 640)
+    );
+  }
+
+  .solutions-item-content.offer {
+    gap: clamp(
+      calc(26px * 580 / 640),
+      calc(100vw * 26 / 640),
+      calc(26px * 1024 / 640)
     );
   }
 
@@ -2515,6 +2543,14 @@
     );
   }
 
+  .solutions-item-icon-wrapper .solutions-item-icon:nth-last-of-type(2) {
+    max-width: 22%;
+  }
+
+  .solutions-item-icon.square {
+    width: clamp(64px, 10vw, 80px);
+  }
+
   .solutions-item-icon.square img {
     max-width: 70%;
   }
@@ -2528,7 +2564,11 @@
   }
 
   .solutions-item-name.offer {
-    font-family: var(--font-primary);
+    font-size: clamp(
+      calc(24px * 580 / 640),
+      calc(100vw * 24 / 640),
+      calc(24px * 1024 / 640)
+    );
   }
 
   .solutions-item-description {
@@ -2536,6 +2576,33 @@
       calc(14px * 580 / 640),
       calc(100vw * 14 / 640),
       calc(14px * 1024 / 640)
+    );
+  }
+
+  .solutions-item-description.offer {
+    font-size: clamp(
+      calc(16px * 580 / 640),
+      calc(100vw * 16 / 640),
+      calc(16px * 1024 / 640)
+    );
+    max-width: 51%;
+  }
+
+  .solutions-item-link.offer {
+    font-size: clamp(
+      calc(16px * 580 / 640),
+      calc(100vw * 16 / 640),
+      calc(16px * 1024 / 640)
+    );
+    padding: clamp(
+      calc(12px * 580 / 640),
+      calc(100vw * 12 / 640),
+      calc(12px * 1024 / 640)
+    );
+    padding-inline: clamp(
+      calc(24px * 580 / 640),
+      calc(100vw * 24 / 640),
+      calc(24px * 1024 / 640)
     );
   }
 
@@ -2686,6 +2753,10 @@
     margin-left: 4vw;
   }
 
+  .about-team-slider-list li:first-of-type .about-team-slider-item {
+    margin-left: 4vw;
+  }
+
   .about-certificates {
     flex-direction: column-reverse;
   }
@@ -2728,14 +2799,13 @@
     margin-right: 4vw;
   }
 
-  .about-certificates-slider-end-spacer {
-    width: 4vw;
-    min-width: max(27px, 1.9vw);
-  }
-
   .about-certificates-slider-item {
     width: max(287px, 44vw);
     height: max(406px, 63vw);
+  }
+
+  .about-certificates-slider-item:first-of-type {
+    margin-left: 4vw;
   }
 
   .articles {
@@ -2784,6 +2854,10 @@
     flex-shrink: 0;
     width: max(287px, 44vw);
     margin-right: max(14px, 2.2vw);
+  }
+
+  .articles-slider-item:last-of-type {
+    margin-right: 0;
   }
 
   .articles-slider-item-content {
@@ -2918,7 +2992,12 @@
   }
 
   .faq-item.open > .faq-item-content > .faq-item-text {
-    padding-block: clamp(
+    padding-top: clamp(
+      calc(24px * 580 / 640),
+      calc(100vw * 24 / 640),
+      calc(24px * 1024 / 640)
+    );
+    padding-bottom: clamp(
       calc(24px * 580 / 640),
       calc(100vw * 24 / 640),
       calc(24px * 1024 / 640)
@@ -3241,9 +3320,9 @@
 
   .hero-button::before {
     width: clamp(
-      calc(24px * 320 / 375),
-      calc(100vw * 24 / 375),
-      calc(24px * 580 / 375)
+      calc(20px * 320 / 375),
+      calc(100vw * 20 / 375),
+      calc(20px * 580 / 375)
     );
   }
 
@@ -3301,6 +3380,11 @@
   .achievements-statistic-item .wrapper {
     flex-direction: row-reverse;
     justify-content: space-between;
+    padding: clamp(
+      calc(24px * 320 / 375),
+      calc(100vw * 24 / 375),
+      calc(24px * 580 / 375)
+    );
   }
 
   .achievements-statistic-item .wrapper::before {
@@ -3311,7 +3395,7 @@
     );
   }
 
-  .achievements-statistic-item-content {
+  .achievements-statistic-item .content {
     gap: clamp(
       calc(18px * 320 / 375),
       calc(100vw * 18 / 375),
@@ -3321,6 +3405,7 @@
   }
 
   .achievements-statistic-item dt {
+    line-height: 100%;
     font-size: clamp(
       calc(36px * 320 / 375),
       calc(100vw * 36 / 375),
@@ -3425,6 +3510,15 @@
     );
   }
 
+  .solutions-item-link {
+    width: 100%;
+    font-size: clamp(
+      calc(16px * 320 / 375),
+      calc(100vw * 16 / 375),
+      calc(16px * 580 / 375)
+    );
+  }
+
   .solutions-item.offer {
     aspect-ratio: 0.56;
     gap: clamp(
@@ -3434,6 +3528,11 @@
     );
     justify-content: flex-start;
     overflow: hidden;
+    padding: clamp(
+      calc(26px * 320 / 375),
+      calc(100vw * 26 / 375),
+      calc(26px * 580 / 375)
+    );
   }
 
   .solutions-item-content.offer {
@@ -3446,10 +3545,29 @@
 
   .solutions-item-name.offer {
     max-width: 100%;
+    font-size: clamp(
+      calc(22px * 320 / 375),
+      calc(100vw * 22 / 375),
+      calc(22px * 580 / 375)
+    );
   }
 
   .solutions-item-description.offer {
     max-width: 100%;
+    font-size: clamp(
+      calc(16px * 320 / 375),
+      calc(100vw * 16 / 375),
+      calc(16px * 580 / 375)
+    );
+  }
+
+  .solutions-item-link.offer {
+    font-size: clamp(
+      calc(16px * 320 / 375),
+      calc(100vw * 16 / 375),
+      calc(16px * 580 / 375)
+    );
+    border-radius: 10px;
   }
 
   .solutions-item-image {
@@ -3457,6 +3575,7 @@
     height: auto;
     object-fit: cover;
     object-position: bottom;
+    right: -8%;
   }
 
   .cases {
@@ -3572,12 +3691,20 @@
     );
   }
 
+  .about-title {
+    max-width: 100%;
+  }
+
   .about-team-slider-wrapper {
     grid-template-columns: 1fr;
   }
   .about-team-slider-controls {
     grid-row: 3;
     justify-self: start;
+    margin-left: 5.3vw;
+  }
+
+  .about-team-slider-list li:first-of-type .about-team-slider-item {
     margin-left: 5.3vw;
   }
 
@@ -3600,9 +3727,8 @@
     margin-left: 5.3vw;
   }
 
-  .about-certificates-slider-end-spacer {
-    width: 5.3vw;
-    min-width: max(27px, 1.9vw);
+  .about-certificates-slider-item:first-of-type {
+    margin-left: 5.3vw;
   }
 
   .articles {
@@ -3729,6 +3855,43 @@
     align-self: center;
     text-align: center;
     max-width: 80%;
+  }
+
+  .faq-item-title {
+    padding: clamp(
+      calc(24px * 320 / 375),
+      calc(100vw * 24 / 375),
+      calc(24px * 580 / 375)
+    );
+  }
+
+  .faq-item-title-text {
+    font-size: clamp(
+      calc(18px * 320 / 375),
+      calc(100vw * 18 / 375),
+      calc(18px * 580 / 375)
+    );
+  }
+
+  .faq-item-text {
+    padding-inline: clamp(
+      calc(24px * 320 / 375),
+      calc(100vw * 24 / 375),
+      calc(24px * 580 / 375)
+    );
+  }
+
+  .faq-item.open > .faq-item-content > .faq-item-text {
+    padding-top: clamp(
+      calc(24px * 320 / 375),
+      calc(100vw * 24 / 375),
+      calc(24px * 580 / 375)
+    );
+    padding-bottom: clamp(
+      calc(24px * 320 / 375),
+      calc(100vw * 24 / 375),
+      calc(24px * 580 / 375)
+    );
   }
 
   .consult {
