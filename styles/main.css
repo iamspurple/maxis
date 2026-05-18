@@ -171,6 +171,14 @@ body {
   margin-inline: 5.5vw;
 }
 
+@media screen and (min-width: 1720px) {
+  .container {
+    margin: 0 auto;
+    max-width: 1530px;
+    width: 100%;
+  }
+}
+
 .accent {
   color: var(--color-primary);
 }
@@ -198,7 +206,7 @@ body {
   font-size: clamp(
     calc(36px * 1025 / 1400),
     calc(100vw * 36 / 1400),
-    calc(36px * 2560 / 1400)
+    calc(36px * 1720 / 1400)
   );
 }
 
