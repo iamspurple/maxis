@@ -105,6 +105,55 @@ const initHorizontalSlider = (root, selectors) => {
     }
   });
 
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let isSwiping = false;
+
+  track.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      isSwiping = false;
+    },
+    { passive: true },
+  );
+
+  track.addEventListener(
+    "touchmove",
+    (e) => {
+      const dx = e.touches[0].clientX - touchStartX;
+      const dy = e.touches[0].clientY - touchStartY;
+      if (!isSwiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 5) {
+        isSwiping = true;
+      }
+      if (isSwiping) e.preventDefault();
+    },
+    { passive: false },
+  );
+
+  track.addEventListener(
+    "touchend",
+    (e) => {
+      if (!isSwiping) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const threshold = 50;
+      if (dx < -threshold) {
+        if (currentIndex < getMaxIndex()) {
+          currentIndex++;
+          updateSlider();
+        }
+      } else if (dx > threshold) {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      }
+      isSwiping = false;
+    },
+    { passive: true },
+  );
+
   window.addEventListener("resize", () => {
     currentIndex = Math.min(currentIndex, getMaxIndex());
     updateSlider();
@@ -119,8 +168,27 @@ const initFaqAccordion = () => {
     btn.addEventListener("click", () => {
       const item = btn.closest(".faq-item");
       if (!item) return;
-      const open = item.classList.toggle("open");
-      btn.setAttribute("aria-expanded", String(open));
+      const content = item.querySelector(".faq-item-content");
+      if (!content) return;
+
+      if (item.classList.contains("open")) {
+        content.style.height = content.scrollHeight + "px";
+        content.getBoundingClientRect(); // force reflow
+        content.style.height = "0";
+        item.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      } else {
+        item.classList.add("open");
+        content.style.height = content.scrollHeight + "px";
+        btn.setAttribute("aria-expanded", "true");
+        content.addEventListener(
+          "transitionend",
+          () => {
+            content.style.height = "auto";
+          },
+          { once: true },
+        );
+      }
     });
   });
 };

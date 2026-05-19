@@ -167,12 +167,12 @@
   width: clamp(
     calc(14px * 1025 / 1400 * 1.4),
     calc(100vw * 14 / 1400 * 1.4),
-    calc(14px * 1720 / 1400 1.4)
+    calc(14px * 1720 / 1400 * 1.4)
   );
   height: clamp(
     calc(14px * 1025 / 1400 * 1.4),
     calc(100vw * 14 / 1400 * 1.4),
-    calc(14px * 1720 / 1400 1.4)
+    calc(14px * 1720 / 1400 * 1.4)
   );
   aspect-ratio: 1;
 }
@@ -420,9 +420,9 @@
 .footer {
   overflow: hidden;
   position: relative;
-  margin-top: calc(((100vw - 11vw) / 4) * (-1));
+  margin-top: calc(((100vw - 11vw) / 2) * (-1));
   background-color: var(--color-dark);
-  padding-block: calc((100vw - 11vw) / 4 + max(90px, 6.42vw)) max(40px, 2.85vw);
+  padding-block: calc((100vw - 11vw) / 2 + max(90px, 6.42vw)) max(40px, 2.85vw);
 }
 
 .footer a {
@@ -458,9 +458,9 @@
   filter: blur(45px);
   border-radius: 50%;
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
-  transform: translate(45%, -40%);
+  transform: translate(45%, -50%);
 }
 
 .footer-wrapper {
@@ -896,6 +896,39 @@
 
 .modal-form-text a {
   text-decoration: underline;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: clamp(
+    calc(5px * 1025 / 1400),
+    calc(100vw * 5 / 1400),
+    calc(5px * 1720 / 1400)
+  );
+  font-size: clamp(
+    calc(12px * 1025 / 1400),
+    calc(100vw * 12 / 1400),
+    calc(12px * 1720 / 1400)
+  );
+  line-height: 160%;
+  color: #a0a7aa;
+}
+
+.breadcrumb li:not(:last-of-type)::after {
+  content: "/";
+  color: #a0a7aa;
+  margin-inline: clamp(
+    calc(5px * 1025 / 1400),
+    calc(100vw * 5 / 1400),
+    calc(5px * 1720 / 1400)
+  );
+}
+
+@media (any-hover: hover) {
+  .breadcrumb li a:hover {
+    text-decoration: underline;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -1363,7 +1396,7 @@
 
   .footer {
     padding-top: calc(
-      (100vw - 8vw) +
+      (100vw - 8vw) * 2 +
         clamp(
           calc(90px * 580 / 640),
           calc(100vw * 90 / 640),
@@ -1378,7 +1411,7 @@
     margin-top: calc(
       -1 *
         (
-          ((100vw - 8vw)) +
+          ((100vw - 8vw) * 2) +
             calc(
               clamp(
                   calc(40px * 580 / 640),
@@ -1389,6 +1422,16 @@
             )
         )
     );
+  }
+
+  .footer::before {
+    width: 130%;
+    bottom: 35%;
+  }
+
+  .footer::after {
+    width: 130%;
+    top: 35%;
   }
 
   .footer-content {
@@ -1925,7 +1968,7 @@
 
   .footer {
     padding-top: calc(
-      ((100vw - (2 * 5.3vw)) / 0.3 / 2) +
+      ((100vw - (2 * 5.3vw)) / 0.3) +
         clamp(
           calc(60px * 320 / 375),
           calc(100vw * 60 / 375),
@@ -1948,7 +1991,7 @@
     margin-top: calc(
       -1 *
         (
-          (((100vw - (2 * 5.3vw)) / 0.3 / 2)) +
+          (((100vw - (2 * 5.3vw)) / 0.3)) +
             calc(
               clamp(
                 calc(21px * 320 / 375),

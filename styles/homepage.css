@@ -1150,11 +1150,11 @@
   height: clamp(24px, 1.7vw, 30px);
 }
 
-.about-team-slider-btn.backward {
+.about-team-slider-btn.backward svg {
   transform: rotate(90deg);
 }
 
-.about-team-slider-btn.forward {
+.about-team-slider-btn.forward svg {
   transform: rotate(270deg);
 }
 
@@ -1403,11 +1403,11 @@
   height: clamp(24px, 1.7vw, 30px);
 }
 
-.about-certificates-slider-btn.backward {
+.about-certificates-slider-btn.backward svg {
   transform: rotate(90deg);
 }
 
-.about-certificates-slider-btn.forward {
+.about-certificates-slider-btn.forward svg {
   transform: rotate(270deg);
 }
 
@@ -1556,11 +1556,11 @@
   height: clamp(24px, 1.7vw, 30px);
 }
 
-.articles-slider-btn.backward {
+.articles-slider-btn.backward svg {
   transform: rotate(90deg);
 }
 
-.articles-slider-btn.forward {
+.articles-slider-btn.forward svg {
   transform: rotate(270deg);
 }
 
@@ -1811,20 +1811,19 @@
 }
 
 .faq-item-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease;
-  border-top: 1px solid transparent;
+  height: 0;
   overflow: hidden;
+  transition:
+    height 0.3s ease,
+    border-color 0.3s ease;
+  border-top: 1px solid transparent;
 }
 
 .faq-item.open > .faq-item-content {
-  grid-template-rows: 1fr;
   border-color: #ebebeb;
 }
 
 .faq-item-content > * {
-  min-height: 0;
   overflow: hidden;
 }
 
@@ -1840,20 +1839,6 @@
     calc(100vw * 18 / 1400),
     calc(18px * 1720 / 1400)
   );
-  line-height: 170%;
-  max-width: 65%;
-  transition:
-    padding-top 0.3s ease,
-    padding-bottom 0.3s ease;
-}
-
-@media screen and (max-width: 1280px) {
-  .faq-item-text {
-    max-width: 80%;
-  }
-}
-
-.faq-item.open > .faq-item-content > .faq-item-text {
   padding-top: clamp(
     calc(24px * 1025 / 1400),
     calc(100vw * 24 / 1400),
@@ -1864,6 +1849,14 @@
     calc(100vw * 24 / 1400),
     calc(24px * 1720 / 1400)
   );
+  line-height: 170%;
+  max-width: 65%;
+}
+
+@media screen and (max-width: 1280px) {
+  .faq-item-text {
+    max-width: 80%;
+  }
 }
 
 .consult {
@@ -2331,7 +2324,7 @@
       calc(100vw * 20 / 640),
       calc(20px * 1024 / 640)
     );
-    max-width: 100%;
+    max-width: 65%;
   }
 
   .hero-button {
@@ -2582,7 +2575,7 @@
     );
   }
 
-  .solutions-item-icon-wrapper .solutions-item-icon:nth-last-of-type(2) {
+  .solutions-item-icon-wrapper .solutions-item-icon:nth-of-type(2) {
     max-width: 22%;
   }
 
@@ -3325,9 +3318,9 @@
 
   .hero-title {
     font-size: clamp(
-      calc(28px * 320 / 375),
-      calc(100vw * 28 / 375),
-      calc(28px * 580 / 375)
+      calc(25px * 320 / 375),
+      calc(100vw * 25 / 375),
+      calc(25px * 580 / 375)
     );
   }
 
@@ -3337,6 +3330,7 @@
       calc(100vw * 16 / 375),
       calc(16px * 580 / 375)
     );
+    max-width: 93%;
   }
 
   .hero-button {
