@@ -3021,9 +3021,6 @@
       calc(100vw * 40 / 640),
       calc(40px * 1024 / 640)
     );
-  }
-
-  .faq-item.open > .faq-item-content > .faq-item-text {
     padding-top: clamp(
       calc(24px * 580 / 640),
       calc(100vw * 24 / 640),
@@ -3917,9 +3914,6 @@
       calc(100vw * 24 / 375),
       calc(24px * 580 / 375)
     );
-  }
-
-  .faq-item.open > .faq-item-content > .faq-item-text {
     padding-top: clamp(
       calc(24px * 320 / 375),
       calc(100vw * 24 / 375),
