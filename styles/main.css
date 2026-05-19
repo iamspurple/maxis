@@ -197,6 +197,16 @@ body {
   gap: 0.5em;
 }
 
+.btn {
+  transition: 0.3s ease;
+}
+
+@media (any-hover: hover) {
+  .btn:hover {
+    transform: scale(1.07);
+  }
+}
+
 .heading {
   font-family: var(--font-secondary);
   font-weight: 600;
