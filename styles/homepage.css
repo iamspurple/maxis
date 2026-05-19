@@ -3519,6 +3519,10 @@
     );
   }
 
+  .solutions-item-icon-wrapper .solutions-item-icon:nth-of-type(2) {
+    max-width: 50%;
+  }
+
   .solutions-item-content {
     gap: clamp(
       calc(16px * 320 / 375),
