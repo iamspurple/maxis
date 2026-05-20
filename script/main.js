@@ -164,6 +164,8 @@ const initHorizontalSlider = (root, selectors) => {
 };
 
 const initFaqAccordion = () => {
+  const opts = { duration: 300, easing: "ease" };
+
   document.querySelectorAll(".faq-list .faq-item-title").forEach((btn) => {
     btn.addEventListener("click", () => {
       const item = btn.closest(".faq-item");
@@ -172,22 +174,27 @@ const initFaqAccordion = () => {
       if (!content) return;
 
       if (item.classList.contains("open")) {
-        content.style.height = content.scrollHeight + "px";
-        content.getBoundingClientRect(); // force reflow
-        content.style.height = "0";
+        const fromH = content.scrollHeight + "px";
         item.classList.remove("open");
         btn.setAttribute("aria-expanded", "false");
+        const anim = content.animate(
+          [{ height: fromH }, { height: "0px" }],
+          opts,
+        );
+        anim.onfinish = () => {
+          content.style.height = "0";
+        };
       } else {
         item.classList.add("open");
-        content.style.height = content.scrollHeight + "px";
         btn.setAttribute("aria-expanded", "true");
-        content.addEventListener(
-          "transitionend",
-          () => {
-            content.style.height = "auto";
-          },
-          { once: true },
+        const toH = content.scrollHeight + "px";
+        const anim = content.animate(
+          [{ height: "0px" }, { height: toH }],
+          opts,
         );
+        anim.onfinish = () => {
+          content.style.height = "auto";
+        };
       }
     });
   });
