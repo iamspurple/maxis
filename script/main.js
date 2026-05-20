@@ -172,29 +172,47 @@ const initFaqAccordion = () => {
       if (!item) return;
       const content = item.querySelector(".faq-item-content");
       if (!content) return;
+      const list = item.closest(".faq-list");
+
+      const contentH = content.scrollHeight;
+      const listH = list.offsetHeight;
 
       if (item.classList.contains("open")) {
-        const fromH = content.scrollHeight + "px";
         item.classList.remove("open");
         btn.setAttribute("aria-expanded", "false");
-        const anim = content.animate(
-          [{ height: fromH }, { height: "0px" }],
+
+        list.style.height = listH + "px";
+
+        content.animate(
+          [{ height: contentH + "px" }, { height: "0px" }],
+          opts,
+        ).onfinish = () => {
+          content.style.height = "0";
+          list.style.height = "auto";
+        };
+
+        list.animate(
+          [{ height: listH + "px" }, { height: listH - contentH + "px" }],
           opts,
         );
-        anim.onfinish = () => {
-          content.style.height = "0";
-        };
       } else {
         item.classList.add("open");
         btn.setAttribute("aria-expanded", "true");
-        const toH = content.scrollHeight + "px";
-        const anim = content.animate(
-          [{ height: "0px" }, { height: toH }],
+
+        list.style.height = listH + "px";
+
+        content.animate(
+          [{ height: "0px" }, { height: contentH + "px" }],
+          opts,
+        ).onfinish = () => {
+          content.style.height = "auto";
+          list.style.height = "auto";
+        };
+
+        list.animate(
+          [{ height: listH + "px" }, { height: listH + contentH + "px" }],
           opts,
         );
-        anim.onfinish = () => {
-          content.style.height = "auto";
-        };
       }
     });
   });
