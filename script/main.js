@@ -198,6 +198,18 @@ const initFaqAccordion = () => {
   });
 };
 
+const toggleDisabled = () => {
+  const checkbox = document.getElementById("consult-checkbox");
+  const button = document.getElementById("consult-submit");
+
+  if (!checkbox || !button) return;
+
+  checkbox.addEventListener("change", () => {
+    button.disabled = !checkbox.checked;
+    button.classList.toggle("btn", checkbox.checked);
+  });
+};
+
 const initHeaderBurger = () => {
   const burgerBtn = document.querySelector(".header-burger-btn");
   const menu = document.querySelector("#menu");
@@ -310,6 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getHeaderHeight();
   initModal();
   initStickyHeaderBottom();
+  toggleDisabled();
 });
 
 window.addEventListener("resize", () => {

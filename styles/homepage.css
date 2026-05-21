@@ -2513,6 +2513,10 @@
   border-radius: 10px;
 }
 
+.consult-form button:disabled {
+  opacity: 0.7;
+}
+
 .consult-form input:not([type="file"]):not([type="checkbox"]) {
   width: 100%;
   padding: clamp(
