@@ -6,6 +6,7 @@
   width: 100%;
   padding-top: clamp(14px, 1.28vw, 24px);
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -53,6 +54,7 @@
 
 .header-contacts {
   display: flex;
+  align-items: center;
   gap: clamp(32px, 3vw, 48px);
   min-width: 0;
 }
@@ -135,11 +137,21 @@
 
 .header-buttons-wrapper {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .header-callback-btn {
-  padding: clamp(12px, 0.85vw, 15px) clamp(32px, 2.28vw, 40px);
+  padding: clamp(
+      calc(12px * 1025 / 1400),
+      calc(100vw * 12 / 1400),
+      calc(12px * 1720 / 1400)
+    )
+    clamp(
+      calc(32px * 1025 / 1400),
+      calc(100vw * 32 / 1400),
+      calc(32px * 1720 / 1400)
+    );
   font-size: clamp(
     calc(14px * 1025 / 1400),
     calc(100vw * 14 / 1400),
@@ -154,7 +166,11 @@
 }
 
 .header-social-link {
-  padding: clamp(12px, 0.85vw, 15px);
+  padding: clamp(
+    calc(12px * 1025 / 1400),
+    calc(100vw * 12 / 1400),
+    calc(12px * 1720 / 1400)
+  );
   aspect-ratio: 1;
   background-color: var(--color-lightblue);
   border-radius: 10px;
@@ -343,6 +359,12 @@
   opacity: 0.5;
 }
 
+.header-nav:has(.main-link.active) .dropbtn,
+.header-nav:has(.main-link.active) .header-nav-list > li > a,
+.header-nav:has(.main-link.active) .header-nav-list-main > li > a:not(.active) {
+  opacity: 0.5;
+}
+
 .dropdown.active .dropbtn {
   opacity: 1;
 }
@@ -500,7 +522,7 @@
 .footer-accreditation {
   grid-column: 1;
   grid-row: 2;
-  margin-top: -53%;
+  margin-top: -72%;
   display: flex;
   flex-direction: column;
   gap: clamp(
@@ -1538,6 +1560,10 @@
 
   .footer-bottom > * {
     grid-column: 1;
+  }
+
+  .footer-bottom-link {
+    max-width: 95%;
   }
 
   .footer-creator {

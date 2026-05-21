@@ -183,6 +183,10 @@ body {
   color: var(--color-primary);
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .more-link {
   color: var(--color-primary);
   background-color: var(--color-lightblue);

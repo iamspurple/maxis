@@ -1,7 +1,7 @@
 const toggleActive = () => {
   const isHover = window.matchMedia("(any-hover: hover)").matches;
 
-  const dropDowns = document.querySelectorAll(".dropdown");
+  const dropDowns = document.querySelectorAll(".dropdown, .main-link");
   dropDowns.forEach((btn) => {
     if (isHover) {
       btn.addEventListener("mouseenter", () => {
@@ -172,47 +172,27 @@ const initFaqAccordion = () => {
       if (!item) return;
       const content = item.querySelector(".faq-item-content");
       if (!content) return;
-      const list = item.closest(".faq-list");
 
       const contentH = content.scrollHeight;
-      const listH = list.offsetHeight;
 
       if (item.classList.contains("open")) {
         item.classList.remove("open");
         btn.setAttribute("aria-expanded", "false");
-
-        list.style.height = listH + "px";
-
         content.animate(
           [{ height: contentH + "px" }, { height: "0px" }],
           opts,
         ).onfinish = () => {
           content.style.height = "0";
-          list.style.height = "auto";
         };
-
-        list.animate(
-          [{ height: listH + "px" }, { height: listH - contentH + "px" }],
-          opts,
-        );
       } else {
         item.classList.add("open");
         btn.setAttribute("aria-expanded", "true");
-
-        list.style.height = listH + "px";
-
         content.animate(
           [{ height: "0px" }, { height: contentH + "px" }],
           opts,
         ).onfinish = () => {
           content.style.height = "auto";
-          list.style.height = "auto";
         };
-
-        list.animate(
-          [{ height: listH + "px" }, { height: listH + contentH + "px" }],
-          opts,
-        );
       }
     });
   });
