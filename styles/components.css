@@ -873,7 +873,7 @@
 .modal-form-file-label {
   color: var(--color-primary);
   background-color: var(--color-lightblue);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(

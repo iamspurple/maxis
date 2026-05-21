@@ -1027,6 +1027,8 @@
 
 .solutions-item-content.offer {
   gap: clamp(26px, 1.85vw, 32px);
+  position: relative;
+  z-index: 2;
 }
 
 .solutions-item-icon.offer {
@@ -1059,6 +1061,8 @@
   padding: clamp(16px, 1.2vw, 20px) clamp(32px, 2.28vw, 40px);
   background-color: white;
   border-radius: 15px;
+  position: relative;
+  z-index: 2;
 }
 
 .solutions-item-image {
@@ -1068,7 +1072,6 @@
   width: auto;
   height: 145%;
   object-fit: cover;
-  z-index: -1;
 }
 
 .reasons {
@@ -2550,7 +2553,7 @@
 .consult-form-file-label {
   color: var(--color-primary);
   background-color: var(--color-lightblue);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(
@@ -4376,9 +4379,9 @@
 
   .solutions-item-link.offer {
     font-size: clamp(
-      calc(16px * 320 / 375),
-      calc(100vw * 16 / 375),
-      calc(16px * 580 / 375)
+      calc(15px * 320 / 375),
+      calc(100vw * 15 / 375),
+      calc(15px * 580 / 375)
     );
     border-radius: 10px;
   }

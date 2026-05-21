@@ -203,6 +203,7 @@ body {
 
 .btn {
   transition: transform 0.3s ease;
+  will-change: transform;
 }
 
 @media (any-hover: hover) {
