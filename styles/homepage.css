@@ -2661,6 +2661,7 @@
 .consult-form-submit-btn {
   color: white;
   background-color: var(--color-primary);
+  transition: all 0.3s ease;
 }
 
 .consult-form-text {

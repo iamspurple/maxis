@@ -160,7 +160,6 @@ const initHorizontalSlider = (root, selectors) => {
   });
 
   updateSlider();
-  console.log(getSlideWidth());
 };
 
 const initFaqAccordion = () => {
@@ -222,12 +221,19 @@ const initHeaderBurger = () => {
 };
 
 const getHeaderHeight = () => {
-  if (window.innerWidth < 1024) {
-    const header = document.querySelector(".header");
-    const main = document.querySelector(".main");
-    const headerHeight = header.offsetHeight;
-    main.style.marginTop = `${headerHeight}px`;
-  }
+  const header = document.querySelector(".header");
+  const main = document.querySelector(".main");
+
+  window.addEventListener("resize", () => {
+    if (!header || !main) return;
+
+    if (window.innerWidth < 1024) {
+      const headerHeight = header.offsetHeight;
+      main.style.marginTop = `${headerHeight}px`;
+    } else {
+      main.style.marginTop = "0";
+    }
+  });
 };
 
 const initModal = () => {
