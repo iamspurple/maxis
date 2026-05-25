@@ -14,36 +14,54 @@
   z-index: -1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+.hero-video-wrapper.desktop::before {
+  content: "";
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 60%;
+  backdrop-filter: blur(20px);
 }
 
 .hero-video.desktop {
   width: auto;
   height: 100%;
   object-fit: cover;
+  margin-right: -10%;
 }
 
 .hero-video-canvas.desktop {
   position: absolute;
   top: 0;
-  left: 50%;
+  right: 0;
   height: 100%;
-  width: auto;
-  transform: translateX(-50%);
+  width: 90%;
   z-index: -1;
   filter: blur(50px);
+  margin-right: -10%;
 }
 
-@media screen and (min-width: 1440px) and (max-width: 2000px) {
-  .hero-video-canvas.hero-description {
-    max-width: 1600px;
-    width: 100%;
+@media screen and (min-width: 1575px) {
+  .hero-video-wrapper.desktop::before {
+    right: 1000px;
+  }
+
+  .hero-video.desktop,
+  .hero-video-canvas.desktop {
+    margin-right: 0;
   }
 }
 
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1440px) {
   .hero-video-canvas.desktop {
-    width: 1565px;
+    max-width: 1295px;
+    width: 100%;
   }
 }
 
