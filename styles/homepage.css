@@ -4376,6 +4376,11 @@
       calc(15px * 580 / 375)
     );
     border-radius: 10px;
+    padding: clamp(
+      calc(10px * 320 / 375),
+      calc(100vw * 10 / 375),
+      calc(10px * 580 / 375)
+    );
   }
 
   .solutions-item-image {
