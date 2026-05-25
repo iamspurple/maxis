@@ -171,11 +171,17 @@ body {
   margin-inline: 5.5vw;
 }
 
-@media screen and (min-width: 1720px) {
+@media screen and (min-width: 1440px) {
   .container {
     margin: 0 auto;
-    max-width: 1530px;
+    max-width: 1280px;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .wrapper {
+    zoom: 1.25;
   }
 }
 
@@ -190,8 +196,8 @@ body {
 .more-link {
   color: var(--color-primary);
   background-color: var(--color-lightblue);
-  padding: max(10px, 0.7vw) max(24px, 1.7vw);
-  font-size: max(16px, 1.14vw);
+  padding: clamp(10px, 0.7vw, 12px) clamp(24px, 1.7vw, 28px);
+  font-size: clamp(16px, 1.14vw, 18px);
   line-height: 160%;
   font-weight: 700;
   border-radius: 10px;
@@ -221,7 +227,7 @@ body {
   font-size: clamp(
     calc(36px * 1025 / 1400),
     calc(100vw * 36 / 1400),
-    calc(36px * 1720 / 1400)
+    calc(36px * 1440 / 1400)
   );
 }
 
@@ -246,6 +252,10 @@ body {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+.noscroll {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1024px) {

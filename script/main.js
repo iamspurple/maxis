@@ -29,6 +29,42 @@ const toggleActive = () => {
   });
 };
 
+const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
+  const video = document.querySelector(videoSelector);
+  const canvas = document.querySelector(canvasSelector);
+  const wrapper = document.querySelector(wrapperSelector);
+  if (!video || !canvas || !wrapper) return;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const updateCanvasSize = () => {
+    const width = wrapper.offsetWidth;
+    const height = wrapper.offsetHeight;
+
+    if (width > 0 && height > 0) {
+      canvas.width = width;
+      canvas.height = height;
+    }
+  };
+
+  const resizeObserver = new ResizeObserver(() => {
+    updateCanvasSize();
+  });
+
+  resizeObserver.observe(wrapper);
+  updateCanvasSize();
+
+  function update() {
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    requestAnimationFrame(update);
+  }
+
+  video.addEventListener("play", () => {
+    update();
+  });
+};
+
 /**
  * @param {Element | null} root
  * @param {{ list: string; item: string; track?: string; btnBack: string; btnFwd: string }} selectors — относительно root
@@ -42,19 +78,27 @@ const initHorizontalSlider = (root, selectors) => {
     list?.parentElement;
   const btnBack = root.querySelector(selectors.btnBack);
   const btnFwd = root.querySelector(selectors.btnFwd);
+  const wrapper = document.querySelector("body > .wrapper");
+  console.log(wrapper);
 
   if (!track || !list || !btnBack || !btnFwd) return;
 
   let currentIndex = 0;
   const scrollEndEpsilon = 2;
 
+  function getZoom() {
+    return parseFloat(getComputedStyle(wrapper).zoom) || 1;
+  }
+
   function getSlideWidth() {
     const items = list.querySelectorAll(selectors.item);
     if (!items.length) return 0;
     const item = items[0];
+    const zoom = getZoom();
+    console.log("Zoom:", zoom);
     const marginRight =
       parseFloat(window.getComputedStyle(item).marginRight) || 0;
-    return item.getBoundingClientRect().width + marginRight;
+    return item.getBoundingClientRect().width / zoom + marginRight;
   }
 
   function getMaxOffset() {
@@ -154,6 +198,40 @@ const initHorizontalSlider = (root, selectors) => {
     { passive: true },
   );
 
+  let wheelTimeout = null;
+  let wheelAccum = 0;
+
+  track.addEventListener(
+    "wheel",
+    (e) => {
+      if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return;
+
+      e.preventDefault();
+
+      wheelAccum += e.deltaX;
+
+      clearTimeout(wheelTimeout);
+      wheelTimeout = setTimeout(() => {
+        wheelAccum = 0;
+      }, 300);
+
+      if (wheelAccum > 300) {
+        wheelAccum = 0;
+        if (currentIndex < getMaxIndex()) {
+          currentIndex++;
+          updateSlider();
+        }
+      } else if (wheelAccum < -300) {
+        wheelAccum = 0;
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      }
+    },
+    { passive: false },
+  );
+
   window.addEventListener("resize", () => {
     currentIndex = Math.min(currentIndex, getMaxIndex());
     updateSlider();
@@ -217,6 +295,7 @@ const initHeaderBurger = () => {
     burgerBtn.classList.toggle("active");
     menu.classList.toggle("active");
     overlay.classList.toggle("active");
+    document.documentElement.classList.toggle("noscroll");
   });
 };
 
@@ -224,16 +303,14 @@ const getHeaderHeight = () => {
   const header = document.querySelector(".header");
   const main = document.querySelector(".main");
 
-  window.addEventListener("resize", () => {
-    if (!header || !main) return;
+  if (!header || !main) return;
 
-    if (window.innerWidth < 1024) {
-      const headerHeight = header.offsetHeight;
-      main.style.marginTop = `${headerHeight}px`;
-    } else {
-      main.style.marginTop = "0";
-    }
-  });
+  if (window.innerWidth < 1024) {
+    const headerHeight = header.offsetHeight;
+    main.style.marginTop = `${headerHeight}px`;
+  } else {
+    main.style.marginTop = "0";
+  }
 };
 
 const initModal = () => {
@@ -244,16 +321,19 @@ const initModal = () => {
   modalOpenBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       modal.classList.add("active");
+      document.documentElement.classList.add("noscroll");
     });
   });
   modalCloseBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       modal.classList.remove("active");
+      document.documentElement.classList.remove("noscroll");
     });
   });
   modal.addEventListener("click", (e) => {
     if (e.target.closest(".modal-content")) return;
     modal.classList.remove("active");
+    document.documentElement.classList.remove("noscroll");
   });
 };
 
@@ -298,6 +378,16 @@ const initStickyHeaderBottom = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   toggleActive();
+  initVideoBlur(
+    ".hero-video.desktop",
+    ".hero-video-canvas.desktop",
+    ".hero-video-wrapper.desktop",
+  );
+  initVideoBlur(
+    ".hero-video.mobile",
+    ".hero-video-canvas.mobile",
+    ".hero-video-wrapper.mobile",
+  );
   initFaqAccordion();
 
   initHorizontalSlider(document.querySelector(".about-team-slider-wrapper"), {

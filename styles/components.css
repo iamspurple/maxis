@@ -35,7 +35,7 @@
   padding-inline: clamp(
     calc(16px * 1025 / 1400),
     calc(100vw * 16 / 1400),
-    calc(16px * 1720 / 1400)
+    calc(16px * 1440 / 1400)
   );
   border-left: 1px solid var(--color-grayblue);
   color: var(--color-grayblue);
@@ -44,7 +44,7 @@
   font-size: clamp(
     calc(12px * 1025 / 1400),
     calc(100vw * 12 / 1400),
-    calc(12px * 1720 / 1400)
+    calc(12px * 1440 / 1400)
   );
   line-height: 140%;
   display: inline-flex;
@@ -78,7 +78,7 @@
   font-size: clamp(
     calc(18px * 1025 / 1400),
     calc(100vw * 18 / 1400),
-    calc(18px * 1720 / 1400)
+    calc(18px * 1440 / 1400)
   );
   text-wrap: nowrap;
 }
@@ -98,7 +98,7 @@
   font-size: clamp(
     calc(12px * 1025 / 1400),
     calc(100vw * 12 / 1400),
-    calc(12px * 1720 / 1400)
+    calc(12px * 1440 / 1400)
   );
   letter-spacing: -2%;
 }
@@ -129,7 +129,7 @@
   font-size: clamp(
     calc(10px * 1025 / 1400),
     calc(100vw * 10 / 1400),
-    calc(10px * 1720 / 1400)
+    calc(10px * 1440 / 1400)
   );
   letter-spacing: -2%;
   text-wrap: nowrap;
@@ -145,17 +145,17 @@
   padding: clamp(
       calc(12px * 1025 / 1400),
       calc(100vw * 12 / 1400),
-      calc(12px * 1720 / 1400)
+      calc(12px * 1440 / 1400)
     )
     clamp(
       calc(32px * 1025 / 1400),
       calc(100vw * 32 / 1400),
-      calc(32px * 1720 / 1400)
+      calc(32px * 1440 / 1400)
     );
   font-size: clamp(
     calc(14px * 1025 / 1400),
     calc(100vw * 14 / 1400),
-    calc(14px * 1720 / 1400)
+    calc(14px * 1440 / 1400)
   );
   line-height: 140%;
   font-weight: 700;
@@ -169,7 +169,7 @@
   padding: clamp(
     calc(12px * 1025 / 1400),
     calc(100vw * 12 / 1400),
-    calc(12px * 1720 / 1400)
+    calc(12px * 1440 / 1400)
   );
   aspect-ratio: 1;
   background-color: var(--color-lightblue);
@@ -183,12 +183,12 @@
   width: clamp(
     calc(14px * 1025 / 1400 * 1.4),
     calc(100vw * 14 / 1400 * 1.4),
-    calc(14px * 1720 / 1400 * 1.4)
+    calc(14px * 1440 / 1400 * 1.4)
   );
   height: clamp(
     calc(14px * 1025 / 1400 * 1.4),
     calc(100vw * 14 / 1400 * 1.4),
-    calc(14px * 1720 / 1400 * 1.4)
+    calc(14px * 1440 / 1400 * 1.4)
   );
   aspect-ratio: 1;
 }
@@ -209,12 +209,12 @@
   width: clamp(
     calc(16px * 1025 / 1400),
     calc(100vw * 16 / 1400),
-    calc(16px * 1720 / 1400)
+    calc(16px * 1440 / 1400)
   );
   height: clamp(
     calc(16px * 1025 / 1400),
     calc(100vw * 16 / 1400),
-    calc(16px * 1720 / 1400)
+    calc(16px * 1440 / 1400)
   );
 }
 
@@ -237,14 +237,21 @@
 .header-bottom {
   background-color: white;
   width: 100%;
-  padding-block: clamp(
+  padding-top: clamp(
     calc(18px * 1025 / 1400),
     calc(100vw * 18 / 1400),
-    calc(18px * 1720 / 1400)
+    calc(18px * 1440 / 1400)
+  );
+  padding-bottom: clamp(
+    calc(18px * 1025 / 1400),
+    calc(100vw * 18 / 1400),
+    calc(18px * 1440 / 1400)
   );
   display: flex;
   justify-content: space-between;
-  transition: padding-top padding-bottom 0.3s ease;
+  transition:
+    padding-top 0.3s ease,
+    padding-bottom 0.3s ease;
 }
 
 @media screen and (min-width: 1025px) {
@@ -252,12 +259,12 @@
     padding-top: clamp(
       calc(4px * 1025 / 1400),
       calc(100vw * 4 / 1400),
-      calc(4px * 1720 / 1400)
+      calc(4px * 1440 / 1400)
     );
     padding-bottom: clamp(
       calc(4px * 1025 / 1400),
       calc(100vw * 4 / 1400),
-      calc(4px * 1720 / 1400)
+      calc(4px * 1440 / 1400)
     );
     position: fixed;
     top: 0;
@@ -270,13 +277,26 @@
   }
 
   .header-bottom.sticky .dropdown-content {
-    padding-top: calc(clamp(4px, 0.3vw, 5px) + 1px);
+    padding-top: calc(
+      clamp(
+          calc(4px * 1025 / 1400),
+          calc(100vw * 4 / 1400),
+          calc(4px * 1440 / 1400)
+        ) +
+        1px
+    );
   }
 }
 
-@media screen and (min-width: 1720px) {
+@media screen and (min-width: 1440px) {
   .header-bottom.sticky {
-    padding-inline: calc((100vw - 1530px) / 2);
+    padding-inline: calc((100vw - 1280px) / 2);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .header-bottom.sticky {
+    padding-inline: calc((100vw / 1.25 - 1280px) / 2);
   }
 }
 
@@ -295,7 +315,7 @@
   font-size: clamp(
     calc(14px * 1025 / 1400),
     calc(100vw * 14 / 1400),
-    calc(14px * 1720 / 1400)
+    calc(14px * 1440 / 1400)
   );
   font-weight: 600;
 }
@@ -305,7 +325,7 @@
   padding-block: clamp(
     calc(18px * 1025 / 1400),
     calc(100vw * 18 / 1400),
-    calc(18px * 1720 / 1400)
+    calc(18px * 1440 / 1400)
   );
   color: var(--color-text-dark);
   transition: 0.3s ease;
@@ -315,7 +335,7 @@
   padding-inline: clamp(
     calc(32px * 1025 / 1400),
     calc(100vw * 32 / 1400),
-    calc(32px * 1720 / 1400)
+    calc(32px * 1440 / 1400)
   );
   border-radius: 10px;
   background-color: var(--color-lightblue);
@@ -328,7 +348,7 @@
   gap: clamp(
     calc(32px * 1025 / 1400),
     calc(100vw * 32 / 1400),
-    calc(32px * 1720 / 1400)
+    calc(32px * 1440 / 1400)
   );
   border-radius: 10px;
   color: var(--color-primary);
@@ -377,13 +397,22 @@
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  padding-top: calc(max(12px, 1.28vw) + 1px);
+  padding-top: calc(
+    clamp(
+        calc(18px * 1025 / 1400),
+        calc(100vw * 18 / 1400),
+        calc(18px * 1440 / 1400)
+      ) +
+      1px
+  );
   opacity: 0;
   visibility: hidden;
   position: absolute;
   min-width: 160px;
   z-index: 1;
-  transition: opacity 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    padding-top 0.3s ease;
   filter: drop-shadow(0 40px 10px rgba(21, 30, 48, 0.05));
 }
 
@@ -507,7 +536,7 @@
   font-size: clamp(
     calc(24px * 1025 / 1400),
     calc(100vw * 24 / 1400),
-    calc(24px * 1720 / 1400)
+    calc(24px * 1440 / 1400)
   );
   font-weight: 700;
   text-transform: uppercase;
@@ -528,7 +557,7 @@
   gap: clamp(
     calc(24px * 1025 / 1400),
     calc(100vw * 24 / 1400),
-    calc(24px * 1720 / 1400)
+    calc(24px * 1440 / 1400)
   );
 }
 
@@ -541,7 +570,7 @@
   font-size: clamp(
     calc(12px * 1025 / 1400),
     calc(100vw * 12 / 1400),
-    calc(12px * 1720 / 1400)
+    calc(12px * 1440 / 1400)
   );
   font-weight: 500;
   line-height: 140%;
@@ -551,7 +580,7 @@
   font-size: clamp(
     calc(10px * 1025 / 1400),
     calc(100vw * 10 / 1400),
-    calc(10px * 1720 / 1400)
+    calc(10px * 1440 / 1400)
   );
   font-weight: 500;
   line-height: 140%;
@@ -564,7 +593,7 @@
   gap: clamp(
     calc(36px * 1025 / 1400),
     calc(100vw * 36 / 1400),
-    calc(36px * 1720 / 1400)
+    calc(36px * 1440 / 1400)
   );
   margin-right: 10.8vw;
 }
@@ -579,7 +608,7 @@
   font-size: clamp(
     calc(10px * 1025 / 1400),
     calc(100vw * 10 / 1400),
-    calc(10px * 1720 / 1400)
+    calc(10px * 1440 / 1400)
   );
   line-height: 95%;
   letter-spacing: -2%;
@@ -590,7 +619,7 @@
   font-size: clamp(
     calc(18px * 1025 / 1400),
     calc(100vw * 18 / 1400),
-    calc(18px * 1720 / 1400)
+    calc(18px * 1440 / 1400)
   );
   line-height: 95%;
 }
@@ -601,7 +630,7 @@
   gap: clamp(
     calc(25px * 1025 / 1400),
     calc(100vw * 25 / 1400),
-    calc(25px * 1720 / 1400)
+    calc(25px * 1440 / 1400)
   );
 }
 
@@ -609,7 +638,7 @@
   font-size: clamp(
     calc(16px * 1025 / 1400),
     calc(100vw * 16 / 1400),
-    calc(16px * 1720 / 1400)
+    calc(16px * 1440 / 1400)
   );
   line-height: 90%;
   font-weight: 600;
@@ -622,7 +651,7 @@
   font-size: clamp(
     calc(14px * 1025 / 1400),
     calc(100vw * 14 / 1400),
-    calc(14px * 1720 / 1400)
+    calc(14px * 1440 / 1400)
   );
   color: var(--color-grayblue);
 }
@@ -641,7 +670,7 @@
     gap: clamp(
       calc(24px * 1025 / 1400),
       calc(100vw * 24 / 1400),
-      calc(24px * 1720 / 1400)
+      calc(24px * 1440 / 1400)
     );
     align-items: center;
     justify-items: stretch;
@@ -654,7 +683,7 @@
   gap: clamp(
     calc(14px * 1025 / 1400),
     calc(100vw * 14 / 1400),
-    calc(14px * 1720 / 1400)
+    calc(14px * 1440 / 1400)
   );
 }
 
@@ -674,10 +703,20 @@
   backdrop-filter: blur(7px);
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .modal.active {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 0.3s ease;
 }
 
 .modal-content {
@@ -688,7 +727,7 @@
   gap: clamp(
     calc(14px * 1025 / 1400),
     calc(100vw * 14 / 1400),
-    calc(14px * 1720 / 1400)
+    calc(14px * 1440 / 1400)
   );
 }
 
@@ -699,12 +738,12 @@
   width: clamp(
     calc(40px * 1025 / 1400),
     calc(100vw * 40 / 1400),
-    calc(40px * 1720 / 1400)
+    calc(40px * 1440 / 1400)
   );
   height: clamp(
     calc(40px * 1025 / 1400),
     calc(100vw * 40 / 1400),
-    calc(40px * 1720 / 1400)
+    calc(40px * 1440 / 1400)
   );
   background-color: white;
   color: var(--color-primary);
@@ -717,12 +756,12 @@
   width: clamp(
     calc(16px * 1025 / 1400),
     calc(100vw * 16 / 1400),
-    calc(16px * 1720 / 1400)
+    calc(16px * 1440 / 1400)
   );
   height: clamp(
     calc(16px * 1025 / 1400),
     calc(100vw * 16 / 1400),
-    calc(16px * 1720 / 1400)
+    calc(16px * 1440 / 1400)
   );
 }
 
@@ -734,13 +773,13 @@
   gap: clamp(
     calc(24px * 1025 / 1400),
     calc(100vw * 24 / 1400),
-    calc(24px * 1720 / 1400)
+    calc(24px * 1440 / 1400)
   );
   background-color: #f2f7fe;
   padding: clamp(
     calc(40px * 1025 / 1400),
     calc(100vw * 40 / 1400),
-    calc(40px * 1720 / 1400)
+    calc(40px * 1440 / 1400)
   );
   border-radius: 20px;
 }
@@ -749,7 +788,7 @@
   font-size: clamp(
     calc(18px * 1025 / 1400),
     calc(100vw * 18 / 1400),
-    calc(18px * 1720 / 1400)
+    calc(18px * 1440 / 1400)
   );
   font-weight: 700;
   line-height: 160%;
@@ -759,7 +798,7 @@
   gap: clamp(
     calc(10px * 1025 / 1400),
     calc(100vw * 10 / 1400),
-    calc(10px * 1720 / 1400)
+    calc(10px * 1440 / 1400)
   );
   width: 100%;
   text-wrap: nowrap;
@@ -771,7 +810,7 @@
   font-size: clamp(
     calc(28px * 1025 / 1400),
     calc(100vw * 28 / 1400),
-    calc(28px * 1720 / 1400)
+    calc(28px * 1440 / 1400)
   );
 }
 
@@ -781,12 +820,12 @@
   gap: clamp(
     calc(16px * 1025 / 1400),
     calc(100vw * 16 / 1400),
-    calc(16px * 1720 / 1400)
+    calc(16px * 1440 / 1400)
   );
   font-size: clamp(
     calc(18px * 1025 / 1400),
     calc(100vw * 18 / 1400),
-    calc(18px * 1720 / 1400)
+    calc(18px * 1440 / 1400)
   );
   font-weight: 600;
 }
@@ -802,14 +841,14 @@
   width: clamp(
     calc(24px * 1025 / 1400),
     calc(100vw * 24 / 1400),
-    calc(24px * 1720 / 1400)
+    calc(24px * 1440 / 1400)
   );
   aspect-ratio: 1;
   position: absolute;
   left: clamp(
     calc(24px * 1025 / 1400),
     calc(100vw * 24 / 1400),
-    calc(24px * 1720 / 1400)
+    calc(24px * 1440 / 1400)
   );
   top: 50%;
   transform: translateY(-50%);
@@ -829,12 +868,12 @@
   padding: clamp(
       calc(20px * 1025 / 1400),
       calc(100vw * 20 / 1400),
-      calc(20px * 1720 / 1400)
+      calc(20px * 1440 / 1400)
     )
     clamp(
       calc(24px * 1025 / 1400),
       calc(100vw * 24 / 1400),
-      calc(24px * 1720 / 1400)
+      calc(24px * 1440 / 1400)
     );
 
   border-radius: 10px;
@@ -845,17 +884,17 @@
   padding: clamp(
       calc(20px * 1025 / 1400),
       calc(100vw * 20 / 1400),
-      calc(20px * 1720 / 1400)
+      calc(20px * 1440 / 1400)
     )
     clamp(
       calc(24px * 1025 / 1400),
       calc(100vw * 24 / 1400),
-      calc(24px * 1720 / 1400)
+      calc(24px * 1440 / 1400)
     );
   padding-left: clamp(
     calc(64px * 1025 / 1400),
     calc(100vw * 64 / 1400),
-    calc(64px * 1720 / 1400)
+    calc(64px * 1440 / 1400)
   );
   color: var(--color-dark);
   background-color: white;
@@ -879,7 +918,7 @@
   gap: clamp(
     calc(14px * 1025 / 1400),
     calc(100vw * 14 / 1400),
-    calc(14px * 1720 / 1400)
+    calc(14px * 1440 / 1400)
   );
 }
 
@@ -889,7 +928,7 @@
   width: clamp(
     calc(24px * 1025 / 1400),
     calc(100vw * 24 / 1400),
-    calc(24px * 1720 / 1400)
+    calc(24px * 1440 / 1400)
   );
   aspect-ratio: 1;
   background: url(/assets/icons/paperclip.svg) center/contain no-repeat;
@@ -909,7 +948,7 @@
   font-size: clamp(
     calc(11px * 1025 / 1400),
     calc(100vw * 11 / 1400),
-    calc(11px * 1720 / 1400)
+    calc(11px * 1440 / 1400)
   );
   line-height: 160%;
   font-weight: 500;
@@ -926,12 +965,12 @@
   gap: clamp(
     calc(5px * 1025 / 1400),
     calc(100vw * 5 / 1400),
-    calc(5px * 1720 / 1400)
+    calc(5px * 1440 / 1400)
   );
   font-size: clamp(
     calc(12px * 1025 / 1400),
     calc(100vw * 12 / 1400),
-    calc(12px * 1720 / 1400)
+    calc(12px * 1440 / 1400)
   );
   line-height: 160%;
   color: #a0a7aa;
@@ -943,7 +982,7 @@
   margin-inline: clamp(
     calc(5px * 1025 / 1400),
     calc(100vw * 5 / 1400),
-    calc(5px * 1720 / 1400)
+    calc(5px * 1440 / 1400)
   );
 }
 
