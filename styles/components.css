@@ -777,7 +777,7 @@
     calc(100vw * 24 / 1400),
     calc(24px * 1440 / 1400)
   );
-  background-color: #f2f7fe;
+  background-color: white;
   padding: clamp(
     calc(40px * 1025 / 1400),
     calc(100vw * 40 / 1400),
@@ -903,7 +903,7 @@
     calc(64px * 1440 / 1400)
   );
   color: var(--color-dark);
-  background-color: white;
+  background-color: #f8f8f8;
   border-radius: 10px;
 }
 
@@ -1765,8 +1765,8 @@
     );
   }
 
-  .modal-form label,
-  .modal-form button {
+  .modal-form > label,
+  .modal-form > button {
     padding: clamp(
         calc(20px * 580 / 640),
         calc(100vw * 20 / 640),
@@ -1779,7 +1779,7 @@
       );
   }
 
-  .modal-form input:not([type="file"]) {
+  .modal-form input:not([type="file"]):not([type="checkbox"]) {
     padding: clamp(
         calc(20px * 580 / 640),
         calc(100vw * 20 / 640),
@@ -2410,8 +2410,8 @@
     );
   }
 
-  .modal-form label,
-  .modal-form button {
+  .modal-form > label,
+  .modal-form > button {
     padding: clamp(
         calc(20px * 320 / 375),
         calc(100vw * 20 / 375),
@@ -2424,7 +2424,7 @@
       );
   }
 
-  .modal-form input:not([type="file"]) {
+  .modal-form input:not([type="file"]):not([type="checkbox"]) {
     padding: clamp(
         calc(20px * 320 / 375),
         calc(100vw * 20 / 375),

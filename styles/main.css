@@ -267,7 +267,12 @@ body {
 
 @media screen and (max-width: 1024px) {
   .container {
+    width: auto;
     margin-inline: 4vw;
+  }
+
+  .wrapper {
+    zoom: 1;
   }
 
   .title-medium {

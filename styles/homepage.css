@@ -2960,6 +2960,7 @@
       calc(24px * 1024 / 640)
     );
     align-items: flex-start;
+    border-radius: 20px;
   }
 
   .achievements-qualities-item-icon {
@@ -3011,6 +3012,7 @@
       calc(100vw * 24 / 640),
       calc(24px * 1024 / 640)
     );
+    border-radius: 20px;
   }
 
   .achievements-statistic-item .wrapper::before {
@@ -3497,6 +3499,7 @@
   .about-certificates-slider-item {
     width: max(287px, 44vw);
     height: max(406px, 63vw);
+    zoom: 1;
   }
 
   .about-certificates-slider-item:first-of-type {
