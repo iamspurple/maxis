@@ -1660,7 +1660,7 @@
                 </label>
                 <div class="consult-form-checkbox-wrapper">
                   <input type="checkbox" id="consult-checkbox" />
-                  <label for="checkbox">
+                  <label for="consult-checkbox">
                     <span class="consult-form-checkbox-text">
                       Я ознакомлен и принимаю условия
                       <a href="/" class="nowrap"
@@ -1874,11 +1874,25 @@
                 >
                 <input type="tel" placeholder="Номер телефона" />
               </div>
-              <label for="file" class="modal-form-file-label">
+              <label for="file" class="modal-form-file-label btn">
                 Прикрепите файл
                 <input type="file" name="file" id="file" accept="image/*" />
               </label>
-              <button type="submit" class="modal-form-submit-btn">
+              <div class="modal-form-checkbox-wrapper">
+                <input type="checkbox" id="modal-checkbox" />
+                <label for="modal-checkbox">
+                  <span class="modal-form-checkbox-text">
+                    Я ознакомлен и принимаю условия
+                    <a href="/" class="nowrap">обработки персональных данных</a>
+                  </span>
+                </label>
+              </div>
+              <button
+                id="modal-submit"
+                type="submit"
+                class="modal-form-submit-btn"
+                disabled
+              >
                 Отправить
               </button>
             </form>

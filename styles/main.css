@@ -149,6 +149,8 @@ body {
   --color-white65: rgba(255, 255, 255, 0.65);
   --font-primary: "Manrope";
   --font-secondary: "Unbounded";
+  --zoom-1: 0.85;
+  --zoom-2: 1.15;
   font-size: 16px;
   font-family: var(--font-primary);
   background-color: #fff;
@@ -168,7 +170,8 @@ body {
 }
 
 .container {
-  margin-inline: 5.5vw;
+  margin-inline: 12.5%;
+  width: 75%;
 }
 
 @media screen and (min-width: 1440px) {
@@ -179,9 +182,13 @@ body {
   }
 }
 
+.wrapper {
+  zoom: var(--zoom-1);
+}
+
 @media screen and (min-width: 2000px) {
   .wrapper {
-    zoom: 1.25;
+    zoom: var(--zoom-2);
   }
 }
 

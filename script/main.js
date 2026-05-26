@@ -95,7 +95,6 @@ const initHorizontalSlider = (root, selectors) => {
     if (!items.length) return 0;
     const item = items[0];
     const zoom = getZoom();
-    console.log("Zoom:", zoom);
     const marginRight =
       parseFloat(window.getComputedStyle(item).marginRight) || 0;
     return item.getBoundingClientRect().width / zoom + marginRight;
@@ -275,12 +274,11 @@ const initFaqAccordion = () => {
   });
 };
 
-const toggleDisabled = () => {
-  const checkbox = document.getElementById("consult-checkbox");
-  const button = document.getElementById("consult-submit");
+const toggleDisabled = (checkboxID, buttonID) => {
+  const checkbox = document.getElementById(checkboxID);
+  const button = document.getElementById(buttonID);
 
   if (!checkbox || !button) return;
-
   checkbox.addEventListener("change", () => {
     button.disabled = !checkbox.checked;
     button.classList.toggle("btn", checkbox.checked);
@@ -418,7 +416,8 @@ document.addEventListener("DOMContentLoaded", () => {
   getHeaderHeight();
   initModal();
   initStickyHeaderBottom();
-  toggleDisabled();
+  toggleDisabled("consult-checkbox", "consult-submit");
+  toggleDisabled("modal-checkbox", "modal-submit");
 });
 
 window.addEventListener("resize", () => {

@@ -33,7 +33,7 @@
   width: auto;
   height: 100%;
   object-fit: cover;
-  margin-right: -10%;
+  /* margin-right: -10%; */
 }
 
 .hero-video-canvas.desktop {
@@ -41,10 +41,11 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 90%;
+  /* width: 90%; */
+  width: 80%;
   z-index: -1;
   filter: blur(50px);
-  margin-right: -10%;
+  /* margin-right: -10%; */
 }
 
 @media screen and (min-width: 1575px) {
@@ -55,6 +56,32 @@
   .hero-video.desktop,
   .hero-video-canvas.desktop {
     margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1720px) and (max-width: 2000px) {
+  .hero-video-wrapper.desktop::before {
+    right: 1140px;
+  }
+
+  .hero-video-wrapper.desktop::after {
+    content: "";
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      #fbfbfb 30%
+    );
+    z-index: 10;
+    filter: blur(20px);
+  }
+  .hero-video.desktop {
+    margin-right: 5%;
   }
 }
 
@@ -463,7 +490,7 @@
 
 @media screen and (min-width: 2000px) {
   .achievements-qualities-item {
-    border-radius: 28px;
+    border-radius: 25px;
   }
 }
 
@@ -489,7 +516,7 @@
     calc(100vw * 24 / 1400),
     calc(24px * 1440 / 1400)
   );
-  border-radius: 20px;
+  border-radius: 22px;
   position: relative;
   overflow: hidden;
   background-color: var(--color-dark);
@@ -566,16 +593,21 @@
   flex-shrink: 0;
   display: flex;
   justify-content: space-between;
+  zoom: calc(1 / var(--zoom-1));
 }
 
 .achievements-statistic-item {
   position: relative;
-  border-radius: clamp(15px, 1.42vw, 2rem);
+  border-radius: 22px;
   padding: 1px;
   overflow: hidden;
 }
 
 @media screen and (min-width: 2000px) {
+  .achievements-statistic {
+    zoom: 1.075;
+  }
+
   .achievements-statistic-item {
     border-radius: 28px;
   }
@@ -624,7 +656,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: calc(clamp(15px, 1.42vw, 2rem) - 1px);
+  border-radius: 25px;
   overflow: hidden;
 }
 
@@ -781,10 +813,11 @@
   border-top-right-radius: 40px;
   background-color: #f3f8ff;
   padding-block: clamp(
-    calc(84px * 1025 / 1400),
-    calc(100vw * 84 / 1400),
-    calc(84px * 1440 / 1400)
-  );
+      calc(84px * 1025 / 1400),
+      calc(100vw * 84 / 1400),
+      calc(84px * 1440 / 1400)
+    )
+    clamp(90px, 6.42vw, 115px);
   position: relative;
   z-index: 10;
 }
@@ -1367,25 +1400,25 @@
 .about-title {
   max-width: 45%;
   color: white;
-  margin-left: 5.5vw;
+  margin-left: calc(12.5vw / var(--zoom-1));
 }
 
 @media screen and (min-width: 1440px) {
   .about-title {
-    margin-left: calc((100vw - 1280px) / 2);
+    margin-left: calc((100vw / var(--zoom-1) - 1280px) / 2);
     max-width: calc(1280px * 0.45);
   }
 }
 
 @media screen and (min-width: 2000px) {
   .about-title {
-    margin-left: calc((100vw / 1.25 - 1280px) / 2);
+    margin-left: calc((100vw / var(--zoom-2) - 1280px) / 2);
     max-width: calc(1600px * 0.35);
   }
 }
 
 .about-team-slider-controls {
-  margin-right: 5.5vw;
+  margin-right: calc(12.5vw / var(--zoom-1));
   display: flex;
   gap: clamp(10px, 0.7vw, 14px);
   align-items: center;
@@ -1394,13 +1427,13 @@
 
 @media screen and (min-width: 1440px) {
   .about-team-slider-controls {
-    margin-right: calc((100vw - 1280px) / 2);
+    margin-right: calc((100vw / var(--zoom-1) - 1280px) / 2);
   }
 }
 
 @media screen and (min-width: 2000px) {
   .about-team-slider-controls {
-    margin-right: calc((100vw / 1.25 - 1280px) / 2);
+    margin-right: calc((100vw / var(--zoom-2) - 1280px) / 2);
   }
 }
 
@@ -1447,18 +1480,18 @@
 }
 
 .about-team-slider-list li:first-of-type .about-team-slider-item {
-  margin-left: 5.5vw;
+  margin-left: calc(12.5vw / var(--zoom-1));
 }
 
 @media screen and (min-width: 1440px) {
   .about-team-slider-list li:first-of-type .about-team-slider-item {
-    margin-left: calc((100vw - 1280px) / 2);
+    margin-left: calc((100vw / var(--zoom-1) - 1280px) / 2);
   }
 }
 
 @media screen and (min-width: 2000px) {
   .about-team-slider-list li:first-of-type .about-team-slider-item {
-    margin-left: calc((100vw / 1.25 - 1280px) / 2);
+    margin-left: calc((100vw / var(--zoom-2) - 1280px) / 2);
   }
 }
 
@@ -1653,7 +1686,7 @@
 }
 
 .about-certificates-slider-controls {
-  margin-right: 5.5vw;
+  margin-right: calc(12.5vw / var(--zoom-1));
   display: flex;
   align-items: center;
   justify-self: end;
@@ -1662,13 +1695,13 @@
 
 @media screen and (min-width: 1440px) {
   .about-certificates-slider-controls {
-    margin-right: calc((100vw - 1280px) / 2);
+    margin-right: calc((100vw / var(--zoom-1) - 1280px) / 2);
   }
 }
 
 @media screen and (min-width: 2000px) {
   .about-certificates-slider-controls {
-    margin-right: calc((100vw / 1.25 - 1280px) / 2);
+    margin-right: calc((100vw / var(--zoom-2) - 1280px) / 2);
   }
 }
 
@@ -1723,10 +1756,21 @@
   border-radius: 8px;
   overflow: hidden;
   margin-right: max(27px, 1.9vw);
+  zoom: calc(1 / var(--zoom-1));
 }
 
 .about-certificates-slider-item:first-of-type {
-  margin-left: 5.5vw;
+  margin-left: 4.5vw;
+}
+
+@media screen and (min-width: 2000px) {
+  .about-certificates-slider-item {
+    zoom: 1;
+  }
+
+  .about-certificates-slider-item:first-of-type {
+    margin-left: 5.5vw;
+  }
 }
 
 .about-certificates-slider-item figure {
@@ -2946,6 +2990,7 @@
       calc(100vw * 14 / 640),
       calc(14px * 1024 / 640)
     );
+    zoom: 1;
   }
 
   .achievements-statistic-item {
