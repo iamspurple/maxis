@@ -361,6 +361,7 @@
 .dropbtn {
   background-color: transparent;
   padding-block: clamp(18px, 1.28vw, 22px);
+  padding-left: clamp(24px, 1.7vw, 30px);
   display: inline-flex;
   align-items: center;
   gap: 5px;
