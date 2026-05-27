@@ -1,5 +1,5 @@
 const toggleActive = () => {
-  const isHover = window.matchMedia("(any-hover: hover)").matches;
+  const isHover = window.matchMedia("(hover: hover)").matches;
 
   const dropDowns = document.querySelectorAll(".dropdown, .main-link");
   dropDowns.forEach((btn) => {
@@ -12,22 +12,23 @@ const toggleActive = () => {
         btn.classList.remove("active");
       });
     } else {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
+      btn.addEventListener("click", () => {
         btn.classList.toggle("active");
       });
     }
   });
 
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".dropdown")) {
-      dropDowns.forEach((btn) => {
-        if (btn.classList.contains("active")) {
-          btn.classList.remove("active");
-        }
-      });
-    }
-  });
+  if (window.innerWidth < 1024) {
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".dropdown")) {
+        dropDowns.forEach((btn) => {
+          if (btn.classList.contains("active")) {
+            btn.classList.remove("active");
+          }
+        });
+      }
+    });
+  }
 };
 
 const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
