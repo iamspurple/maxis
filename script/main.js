@@ -12,7 +12,8 @@ const toggleActive = () => {
         btn.classList.remove("active");
       });
     } else {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
         btn.classList.toggle("active");
       });
     }
