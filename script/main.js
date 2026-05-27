@@ -1,5 +1,7 @@
 const toggleActive = () => {
-  const isHover = window.matchMedia("(hover: hover)").matches;
+  const isHover = window.matchMedia(
+    "(hover: hover) and (pointer: fine)",
+  ).matches;
 
   const dropDowns = document.querySelectorAll(".dropdown, .main-link");
   dropDowns.forEach((btn) => {
