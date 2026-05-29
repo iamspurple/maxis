@@ -344,10 +344,6 @@ const initStickyHeaderBottom = () => {
   const headerBottom = document.querySelector(".header-bottom");
   if (!headerTop || !headerBottom) return;
 
-  const spacer = document.createElement("div");
-  spacer.style.display = "none";
-  headerBottom.insertAdjacentElement("afterend", spacer);
-
   let isSticky = false;
 
   function update() {
@@ -363,13 +359,10 @@ const initStickyHeaderBottom = () => {
     const shouldBeSticky = headerTop.getBoundingClientRect().bottom <= 0;
 
     if (shouldBeSticky && !isSticky) {
-      spacer.style.height = headerBottom.offsetHeight + "px";
-      spacer.style.display = "block";
       headerBottom.classList.add("sticky");
       isSticky = true;
     } else if (!shouldBeSticky && isSticky) {
       headerBottom.classList.remove("sticky");
-      spacer.style.display = "none";
       isSticky = false;
     }
   }
