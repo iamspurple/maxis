@@ -20,7 +20,7 @@ const toggleActive = () => {
     }
   });
 
-  if (window.innerWidth < 1024) {
+  if (window.innerWidth < 849) {
     document.addEventListener("click", (e) => {
       if (!e.target.closest(".dropdown")) {
         dropDowns.forEach((btn) => {
@@ -307,7 +307,7 @@ const getHeaderHeight = () => {
 
   if (!header || !main) return;
 
-  if (window.innerWidth < 1024) {
+  if (window.innerWidth < 849) {
     const headerHeight = header.offsetHeight;
     main.style.marginTop = `${headerHeight}px`;
   } else {
@@ -351,7 +351,7 @@ const initStickyHeaderBottom = () => {
   let isSticky = false;
 
   function update() {
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth <= 849) {
       if (isSticky) {
         headerBottom.classList.remove("sticky");
         spacer.style.display = "none";

@@ -254,7 +254,7 @@
     padding-bottom 0.3s ease;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 850px) {
   .header-bottom.sticky {
     padding-top: clamp(
       calc(4px * 1025 / 1400),
@@ -270,7 +270,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding-inline: 12.5vw;
+    padding-inline: calc((100vw - 768px) / 2);
     z-index: 100;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     border-bottom: 1px solid #edf5ff;
@@ -285,6 +285,12 @@
         ) +
         1px
     );
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-bottom.sticky {
+    padding-inline: 12.5vw;
   }
 }
 
@@ -770,7 +776,7 @@
 }
 
 .modal-form-wrapper {
-  width: max(35%, 700px);
+  width: max(35%, 460px);
   display: flex;
   flex-direction: column;
   gap: clamp(
@@ -1370,7 +1376,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 850px) {
   .header {
     background-color: white;
     position: fixed;

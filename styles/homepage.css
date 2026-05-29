@@ -45,6 +45,16 @@
   filter: blur(50px);
 }
 
+@media screen and (min-width: 850px) and (max-width: 1024px) {
+  .hero-video-wrapper.desktop::before {
+    right: 65%;
+  }
+
+  .hero-video.desktop {
+    width: 70%;
+  }
+}
+
 @media screen and (min-width: 1575px) {
   .hero-video-wrapper.desktop::before {
     right: 850px;
@@ -486,12 +496,6 @@
   width: 100%;
 }
 
-/* @media screen and (min-width: 2000px) {
-  .achievements-qualities-item {
-    border-radius: calc(25px * var(--zoom-2));
-  }
-} */
-
 .achievements-qualities-item:nth-of-type(2) {
   background: linear-gradient(
     3deg,
@@ -519,12 +523,6 @@
   overflow: hidden;
   background-color: var(--color-dark);
 }
-
-/* @media screen and (min-width: 2000px) {
-  .achievements-qualities-item .wrapper {
-    border-radius: calc(22px * var(--zoom-2));
-  }
-} */
 
 .achievements-qualities-item .wrapper::after {
   content: "";
@@ -600,13 +598,6 @@
   overflow: hidden;
 }
 
-/* @media screen and (min-width: 2000px) {
-  
-  .achievements-statistic-item {
-    border-radius: 28px;
-  }
-} */
-
 .achievements-statistic-item:nth-of-type(1) {
   background: linear-gradient(
     225deg,
@@ -652,12 +643,6 @@
   justify-content: space-between;
   border-radius: 22px;
   overflow: hidden;
-}
-
-@media screen and (min-width: 2000px) {
-  .achievements-statistic-item .wrapper {
-    border-radius: 22px;
-  }
 }
 
 .achievements-statistic-item:nth-of-type(1) .wrapper {
@@ -1402,6 +1387,12 @@
   margin-left: 12.5vw;
 }
 
+@media screen and (min-width: 850px) and (max-width: 1024px) {
+  .about-title {
+    margin-left: calc((100vw - 768px) / 2);
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .about-title {
     margin-left: calc((100vw - 1090px) / 2);
@@ -1422,6 +1413,12 @@
   gap: calc(clamp(10px, 0.7vw, 14px) * var(--zoom-1));
   align-items: center;
   justify-self: end;
+}
+
+@media screen and (min-width: 850px) and (max-width: 1024px) {
+  .about-team-slider-controls {
+    margin-right: calc((100vw - 768px) / 2);
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -1480,6 +1477,12 @@
 
 .about-team-slider-list li:first-of-type .about-team-slider-item {
   margin-left: calc(12.5vw);
+}
+
+@media screen and (min-width: 850px) and (max-width: 1024px) {
+  .about-team-slider-list li:first-of-type .about-team-slider-item {
+    margin-left: calc((100vw - 768px) / 2);
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -1692,6 +1695,12 @@
   gap: calc(clamp(10px, 0.7vw, 14px) * var(--zoom-1));
 }
 
+@media screen and (min-width: 850px) and (max-width: 1024px) {
+  .about-certificates-slider-controls {
+    margin-right: calc((100vw - 768px) / 2);
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .about-certificates-slider-controls {
     margin-right: calc((100vw - 1090px) / 2);
@@ -1755,6 +1764,13 @@
   border-radius: 8px;
   overflow: hidden;
   margin-right: max(27px, 1.9vw);
+}
+
+@media screen and (min-width: 850px) and (max-width: 1024px) {
+  .about-certificates-slider-item {
+    width: 180px;
+    height: 260px;
+  }
 }
 
 .about-certificates-slider-item:first-of-type {
@@ -2927,6 +2943,7 @@
       calc(100vw * 45 / 1400 * var(--zoom-2)),
       calc(45px * 1440 / 1400 * var(--zoom-2))
     );
+    border-radius: 22px;
   }
 
   .achievements-statistic-item .wrapper::before {
@@ -3761,7 +3778,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 850px) {
   .hero {
     flex-direction: column;
     padding-bottom: 100vw;
@@ -4062,7 +4079,6 @@
       calc(100vw * 14 / 640),
       calc(14px * 1024 / 640)
     );
-    zoom: 1;
   }
 
   .achievements-statistic-item {
@@ -4079,6 +4095,11 @@
 
   .achievements-statistic-item .wrapper {
     gap: clamp(
+      calc(24px * 580 / 640),
+      calc(100vw * 24 / 640),
+      calc(24px * 1024 / 640)
+    );
+    padding: clamp(
       calc(24px * 580 / 640),
       calc(100vw * 24 / 640),
       calc(24px * 1024 / 640)
@@ -4570,7 +4591,6 @@
   .about-certificates-slider-item {
     width: max(287px, 44vw);
     height: max(406px, 63vw);
-    zoom: 1;
   }
 
   .about-certificates-slider-item:first-of-type {
@@ -5734,6 +5754,10 @@
   .about-video.container {
     margin-inline: 0;
     border-radius: 0;
+  }
+
+  .about-certificates-wrapper {
+    margin-top: 0;
   }
 
   .about-certificates-content {
