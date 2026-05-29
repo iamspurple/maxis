@@ -3966,7 +3966,7 @@
       calc(24px * 1024 / 640)
     );
     justify-content: center;
-    width: 56%;
+    width: 58%;
   }
 
   .achievements-info-icon .wrapper {
@@ -4081,16 +4081,12 @@
     );
   }
 
-  .achievements-statistic-item {
-    width: 100%;
-  }
-
-  .achievements-statistic-item:nth-of-type(1) {
-    width: 100%;
-  }
-
   .achievements-statistic-item:nth-of-type(2) {
-    width: 100%;
+    width: 33%;
+  }
+
+  .achievements-statistic-item:nth-of-type(3) {
+    width: 38%;
   }
 
   .achievements-statistic-item .wrapper {
@@ -4107,6 +4103,9 @@
     border-radius: 22px;
   }
 
+  .achievements-statistic-item:nth-of-type(1) .wrapper {
+    margin: 0;
+  }
   .achievements-statistic-item .wrapper::before {
     width: clamp(
       calc(26px * 580 / 640),

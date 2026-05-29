@@ -796,7 +796,7 @@
 
 @media screen and (min-width: 850px) and (max-width: 1280px) {
   .modal-form-wrapper {
-    width: 55%;
+    width: max(55%, 520px);
   }
 }
 
