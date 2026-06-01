@@ -3411,7 +3411,7 @@
         calc(90px * 1440 / 1400 * var(--zoom-2))
       )
       calc(
-        (100vw - 11vw) / 4 +
+        1470px / 4 +
           clamp(
             calc(90px * 1025 / 1400 * var(--zoom-2)),
             calc(100vw * 90 / 1400 * var(--zoom-2)),

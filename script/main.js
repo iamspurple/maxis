@@ -307,7 +307,7 @@ const getHeaderHeight = () => {
 
   if (!header || !main) return;
 
-  if (window.innerWidth < 849) {
+  if (window.innerWidth <= 849) {
     const headerHeight = header.offsetHeight;
     main.style.marginTop = `${headerHeight}px`;
   } else {
@@ -319,11 +319,21 @@ const initModal = () => {
   const modalOpenBtns = document.querySelectorAll(".modal-open-btn");
   const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
   const modal = document.querySelector(".modal");
+  const menu = document.getElementById("menu");
+  const overlay = document.querySelector(".overlay");
+  const burgerBtn = document.querySelector(".header-burger-btn");
+
+  const closeMenu = () => {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+    burgerBtn.classList.remove("active");
+  };
 
   modalOpenBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       modal.classList.add("active");
       document.documentElement.classList.add("noscroll");
+      closeMenu();
     });
   });
   modalCloseBtns.forEach((btn) => {
@@ -340,9 +350,10 @@ const initModal = () => {
 };
 
 const initStickyHeaderBottom = () => {
+  const header = document.querySelector(".header");
   const headerTop = document.querySelector(".header-top");
   const headerBottom = document.querySelector(".header-bottom");
-  if (!headerTop || !headerBottom) return;
+  if (!header || !headerTop || !headerBottom) return;
 
   let isSticky = false;
 
@@ -350,7 +361,7 @@ const initStickyHeaderBottom = () => {
     if (window.innerWidth <= 849) {
       if (isSticky) {
         headerBottom.classList.remove("sticky");
-        spacer.style.display = "none";
+        header.style.paddingBottom = "";
         isSticky = false;
       }
       return;
@@ -359,11 +370,17 @@ const initStickyHeaderBottom = () => {
     const shouldBeSticky = headerTop.getBoundingClientRect().bottom <= 0;
 
     if (shouldBeSticky && !isSticky) {
+      header.style.paddingBottom = headerBottom.offsetHeight - 4 + "px";
       headerBottom.classList.add("sticky");
       isSticky = true;
     } else if (!shouldBeSticky && isSticky) {
+      headerBottom.style.transition = "none";
       headerBottom.classList.remove("sticky");
+      header.style.paddingBottom = "";
       isSticky = false;
+      requestAnimationFrame(() => {
+        headerBottom.style.transition = "";
+      });
     }
   }
 

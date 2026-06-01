@@ -250,8 +250,8 @@
   display: flex;
   justify-content: space-between;
   transition:
-    padding-top 0.3s ease,
-    padding-bottom 0.3s ease;
+    padding-top 0.5s ease,
+    padding-bottom 0.5s ease;
 }
 
 @media screen and (min-width: 850px) {
@@ -794,7 +794,7 @@
   border-radius: 20px;
 }
 
-@media screen and (min-width: 850px) and (max-width: 1280px) {
+@media screen and (min-width: 580px) and (max-width: 1280px) {
   .modal-form-wrapper {
     width: max(55%, 520px);
   }
@@ -1603,6 +1603,7 @@
       calc(14px * 1024 / 640)
     );
     align-items: start;
+    height: fit-content;
   }
 
   .header-nav-list-main > li {
@@ -2001,7 +2002,9 @@
     grid-column: 2;
     grid-row: 2;
   }
+}
 
+@media screen and (max-width: 580px) {
   .modal.active {
     align-items: flex-end;
   }
