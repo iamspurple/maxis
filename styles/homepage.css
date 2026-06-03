@@ -215,12 +215,12 @@
   width: clamp(
     calc(20px * 1025 / 1400 * var(--zoom-1)),
     calc(100vw * 20 / 1400 * var(--zoom-1)),
-    calc(20px * 1440 / 1400 * var(--zoom-1)) calc(20px * 1440 / 1400)
+    calc(20px * 1440 / 1400 * var(--zoom-1))
   );
   height: clamp(
     calc(20px * 1025 / 1400 * var(--zoom-1)),
     calc(100vw * 20 / 1400 * var(--zoom-1)),
-    calc(20px * 1440 / 1400 var(--zoom-1))
+    calc(20px * 1440 / 1400 * var(--zoom-1))
   );
   background: url(/assets/icons/plus.svg) center/contain no-repeat;
 }
@@ -1075,14 +1075,14 @@
   justify-content: center;
   background-color: var(--color-lightblue);
   width: clamp(
-    calc(52px * 1025 / 1400 * var(--zoom-1)),
-    calc(100vw * 52 / 1400 * var(--zoom-1)),
-    calc(52px * 1440 / 1400 * var(--zoom-1))
+    calc(56px * 1025 / 1400 * var(--zoom-1)),
+    calc(100vw * 56 / 1400 * var(--zoom-1)),
+    calc(56px * 1440 / 1400 * var(--zoom-1))
   );
   height: clamp(
-    calc(52px * 1025 / 1400 * var(--zoom-1)),
-    calc(100vw * 52 / 1400 * var(--zoom-1)),
-    calc(52px * 1440 / 1400 * var(--zoom-1))
+    calc(56px * 1025 / 1400 * var(--zoom-1)),
+    calc(100vw * 56 / 1400 * var(--zoom-1)),
+    calc(56px * 1440 / 1400 * var(--zoom-1))
   );
   padding: clamp(
     calc(12px * 1025 / 1400 * var(--zoom-1)),
@@ -3151,14 +3151,14 @@
 
   .reasons-item-icon {
     width: clamp(
-      calc(52px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 52 / 1400 * var(--zoom-2)),
-      calc(52px * 1440 / 1400 * var(--zoom-2))
+      calc(56px * 1025 / 1400 * var(--zoom-2)),
+      calc(100vw * 56 / 1400 * var(--zoom-2)),
+      calc(56px * 1440 / 1400 * var(--zoom-2))
     );
     height: clamp(
-      calc(52px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 52 / 1400 * var(--zoom-2)),
-      calc(52px * 1440 / 1400 * var(--zoom-2))
+      calc(56px * 1025 / 1400 * var(--zoom-2)),
+      calc(100vw * 56 / 1400 * var(--zoom-2)),
+      calc(56px * 1440 / 1400 * var(--zoom-2))
     );
     padding: clamp(
       calc(12px * 1025 / 1400 * var(--zoom-2)),
