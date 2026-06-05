@@ -4725,67 +4725,67 @@
 
   .faq-item-title {
     padding: clamp(
-        calc(24px * 580 / 640),
-        calc(100vw * 24 / 640),
-        calc(24px * 1024 / 640)
+        calc(18px * 580 / 640),
+        calc(100vw * 18 / 640),
+        calc(18px * 1024 / 640)
       )
       clamp(
-        calc(40px * 580 / 640),
-        calc(100vw * 40 / 640),
-        calc(40px * 1024 / 640)
+        calc(32px * 580 / 640),
+        calc(100vw * 32 / 640),
+        calc(32px * 1024 / 640)
       );
   }
 
   .faq-item-title-text {
     font-size: clamp(
-      calc(22px * 580 / 640),
-      calc(100vw * 22 / 640),
-      calc(22px * 1024 / 640)
+      calc(18px * 580 / 640),
+      calc(100vw * 18 / 640),
+      calc(18px * 1024 / 640)
     );
   }
 
   .faq-item-icon {
     width: clamp(
-      calc(60px * 580 / 640),
-      calc(100vw * 60 / 640),
-      calc(60px * 1024 / 640)
+      calc(48px * 580 / 640),
+      calc(100vw * 48 / 640),
+      calc(48px * 1024 / 640)
     );
   }
 
   .faq-item-icon svg {
     width: clamp(
-      calc(24px * 580 / 640),
-      calc(100vw * 24 / 640),
-      calc(24px * 1024 / 640)
+      calc(19px * 580 / 640),
+      calc(100vw * 19 / 640),
+      calc(19px * 1024 / 640)
     );
     height: clamp(
-      calc(24px * 580 / 640),
-      calc(100vw * 24 / 640),
-      calc(24px * 1024 / 640)
+      calc(19px * 580 / 640),
+      calc(100vw * 19 / 640),
+      calc(19px * 1024 / 640)
     );
   }
 
   .faq-item-text {
     font-size: clamp(
-      calc(18px * 580 / 640),
-      calc(100vw * 18 / 640),
-      calc(18px * 1024 / 640)
+      calc(14px * 580 / 640),
+      calc(100vw * 14 / 640),
+      calc(14px * 1024 / 640)
     );
 
     padding-inline: clamp(
-      calc(40px * 580 / 640),
-      calc(100vw * 40 / 640),
-      calc(40px * 1024 / 640)
+      calc(32px * 580 / 640),
+      calc(100vw * 32 / 640),
+      calc(32px * 1024 / 640)
     );
     padding-top: clamp(
-      calc(24px * 580 / 640),
-      calc(100vw * 24 / 640),
-      calc(24px * 1024 / 640)
+      calc(19px * 580 / 640),
+      calc(100vw * 19 / 640),
+      calc(19px * 1024 / 640)
     );
     padding-bottom: clamp(
-      calc(24px * 580 / 640),
-      calc(100vw * 24 / 640),
-      calc(24px * 1024 / 640)
+      calc(19px * 580 / 640),
+      calc(100vw * 19 / 640),
+      calc(19px * 1024 / 640)
     );
   }
 
