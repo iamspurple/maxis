@@ -82,26 +82,19 @@ const initHorizontalSlider = (root, selectors) => {
     list?.parentElement;
   const btnBack = root.querySelector(selectors.btnBack);
   const btnFwd = root.querySelector(selectors.btnFwd);
-  const wrapper = document.querySelector("body > .wrapper");
-  console.log(wrapper);
 
   if (!track || !list || !btnBack || !btnFwd) return;
 
   let currentIndex = 0;
   const scrollEndEpsilon = 2;
 
-  function getZoom() {
-    return parseFloat(getComputedStyle(wrapper).zoom) || 1;
-  }
-
   function getSlideWidth() {
     const items = list.querySelectorAll(selectors.item);
     if (!items.length) return 0;
     const item = items[0];
-    const zoom = getZoom();
     const marginRight =
       parseFloat(window.getComputedStyle(item).marginRight) || 0;
-    return item.getBoundingClientRect().width / zoom + marginRight;
+    return item.getBoundingClientRect().width + marginRight;
   }
 
   function getMaxOffset() {
@@ -323,6 +316,8 @@ const initModal = () => {
   const overlay = document.querySelector(".overlay");
   const burgerBtn = document.querySelector(".header-burger-btn");
 
+  if (!modal || !menu || !overlay) return;
+
   const closeMenu = () => {
     menu.classList.remove("active");
     overlay.classList.remove("active");
@@ -388,6 +383,114 @@ const initStickyHeaderBottom = () => {
   window.addEventListener("resize", update);
 };
 
+class Progress {
+  constructor(
+    currentStep = 1,
+    totalStep = 7,
+    progressElement = document.querySelector(".process-slider-progress"),
+    progressCurrentStepElement = document.querySelector(".current-step"),
+    totalStepElement = document.querySelector(".total-step"),
+  ) {
+    this.currentStep = currentStep;
+    this.totalStep = totalStep;
+    this.progressElement = progressElement;
+    this.progressCurrentStepElement = progressCurrentStepElement;
+    this.totalStepElement = totalStepElement;
+    this.progressElement.style.setProperty(
+      "--percent",
+      (this.currentStep / this.totalStep) * 100 + "%",
+    );
+    this.progressCurrentStepElement.textContent = this.currentStep;
+    this.totalStepElement.textContent = this.totalStep;
+  }
+
+  onNewStep(newStep) {
+    this.progressCurrentStepElement.textContent = newStep;
+    this.progressElement.style.setProperty(
+      "--percent",
+      (newStep / this.totalStep) * 100 + "%",
+    );
+  }
+}
+
+const initStepper = () => {
+  const buttons = document.querySelectorAll(".process-steps-btn");
+  const contents = document.querySelectorAll(".process-steps-item");
+
+  const hasActiveButton = Array.from(buttons).some((btn) =>
+    btn.classList.contains("active"),
+  );
+  const hasActiveContent = Array.from(contents).some((content) =>
+    content.classList.contains("active"),
+  );
+
+  if (!hasActiveButton && buttons.length) {
+    buttons[0].classList.add("active");
+  }
+  if (!hasActiveContent && contents.length) {
+    contents[0].classList.add("active");
+  }
+
+  const container = document.querySelector(".process-steps-list");
+  container.addEventListener("click", (e) => {
+    const button = e.target.closest(".process-steps-btn");
+    if (!button) return;
+
+    const stepIndex = Array.from(buttons).indexOf(button);
+    if (stepIndex === -1) return;
+
+    buttons.forEach((btn) => btn.classList.remove("active"));
+    contents.forEach((content) => content.classList.remove("active"));
+
+    button.classList.add("active");
+    if (contents[stepIndex]) {
+      contents[stepIndex].classList.add("active");
+    }
+  });
+};
+
+const initStepSlider = () => {
+  const nextBtn = document.querySelector(".process-slider-btn.forward");
+  const prevBtn = document.querySelector(".process-slider-btn.backward");
+  const steps = document.querySelectorAll(".process-steps-item");
+
+  let currentStep = 1;
+  let totalStep = 7;
+
+  const mainPageProgress = new Progress(currentStep, totalStep);
+
+  const updateStep = (current) => {
+    steps.forEach((step, index) => {
+      if (index + 1 === current) {
+        step.classList.add("active");
+      } else {
+        step.classList.remove("active");
+      }
+    });
+  };
+
+  nextBtn.addEventListener("click", () => {
+    currentStep += 1;
+    mainPageProgress.onNewStep(currentStep);
+    prevBtn.disabled = false;
+    if (currentStep === totalStep) {
+      nextBtn.disabled = true;
+    }
+    updateStep(currentStep);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentStep -= 1;
+    mainPageProgress.onNewStep(currentStep);
+
+    nextBtn.disabled = false;
+    if (currentStep === 1) {
+      prevBtn.disabled = true;
+    }
+    updateStep(currentStep);
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   toggleActive();
   initVideoBlur(
@@ -432,6 +535,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initStickyHeaderBottom();
   toggleDisabled("consult-checkbox", "consult-submit");
   toggleDisabled("modal-checkbox", "modal-submit");
+  initStepper();
+  initStepSlider();
 });
 
 window.addEventListener("resize", () => {

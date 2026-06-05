@@ -572,51 +572,89 @@
               <nav class="process-steps" aria-label="Шаги процесса">
                 <ol class="process-steps-list">
                   <li>
-                    <button
-                      class="process-steps-btn"
-                      aria-current="step"
-                      data-step="1"
-                    >
+                    <button class="process-steps-btn" aria-current="step">
                       <span class="process-steps-number">1</span> Знакомство и
                       экспресс-обследование
                     </button>
                   </li>
                   <li>
-                    <button class="process-steps-btn" data-step="2">
+                    <button class="process-steps-btn">
                       <span class="process-steps-number">2</span> Определение
                       целей внедрения
                     </button>
                   </li>
                   <li>
-                    <button class="process-steps-btn active" data-step="3">
+                    <button class="process-steps-btn">
                       <span class="process-steps-number">3</span> Техническое
                       задание и MVP
                     </button>
                   </li>
                   <li>
-                    <button class="process-steps-btn" data-step="4">
+                    <button class="process-steps-btn">
                       <span class="process-steps-number">4</span> Снижение
                       рисков
                     </button>
                   </li>
                   <li>
-                    <button class="process-steps-btn" data-step="5">
+                    <button class="process-steps-btn">
                       <span class="process-steps-number">5</span> Внедрение
                     </button>
                   </li>
                   <li>
-                    <button class="process-steps-btn" data-step="6">
+                    <button class="process-steps-btn">
                       <span class="process-steps-number">6</span> Обучение и
                       запуск
                     </button>
                   </li>
                   <li>
-                    <button class="process-steps-btn" data-step="7">
+                    <button class="process-steps-btn">
                       <span class="process-steps-number">7</span> Поддержка и
                       развитие
                     </button>
                   </li>
                 </ol>
+              </nav>
+              <nav
+                class="process-slider-controls"
+                aria-label="Навигация по шагам"
+              >
+                <button class="process-slider-btn backward btn" disabled>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.4102 7.41L10.8302 12L15.4102 16.59L14.0002 18L8.00016 12L14.0002 6L15.4102 7.41Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  Назад
+                </button>
+                <div class="process-slider-progress" style="--percent: 10%">
+                  <div class="progress"></div>
+                  <span class="progress-text">
+                    <span class="current-step"></span> из
+                    <span class="total-step"></span>
+                  </span>
+                </div>
+                <button class="process-slider-btn forward btn">
+                  Следующий
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.58984 16.59Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
               </nav>
               <div class="process-steps-content">
                 <section
@@ -662,7 +700,7 @@
                   </div>
                 </section>
                 <section
-                  class="process-steps-item active"
+                  class="process-steps-item"
                   aria-label="Шаг 3 из 7: Техническое задание и MVP"
                   aria-live="polite"
                   tabindex="-1"
@@ -685,7 +723,13 @@
                       <li>Перечень доработок и интеграций</li>
                       <li>Описание автоматизируемых процессов</li>
                       <li>Роли и ответственных с обеих сторон</li>
-                      <li>Архитектуру системы и инфраструктурные требования</li>
+                      <li>
+                        <span>
+                          Архитектуру системы
+                          <span class="nowrap">и инфраструктурные</span>
+                          требования
+                        </span>
+                      </li>
                       <li>План-график работ и риски проекта</li>
                       <li>Порядок обучения и сдачи работ</li>
                     </ul>
@@ -777,7 +821,8 @@
           <div class="automation-wrapper container">
             <div class="automation-header">
               <h2 class="automation-title title-medium heading">
-                <span class="accent"> Эффективная </span> автоматизация на базе
+                <span class="accent"> Эффективная </span> автоматизация
+                <span class="nowrap">на базе</span>
                 1С
               </h2>
               <p class="automation-subtitle">
@@ -828,7 +873,8 @@
         <section class="task">
           <div class="task-wrapper container">
             <h2 class="task-title title-medium heading">
-              Решаем любые задачи <span class="accent">автоматизации</span>
+              Решаем <span class="nowrap">любые задачи</span>
+              <span class="accent">автоматизации</span>
             </h2>
 
             <ul class="task-list">
@@ -975,7 +1021,7 @@
                   </a>
                 </li>
                 <li class="configuration-item offer">
-                  <div class="configuration-item-content">
+                  <div class="configuration-item-content offer">
                     <h3 class="configuration-item-name offer">
                       Получите бесплатный аудит по оптимизации вашего бизнеса
                     </h3>
@@ -992,6 +1038,11 @@
                   >
                     Бесплатный аудит →
                   </a>
+                  <img
+                    class="configuration-item-image"
+                    src="/assets/images/circles-1.png"
+                    alt=""
+                  />
                 </li>
               </ul>
               <a href="/" class="configuration-link more-link">Смотреть все</a>
@@ -1252,7 +1303,545 @@
             </div>
           </div>
         </section>
+        <section class="faq">
+          <div class="faq-wrapper container">
+            <h2 class="faq-title heading title-medium">
+              Ответы <span class="accent">на популярные</span> вопросы
+            </h2>
+            <div class="faq-content">
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button
+                    type="button"
+                    class="faq-item-title"
+                    aria-expanded="false"
+                  >
+                    <span class="faq-item-title-text"
+                      >Как происходит оплата?</span
+                    >
+                    <span class="faq-item-icon">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.25 8.25H9.75V3.75C9.75 3.336 9.414 3 9 3C8.586 3 8.25 3.336 8.25 3.75V8.25H3.75C3.336 8.25 3 8.586 3 9C3 9.414 3.336 9.75 3.75 9.75H8.25V14.25C8.25 14.664 8.586 15 9 15C9.414 15 9.75 14.664 9.75 14.25V9.75H14.25C14.664 9.75 15 9.414 15 9C15 8.586 14.664 8.25 14.25 8.25Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-item-content">
+                    <p class="faq-item-text">
+                      Мы принимаем безналичный расчет или оплату через расчетный
+                      счет
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button
+                    type="button"
+                    class="faq-item-title"
+                    aria-expanded="false"
+                  >
+                    <span class="faq-item-title-text"
+                      >Сколько стоит внедрение 1С?</span
+                    >
+                    <span class="faq-item-icon">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.25 8.25H9.75V3.75C9.75 3.336 9.414 3 9 3C8.586 3 8.25 3.336 8.25 3.75V8.25H3.75C3.336 8.25 3 8.586 3 9C3 9.414 3.336 9.75 3.75 9.75H8.25V14.25C8.25 14.664 8.586 15 9 15C9.414 15 9.75 14.664 9.75 14.25V9.75H14.25C14.664 9.75 15 9.414 15 9C15 8.586 14.664 8.25 14.25 8.25Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-item-content">
+                    <p class="faq-item-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Maxime, eveniet.
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button
+                    type="button"
+                    class="faq-item-title"
+                    aria-expanded="false"
+                  >
+                    <span class="faq-item-title-text"
+                      >Чем отличаются конфигурации 1С?</span
+                    >
+                    <span class="faq-item-icon">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.25 8.25H9.75V3.75C9.75 3.336 9.414 3 9 3C8.586 3 8.25 3.336 8.25 3.75V8.25H3.75C3.336 8.25 3 8.586 3 9C3 9.414 3.336 9.75 3.75 9.75H8.25V14.25C8.25 14.664 8.586 15 9 15C9.414 15 9.75 14.664 9.75 14.25V9.75H14.25C14.664 9.75 15 9.414 15 9C15 8.586 14.664 8.25 14.25 8.25Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-item-content">
+                    <p class="faq-item-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Maxime, eveniet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button
+                    type="button"
+                    class="faq-item-title"
+                    aria-expanded="false"
+                  >
+                    <span class="faq-item-title-text"
+                      >Какая квалификация у ваших сотрудников?</span
+                    >
+                    <span class="faq-item-icon">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.25 8.25H9.75V3.75C9.75 3.336 9.414 3 9 3C8.586 3 8.25 3.336 8.25 3.75V8.25H3.75C3.336 8.25 3 8.586 3 9C3 9.414 3.336 9.75 3.75 9.75H8.25V14.25C8.25 14.664 8.586 15 9 15C9.414 15 9.75 14.664 9.75 14.25V9.75H14.25C14.664 9.75 15 9.414 15 9C15 8.586 14.664 8.25 14.25 8.25Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-item-content">
+                    <p class="faq-item-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Maxime, eveniet.
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button
+                    type="button"
+                    class="faq-item-title"
+                    aria-expanded="false"
+                  >
+                    <span class="faq-item-title-text"
+                      >Какие этапы внедрения 1С?</span
+                    >
+                    <span class="faq-item-icon">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.25 8.25H9.75V3.75C9.75 3.336 9.414 3 9 3C8.586 3 8.25 3.336 8.25 3.75V8.25H3.75C3.336 8.25 3 8.586 3 9C3 9.414 3.336 9.75 3.75 9.75H8.25V14.25C8.25 14.664 8.586 15 9 15C9.414 15 9.75 14.664 9.75 14.25V9.75H14.25C14.664 9.75 15 9.414 15 9C15 8.586 14.664 8.25 14.25 8.25Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-item-content">
+                    <p class="faq-item-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Maxime, eveniet.
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button
+                    type="button"
+                    class="faq-item-title"
+                    aria-expanded="false"
+                  >
+                    <span class="faq-item-title-text"
+                      >Как автоматизировать бизнес-процессы на 1С?</span
+                    >
+                    <span class="faq-item-icon">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.25 8.25H9.75V3.75C9.75 3.336 9.414 3 9 3C8.586 3 8.25 3.336 8.25 3.75V8.25H3.75C3.336 8.25 3 8.586 3 9C3 9.414 3.336 9.75 3.75 9.75H8.25V14.25C8.25 14.664 8.586 15 9 15C9.414 15 9.75 14.664 9.75 14.25V9.75H14.25C14.664 9.75 15 9.414 15 9C15 8.586 14.664 8.25 14.25 8.25Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-item-content">
+                    <p class="faq-item-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Maxime, eveniet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="consult">
+          <div class="consult-wrapper container">
+            <div class="consult-content">
+              <div class="consult-info">
+                <h2 class="consult-title heading title-medium">
+                  Получите <span class="accent">консультацию</span>
+                  <span class="nowrap">по проекту</span>
+                </h2>
+                <div class="consult-phone-wrapper">
+                  <div class="consult-phone">
+                    <a class="consult-phone-number" href="tel:+74951515094"
+                      >+7 (495) 151-50-94</a
+                    >
+                    <div class="consult-phone-details">
+                      <div class="consult-phone-city">
+                        <span class="dot"></span>
+                        <span>Москва</span>
+                      </div>
+                      <p class="consult-phone-hours">
+                        пн-пт c <time datetime="09:30">9:30</time> до
+                        <time datetime="18:30">18:30</time>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="consult-phone">
+                    <a class="consult-phone-number" href="tel:+74872338088"
+                      >+7 (4872) 33-80-88</a
+                    >
+                    <div class="consult-phone-details">
+                      <div class="consult-phone-city">
+                        <span class="dot"></span>
+                        <span>Тула</span>
+                      </div>
+                      <p class="consult-phone-hours">
+                        пн-пт c <time datetime="09:30">9:30</time> до
+                        <time datetime="18:30">18:30</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="consult-email-wrapper">
+                  <span class="consult-email-label">Email</span>
+                  <a class="consult-email-address" href="mailto:info@maxis.ru"
+                    >info@maxis.ru</a
+                  >
+                </div>
+              </div>
+              <div class="consult-details">
+                <p class="consult-details-text">
+                  «Хотите узнать, как оптимизировать именно ваш бизнес?
+                  <span class="nowrap">Наши специалисты</span>
+                  готовы разложить все по полочкам
+                  <span class="nowrap">и составить план</span> развития уже
+                  сейчас»
+                </p>
+                <div class="consult-manager">
+                  <img
+                    class="consult-manager-image"
+                    src="/assets/images/manager.png"
+                    alt="manager"
+                  />
+                  <div class="consult-manager-content">
+                    <h3 class="consult-manager-name">
+                      Смирнова <br />
+                      Екатерина Александровна
+                    </h3>
+                    <p class="consult-manager-description">
+                      Проектный менеджер
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="consult-form-wrapper">
+              <h2 class="consult-form-title">
+                <span class="dark">Оставьте ваши контакты</span> и наш
+                специалист свяжется с вами в ближайшее время
+              </h2>
+              <form class="consult-form">
+                <div class="consult-form-input-wrapper name">
+                  <label for="name" class="visually-hidden">Ваше имя</label>
+                  <input type="text" placeholder="Ваше имя" id="name" />
+                </div>
+                <div class="consult-form-input-wrapper phone">
+                  <label for="phone" class="visually-hidden"
+                    >Номер телефона</label
+                  >
+                  <input type="tel" placeholder="Номер телефона" />
+                </div>
+                <label for="file" class="consult-form-file-label btn">
+                  Прикрепите файл
+                  <input type="file" name="file" id="file" accept="image/*" />
+                </label>
+                <div class="consult-form-checkbox-wrapper">
+                  <input type="checkbox" id="consult-checkbox" />
+                  <label for="consult-checkbox">
+                    <span class="consult-form-checkbox-text">
+                      Я ознакомлен и принимаю условия
+                      <a href="/" class="nowrap"
+                        >обработки персональных данных</a
+                      >
+                    </span>
+                  </label>
+                </div>
+                <button
+                  id="consult-submit"
+                  type="submit"
+                  class="consult-form-submit-btn"
+                  disabled
+                >
+                  Отправить
+                </button>
+              </form>
+              <p class="consult-form-text">
+                Нажимая кнопку «Отправить», Вы даете согласие на обработку Ваших
+                персональных данных, а также соглашаетесь с условиями
+                <a href="/">Политики конфиденциальности</a>
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
+      <footer class="footer">
+        <div class="footer-wrapper container">
+          <div class="footer-content">
+            <a href="/" class="footer-logo heading">
+              <img src="/assets/icons/logo.svg" alt="Максис ИТ" />
+              Максис
+            </a>
+            <div class="footer-accreditation">
+              <img
+                class="footer-accreditation-icon"
+                src="/assets/icons/mincifry.svg"
+                alt="Минцифры России"
+              />
+              <span class="footer-accreditation-text"
+                >Аккредитованная IT компания</span
+              >
+              <span class="footer-accreditation-description">
+                Деятельность осуществляется <br />
+                в соответствии с приказами <br />
+                Минцифры России №449 и №511, <br />
+                Имеет запись в реестре №2647 <br />
+                от 15 октября 2013 года.
+              </span>
+            </div>
+            <div class="footer-contacts">
+              <div class="footer-contacts-item">
+                <span class="footer-contacts-item-label">Москва</span>
+                <a class="footer-contacts-item-value" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+              </div>
+              <div class="footer-contacts-item">
+                <span class="footer-contacts-item-label">Тула</span>
+                <a class="footer-contacts-item-value" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+              </div>
+
+              <div class="footer-contacts-item">
+                <span class="footer-contacts-item-label"> Режим работы</span>
+                <span class="footer-contacts-item-value">
+                  пн-пт c <time datetime="09:30">9:30</time> до
+                  <time datetime="18:30">18:30</time>
+                </span>
+              </div>
+              <div class="footer-contacts-item">
+                <span class="footer-contacts-item-label">Email</span>
+                <a
+                  class="footer-contacts-item-value"
+                  href="mailto:info@maxis.ru"
+                  >info@maxis.ru</a
+                >
+              </div>
+            </div>
+            <nav class="footer-navigation">
+              <h3 class="footer-navigation-title">Меню</h3>
+              <ul class="footer-navigation-list">
+                <li>
+                  <a href="/">Главная</a>
+                </li>
+                <li>
+                  <a href="">О компании</a>
+                </li>
+                <li>
+                  <a href=""> Кейсы</a>
+                </li>
+                <li>
+                  <a href="">Решения</a>
+                </li>
+                <li>
+                  <a href="">Новости</a>
+                </li>
+                <li>
+                  <a href="">Контакты</a>
+                </li>
+                <li>
+                  <a href="">ИТ деятельность</a>
+                </li>
+              </ul>
+            </nav>
+            <nav class="footer-navigation">
+              <h3 class="footer-navigation-title">Услуги</h3>
+              <ul class="footer-navigation-list">
+                <li>
+                  <a href="">1C Предприятие</a>
+                </li>
+                <li>
+                  <a href="">Битрикс24</a>
+                </li>
+                <li>
+                  <a href="">Интеграция 1С и Битрикс 24</a>
+                </li>
+                <li>
+                  <a href="">BI-аналитика</a>
+                </li>
+                <li>
+                  <a href="">IT-инфраструктура</a>
+                </li>
+                <li>
+                  <a href="">Разработки и интеграции</a>
+                </li>
+                <li>
+                  <a href="">Искуственный интеллект</a>
+                </li>
+                <li>
+                  <a href="">Open Source</a>
+                </li>
+              </ul>
+            </nav>
+            <nav class="footer-navigation">
+              <h3 class="footer-navigation-title">Каталог</h3>
+              <ul class="footer-navigation-list">
+                <li>
+                  <a href="">Конфигурации</a>
+                </li>
+                <li>
+                  <a href="">Лицензии</a>
+                </li>
+                <li>
+                  <a href="">ИТС</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <p class="footer-bottom-text">© 2026 ООО «МАКСИС АЙ ТИ»</p>
+            <a href="/" class="footer-bottom-link"
+              >Политика обработки персональных данных</a
+            >
+            <a href="/" class="footer-bottom-link"
+              >Политика конфиденциальности</a
+            >
+            <div class="footer-creator">
+              <p class="footer-creator-text">
+                Сайт разработан
+                <a href="https://tolacompany.ru" class="accent" target="_blank">
+                  TOLACOMPANY.RU
+                </a>
+              </p>
+              <img src="/assets/icons/tola.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div id="overlay" class="overlay"></div>
+      <div class="modal">
+        <div class="modal-content">
+          <button type="button" class="modal-close-btn">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6 6L18 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="modal-form-wrapper">
+            <h2 class="modal-form-title">
+              <span class="accent heading">Оставьте ваши контакты</span>
+              <span>и наш специалист свяжется с вами в ближайшее время</span>
+            </h2>
+            <form class="modal-form">
+              <div class="modal-form-input-wrapper name">
+                <label for="name" class="visually-hidden">Ваше имя</label>
+                <input type="text" placeholder="Ваше имя" id="name" />
+              </div>
+              <div class="modal-form-input-wrapper phone">
+                <label for="phone" class="visually-hidden"
+                  >Номер телефона</label
+                >
+                <input type="tel" placeholder="Номер телефона" />
+              </div>
+              <label for="file" class="modal-form-file-label btn">
+                Прикрепите файл
+                <input type="file" name="file" id="file" accept="image/*" />
+              </label>
+              <div class="modal-form-checkbox-wrapper">
+                <input type="checkbox" id="modal-checkbox" />
+                <label for="modal-checkbox">
+                  <span class="modal-form-checkbox-text">
+                    Я ознакомлен и принимаю условия
+                    <a href="/" class="nowrap">обработки персональных данных</a>
+                  </span>
+                </label>
+              </div>
+              <button
+                id="modal-submit"
+                type="submit"
+                class="modal-form-submit-btn"
+                disabled
+              >
+                Отправить
+              </button>
+            </form>
+            <p class="modal-form-text">
+              Нажимая кнопку «Отправить», Вы даете согласие на обработку Ваших
+              персональных данных, а также соглашаетесь с условиями
+              <a href="/">Политики конфиденциальности</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="/script/main.js"></script>
   </body>
 </html>
