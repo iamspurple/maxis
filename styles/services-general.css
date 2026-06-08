@@ -226,6 +226,11 @@
   gap: clamp(15px, 1.45vw, 21px);
 }
 
+.services-item-content.offer {
+  position: relative;
+  z-index: 10;
+}
+
 .services-item-header {
   display: flex;
   align-items: center;
@@ -313,6 +318,8 @@
 
 .services-item-link.offer {
   background-color: white;
+  position: relative;
+  z-index: 10;
 }
 
 .services-item-image {
@@ -2790,6 +2797,7 @@
   }
 
   .automation-list {
+    padding: 0;
     background: transparent;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3679,7 +3687,7 @@
   }
 
   .automation-item-text {
-    padding: clamp(14px, 4.2vw, 25px);
+    font-size: clamp(14px, 4.2vw, 25px);
   }
 
   .task {
