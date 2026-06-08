@@ -768,6 +768,8 @@
 .configuration-item-link,
 .services1c-item-link {
   width: fit-content;
+  position: relative;
+  z-index: 10;
 }
 
 .configuration-item-link.offer {

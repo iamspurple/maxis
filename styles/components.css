@@ -1381,6 +1381,15 @@
       calc(14px * 1440 / 1400 * var(--zoom-2))
     );
   }
+
+  .breadcrumb {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .breadcrumb li:not(:last-of-type)::after {
+    margin-inline: 8px;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -2001,6 +2010,15 @@
   .footer-creator {
     grid-column: 2;
     grid-row: 2;
+  }
+
+  .breadcrumb {
+    gap: 5px;
+    font-size: clamp(10px, 2vw, 17px);
+  }
+
+  .breadcrumb li:not(:last-of-type)::after {
+    margin-inline: 5px;
   }
 }
 
@@ -2844,5 +2862,9 @@
       calc(100vw * 10 / 375),
       calc(10px * 580 / 375)
     );
+  }
+
+  .breadcrumb {
+    font-size: 12px;
   }
 }
