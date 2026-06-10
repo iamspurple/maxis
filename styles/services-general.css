@@ -2007,15 +2007,6 @@
   }
 
   .articles {
-    margin-top: calc(
-      clamp(
-          calc(42px * 1025 / 1400 * var(--zoom-2)),
-          calc(100vw * 42 / 1400 * var(--zoom-2)),
-          calc(42px * 1440 / 1400 * var(--zoom-2))
-        ) *
-        (-6)
-    );
-
     padding-block: calc(min(92px, 6.42vw) * var(--zoom-2));
   }
 
