@@ -2627,7 +2627,7 @@
   background: url(/assets/icons/paperclip.svg) center/contain no-repeat;
 }
 
-.consult-form-file-label input[type="file"] {
+input[type="file"]#consult-file {
   display: none;
 }
 

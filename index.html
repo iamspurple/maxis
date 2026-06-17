@@ -1645,10 +1645,20 @@
                   id="consult-form-phone"
                 />
               </div>
-              <label for="file" class="consult-form-file-label btn">
+              <button
+                type="button"
+                for="file"
+                class="consult-form-file-label btn"
+              >
                 Прикрепите файл
-                <input type="file" name="file" id="file" accept="image/*" />
-              </label>
+              </button>
+              <input
+                type="file"
+                name="file"
+                accept="image/*"
+                id="consult-file"
+              />
+
               <div class="consult-form-checkbox-wrapper">
                 <input type="checkbox" id="consult-checkbox" />
                 <label for="consult-checkbox">
@@ -1909,57 +1919,93 @@
     <script src="/script/main.js"></script>
 
     <!-- DEV: zoom-header-1 tester -->
-    <div id="zoom-tester" style="
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 99999;
-      background: rgba(0,0,0,0.8);
-      color: #fff;
-      font: 13px/1.4 monospace;
-      padding: 10px 14px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      user-select: none;
-    ">
-      <span style="opacity:.7">--zoom-header-1:</span>
-      <span id="zoom-value" style="min-width:40px;text-align:center;font-weight:bold"></span>
-      <button id="zoom-dec" style="
-        width:28px;height:28px;border:none;border-radius:4px;
-        background:#444;color:#fff;font-size:18px;cursor:pointer;line-height:1
-      ">−</button>
-      <button id="zoom-inc" style="
-        width:28px;height:28px;border:none;border-radius:4px;
-        background:#444;color:#fff;font-size:18px;cursor:pointer;line-height:1
-      ">+</button>
+    <div
+      id="zoom-tester"
+      style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99999;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        font: 13px/1.4 monospace;
+        padding: 10px 14px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        user-select: none;
+      "
+    >
+      <span style="opacity: 0.7">--zoom-header-1:</span>
+      <span
+        id="zoom-value"
+        style="min-width: 40px; text-align: center; font-weight: bold"
+      ></span>
+      <button
+        id="zoom-dec"
+        style="
+          width: 28px;
+          height: 28px;
+          border: none;
+          border-radius: 4px;
+          background: #444;
+          color: #fff;
+          font-size: 18px;
+          cursor: pointer;
+          line-height: 1;
+        "
+      >
+        −
+      </button>
+      <button
+        id="zoom-inc"
+        style="
+          width: 28px;
+          height: 28px;
+          border: none;
+          border-radius: 4px;
+          background: #444;
+          color: #fff;
+          font-size: 18px;
+          cursor: pointer;
+          line-height: 1;
+        "
+      >
+        +
+      </button>
     </div>
     <script>
       (function () {
         var root = document.documentElement;
-        var display = document.getElementById('zoom-value');
+        var display = document.getElementById("zoom-value");
         var step = 0.01;
 
         function getCurrent() {
-          var raw = getComputedStyle(root).getPropertyValue('--zoom-header-1').trim();
-          return raw === '' ? 1 : parseFloat(raw);
+          var raw = getComputedStyle(root)
+            .getPropertyValue("--zoom-header-1")
+            .trim();
+          return raw === "" ? 1 : parseFloat(raw);
         }
 
         function set(val) {
           val = Math.round(val * 100) / 100;
-          root.style.setProperty('--zoom-header-1', val);
+          root.style.setProperty("--zoom-header-1", val);
           display.textContent = val.toFixed(2);
         }
 
         set(getCurrent());
 
-        document.getElementById('zoom-inc').addEventListener('click', function () {
-          set(getCurrent() + step);
-        });
-        document.getElementById('zoom-dec').addEventListener('click', function () {
-          set(getCurrent() - step);
-        });
+        document
+          .getElementById("zoom-inc")
+          .addEventListener("click", function () {
+            set(getCurrent() + step);
+          });
+        document
+          .getElementById("zoom-dec")
+          .addEventListener("click", function () {
+            set(getCurrent() - step);
+          });
       })();
     </script>
     <!-- /DEV -->

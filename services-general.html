@@ -1693,10 +1693,20 @@
                 >
                 <input type="tel" placeholder="Номер телефона" />
               </div>
-              <label for="file" class="consult-form-file-label btn">
+              <button
+                type="button"
+                for="file"
+                class="consult-form-file-label btn"
+              >
                 Прикрепите файл
-                <input type="file" name="file" id="file" accept="image/*" />
-              </label>
+              </button>
+              <input
+                type="file"
+                name="file"
+                id="consult-file"
+                accept="image/*"
+              />
+
               <div class="consult-form-checkbox-wrapper">
                 <input type="checkbox" id="consult-checkbox" />
                 <label for="consult-checkbox">
@@ -1899,17 +1909,35 @@
           </h2>
           <form class="modal-form">
             <div class="modal-form-input-wrapper name">
-              <label for="name" class="visually-hidden">Ваше имя</label>
-              <input type="text" placeholder="Ваше имя" id="name" />
+              <label for="modal-form-name" class="visually-hidden"
+                >Ваше имя</label
+              >
+              <input type="text" placeholder="Ваше имя" id="modal-form-name" />
             </div>
             <div class="modal-form-input-wrapper phone">
-              <label for="phone" class="visually-hidden">Номер телефона</label>
-              <input type="tel" placeholder="Номер телефона" />
+              <label for="modal-form-phone" class="visually-hidden"
+                >Номер телефона</label
+              >
+              <input
+                type="tel"
+                placeholder="Номер телефона"
+                id="modal-form-phone"
+              />
             </div>
-            <label for="file" class="modal-form-file-label btn">
+            <button
+              type="button"
+              id="modal-file-btn"
+              class="modal-form-file-label btn"
+            >
               Прикрепите файл
-              <input type="file" name="file" id="file" accept="image/*" />
-            </label>
+            </button>
+            <input
+              type="file"
+              name="modal-file"
+              id="modal-file"
+              accept="image/*"
+            />
+
             <div class="modal-form-checkbox-wrapper">
               <input type="checkbox" id="modal-checkbox" />
               <label for="modal-checkbox">
