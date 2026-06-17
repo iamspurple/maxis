@@ -210,7 +210,6 @@
   gap: clamp(25px, 2.4vw, 35px);
   background-color: white;
   border-radius: 20px;
-  box-shadow: 0 15px 20px 10px rgba(21, 30, 48, 0.05);
 }
 
 .services-item.offer {
@@ -638,6 +637,7 @@
   background-color: white;
   padding: clamp(15px, 1.45vw, 20px) clamp(22px, 2.2vw, 30px);
   border-radius: 20px;
+  box-shadow: 0 15px 20px 10px rgba(21, 30, 48, 0.05);
 }
 
 .task-item:nth-of-type(-n + 2) {

@@ -125,7 +125,7 @@
 }
 
 .header-phone-hours {
-  margin-bottom: 0.097em;
+  margin-bottom: 0.5px;
   color: var(--color-grayblue);
   font-size: clamp(
     calc(10px * 1025 / 1400 * var(--zoom-header-1)),
