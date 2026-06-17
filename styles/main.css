@@ -157,6 +157,7 @@ body {
   --font-primary: "Manrope";
   --font-secondary: "Unbounded";
   --zoom-1: 0.85;
+  --zoom-header-1: 0.9;
   --zoom-2: 1.15;
   font-size: 16px;
   font-family: var(--font-primary);

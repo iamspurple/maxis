@@ -271,21 +271,12 @@ const initFaqAccordion = () => {
   });
 };
 
-const toggleDisabled = (checkboxID, buttonID) => {
-  const checkbox = document.getElementById(checkboxID);
-  const button = document.getElementById(buttonID);
-
-  if (!checkbox || !button) return;
-  checkbox.addEventListener("change", () => {
-    button.disabled = !checkbox.checked;
-    button.classList.toggle("btn", checkbox.checked);
-  });
-};
-
 const initHeaderBurger = () => {
   const burgerBtn = document.querySelector(".header-burger-btn");
   const menu = document.querySelector("#menu");
   const overlay = document.querySelector(".overlay");
+  if (!burgerBtn || !menu || !overlay) return;
+
   burgerBtn.addEventListener("click", () => {
     burgerBtn.classList.toggle("active");
     menu.classList.toggle("active");
@@ -309,14 +300,23 @@ const getHeaderHeight = () => {
 };
 
 const initModal = () => {
-  const modalOpenBtns = document.querySelectorAll(".modal-open-btn");
-  const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
   const modal = document.querySelector(".modal");
   const menu = document.getElementById("menu");
   const overlay = document.querySelector(".overlay");
+  if (!modal || !menu || !overlay) return;
+
+  const modalOpenBtns = document.querySelectorAll(".modal-open-btn");
+  const modalCloseBtn = document.querySelector(".modal-close-btn");
   const burgerBtn = document.querySelector(".header-burger-btn");
 
-  if (!modal || !menu || !overlay) return;
+  const fileBtn = document.getElementById("modal-file-btn");
+  const fileInput = document.getElementById("modal-file");
+
+  if (fileBtn && fileInput) {
+    fileBtn.addEventListener("click", () => {
+      fileInput.click();
+    });
+  }
 
   const closeMenu = () => {
     menu.classList.remove("active");
@@ -331,17 +331,21 @@ const initModal = () => {
       closeMenu();
     });
   });
-  modalCloseBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      modal.classList.remove("active");
-      document.documentElement.classList.remove("noscroll");
-    });
-  });
+
+  modalCloseBtn.addEventListener("click", closeModal());
+
   modal.addEventListener("click", (e) => {
-    if (e.target.closest(".modal-content")) return;
+    if (e.target.closest(".modal-form-wrapper")) return;
     modal.classList.remove("active");
     document.documentElement.classList.remove("noscroll");
   });
+};
+
+const closeModal = () => {
+  const modal = document.querySelector(".modal");
+
+  modal.classList.remove("active");
+  document.documentElement.classList.remove("noscroll");
 };
 
 const initStickyHeaderBottom = () => {
@@ -391,6 +395,11 @@ class Progress {
     progressCurrentStepElement = document.querySelector(".current-step"),
     totalStepElement = document.querySelector(".total-step"),
   ) {
+    if (!progressElement || !progressCurrentStepElement || !totalStepElement) {
+      this.valid = false;
+      return;
+    }
+    this.valid = true;
     this.currentStep = currentStep;
     this.totalStep = totalStep;
     this.progressElement = progressElement;
@@ -405,6 +414,7 @@ class Progress {
   }
 
   onNewStep(newStep) {
+    if (!this.valid) return;
     this.progressCurrentStepElement.textContent = newStep;
     this.progressElement.style.setProperty(
       "--percent",
@@ -413,25 +423,155 @@ class Progress {
   }
 }
 
+const validateForm = ({ nameSelector, phoneSelector, checkboxSelector }) => {
+  const nameInput = document.querySelector(nameSelector);
+  const phoneInput = document.querySelector(phoneSelector);
+  const checkbox = document.querySelector(checkboxSelector);
+
+  let isValid = true;
+
+  const validate = (input, condition) => {
+    if (condition) {
+      input.classList.add("error");
+      isValid = false;
+    } else {
+      input.classList.remove("error");
+    }
+  };
+
+  if (nameInput) {
+    validate(nameInput, !nameInput.value.trim());
+  }
+
+  if (phoneInput) {
+    const digits = phoneInput.value.replace(/\D/g, "");
+    validate(phoneInput, digits.length < 10);
+  }
+
+  if (checkbox) {
+    validate(checkbox, !checkbox.checked);
+  }
+
+  return isValid;
+};
+
+const clearErrorOnInput = (selectors) => {
+  selectors.forEach((selector) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    el.addEventListener("input", () => el.classList.remove("error"));
+    el.addEventListener("change", () => el.classList.remove("error"));
+  });
+};
+
+const clearForm = (selectors) => {
+  selectors.forEach((selector) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    el.value = "";
+    el.checked = false;
+  });
+};
+
+const initFormValidation = () => {
+  const consultForm = document.querySelector(".consult-form");
+  const modalForm = document.querySelector(".modal-form");
+
+  if (consultForm) {
+    clearErrorOnInput([
+      "#consult-form-name",
+      "#consult-form-phone",
+      "#consult-checkbox",
+    ]);
+
+    consultForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const isValid = validateForm({
+        nameSelector: "#consult-form-name",
+        phoneSelector: "#consult-form-phone",
+        checkboxSelector: "#consult-checkbox",
+      });
+
+      if (!isValid) return;
+      clearForm([
+        "#consult-form-name",
+        "#consult-form-phone",
+        "#consult-checkbox",
+      ]);
+      setTimeout(() => {
+        alert("Форма успешно отправлена");
+      }, 1000);
+    });
+  }
+
+  if (modalForm) {
+    clearErrorOnInput([
+      "#modal-form-name",
+      "#modal-form-phone",
+      "#modal-checkbox",
+    ]);
+
+    modalForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const isValid = validateForm({
+        nameSelector: "#modal-form-name",
+        phoneSelector: "#modal-form-phone",
+        checkboxSelector: "#modal-checkbox",
+      });
+
+      if (!isValid) return;
+      clearForm(["#modal-form-name", "#modal-form-phone", "#modal-checkbox"]);
+      closeModal();
+      setTimeout(() => {
+        alert("Форма успешно отправлена");
+      }, 1000);
+    });
+  }
+};
+
 const initStepper = () => {
   const buttons = document.querySelectorAll(".process-steps-btn");
   const contents = document.querySelectorAll(".process-steps-item");
-
-  const hasActiveButton = Array.from(buttons).some((btn) =>
-    btn.classList.contains("active"),
-  );
-  const hasActiveContent = Array.from(contents).some((content) =>
-    content.classList.contains("active"),
-  );
-
-  if (!hasActiveButton && buttons.length) {
-    buttons[0].classList.add("active");
-  }
-  if (!hasActiveContent && contents.length) {
-    contents[0].classList.add("active");
-  }
-
   const container = document.querySelector(".process-steps-list");
+
+  if (!buttons.length || !container) return;
+
+  let currentIndex = 0;
+  let autoInterval = null;
+  let pauseTimeout = null;
+
+  const setStep = (index) => {
+    currentIndex = index;
+    buttons.forEach((btn) => btn.classList.remove("active"));
+    contents.forEach((content) => content.classList.remove("active"));
+    buttons[currentIndex].classList.add("active");
+    if (contents[currentIndex]) contents[currentIndex].classList.add("active");
+  };
+
+  const nextStep = () => {
+    setStep((currentIndex + 1) % buttons.length);
+  };
+
+  const startAuto = () => {
+    if (autoInterval) return;
+    autoInterval = setInterval(nextStep, 3000);
+  };
+
+  const stopAuto = () => {
+    clearInterval(autoInterval);
+    autoInterval = null;
+  };
+
+  const pauseAuto = () => {
+    stopAuto();
+    clearTimeout(pauseTimeout);
+    pauseTimeout = setTimeout(startAuto, 5000);
+  };
+
+  setStep(0);
+
   container.addEventListener("click", (e) => {
     const button = e.target.closest(".process-steps-btn");
     if (!button) return;
@@ -439,20 +579,33 @@ const initStepper = () => {
     const stepIndex = Array.from(buttons).indexOf(button);
     if (stepIndex === -1) return;
 
-    buttons.forEach((btn) => btn.classList.remove("active"));
-    contents.forEach((content) => content.classList.remove("active"));
-
-    button.classList.add("active");
-    if (contents[stepIndex]) {
-      contents[stepIndex].classList.add("active");
-    }
+    setStep(stepIndex);
+    pauseAuto();
   });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAuto();
+        } else {
+          stopAuto();
+          clearTimeout(pauseTimeout);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  observer.observe(container);
 };
 
 const initStepSlider = () => {
   const nextBtn = document.querySelector(".process-slider-btn.forward");
   const prevBtn = document.querySelector(".process-slider-btn.backward");
   const steps = document.querySelectorAll(".process-steps-item");
+
+  if (!nextBtn || !prevBtn) return;
 
   let currentStep = 1;
   let totalStep = 7;
@@ -533,10 +686,9 @@ document.addEventListener("DOMContentLoaded", () => {
   getHeaderHeight();
   initModal();
   initStickyHeaderBottom();
-  toggleDisabled("consult-checkbox", "consult-submit");
-  toggleDisabled("modal-checkbox", "modal-submit");
   initStepper();
   initStepSlider();
+  initFormValidation();
 });
 
 window.addEventListener("resize", () => {

@@ -2097,6 +2097,7 @@
 .faq-item {
   border-radius: 15px;
   background-color: white;
+  box-shadow: 0 6px 20px 6px rgba(21, 30, 48, 0.05);
 }
 
 .faq-item-title {
@@ -2253,6 +2254,7 @@
     calc(26px * 1440 / 1400 * var(--zoom-1))
   );
   border-radius: 20px;
+  box-shadow: 0 15px 20px 15px rgba(21, 30, 48, 0.05);
 }
 
 .consult-content {
@@ -2596,6 +2598,10 @@
   outline: 1.5px solid var(--color-gray);
 }
 
+.consult-form input.error {
+  border: 1px solid rgb(255, 75, 75);
+}
+
 .consult-form-file-label {
   color: var(--color-primary);
   background-color: var(--color-lightblue);
@@ -2656,6 +2662,11 @@
   border: 1px solid var(--color-gray);
   transition: 500ms;
   outline: none;
+}
+
+.consult-form .consult-form-checkbox-wrapper input[type="checkbox"].error {
+  border: 1px solid rgb(255, 75, 75);
+  background-color: rgb(255, 75, 75, 0.1);
 }
 
 .consult-form-checkbox-wrapper input[type="checkbox"]:checked {

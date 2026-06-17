@@ -210,6 +210,7 @@
   gap: clamp(25px, 2.4vw, 35px);
   background-color: white;
   border-radius: 20px;
+  box-shadow: 0 15px 20px 10px rgba(21, 30, 48, 0.05);
 }
 
 .services-item.offer {
@@ -380,6 +381,7 @@
   font-weight: 700;
   color: rgba(21, 30, 48, 0.65);
   border-radius: 8px;
+  transition: 0.3s ease;
 }
 
 .process-steps-btn.active {
@@ -420,7 +422,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(25px, 2.4vw, 35px);
-  animation: fadeIn 0.4s ease;
+  animation: fadeIn 0.6s ease;
 }
 
 .process-steps-item-wrapper {
@@ -673,12 +675,9 @@
 
 .cases {
   padding-block: calc(clamp(90px, 6.42vw, 115px) * var(--zoom-1))
-    calc(clamp(120px, 8.57vw, 150px) * var(--zoom-1));
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+    calc(clamp(50px, 5vw, 80px) * var(--zoom-1));
   background-color: #fff;
   overflow: hidden;
-  margin-bottom: calc(-1 * clamp(42px, 3vw, 52px) * var(--zoom-1));
   position: relative;
   z-index: 10;
 }
@@ -1325,6 +1324,7 @@
 .faq-item {
   border-radius: 15px;
   background-color: white;
+  box-shadow: 0 6px 20px 6px rgba(21, 30, 48, 0.05);
 }
 
 .faq-item-title {
@@ -1481,6 +1481,7 @@
     calc(26px * 1440 / 1400 * var(--zoom-1))
   );
   border-radius: 20px;
+  box-shadow: 0 15px 20px 15px rgba(21, 30, 48, 0.05);
 }
 
 .consult-content {
@@ -2187,8 +2188,7 @@
 
   .cases {
     padding-block: calc(clamp(90px, 6.42vw, 115px) * var(--zoom-2))
-      calc(clamp(120px, 8.57vw, 150px) * var(--zoom-2));
-    margin-bottom: calc(-1 * clamp(42px, 3vw, 52px) * var(--zoom-2));
+      calc(clamp(50px, 5vw, 80px) * var(--zoom-2));
   }
 
   .cases-wrapper {

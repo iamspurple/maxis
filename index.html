@@ -1643,14 +1643,24 @@
               </h2>
               <form class="consult-form">
                 <div class="consult-form-input-wrapper name">
-                  <label for="name" class="visually-hidden">Ваше имя</label>
-                  <input type="text" placeholder="Ваше имя" id="name" />
+                  <label for="consult-form-name" class="visually-hidden"
+                    >Ваше имя</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Ваше имя"
+                    id="consult-form-name"
+                  />
                 </div>
                 <div class="consult-form-input-wrapper phone">
-                  <label for="phone" class="visually-hidden"
+                  <label for="consult-form-phone" class="visually-hidden"
                     >Номер телефона</label
                   >
-                  <input type="tel" placeholder="Номер телефона" />
+                  <input
+                    type="tel"
+                    placeholder="Номер телефона"
+                    id="consult-form-phone"
+                  />
                 </div>
                 <label for="file" class="consult-form-file-label btn">
                   Прикрепите файл
@@ -1671,7 +1681,6 @@
                   id="consult-submit"
                   type="submit"
                   class="consult-form-submit-btn"
-                  disabled
                 >
                   Отправить
                 </button>
@@ -1863,19 +1872,39 @@
             </h2>
             <form class="modal-form">
               <div class="modal-form-input-wrapper name">
-                <label for="name" class="visually-hidden">Ваше имя</label>
-                <input type="text" placeholder="Ваше имя" id="name" />
+                <label for="modal-form-name" class="visually-hidden"
+                  >Ваше имя</label
+                >
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  id="modal-form-name"
+                />
               </div>
               <div class="modal-form-input-wrapper phone">
-                <label for="phone" class="visually-hidden"
+                <label for="modal-form-phone" class="visually-hidden"
                   >Номер телефона</label
                 >
-                <input type="tel" placeholder="Номер телефона" />
+                <input
+                  type="tel"
+                  placeholder="Номер телефона"
+                  id="modal-form-phone"
+                />
               </div>
-              <label for="file" class="modal-form-file-label btn">
+              <button
+                type="button"
+                id="modal-file-btn"
+                class="modal-form-file-label btn"
+              >
                 Прикрепите файл
-                <input type="file" name="file" id="file" accept="image/*" />
-              </label>
+              </button>
+              <input
+                type="file"
+                name="modal-file"
+                id="modal-file"
+                accept="image/*"
+              />
+
               <div class="modal-form-checkbox-wrapper">
                 <input type="checkbox" id="modal-checkbox" />
                 <label for="modal-checkbox">
@@ -1889,7 +1918,6 @@
                 id="modal-submit"
                 type="submit"
                 class="modal-form-submit-btn"
-                disabled
               >
                 Отправить
               </button>
