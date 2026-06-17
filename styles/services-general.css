@@ -1825,6 +1825,10 @@
   outline: 1.5px solid var(--color-gray);
 }
 
+.consult-form input.error {
+  border: 1px solid rgb(255, 75, 75);
+}
+
 .consult-form-file-label {
   color: var(--color-primary);
   background-color: var(--color-lightblue);
@@ -1890,6 +1894,11 @@ input[type="file"]#consult-file {
 .consult-form-checkbox-wrapper input[type="checkbox"]:checked {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+}
+
+.consult-form .consult-form-checkbox-wrapper input[type="checkbox"].error {
+  border: 1px solid rgb(255, 75, 75);
+  background-color: rgb(255, 75, 75, 0.1);
 }
 
 .consult-form-checkbox-wrapper input[type="checkbox"]:checked::before {
