@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <link rel="stylesheet" href="/styles/service.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <div class="header-logo-wrapper">
+            <a href="/" class="header-logo heading">
+              <img src="/assets/icons/logo.svg" alt="Максис ИТ" />
+              Максис
+            </a>
+            <span class="header-logo-exp">
+              Работаем <br />
+              с 2013 года
+            </span>
+          </div>
+          <div class="header-contacts">
+            <div class="header-phone-wrapper">
+              <div class="header-phone">
+                <a class="header-phone-number" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+                <div class="header-phone-details">
+                  <div class="header-phone-city">
+                    <span class="dot"></span>
+                    <span>Москва</span>
+                  </div>
+                  <p class="header-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+              <div class="header-phone">
+                <a class="header-phone-number" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+                <div class="header-phone-details">
+                  <div class="header-phone-city">
+                    <span class="dot"></span>
+                    <span>Тула</span>
+                  </div>
+                  <p class="header-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="header-buttons-wrapper">
+              <button class="header-callback-btn modal-open-btn btn">
+                Обратный звонок
+              </button>
+              <a href="/" title="Max" class="header-social-link btn">
+                <img src="/assets/icons/max.svg" alt="Max" />
+              </a>
+              <button class="header-burger-btn" title="Открыть меню">
+                <svg
+                  class="open"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="5"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    y="9"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  class="close"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="2"
+                    y="13.3137"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    transform="rotate(-45 2 13.3137)"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="3.41455"
+                    y="2"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    transform="rotate(45 3.41455 2)"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="menu" class="header-bottom">
+          <nav class="header-nav">
+            <ul class="header-nav-list">
+              <li class="header-nav-main">
+                <ul class="header-nav-list-main">
+                  <li>
+                    <a href="/" class="main-link">1C</a>
+                  </li>
+                  <li>
+                    <a href="/" class="main-link">Битрикс24</a>
+                  </li>
+                  <li>
+                    <div class="dropdown">
+                      <button class="dropbtn">
+                        Услуги
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                            fill="currentColor"
+                            fill-opacity="1"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-content-wrapper">
+                        <ul class="dropdown-content">
+                          <li>
+                            <a href="#">Интеграция 1С и Битрикс24</a>
+                          </li>
+                          <li>
+                            <a href="#">BI-аналитика и дашборды</a>
+                          </li>
+                          <li>
+                            <a href="#">IT-инфраструктура</a>
+                          </li>
+                          <li>
+                            <a href="#">Разработки и интеграции</a>
+                          </li>
+                          <li>
+                            <a href="#">Искуственный интеллект</a>
+                          </li>
+                          <li>
+                            <a href="#">Open Source</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    Кейсы
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    Каталог
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">1С</a>
+                      </li>
+                      <li>
+                        <a href="#">Битрикс24</a>
+                      </li>
+                      <li>
+                        <a href="#">Прочее ПО</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    О компании
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">О компании</a>
+                      </li>
+                      <li>
+                        <a href="#">ИТ деятельность</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="/">Новости</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-menu-contacts">
+            <div class="header-menu-phone-wrapper">
+              <div class="header-menu-phone">
+                <a class="header-menu-phone-number" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+                <div class="header-menu-phone-details">
+                  <div class="header-menu-phone-city">
+                    <span class="dot"></span>
+                    <span>Москва</span>
+                  </div>
+                  <p class="header-menu-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+              <div class="header-menu-phone">
+                <a class="header-menu-phone-number" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+                <div class="header-menu-phone-details">
+                  <div class="header-menu-phone-city">
+                    <span class="dot"></span>
+                    <span>Тула</span>
+                  </div>
+                  <p class="header-menu-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="header-menu-buttons-wrapper">
+              <button class="header-menu-callback-btn modal-open-btn">
+                Обратный звонок
+              </button>
+              <a href="/" title="Max" class="header-menu-social-link">
+                <img src="/assets/icons/max.svg" alt="Max" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero">
+        <div class="hero-wrapper container">
+          <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li>
+                <a href="/">Главная</a>
+              </li>
+              <li aria-current="page">BI-аналитика и дашборды</li>
+            </ul>
+          </nav>
+          <div class="hero-content">
+            <h1 class="hero-title heading">BI-аналитика и дашборды</h1>
+            <p class="hero-description">
+              Собираем данные из 1С, Битрикс24, сайтов, таблиц и внешних
+              сервисов. Настраиваем дашборды, чтобы руководитель видел продажи,
+              финансы, склад, задачи и KPI в одном месте.
+            </p>
+            <button class="hero-button modal-open-btn btn">
+              Записаться на консультацию
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="reasons">
+        <div class="reasons-wrapper">
+          <div class="reasons-content">
+            <h2 class="reasons-title title-medium heading">
+              Для чего нужна <span class="accent">BI-аналитика</span>
+            </h2>
+            <p class="reasons-text">
+              BI-аналитика помогает компании видеть реальные показатели бизнеса
+              без ручной сборки отчётов из разных систем.
+            </p>
+            <p class="reasons-text">
+              Данные из 1С, Битрикс24, CRM, сайтов, таблиц и других источников
+              собираются в понятные панели: графики, таблицы, показатели,
+              воронки, динамика продаж, остатки, прибыль, задолженность,
+              эффективность сотрудников.
+            </p>
+          </div>
+          <div class="reasons-list-wrapper">
+            <h3 class="reasons-list-title">Какие задачи закрываем</h3>
+            <ul class="reasons-list">
+              <li>Сбор данных из разных систем</li>
+              <li>Настройка управленческих дашбордов</li>
+              <li>Контроль продаж, финансов, склада и KPI</li>
+              <li>Аналитика по клиентам, сделкам и менеджерам</li>
+              <li>Визуализация данных для руководителей и отделов</li>
+              <li>Автоматизация регулярных отчётов</li>
+              <li>Снижение ручной работы с таблицами</li>
+              <li>Развёртывание BI-системы на локальных серверах</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="solutions">
+        <div class="solutions-wrapper">
+          <h2 class="solutions-title title-medium heading">Основные решения</h2>
+          <ul class="solutions-list">
+            <li class="solutions-item">
+              <div class="solutions-item-content">
+                <div class="solutions-item-header">
+                  <div class="solutions-item-icon">
+                    <img src="/assets/icons/code.svg" alt="" />
+                  </div>
+                  <h3 class="solutions-item-name">Разработка на 1С</h3>
+                </div>
+                <p class="solutions-item-description">
+                  Расширяем возможности типовых конфигураций без ограничений
+                </p>
+              </div>
+              <div class="solutions-item-content">
+                <h4 class="solutions-item-list-title"></h4>
+                <ul class="solutions-item-list">
+                  <li>Универсальные парсеры данных и сложные обмены</li>
+                  <li>Интеграции c внешними сервисами</li>
+                  <li>Не типовые отчеты и печатные формы</li>
+                  <li>Подсистемы с нуля</li>
+                  <li>АРМы: управление производством, управление закупками</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

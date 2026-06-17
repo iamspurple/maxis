@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Максис IT</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <link rel="stylesheet" href="/styles/policy.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <div class="header-logo-wrapper">
+            <a href="/" class="header-logo heading">
+              <img src="/assets/icons/logo.svg" alt="Максис ИТ" />
+              Максис
+            </a>
+            <span class="header-logo-exp">
+              Работаем <br />
+              с 2013 года
+            </span>
+          </div>
+          <div class="header-contacts">
+            <div class="header-phone-wrapper">
+              <div class="header-phone">
+                <a class="header-phone-number" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+                <div class="header-phone-details">
+                  <div class="header-phone-city">
+                    <span class="dot"></span>
+                    <span>Москва</span>
+                  </div>
+                  <p class="header-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+              <div class="header-phone">
+                <a class="header-phone-number" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+                <div class="header-phone-details">
+                  <div class="header-phone-city">
+                    <span class="dot"></span>
+                    <span>Тула</span>
+                  </div>
+                  <p class="header-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="header-buttons-wrapper">
+              <button class="header-callback-btn modal-open-btn btn">
+                Обратный звонок
+              </button>
+              <a href="/" title="Max" class="header-social-link btn">
+                <img src="/assets/icons/max.svg" alt="Max" />
+              </a>
+              <button class="header-burger-btn" title="Открыть меню">
+                <svg
+                  class="open"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="5"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    y="9"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  class="close"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="2"
+                    y="13.3137"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    transform="rotate(-45 2 13.3137)"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="3.41455"
+                    y="2"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    transform="rotate(45 3.41455 2)"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="menu" class="header-bottom">
+          <nav class="header-nav">
+            <ul class="header-nav-list">
+              <li class="header-nav-main">
+                <ul class="header-nav-list-main">
+                  <li>
+                    <a href="/" class="main-link">1C</a>
+                  </li>
+                  <li>
+                    <a href="/" class="main-link">Битрикс24</a>
+                  </li>
+                  <li>
+                    <div class="dropdown">
+                      <button class="dropbtn">
+                        Услуги
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                            fill="currentColor"
+                            fill-opacity="1"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-content-wrapper">
+                        <ul class="dropdown-content">
+                          <li>
+                            <a href="#">Интеграция 1С и Битрикс24</a>
+                          </li>
+                          <li>
+                            <a href="#">BI-аналитика и дашборды</a>
+                          </li>
+                          <li>
+                            <a href="#">IT-инфраструктура</a>
+                          </li>
+                          <li>
+                            <a href="#">Разработки и интеграции</a>
+                          </li>
+                          <li>
+                            <a href="#">Искуственный интеллект</a>
+                          </li>
+                          <li>
+                            <a href="#">Open Source</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    Кейсы
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    Каталог
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">1С</a>
+                      </li>
+                      <li>
+                        <a href="#">Битрикс24</a>
+                      </li>
+                      <li>
+                        <a href="#">Прочее ПО</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    О компании
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">О компании</a>
+                      </li>
+                      <li>
+                        <a href="#">ИТ деятельность</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="/">Новости</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-menu-contacts">
+            <div class="header-menu-phone-wrapper">
+              <div class="header-menu-phone">
+                <a class="header-menu-phone-number" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+                <div class="header-menu-phone-details">
+                  <div class="header-menu-phone-city">
+                    <span class="dot"></span>
+                    <span>Москва</span>
+                  </div>
+                  <p class="header-menu-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+              <div class="header-menu-phone">
+                <a class="header-menu-phone-number" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+                <div class="header-menu-phone-details">
+                  <div class="header-menu-phone-city">
+                    <span class="dot"></span>
+                    <span>Тула</span>
+                  </div>
+                  <p class="header-menu-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="header-menu-buttons-wrapper">
+              <button class="header-menu-callback-btn modal-open-btn">
+                Обратный звонок
+              </button>
+              <a href="/" title="Max" class="header-menu-social-link">
+                <img src="/assets/icons/max.svg" alt="Max" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="policy">
+        <div class="policy-container container">
+          <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li>
+                <a href="/">Главная</a>
+              </li>
+              <li aria-current="page">Политика конфиденциальности</li>
+            </ul>
+          </nav>
+          <h1 class="policy-title">Политика конфиденциальности</h1>
+          <div class="policy-content">
+            <section>
+              <h2 class="policy-content-title">1. Общие положения</h2>
+              <div>
+                <p>
+                  Настоящая политика обработки персональных данных составлена
+                  в соответствии с требованиями Федерального закона
+                  от 27.07.2006. № 152-ФЗ «О персональных данных» (далее — Закон
+                  о персональных данных) и определяет порядок обработки
+                  персональных данных и меры по обеспечению безопасности
+                  персональных данных, предпринимаемые Михайловым Иваном
+                  Сергеевичем (далее — Оператор).
+                </p>
+                <p>
+                  1.1. Оператор ставит своей важнейшей целью и условием
+                  осуществления своей деятельности соблюдение прав и свобод
+                  человека и гражданина при обработке его персональных данных,
+                  в том числе защиты прав на неприкосновенность частной жизни,
+                  личную и семейную тайну.
+                </p>
+                <p>
+                  1.2. Настоящая политика Оператора в отношении обработки
+                  персональных данных (далее — Политика) применяется ко всей
+                  информации, которую Оператор может получить о посетителях
+                  веб-сайта
+                  <a href=""> httpsː//thismywebsite·com.</a>
+                </p>
+              </div>
+            </section>
+            <section>
+              <h2 class="policy-content-title">
+                2. Основные понятия, используемые в Политике
+              </h2>
+              <dl>
+                <div>
+                  <dt>2.1.Автоматизированная обработка персональных данных</dt>
+                  <dd>
+                     — обработка персональных данных с помощью средств
+                    вычислительной техники.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.2. Блокирование персональных данных</dt>
+                  <dd>
+                     — временное прекращение обработки персональных данных
+                    (за исключением случаев, если обработка необходима для
+                    уточнения персональных данных).
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.3. Веб-сайт</dt>
+                  <dd>
+                     — совокупность графических и информационных материалов,
+                    а также программ для ЭВМ и баз данных, обеспечивающих
+                    их доступность в сети интернет по сетевому адресу
+                    <a href=""> httpsː//thismywebsite·com.</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.4. Информационная система персональных данных</dt>
+                  <dd>
+                     — совокупность содержащихся в базах данных персональных
+                    данных и обеспечивающих их обработку информационных
+                    технологий и технических средств.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.6. Обработка персональных данных</dt>
+                  <dd>
+                     — любое действие (операция) или совокупность действий
+                    (операций), совершаемых с использованием средств
+                    автоматизации или без использования таких средств
+                    с персональными данными, включая сбор, запись,
+                    систематизацию, накопление, хранение, уточнение (обновление,
+                    изменение), извлечение, использование, передачу
+                    (распространение, предоставление, доступ), обезличивание,
+                    блокирование, удаление, уничтожение персональных данных.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.7. Оператор</dt>
+                  <dd>
+                     — государственный орган, муниципальный орган, юридическое
+                    или физическое лицо, самостоятельно или совместно с другими
+                    лицами организующие и/или осуществляющие обработку
+                    персональных данных, а также определяющие цели обработки
+                    персональных данных, состав персональных данных, подлежащих
+                    обработке, действия (операции), совершаемые с персональными
+                    данными.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.8. Персональные данные</dt>
+                  <dd>
+                     — любая информация, относящаяся прямо или косвенно
+                    к определенному или определяемому Пользователю веб-сайта
+                    <a href=""> httpsː//thismywebsite·com.</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>
+                    2.9. Персональные данные, разрешенные субъектом персональных
+                    данных для распространения
+                  </dt>
+                  <dd>
+                     — персональные данные, доступ неограниченного круга лиц
+                    к которым предоставлен субъектом персональных данных путем
+                    дачи согласия на обработку персональных данных, разрешенных
+                    субъектом персональных данных для распространения в порядке,
+                    предусмотренном Законом о персональных данных (далее —
+                    персональные данные, разрешенные для распространения).
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.10. Пользователь</dt>
+                  <dd>
+                     — любой посетитель веб-сайта <a href=""
+                      > httpsː//thismywebsite·com.</a
+                    >
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.11. Предоставление персональных данных</dt>
+                  <dd>
+                     — действия, направленные на раскрытие персональных данных
+                    определенному лицу или определенному кругу лиц.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.12. Распространение персональных данных</dt>
+                  <dd>
+                     — любые действия, направленные на раскрытие персональных
+                    данных неопределенному кругу лиц (передача персональных
+                    данных) или на ознакомление с персональными данными
+                    неограниченного круга лиц, в том числе обнародование
+                    персональных данных в средствах массовой информации,
+                    размещение в информационно-телекоммуникационных сетях или
+                    предоставление доступа к персональным данным каким-либо иным
+                    способом.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.13. Трансграничная передача персональных данных</dt>
+                  <dd>
+                     — передача персональных данных на территорию иностранного
+                    государства органу власти иностранного государства,
+                    иностранному физическому или иностранному юридическому лицу.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2.14. Уничтожение персональных данных</dt>
+                  <dd>
+                     — любые действия, в результате которых персональные данные
+                    уничтожаются безвозвратно с невозможностью дальнейшего
+                    восстановления содержания персональных данных
+                    в информационной системе персональных данных
+                    и/или уничтожаются материальные носители персональных
+                    данных.
+                  </dd>
+                </div>
+              </dl>
+            </section>
+
+            <section>
+              <h2 class="policy-content-title">
+                3. Основные права и обязанности Оператора
+              </h2>
+              <div>
+                <p>3.1. Оператор имеет право:</p>
+                <ul>
+                  <li>
+                    — получать от субъекта персональных данных достоверную
+                    информацию и/или документы, содержащие персональные данные;
+                  </li>
+                  <li>
+                    — в случае отзыва субъектом персональных данных согласия
+                    на обработку персональных данных, а также, направления
+                    обращения с требованием о прекращении обработки персональных
+                    данных, Оператор вправе продолжить обработку персональных
+                    данных без согласия субъекта персональных данных при наличии
+                    оснований, указанных в Законе о персональных данных;
+                  </li>
+                  <li>
+                    — самостоятельно определять состав и перечень мер,
+                    необходимых и достаточных для обеспечения выполнения
+                    обязанностей, предусмотренных Законом о персональных данных
+                    и принятыми в соответствии с ним нормативными правовыми
+                    актами, если иное не предусмотрено Законом о персональных
+                    данных или другими федеральными законами.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p>3.2. Оператор обязан:</p>
+                <ul>
+                  <li>
+                    — предоставлять субъекту персональных данных по его просьбе
+                    информацию, касающуюся обработки его персональных данных;
+                  </li>
+                  <li>
+                    — организовывать обработку персональных данных в порядке,
+                    установленном действующим законодательством РФ;
+                  </li>
+                  <li>
+                    — отвечать на обращения и запросы субъектов персональных
+                    данных и их законных представителей в соответствии
+                    с требованиями Закона о персональных данных;
+                  </li>
+                  <li>
+                    — публиковать или иным образом обеспечивать неограниченный
+                    доступ к настоящей Политике в отношении обработки
+                    персональных данных;
+                  </li>
+                  <li>
+                    — принимать правовые, организационные и технические меры для
+                    защиты персональных данных от неправомерного или случайного
+                    доступа к ним, уничтожения, изменения, блокирования,
+                    копирования, предоставления, распространения персональных
+                    данных, а также от иных неправомерных действий в отношении
+                    персональных данных;
+                  </li>
+                  <li>
+                    — прекратить передачу (распространение, предоставление,
+                    доступ) персональных данных, прекратить обработку
+                    и уничтожить персональные данные в порядке и случаях,
+                    предусмотренных Законом о персональных данных;
+                  </li>
+                  <li>
+                    — исполнять иные обязанности, предусмотренные Законом
+                    о персональных данных.
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="consult">
+        <div class="consult-wrapper container">
+          <div class="consult-content">
+            <div class="consult-info">
+              <h2 class="consult-title heading title-medium">
+                Получите <span class="accent">консультацию</span>
+                <span class="nowrap">по проекту</span>
+              </h2>
+              <div class="consult-phone-wrapper">
+                <div class="consult-phone">
+                  <a class="consult-phone-number" href="tel:+74951515094"
+                    >+7 (495) 151-50-94</a
+                  >
+                  <div class="consult-phone-details">
+                    <div class="consult-phone-city">
+                      <span class="dot"></span>
+                      <span>Москва</span>
+                    </div>
+                    <p class="consult-phone-hours">
+                      пн-пт c <time datetime="09:30">9:30</time> до
+                      <time datetime="18:30">18:30</time>
+                    </p>
+                  </div>
+                </div>
+                <div class="consult-phone">
+                  <a class="consult-phone-number" href="tel:+74872338088"
+                    >+7 (4872) 33-80-88</a
+                  >
+                  <div class="consult-phone-details">
+                    <div class="consult-phone-city">
+                      <span class="dot"></span>
+                      <span>Тула</span>
+                    </div>
+                    <p class="consult-phone-hours">
+                      пн-пт c <time datetime="09:30">9:30</time> до
+                      <time datetime="18:30">18:30</time>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="consult-email-wrapper">
+                <span class="consult-email-label">Email</span>
+                <a class="consult-email-address" href="mailto:info@maxis.ru"
+                  >info@maxis.ru</a
+                >
+              </div>
+            </div>
+            <div class="consult-details">
+              <p class="consult-details-text">
+                «Хотите узнать, как оптимизировать именно ваш бизнес? Наши
+                специалисты готовы разложить все по полочкам и составить план
+                развития уже сейчас»
+              </p>
+              <div class="consult-manager">
+                <img
+                  class="consult-manager-image"
+                  src="/assets/images/manager.png"
+                  alt="manager"
+                />
+                <div class="consult-manager-content">
+                  <h3 class="consult-manager-name">
+                    Смирнова <br />
+                    Екатерина Александровна
+                  </h3>
+                  <p class="consult-manager-description">Проектный менеджер</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="consult-form-wrapper">
+            <h2 class="consult-form-title">
+              <span class="dark">Оставьте ваши контакты</span> и наш специалист
+              свяжется с вами в ближайшее время
+            </h2>
+            <form class="consult-form">
+              <div class="consult-form-input-wrapper name">
+                <label for="name" class="visually-hidden">Ваше имя</label>
+                <input type="text" placeholder="Ваше имя" id="name" />
+              </div>
+              <div class="consult-form-input-wrapper phone">
+                <label for="phone" class="visually-hidden"
+                  >Номер телефона</label
+                >
+                <input type="tel" placeholder="Номер телефона" />
+              </div>
+              <label for="file" class="consult-form-file-label btn">
+                Прикрепите файл
+                <input type="file" name="file" id="file" accept="image/*" />
+              </label>
+              <div class="consult-form-checkbox-wrapper">
+                <input type="checkbox" id="consult-checkbox" />
+                <label for="checkbox">
+                  <span class="consult-form-checkbox-text">
+                    Я ознакомлен и принимаю условия
+                    <a href="/" class="nowrap">обработки персональных данных</a>
+                  </span>
+                </label>
+              </div>
+              <button
+                id="consult-submit"
+                type="submit"
+                class="consult-form-submit-btn"
+                disabled
+              >
+                Отправить
+              </button>
+            </form>
+            <p class="consult-form-text">
+              Нажимая кнопку «Отправить», Вы даете согласие на обработку Ваших
+              персональных данных, а также соглашаетесь с условиями
+              <a href="/">Политики конфиденциальности</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-wrapper container">
+        <div class="footer-content">
+          <a href="/" class="footer-logo heading">
+            <img src="/assets/icons/logo.svg" alt="Максис ИТ" />
+            Максис
+          </a>
+          <div class="footer-accreditation">
+            <img
+              class="footer-accreditation-icon"
+              src="/assets/icons/mincifry.svg"
+              alt="Минцифры России"
+            />
+            <span class="footer-accreditation-text"
+              >Аккредитованная IT компания</span
+            >
+            <span class="footer-accreditation-description">
+              Деятельность осуществляется <br />
+              в соответствии с приказами <br />
+              Минцифры России №449 и №511, <br />
+              Имеет запись в реестре №2647 <br />
+              от 15 октября 2013 года.
+            </span>
+          </div>
+          <div class="footer-contacts">
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Москва</span>
+              <a class="footer-contacts-item-value" href="tel:+74951515094"
+                >+7 (495) 151-50-94</a
+              >
+            </div>
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Тула</span>
+              <a class="footer-contacts-item-value" href="tel:+74872338088"
+                >+7 (4872) 33-80-88</a
+              >
+            </div>
+
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label"> Режим работы</span>
+              <span class="footer-contacts-item-value">
+                пн-пт c <time datetime="09:30">9:30</time> до
+                <time datetime="18:30">18:30</time>
+              </span>
+            </div>
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Email</span>
+              <a class="footer-contacts-item-value" href="mailto:info@maxis.ru"
+                >info@maxis.ru</a
+              >
+            </div>
+          </div>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Меню</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="/">Главная</a>
+              </li>
+              <li>
+                <a href="">О компании</a>
+              </li>
+              <li>
+                <a href=""> Кейсы</a>
+              </li>
+              <li>
+                <a href="">Решения</a>
+              </li>
+              <li>
+                <a href="">Новости</a>
+              </li>
+              <li>
+                <a href="">Контакты</a>
+              </li>
+              <li>
+                <a href="">ИТ деятельность</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Услуги</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="">1C Предприятие</a>
+              </li>
+              <li>
+                <a href="">Битрикс24</a>
+              </li>
+              <li>
+                <a href="">Интеграция 1С и Битрикс 24</a>
+              </li>
+              <li>
+                <a href="">BI-аналитика</a>
+              </li>
+              <li>
+                <a href="">IT-инфраструктура</a>
+              </li>
+              <li>
+                <a href="">Разработки и интеграции</a>
+              </li>
+              <li>
+                <a href="">Искуственный интеллект</a>
+              </li>
+              <li>
+                <a href="">Open Source</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Каталог</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="">Конфигурации</a>
+              </li>
+              <li>
+                <a href="">Лицензии</a>
+              </li>
+              <li>
+                <a href="">ИТС</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-bottom-text">© 2026 ООО «МАКСИС АЙ ТИ»</p>
+          <a href="/" class="footer-bottom-link"
+            >Политика обработки персональных данных</a
+          >
+          <a href="/" class="footer-bottom-link">Политика конфиденциальности</a>
+          <div class="footer-creator">
+            <p class="footer-creator-text">
+              Сайт разработан
+              <a href="https://tolacompany.ru" class="accent" target="_blank">
+                TOLACOMPANY.RU
+              </a>
+            </p>
+            <img src="/assets/icons/tola.svg" alt="TOLACOMPANY.RU" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="overlay" class="overlay"></div>
+    <div class="modal">
+      <div class="modal-content">
+        <button type="button" class="modal-close-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6 6L18 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-form-wrapper">
+          <h2 class="modal-form-title">
+            <span class="accent heading">Оставьте ваши контакты</span>
+            <span>и наш специалист свяжется с вами в ближайшее время</span>
+          </h2>
+          <form class="modal-form">
+            <div class="modal-form-input-wrapper name">
+              <label for="name" class="visually-hidden">Ваше имя</label>
+              <input type="text" placeholder="Ваше имя" id="name" />
+            </div>
+            <div class="modal-form-input-wrapper phone">
+              <label for="phone" class="visually-hidden">Номер телефона</label>
+              <input type="tel" placeholder="Номер телефона" />
+            </div>
+            <label for="file" class="modal-form-file-label">
+              Прикрепите файл
+              <input type="file" name="file" id="file" accept="image/*" />
+            </label>
+            <button type="submit" class="modal-form-submit-btn">
+              Отправить
+            </button>
+          </form>
+          <p class="modal-form-text">
+            Нажимая кнопку «Отправить», Вы даете согласие на обработку Ваших
+            персональных данных, а также соглашаетесь с условиями
+            <a href="/">Политики конфиденциальности</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="/script/main.js"></script>
+  </body>
+</html>
