@@ -309,15 +309,6 @@ const initModal = () => {
   const modalCloseBtn = document.querySelector(".modal-close-btn");
   const burgerBtn = document.querySelector(".header-burger-btn");
 
-  const fileBtn = document.getElementById("modal-file-btn");
-  const fileInput = document.getElementById("modal-file");
-
-  if (fileBtn && fileInput) {
-    fileBtn.addEventListener("click", () => {
-      fileInput.click();
-    });
-  }
-
   const closeMenu = () => {
     menu.classList.remove("active");
     overlay.classList.remove("active");
@@ -471,6 +462,26 @@ const clearForm = (selectors) => {
     el.value = "";
     el.checked = false;
   });
+};
+
+const initFileBtns = () => {
+  const modalFileBtn = document.getElementById("modal-file-btn");
+  const modalFileInput = document.getElementById("modal-file");
+
+  const consultFileBtn = document.getElementById("consult-file-btn");
+  const consultFileInput = document.getElementById("consult-file");
+
+  if (modalFileBtn && modalFileInput) {
+    modalFileBtn.addEventListener("click", () => {
+      modalFileInput.click();
+    });
+  }
+
+  if (consultFileBtn && consultFileInput) {
+    consultFileBtn.addEventListener("click", () => {
+      consultFileInput.click();
+    });
+  }
 };
 
 const initFormValidation = () => {
@@ -689,6 +700,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStepper();
   initStepSlider();
   initFormValidation();
+  initFileBtns();
 });
 
 window.addEventListener("resize", () => {
