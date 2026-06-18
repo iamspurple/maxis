@@ -100,32 +100,20 @@
     calc(100vw * 12 / 1400 * var(--zoom-header-1)),
     calc(12px * 1440 / 1400 * var(--zoom-header-1))
   );
+  line-height: 1em;
   letter-spacing: -2%;
 }
 
-.header-phone-city .dot {
-  background-color: var(--color-lightgreen);
-  height: 1em;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  position: relative;
-}
-
-.header-phone-city .dot::after {
+.header-phone-city::before {
   content: "";
   display: inline-block;
-  width: 30%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--color-green);
+  width: 1em;
+  height: 1em;
+  background: url(/assets/icons/dot.svg) center/contain no-repeat;
 }
 
 .header-phone-hours {
-  margin-bottom: 0.5px;
+  line-height: 1em;
   color: var(--color-grayblue);
   font-size: clamp(
     calc(10px * 1025 / 1400 * var(--zoom-header-1)),
@@ -1155,6 +1143,7 @@ input[type="file"]#modal-file {
   }
 
   .header-phone-hours {
+    margin-bottom: 0.5px;
     font-size: clamp(
       calc(10px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 10 / 1400 * var(--zoom-2)),
