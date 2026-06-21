@@ -345,37 +345,35 @@ const initStickyHeaderBottom = () => {
   const headerBottom = document.querySelector(".header-bottom");
   if (!header || !headerTop || !headerBottom) return;
 
-  let isSticky = false;
+  const mq = window.matchMedia("(min-width: 850px)");
 
-  function update() {
-    if (window.innerWidth <= 849) {
-      if (isSticky) {
-        headerBottom.classList.remove("sticky");
-        header.style.paddingBottom = "";
-        isSticky = false;
-      }
-      return;
-    }
-
-    const shouldBeSticky = headerTop.getBoundingClientRect().bottom <= 0;
-
-    if (shouldBeSticky && !isSticky) {
+  function setSticky(sticky) {
+    if (sticky) {
       header.style.paddingBottom = headerBottom.offsetHeight - 4 + "px";
       headerBottom.classList.add("sticky");
-      isSticky = true;
-    } else if (!shouldBeSticky && isSticky) {
+    } else {
       headerBottom.style.transition = "none";
       headerBottom.classList.remove("sticky");
       header.style.paddingBottom = "";
-      isSticky = false;
       requestAnimationFrame(() => {
         headerBottom.style.transition = "";
       });
     }
   }
 
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!mq.matches) return;
+      setSticky(!entry.isIntersecting);
+    },
+    { threshold: 0 },
+  );
+
+  mq.addEventListener("change", (e) => {
+    if (!e.matches) setSticky(false);
+  });
+
+  observer.observe(headerTop);
 };
 
 class Progress {
