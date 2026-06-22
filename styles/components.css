@@ -89,26 +89,42 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 6px;
+  position: relative;
+  padding-left: clamp(
+    calc(17px * 1025 / 1400 * var(--zoom-header-1)),
+    calc(100vw * 17 / 1400 * var(--zoom-header-1)),
+    calc(17px * 1440 / 1400 * var(--zoom-header-1))
+  );
 }
 
 .header-phone-city {
-  display: flex;
-  gap: 5px;
   align-items: center;
   font-size: clamp(
     calc(12px * 1025 / 1400 * var(--zoom-header-1)),
     calc(100vw * 12 / 1400 * var(--zoom-header-1)),
     calc(12px * 1440 / 1400 * var(--zoom-header-1))
   );
-  line-height: 1em;
+  line-height: 0.9em;
   letter-spacing: -2%;
 }
 
-.header-phone-city::before {
+.header-phone-details::before {
   content: "";
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: clamp(
+    calc(12px * 1025 / 1400 * var(--zoom-header-1)),
+    calc(100vw * 12 / 1400 * var(--zoom-header-1)),
+    calc(12px * 1440 / 1400 * var(--zoom-header-1))
+  );
+  height: clamp(
+    calc(12px * 1025 / 1400 * var(--zoom-header-1)),
+    calc(100vw * 12 / 1400 * var(--zoom-header-1)),
+    calc(12px * 1440 / 1400 * var(--zoom-header-1))
+  );
   background: url(/assets/icons/dot.svg) center/contain no-repeat;
 }
 
@@ -1150,7 +1166,6 @@ input[type="file"]#modal-file {
   }
 
   .header-phone-hours {
-    margin-bottom: 0.5px;
     font-size: clamp(
       calc(10px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 10 / 1400 * var(--zoom-2)),
