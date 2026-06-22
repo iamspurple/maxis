@@ -314,11 +314,13 @@
 
 .services-item-link {
   width: fit-content;
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
 }
 
 .services-item-link.offer {
   background-color: white;
-  position: relative;
   z-index: 10;
 }
 
