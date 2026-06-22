@@ -347,13 +347,36 @@ const initStickyHeaderBottom = () => {
 
   const mq = window.matchMedia("(min-width: 850px)");
 
+  let isSticky = false;
+  let triggerY = 0;
+  let ticking = false;
+
+  // headerTop всегда in-flow (никогда не fixed), поэтому его положение в документе
+  // стабильно и им безопасно мерить порог независимо от sticky-состояния.
+  // triggerY = scrollY, при котором низ headerTop достигает верха вьюпорта —
+  // ровно тогда верх headerBottom оказывается на top:0.
+  function measure() {
+    triggerY = headerTop.getBoundingClientRect().bottom + window.scrollY;
+  }
+
   function setSticky(sticky) {
+    if (sticky === isSticky) return;
+    isSticky = sticky;
     if (sticky) {
       header.style.paddingBottom = headerBottom.offsetHeight - 4 + "px";
+      // 1. position: fixed + full padding — кадр визуально идентичен in-flow
       headerBottom.classList.add("sticky");
+      // 2. ждём, пока Safari реально отрисует кадр .sticky (двойной rAF),
+      //    только тогда смена padding регистрируется как отдельный transition
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // 3. compact padding → transition анимируется (если ещё sticky)
+          if (isSticky) headerBottom.classList.add("compact");
+        });
+      });
     } else {
       headerBottom.style.transition = "none";
-      headerBottom.classList.remove("sticky");
+      headerBottom.classList.remove("sticky", "compact");
       header.style.paddingBottom = "";
       requestAnimationFrame(() => {
         headerBottom.style.transition = "";
@@ -361,19 +384,28 @@ const initStickyHeaderBottom = () => {
     }
   }
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
+  // Скролл-обработчик читает только window.scrollY (без layout-чтений per-frame),
+  // сравнивая с заранее вычисленным triggerY → пиннинг realtime, без задержки IO.
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
       if (!mq.matches) return;
-      setSticky(!entry.isIntersecting);
-    },
-    { threshold: 0 },
-  );
+      setSticky(window.scrollY >= triggerY);
+    });
+  }
 
+  measure();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    measure();
+    onScroll();
+  });
   mq.addEventListener("change", (e) => {
     if (!e.matches) setSticky(false);
+    else onScroll();
   });
-
-  observer.observe(headerTop);
 };
 
 class Progress {

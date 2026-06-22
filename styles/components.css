@@ -244,17 +244,9 @@
 }
 
 @media screen and (min-width: 850px) {
+  /* .sticky — только переключение position + центрирование, padding остаётся
+     равным базовому (full). Визуально кадр идентичен in-flow состоянию. */
   .header-bottom.sticky {
-    padding-top: clamp(
-      calc(4px * 1025 / 1400),
-      calc(100vw * 4 / 1400),
-      calc(4px * 1440 / 1400)
-    );
-    padding-bottom: clamp(
-      calc(4px * 1025 / 1400),
-      calc(100vw * 4 / 1400),
-      calc(4px * 1440 / 1400)
-    );
     position: fixed;
     top: 0;
     left: 0;
@@ -265,7 +257,22 @@
     border-bottom: 1px solid #edf5ff;
   }
 
-  .header-bottom.sticky .dropdown-content {
+  /* .compact — добавляется отдельным кадром после forced reflow,
+     только этот класс меняет padding-top/bottom → Safari анимирует transition */
+  .header-bottom.sticky.compact {
+    padding-top: clamp(
+      calc(4px * 1025 / 1400),
+      calc(100vw * 4 / 1400),
+      calc(4px * 1440 / 1400)
+    );
+    padding-bottom: clamp(
+      calc(4px * 1025 / 1400),
+      calc(100vw * 4 / 1400),
+      calc(4px * 1440 / 1400)
+    );
+  }
+
+  .header-bottom.sticky.compact .dropdown-content {
     padding-top: calc(
       clamp(
           calc(4px * 1025 / 1400),
