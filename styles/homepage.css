@@ -72,7 +72,7 @@
   }
 }
 
-@media screen and (min-width: 1720px) and (max-width: 2000px) {
+@media screen and (min-width: 1720px) and (max-width: 1999px) {
   .hero-video-wrapper.desktop::before {
     right: 1140px;
   }
