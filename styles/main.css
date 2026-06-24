@@ -122,6 +122,13 @@
   font-weight: inherit;
 }
 
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 ul,
 ol {
   list-style: none;
@@ -137,6 +144,24 @@ body {
   overflow-x: hidden;
 }
 
+/* Форсируем page-wide GPU compositing (ускоренный скролл в Safari), как это
+   делает hero video + backdrop-filter на главной. Без этого Safari красит
+   fixed-хедер на медленном слое и тот отстаёт на пару кадров при скролле.
+   Невидимый слой: НЕ предок .header-bottom → не ломает transition и не меняет
+   его containing block (в отличие от transform прямо на хедере). */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: -1;
+}
+
 :root {
   --color-primary: #3283ff;
   --color-dark: #151e30;
@@ -150,6 +175,7 @@ body {
   --font-primary: "Manrope";
   --font-secondary: "Unbounded";
   --zoom-1: 0.85;
+  --zoom-header-1: 0.9;
   --zoom-2: 1.15;
   font-size: 16px;
   font-family: var(--font-primary);
@@ -170,25 +196,23 @@ body {
 }
 
 .container {
-  margin-inline: 12.5%;
-  width: 75%;
+  margin-inline: 12.5vw;
+  width: 75vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 0 auto;
+    max-width: 768px;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 1090px;
     width: 100%;
-  }
-}
-
-.wrapper {
-  zoom: var(--zoom-1);
-}
-
-@media screen and (min-width: 2000px) {
-  .wrapper {
-    zoom: var(--zoom-2);
   }
 }
 
@@ -203,8 +227,9 @@ body {
 .more-link {
   color: var(--color-primary);
   background-color: var(--color-lightblue);
-  padding: clamp(10px, 0.7vw, 12px) clamp(24px, 1.7vw, 28px);
-  font-size: clamp(16px, 1.14vw, 18px);
+  padding: calc(clamp(10px, 0.7vw, 12px) * var(--zoom-1))
+    calc(clamp(24px, 1.7vw, 28px) * var(--zoom-1));
+  font-size: calc(clamp(16px, 1.14vw, 18px) * var(--zoom-1));
   line-height: 160%;
   font-weight: 700;
   border-radius: 10px;
@@ -232,9 +257,9 @@ body {
 
 .title-medium {
   font-size: clamp(
-    calc(36px * 1025 / 1400),
-    calc(100vw * 36 / 1400),
-    calc(36px * 1440 / 1400)
+    calc(36px * 1025 / 1400 * var(--zoom-1)),
+    calc(100vw * 36 / 1400 * var(--zoom-1)),
+    calc(36px * 1440 / 1400 * var(--zoom-1))
   );
 }
 
@@ -265,14 +290,32 @@ body {
   overflow: hidden;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 2000px) {
+  .container {
+    margin: 0 auto;
+    max-width: 1470px;
+    width: 100%;
+  }
+
+  .title-medium {
+    font-size: clamp(
+      calc(36px * 1025 / 1400 * var(--zoom-2)),
+      calc(100vw * 36 / 1400 * var(--zoom-2)),
+      calc(36px * 1440 / 1400 * var(--zoom-2))
+    );
+  }
+
+  .more-link {
+    font-size: calc(clamp(16px, 1.14vw, 18px) * var(--zoom-2));
+    padding: calc(clamp(10px, 0.7vw, 12px) * var(--zoom-2))
+      calc(clamp(24px, 1.7vw, 28px) * var(--zoom-2));
+  }
+}
+
+@media screen and (max-width: 850px) {
   .container {
     width: auto;
     margin-inline: 4vw;
-  }
-
-  .wrapper {
-    zoom: 1;
   }
 
   .title-medium {

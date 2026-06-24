@@ -1,5 +1,7 @@
 const toggleActive = () => {
-  const isHover = window.matchMedia("(any-hover: hover)").matches;
+  const isHover = window.matchMedia(
+    "(hover: hover) and (pointer: fine)",
+  ).matches;
 
   const dropDowns = document.querySelectorAll(".dropdown, .main-link");
   dropDowns.forEach((btn) => {
@@ -18,15 +20,17 @@ const toggleActive = () => {
     }
   });
 
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".dropdown")) {
-      dropDowns.forEach((btn) => {
-        if (btn.classList.contains("active")) {
-          btn.classList.remove("active");
-        }
-      });
-    }
-  });
+  if (window.innerWidth < 849) {
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".dropdown")) {
+        dropDowns.forEach((btn) => {
+          if (btn.classList.contains("active")) {
+            btn.classList.remove("active");
+          }
+        });
+      }
+    });
+  }
 };
 
 const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
@@ -78,26 +82,19 @@ const initHorizontalSlider = (root, selectors) => {
     list?.parentElement;
   const btnBack = root.querySelector(selectors.btnBack);
   const btnFwd = root.querySelector(selectors.btnFwd);
-  const wrapper = document.querySelector("body > .wrapper");
-  console.log(wrapper);
 
   if (!track || !list || !btnBack || !btnFwd) return;
 
   let currentIndex = 0;
   const scrollEndEpsilon = 2;
 
-  function getZoom() {
-    return parseFloat(getComputedStyle(wrapper).zoom) || 1;
-  }
-
   function getSlideWidth() {
     const items = list.querySelectorAll(selectors.item);
     if (!items.length) return 0;
     const item = items[0];
-    const zoom = getZoom();
     const marginRight =
       parseFloat(window.getComputedStyle(item).marginRight) || 0;
-    return item.getBoundingClientRect().width / zoom + marginRight;
+    return item.getBoundingClientRect().width + marginRight;
   }
 
   function getMaxOffset() {
@@ -274,21 +271,12 @@ const initFaqAccordion = () => {
   });
 };
 
-const toggleDisabled = (checkboxID, buttonID) => {
-  const checkbox = document.getElementById(checkboxID);
-  const button = document.getElementById(buttonID);
-
-  if (!checkbox || !button) return;
-  checkbox.addEventListener("change", () => {
-    button.disabled = !checkbox.checked;
-    button.classList.toggle("btn", checkbox.checked);
-  });
-};
-
 const initHeaderBurger = () => {
   const burgerBtn = document.querySelector(".header-burger-btn");
   const menu = document.querySelector("#menu");
   const overlay = document.querySelector(".overlay");
+  if (!burgerBtn || !menu || !overlay) return;
+
   burgerBtn.addEventListener("click", () => {
     burgerBtn.classList.toggle("active");
     menu.classList.toggle("active");
@@ -303,7 +291,7 @@ const getHeaderHeight = () => {
 
   if (!header || !main) return;
 
-  if (window.innerWidth < 1024) {
+  if (window.innerWidth <= 849) {
     const headerHeight = header.offsetHeight;
     main.style.marginTop = `${headerHeight}px`;
   } else {
@@ -312,66 +300,389 @@ const getHeaderHeight = () => {
 };
 
 const initModal = () => {
-  const modalOpenBtns = document.querySelectorAll(".modal-open-btn");
-  const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
   const modal = document.querySelector(".modal");
+  const menu = document.getElementById("menu");
+  const overlay = document.querySelector(".overlay");
+  if (!modal || !menu || !overlay) return;
+
+  const modalOpenBtns = document.querySelectorAll(".modal-open-btn");
+  const modalCloseBtn = document.querySelector(".modal-close-btn");
+  const burgerBtn = document.querySelector(".header-burger-btn");
+
+  const closeMenu = () => {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+    burgerBtn.classList.remove("active");
+  };
 
   modalOpenBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       modal.classList.add("active");
       document.documentElement.classList.add("noscroll");
+      closeMenu();
     });
   });
-  modalCloseBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      modal.classList.remove("active");
-      document.documentElement.classList.remove("noscroll");
-    });
-  });
+
+  modalCloseBtn.addEventListener("click", closeModal());
+
   modal.addEventListener("click", (e) => {
-    if (e.target.closest(".modal-content")) return;
+    if (e.target.closest(".modal-form-wrapper")) return;
     modal.classList.remove("active");
     document.documentElement.classList.remove("noscroll");
   });
 };
 
+const closeModal = () => {
+  const modal = document.querySelector(".modal");
+
+  modal.classList.remove("active");
+  document.documentElement.classList.remove("noscroll");
+};
+
 const initStickyHeaderBottom = () => {
+  const header = document.querySelector(".header");
   const headerTop = document.querySelector(".header-top");
   const headerBottom = document.querySelector(".header-bottom");
-  if (!headerTop || !headerBottom) return;
+  if (!header || !headerTop || !headerBottom) return;
 
-  const spacer = document.createElement("div");
-  spacer.style.display = "none";
-  headerBottom.insertAdjacentElement("afterend", spacer);
+  const mq = window.matchMedia("(min-width: 850px)");
 
   let isSticky = false;
+  let triggerY = 0;
+  let ticking = false;
 
-  function update() {
-    if (window.innerWidth <= 1024) {
-      if (isSticky) {
-        headerBottom.classList.remove("sticky");
-        spacer.style.display = "none";
-        isSticky = false;
-      }
-      return;
-    }
+  // headerTop всегда in-flow (никогда не fixed), поэтому его положение в документе
+  // стабильно и им безопасно мерить порог независимо от sticky-состояния.
+  // triggerY = scrollY, при котором низ headerTop достигает верха вьюпорта —
+  // ровно тогда верх headerBottom оказывается на top:0.
+  function measure() {
+    triggerY = headerTop.getBoundingClientRect().bottom + window.scrollY;
+  }
 
-    const shouldBeSticky = headerTop.getBoundingClientRect().bottom <= 0;
-
-    if (shouldBeSticky && !isSticky) {
-      spacer.style.height = headerBottom.offsetHeight + "px";
-      spacer.style.display = "block";
+  function setSticky(sticky) {
+    if (sticky === isSticky) return;
+    isSticky = sticky;
+    if (sticky) {
+      header.style.paddingBottom = headerBottom.offsetHeight - 4 + "px";
+      // 1. position: fixed + full padding — кадр визуально идентичен in-flow
       headerBottom.classList.add("sticky");
-      isSticky = true;
-    } else if (!shouldBeSticky && isSticky) {
-      headerBottom.classList.remove("sticky");
-      spacer.style.display = "none";
-      isSticky = false;
+      // 2. ждём, пока Safari реально отрисует кадр .sticky (двойной rAF),
+      //    только тогда смена padding регистрируется как отдельный transition
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // 3. compact padding → transition анимируется (если ещё sticky)
+          if (isSticky) headerBottom.classList.add("compact");
+        });
+      });
+    } else {
+      headerBottom.style.transition = "none";
+      headerBottom.classList.remove("sticky", "compact");
+      header.style.paddingBottom = "";
+      requestAnimationFrame(() => {
+        headerBottom.style.transition = "";
+      });
     }
   }
 
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
+  // Скролл-обработчик читает только window.scrollY (без layout-чтений per-frame),
+  // сравнивая с заранее вычисленным triggerY → пиннинг realtime, без задержки IO.
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      if (!mq.matches) return;
+      setSticky(window.scrollY >= triggerY);
+    });
+  }
+
+  measure();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    measure();
+    onScroll();
+  });
+  mq.addEventListener("change", (e) => {
+    if (!e.matches) setSticky(false);
+    else onScroll();
+  });
+};
+
+class Progress {
+  constructor(
+    currentStep = 1,
+    totalStep = 7,
+    progressElement = document.querySelector(".process-slider-progress"),
+    progressCurrentStepElement = document.querySelector(".current-step"),
+    totalStepElement = document.querySelector(".total-step"),
+  ) {
+    if (!progressElement || !progressCurrentStepElement || !totalStepElement) {
+      this.valid = false;
+      return;
+    }
+    this.valid = true;
+    this.currentStep = currentStep;
+    this.totalStep = totalStep;
+    this.progressElement = progressElement;
+    this.progressCurrentStepElement = progressCurrentStepElement;
+    this.totalStepElement = totalStepElement;
+    this.progressElement.style.setProperty(
+      "--percent",
+      (this.currentStep / this.totalStep) * 100 + "%",
+    );
+    this.progressCurrentStepElement.textContent = this.currentStep;
+    this.totalStepElement.textContent = this.totalStep;
+  }
+
+  onNewStep(newStep) {
+    if (!this.valid) return;
+    this.progressCurrentStepElement.textContent = newStep;
+    this.progressElement.style.setProperty(
+      "--percent",
+      (newStep / this.totalStep) * 100 + "%",
+    );
+  }
+}
+
+const validateForm = ({ nameSelector, phoneSelector, checkboxSelector }) => {
+  const nameInput = document.querySelector(nameSelector);
+  const phoneInput = document.querySelector(phoneSelector);
+  const checkbox = document.querySelector(checkboxSelector);
+
+  let isValid = true;
+
+  const validate = (input, condition) => {
+    if (condition) {
+      input.classList.add("error");
+      isValid = false;
+    } else {
+      input.classList.remove("error");
+    }
+  };
+
+  if (nameInput) {
+    validate(nameInput, !nameInput.value.trim());
+  }
+
+  if (phoneInput) {
+    const digits = phoneInput.value.replace(/\D/g, "");
+    validate(phoneInput, digits.length < 10);
+  }
+
+  if (checkbox) {
+    validate(checkbox, !checkbox.checked);
+  }
+
+  return isValid;
+};
+
+const clearErrorOnInput = (selectors) => {
+  selectors.forEach((selector) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    el.addEventListener("input", () => el.classList.remove("error"));
+    el.addEventListener("change", () => el.classList.remove("error"));
+  });
+};
+
+const clearForm = (selectors) => {
+  selectors.forEach((selector) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    el.value = "";
+    el.checked = false;
+  });
+};
+
+const initFileBtns = () => {
+  const modalFileBtn = document.getElementById("modal-file-btn");
+  const modalFileInput = document.getElementById("modal-file");
+
+  const consultFileBtn = document.getElementById("consult-file-btn");
+  const consultFileInput = document.getElementById("consult-file");
+
+  if (modalFileBtn && modalFileInput) {
+    modalFileBtn.addEventListener("click", () => {
+      modalFileInput.click();
+    });
+  }
+
+  if (consultFileBtn && consultFileInput) {
+    consultFileBtn.addEventListener("click", () => {
+      consultFileInput.click();
+    });
+  }
+};
+
+const initFormValidation = () => {
+  const consultForm = document.querySelector(".consult-form");
+  const modalForm = document.querySelector(".modal-form");
+
+  if (consultForm) {
+    clearErrorOnInput([
+      "#consult-form-name",
+      "#consult-form-phone",
+      "#consult-checkbox",
+    ]);
+
+    consultForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const isValid = validateForm({
+        nameSelector: "#consult-form-name",
+        phoneSelector: "#consult-form-phone",
+        checkboxSelector: "#consult-checkbox",
+      });
+
+      if (!isValid) return;
+      clearForm([
+        "#consult-form-name",
+        "#consult-form-phone",
+        "#consult-checkbox",
+      ]);
+      setTimeout(() => {
+        alert("Форма успешно отправлена");
+      }, 1000);
+    });
+  }
+
+  if (modalForm) {
+    clearErrorOnInput([
+      "#modal-form-name",
+      "#modal-form-phone",
+      "#modal-checkbox",
+    ]);
+
+    modalForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const isValid = validateForm({
+        nameSelector: "#modal-form-name",
+        phoneSelector: "#modal-form-phone",
+        checkboxSelector: "#modal-checkbox",
+      });
+
+      if (!isValid) return;
+      clearForm(["#modal-form-name", "#modal-form-phone", "#modal-checkbox"]);
+      closeModal();
+      setTimeout(() => {
+        alert("Форма успешно отправлена");
+      }, 1000);
+    });
+  }
+};
+
+const initStepper = () => {
+  const buttons = document.querySelectorAll(".process-steps-btn");
+  const contents = document.querySelectorAll(".process-steps-item");
+  const container = document.querySelector(".process-steps-list");
+
+  if (!buttons.length || !container) return;
+
+  let currentIndex = 0;
+  let autoInterval = null;
+  let pauseTimeout = null;
+
+  const setStep = (index) => {
+    currentIndex = index;
+    buttons.forEach((btn) => btn.classList.remove("active"));
+    contents.forEach((content) => content.classList.remove("active"));
+    buttons[currentIndex].classList.add("active");
+    if (contents[currentIndex]) contents[currentIndex].classList.add("active");
+  };
+
+  const nextStep = () => {
+    setStep((currentIndex + 1) % buttons.length);
+  };
+
+  const startAuto = () => {
+    if (autoInterval) return;
+    autoInterval = setInterval(nextStep, 3000);
+  };
+
+  const stopAuto = () => {
+    clearInterval(autoInterval);
+    autoInterval = null;
+  };
+
+  const pauseAuto = () => {
+    stopAuto();
+    clearTimeout(pauseTimeout);
+    pauseTimeout = setTimeout(startAuto, 5000);
+  };
+
+  setStep(0);
+
+  container.addEventListener("click", (e) => {
+    const button = e.target.closest(".process-steps-btn");
+    if (!button) return;
+
+    const stepIndex = Array.from(buttons).indexOf(button);
+    if (stepIndex === -1) return;
+
+    setStep(stepIndex);
+    pauseAuto();
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAuto();
+        } else {
+          stopAuto();
+          clearTimeout(pauseTimeout);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  observer.observe(container);
+};
+
+const initStepSlider = () => {
+  const nextBtn = document.querySelector(".process-slider-btn.forward");
+  const prevBtn = document.querySelector(".process-slider-btn.backward");
+  const steps = document.querySelectorAll(".process-steps-item");
+
+  if (!nextBtn || !prevBtn) return;
+
+  let currentStep = 1;
+  let totalStep = 7;
+
+  const mainPageProgress = new Progress(currentStep, totalStep);
+
+  const updateStep = (current) => {
+    steps.forEach((step, index) => {
+      if (index + 1 === current) {
+        step.classList.add("active");
+      } else {
+        step.classList.remove("active");
+      }
+    });
+  };
+
+  nextBtn.addEventListener("click", () => {
+    currentStep += 1;
+    mainPageProgress.onNewStep(currentStep);
+    prevBtn.disabled = false;
+    if (currentStep === totalStep) {
+      nextBtn.disabled = true;
+    }
+    updateStep(currentStep);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentStep -= 1;
+    mainPageProgress.onNewStep(currentStep);
+
+    nextBtn.disabled = false;
+    if (currentStep === 1) {
+      prevBtn.disabled = true;
+    }
+    updateStep(currentStep);
+  });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -416,8 +727,10 @@ document.addEventListener("DOMContentLoaded", () => {
   getHeaderHeight();
   initModal();
   initStickyHeaderBottom();
-  toggleDisabled("consult-checkbox", "consult-submit");
-  toggleDisabled("modal-checkbox", "modal-submit");
+  initStepper();
+  initStepSlider();
+  initFormValidation();
+  initFileBtns();
 });
 
 window.addEventListener("resize", () => {
