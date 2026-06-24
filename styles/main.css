@@ -144,11 +144,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Форсируем page-wide GPU compositing (ускоренный скролл в Safari), как это
-   делает hero video + backdrop-filter на главной. Без этого Safari красит
-   fixed-хедер на медленном слое и тот отстаёт на пару кадров при скролле.
-   Невидимый слой: НЕ предок .header-bottom → не ломает transition и не меняет
-   его containing block (в отличие от transform прямо на хедере). */
 body::before {
   content: "";
   position: fixed;
@@ -172,6 +167,7 @@ body::before {
   --color-lightgreen: rgba(57, 181, 107, 0.15);
   --color-text-dark: #2e2e2e;
   --color-white65: rgba(255, 255, 255, 0.65);
+  --color-lightblue-bg: #f3f8ff;
   --font-primary: "Manrope";
   --font-secondary: "Unbounded";
   --zoom-1: 0.85;
