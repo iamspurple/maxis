@@ -1,5 +1,7 @@
 .header {
   border-bottom: 1px solid #edf5ff;
+  position: relative;
+  z-index: 30;
 }
 
 .header-top {
