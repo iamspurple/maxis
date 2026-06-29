@@ -271,6 +271,43 @@ const initFaqAccordion = () => {
   });
 };
 
+const initEstimateAccordion = () => {
+  const opts = { duration: 300, easing: "ease" };
+
+  document
+    .querySelectorAll(".estimate-list .estimate-group-title")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const group = btn.closest(".estimate-group");
+        if (!group) return;
+        const body = group.querySelector(".estimate-group-body");
+        if (!body) return;
+
+        const bodyH = body.scrollHeight;
+
+        if (group.classList.contains("is-open")) {
+          group.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+          body.animate(
+            [{ height: bodyH + "px" }, { height: "0px" }],
+            opts,
+          ).onfinish = () => {
+            body.style.height = "0";
+          };
+        } else {
+          group.classList.add("is-open");
+          btn.setAttribute("aria-expanded", "true");
+          body.animate(
+            [{ height: "0px" }, { height: bodyH + "px" }],
+            opts,
+          ).onfinish = () => {
+            body.style.height = "auto";
+          };
+        }
+      });
+    });
+};
+
 const initHeaderBurger = () => {
   const burgerBtn = document.querySelector(".header-burger-btn");
   const menu = document.querySelector("#menu");
@@ -645,11 +682,15 @@ const initStepSlider = () => {
   const nextBtn = document.querySelector(".process-slider-btn.forward");
   const prevBtn = document.querySelector(".process-slider-btn.backward");
   const steps = document.querySelectorAll(".process-steps-item");
+  const controls = document.querySelector(".process-slider-controls");
+  const content = document.querySelector(".process-steps-content");
 
   if (!nextBtn || !prevBtn) return;
 
   let currentStep = 1;
   let totalStep = 7;
+  let autoInterval = null;
+  let pauseTimeout = null;
 
   const mainPageProgress = new Progress(currentStep, totalStep);
 
@@ -663,25 +704,197 @@ const initStepSlider = () => {
     });
   };
 
-  nextBtn.addEventListener("click", () => {
-    currentStep += 1;
+  const setStep = (step) => {
+    currentStep = step;
     mainPageProgress.onNewStep(currentStep);
-    prevBtn.disabled = false;
-    if (currentStep === totalStep) {
-      nextBtn.disabled = true;
-    }
+    prevBtn.disabled = currentStep === 1;
+    nextBtn.disabled = currentStep === totalStep;
     updateStep(currentStep);
+  };
+
+  const nextStep = () => {
+    setStep((currentStep % totalStep) + 1);
+  };
+
+  const startAuto = () => {
+    if (autoInterval) return;
+    autoInterval = setInterval(nextStep, 3000);
+  };
+
+  const stopAuto = () => {
+    clearInterval(autoInterval);
+    autoInterval = null;
+  };
+
+  const pauseAuto = () => {
+    stopAuto();
+    clearTimeout(pauseTimeout);
+    pauseTimeout = setTimeout(startAuto, 5000);
+  };
+
+  nextBtn.addEventListener("click", () => {
+    if (currentStep < totalStep) {
+      setStep(currentStep + 1);
+    }
+    pauseAuto();
   });
 
   prevBtn.addEventListener("click", () => {
-    currentStep -= 1;
-    mainPageProgress.onNewStep(currentStep);
-
-    nextBtn.disabled = false;
-    if (currentStep === 1) {
-      prevBtn.disabled = true;
+    if (currentStep > 1) {
+      setStep(currentStep - 1);
     }
-    updateStep(currentStep);
+    pauseAuto();
+  });
+
+  if (content) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isSwiping = false;
+
+    content.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isSwiping = false;
+      },
+      { passive: true },
+    );
+
+    content.addEventListener(
+      "touchmove",
+      (e) => {
+        const dx = e.touches[0].clientX - touchStartX;
+        const dy = e.touches[0].clientY - touchStartY;
+        if (!isSwiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 5) {
+          isSwiping = true;
+        }
+        if (isSwiping) e.preventDefault();
+      },
+      { passive: false },
+    );
+
+    content.addEventListener(
+      "touchend",
+      (e) => {
+        if (!isSwiping) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const threshold = 50;
+        if (dx < -threshold && currentStep < totalStep) {
+          setStep(currentStep + 1);
+        } else if (dx > threshold && currentStep > 1) {
+          setStep(currentStep - 1);
+        }
+        isSwiping = false;
+        pauseAuto();
+      },
+      { passive: true },
+    );
+  }
+
+  if (controls) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startAuto();
+          } else {
+            stopAuto();
+            clearTimeout(pauseTimeout);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    observer.observe(controls);
+  }
+};
+
+const initCasesSlider = () => {
+  document.querySelectorAll(".cases-slider").forEach((root) => {
+    const list = root.querySelector(".cases-slider-list");
+    if (!list) return;
+
+    const items = list.querySelectorAll(".cases-slider-item");
+    if (!items.length) return;
+
+    let currentIndex = 0;
+    const getMaxIndex = () => items.length - 1;
+
+    const updateSlider = () => {
+      items.forEach((item, index) =>
+        item.classList.toggle("active", index === currentIndex),
+      );
+
+      list
+        .querySelectorAll(".cases-slider-item-btn.backward")
+        .forEach((btn) => (btn.disabled = currentIndex === 0));
+      list
+        .querySelectorAll(".cases-slider-item-btn.forward")
+        .forEach((btn) => (btn.disabled = currentIndex >= getMaxIndex()));
+    };
+
+    const goNext = () => {
+      if (currentIndex < getMaxIndex()) {
+        currentIndex++;
+        updateSlider();
+      }
+    };
+
+    const goPrev = () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    };
+
+    list.addEventListener("click", (e) => {
+      if (e.target.closest(".cases-slider-item-btn.forward")) goNext();
+      else if (e.target.closest(".cases-slider-item-btn.backward")) goPrev();
+    });
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isSwiping = false;
+
+    root.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isSwiping = false;
+      },
+      { passive: true },
+    );
+
+    root.addEventListener(
+      "touchmove",
+      (e) => {
+        const dx = e.touches[0].clientX - touchStartX;
+        const dy = e.touches[0].clientY - touchStartY;
+        if (!isSwiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 5) {
+          isSwiping = true;
+        }
+        if (isSwiping) e.preventDefault();
+      },
+      { passive: false },
+    );
+
+    root.addEventListener(
+      "touchend",
+      (e) => {
+        if (!isSwiping) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const threshold = 50;
+        if (dx < -threshold) goNext();
+        else if (dx > threshold) goPrev();
+        isSwiping = false;
+      },
+      { passive: true },
+    );
+
+    updateSlider();
   });
 };
 
@@ -698,6 +911,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".hero-video-wrapper.mobile",
   );
   initFaqAccordion();
+  initEstimateAccordion();
 
   initHorizontalSlider(document.querySelector(".about-team-slider-wrapper"), {
     list: ".about-team-slider-list",
@@ -729,6 +943,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStickyHeaderBottom();
   initStepper();
   initStepSlider();
+  initCasesSlider();
   initFormValidation();
   initFileBtns();
 });
