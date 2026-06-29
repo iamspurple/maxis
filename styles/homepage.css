@@ -1190,7 +1190,6 @@
 
 .cases-slider-item {
   grid-area: 1 / 1;
-  align-self: start;
   display: grid;
   grid-template-columns: 33% 1fr;
   gap: clamp(26px, 1.85vw, 32px);
@@ -4642,6 +4641,7 @@ input[type="file"]#consult-file {
 
   .cases-slider-item {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    align-self: start;
   }
 
   .cases-slider-item-image {
