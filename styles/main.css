@@ -3,7 +3,7 @@
   src: url(/assets/fonts/Manrope-ExtraLight.woff2) format("woff2");
   font-weight: 200;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   src: url(/assets/fonts/Manrope-Light.woff2) format("woff2");
   font-weight: 300;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url(/assets/fonts/Manrope-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   src: url(/assets/fonts/Manrope-Medium.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -35,7 +35,7 @@
   src: url(/assets/fonts/Manrope-SemiBold.woff2) format("woff2");
   font-weight: 600;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -43,7 +43,7 @@
   src: url(/assets/fonts/Manrope-Bold.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -51,7 +51,7 @@
   src: url(/assets/fonts/Manrope-ExtraBold.woff2) format("woff2");
   font-weight: 800;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -59,7 +59,7 @@
   src: url(/assets/fonts/Unbounded-ExtraLight.woff2) format("woff2");
   font-weight: 200;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -67,7 +67,7 @@
   src: url(/assets/fonts/Unbounded-Light.woff2) format("woff2");
   font-weight: 300;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -75,7 +75,7 @@
   src: url(/assets/fonts/Unbounded-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -83,7 +83,7 @@
   src: url(/assets/fonts/Unbounded-Medium.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -91,7 +91,7 @@
   src: url(/assets/fonts/Unbounded-SemiBold.woff2) format("woff2");
   font-weight: 600;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -99,7 +99,7 @@
   src: url(/assets/fonts/Unbounded-Bold.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -107,7 +107,7 @@
   src: url(/assets/fonts/Unbounded-ExtraBold.woff2) format("woff2");
   font-weight: 800;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 * {

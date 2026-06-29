@@ -1185,9 +1185,23 @@
 }
 
 .cases-slider-item {
-  display: grid;
+  display: none;
   grid-template-columns: 33% 1fr;
   gap: clamp(26px, 1.85vw, 32px);
+}
+
+@keyframes casesFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cases-slider-item.active {
+  display: grid;
+  animation: casesFadeIn 0.6s ease;
 }
 
 .cases-slider-item-image {
@@ -4651,14 +4665,6 @@ input[type="file"]#consult-file {
     );
   }
 
-  .cases-slider-item-points-item {
-    display: none;
-  }
-
-  .cases-slider-item-points-item:nth-last-child(-n + 2) {
-    display: flex;
-  }
-
   .cases-slider-item-details {
     font-size: clamp(
       calc(16px * 580 / 640),
@@ -4885,9 +4891,9 @@ input[type="file"]#consult-file {
 
   .faq {
     padding-top: clamp(
-      calc(90px * 580 / 640),
-      calc(100vw * 90 / 640),
-      calc(90px * 1024 / 640)
+      calc(60px * 580 / 640),
+      calc(100vw * 60 / 640),
+      calc(60px * 1024 / 640)
     );
     padding-bottom: calc(
       (100vw - 8vw) +
