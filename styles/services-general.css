@@ -855,6 +855,7 @@
 
 .cases-slider-item {
   grid-area: 1 / 1;
+  align-self: start;
   display: grid;
   grid-template-columns: 33% 1fr;
   gap: clamp(26px, 1.85vw, 32px);
@@ -3513,6 +3514,7 @@ input[type="file"]#consult-file {
   }
 
   .cases-slider-item-image {
+    height: auto;
     aspect-ratio: 1.78;
   }
 
@@ -4525,6 +4527,7 @@ input[type="file"]#consult-file {
   }
 
   .cases-slider-item-image {
+    height: auto;
     aspect-ratio: 1.6;
   }
 
