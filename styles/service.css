@@ -871,24 +871,42 @@
   background-color: var(--color-primary);
 }
 
-.cases-slider-item {
-  display: none;
-  grid-template-columns: 33% 1fr;
-  gap: clamp(26px, 1.85vw, 32px);
+.cases-slider-list {
+  display: grid;
 }
 
-@keyframes casesFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.cases-slider-item {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: 33% 1fr;
+  gap: clamp(26px, 1.85vw, 32px);
+  pointer-events: none;
 }
 
 .cases-slider-item.active {
-  display: grid;
-  animation: casesFadeIn 0.6s ease;
+  pointer-events: auto;
+}
+
+.cases-slider-item-image,
+.cases-slider-item-content > :not(.cases-slider-item-controls) {
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+}
+
+.cases-slider-item.active .cases-slider-item-image,
+.cases-slider-item.active
+  .cases-slider-item-content
+  > :not(.cases-slider-item-controls) {
+  opacity: 1;
+  transition: opacity 0.55s ease-out 0.3s;
+}
+
+.cases-slider-item-controls {
+  visibility: hidden;
+}
+
+.cases-slider-item.active .cases-slider-item-controls {
+  visibility: visible;
 }
 
 .cases-slider-item-image {
