@@ -1311,7 +1311,6 @@ input[type="file"]#consult-file {
   }
 
   .subtitle {
-    text-align: center;
     font-size: clamp(18px, 3.1vw, 26px);
     max-width: 84%;
   }
@@ -1870,7 +1869,7 @@ input[type="file"]#consult-file {
 
   .subtitle {
     font-size: clamp(14px, 4.2vw, 25px);
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .filters-btn {
