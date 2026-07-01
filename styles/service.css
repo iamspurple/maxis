@@ -25,7 +25,7 @@
   position: absolute;
   z-index: 10;
   top: 0;
-  right: 60%;
+  right: 65%;
   backdrop-filter: blur(20px);
 }
 
@@ -40,7 +40,7 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 80%;
+  width: 75%;
   z-index: -1;
   filter: blur(50px);
 }
@@ -57,7 +57,7 @@
 
 @media screen and (min-width: 1575px) {
   .hero-video-wrapper.desktop::before {
-    right: 900px;
+    right: 930px;
   }
 
   .hero-video.desktop,
@@ -68,7 +68,7 @@
 
 @media screen and (min-width: 2000px) {
   .hero-video-wrapper.desktop::before {
-    right: 1150px;
+    right: 1200px;
   }
 }
 
@@ -100,14 +100,14 @@
 
 @media screen and (min-width: 1440px) {
   .hero-video-canvas.desktop {
-    max-width: 1150px;
+    max-width: 1080px;
     width: 100%;
   }
 }
 
 @media screen and (min-width: 2000px) {
   .hero-video-canvas.desktop {
-    max-width: 1500px;
+    max-width: 1400px;
     width: 100%;
   }
 }
