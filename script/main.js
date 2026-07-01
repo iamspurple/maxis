@@ -376,6 +376,35 @@ const closeModal = () => {
   document.documentElement.classList.remove("noscroll");
 };
 
+const initFiltersModal = () => {
+  const filtersModal = document.querySelector(".filters-modal");
+  const openBtn = document.getElementById("open-filters");
+  const closeBtn = document.getElementById("close-filters");
+  if (!filtersModal || !openBtn || !closeBtn) return;
+
+  const applyBtn = filtersModal.querySelector(".filters-modal-submit");
+
+  const open = () => {
+    filtersModal.classList.add("active");
+    document.documentElement.classList.add("noscroll");
+  };
+
+  const close = () => {
+    filtersModal.classList.remove("active");
+    document.documentElement.classList.remove("noscroll");
+  };
+
+  openBtn.addEventListener("click", open);
+  closeBtn.addEventListener("click", close);
+  applyBtn?.addEventListener("click", close);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && filtersModal.classList.contains("active")) {
+      close();
+    }
+  });
+};
+
 const initStickyHeaderBottom = () => {
   const header = document.querySelector(".header");
   const headerTop = document.querySelector(".header-top");
@@ -940,6 +969,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderBurger();
   getHeaderHeight();
   initModal();
+  initFiltersModal();
   initStickyHeaderBottom();
   initStepper();
   initStepSlider();
