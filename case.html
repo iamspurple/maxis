@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <link rel="stylesheet" href="/styles/case.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <div class="header-logo-wrapper">
+            <a href="/" class="header-logo heading">
+              <img src="/assets/icons/logo.svg" alt="Максис ИТ" />
+              Максис
+            </a>
+            <span class="header-logo-exp">
+              Работаем <br />
+              с 2013 года
+            </span>
+          </div>
+          <div class="header-contacts">
+            <div class="header-phone-wrapper">
+              <div class="header-phone">
+                <a class="header-phone-number" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+                <div class="header-phone-details">
+                  <div class="header-phone-city">
+                    <span class="dot"></span>
+                    <span>Москва</span>
+                  </div>
+                  <p class="header-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+              <div class="header-phone">
+                <a class="header-phone-number" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+                <div class="header-phone-details">
+                  <div class="header-phone-city">
+                    <span class="dot"></span>
+                    <span>Тула</span>
+                  </div>
+                  <p class="header-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="header-buttons-wrapper">
+              <button class="header-callback-btn modal-open-btn btn">
+                Обратный звонок
+              </button>
+              <a href="/" title="Max" class="header-social-link btn">
+                <img src="/assets/icons/max.svg" alt="Max" />
+              </a>
+              <button class="header-burger-btn" title="Открыть меню">
+                <svg
+                  class="open"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="5"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    y="9"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  class="close"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="2"
+                    y="13.3137"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    transform="rotate(-45 2 13.3137)"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="3.41455"
+                    y="2"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    transform="rotate(45 3.41455 2)"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="menu" class="header-bottom">
+          <nav class="header-nav">
+            <ul class="header-nav-list">
+              <li class="header-nav-main">
+                <ul class="header-nav-list-main">
+                  <li>
+                    <a href="/" class="main-link">1C</a>
+                  </li>
+                  <li>
+                    <a href="/" class="main-link">Битрикс24</a>
+                  </li>
+                  <li>
+                    <div class="dropdown">
+                      <button class="dropbtn">
+                        Услуги
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                            fill="currentColor"
+                            fill-opacity="1"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-content-wrapper">
+                        <ul class="dropdown-content">
+                          <li>
+                            <a href="#">Интеграция 1С и Битрикс24</a>
+                          </li>
+                          <li>
+                            <a href="#">BI-аналитика и дашборды</a>
+                          </li>
+                          <li>
+                            <a href="#">IT-инфраструктура</a>
+                          </li>
+                          <li>
+                            <a href="#">Разработки и интеграции</a>
+                          </li>
+                          <li>
+                            <a href="#">Искуственный интеллект</a>
+                          </li>
+                          <li>
+                            <a href="#">Open Source</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    Кейсы
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    Каталог
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">1С</a>
+                      </li>
+                      <li>
+                        <a href="#">Битрикс24</a>
+                      </li>
+                      <li>
+                        <a href="#">Прочее ПО</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    О компании
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">О компании</a>
+                      </li>
+                      <li>
+                        <a href="#">ИТ деятельность</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="/">Новости</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-menu-contacts">
+            <div class="header-menu-phone-wrapper">
+              <div class="header-menu-phone">
+                <a class="header-menu-phone-number" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+                <div class="header-menu-phone-details">
+                  <div class="header-menu-phone-city">
+                    <span class="dot"></span>
+                    <span>Москва</span>
+                  </div>
+                  <p class="header-menu-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+              <div class="header-menu-phone">
+                <a class="header-menu-phone-number" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+                <div class="header-menu-phone-details">
+                  <div class="header-menu-phone-city">
+                    <span class="dot"></span>
+                    <span>Тула</span>
+                  </div>
+                  <p class="header-menu-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="header-menu-buttons-wrapper">
+              <button class="header-menu-callback-btn modal-open-btn">
+                Обратный звонок
+              </button>
+              <a href="/" title="Max" class="header-menu-social-link">
+                <img src="/assets/icons/max.svg" alt="Max" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main-wrapper">
+        <div class="main-container container">
+          <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li>
+                <a href="/">Главная</a>
+              </li>
+              <li>
+                <a href="/cases.html">Кейсы</a>
+              </li>
+              <li aria-current="page">Балтик продукт</li>
+            </ul>
+          </nav>
+
+          <section class="case">
+            <h1 class="case-title heading">Балтик продукт</h1>
+            <aside class="case-sidebar">
+              <div class="case-sidebar-icons">
+                <div class="case-sidebar-icon">
+                  <img src="/assets/icons/logo/1c.svg" alt="1C" />
+                </div>
+                <div class="case-sidebar-icon">
+                  <img src="/assets/icons/logo/bitrix24.svg" alt="bitrix24" />
+                </div>
+              </div>
+              <div class="case-sidebar-buttons">
+                <button class="case-sidebar-btn modal-open-btn btn">
+                  Записаться на аудит
+                </button>
+                <a href="/" class="case-sidebar-link btn"> Смотреть отзыв </a>
+              </div>
+              <div class="case-sidebar-content">
+                <button class="case-sidebar-content-btn heading">
+                  Содержание
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9.41107 6.91076C9.73651 6.58533 10.2641 6.58533 10.5896 6.91076L15.5896 11.9108C15.915 12.2362 15.915 12.7638 15.5896 13.0893C15.2641 13.4147 14.7365 13.4147 14.4111 13.0893L10.0003 8.67853L5.58958 13.0893C5.26414 13.4147 4.73651 13.4147 4.41107 13.0893C4.08563 12.7638 4.08563 12.2362 4.41107 11.9108L9.41107 6.91076Z"
+                      fill="#3283FF"
+                    />
+                  </svg>
+                </button>
+                <ul class="case-sidebar-content-list">
+                  <li>
+                    <a href="#section1">
+                      Что такое реестр платежей и почему ваша компания без него
+                      теряет деньги
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#section2">
+                      Как настроить реестр платежей, который будет работать на
+                      вас
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#section3">
+                      Инструкция создания и проведения реестра платежей в 1С
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#section4">
+                      Преимущества профессиональной настройки реестра платежей в
+                      1С: реальные результаты
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+            <div class="case-content">
+              <section class="case-section">
+                <p class="case-description">
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable. If you are going to use a passage of
+                  Lorem Ipsum, you need to be sure there isn't anything
+                  embarrassing hidden in the middle of text. All the Lorem Ipsum
+                  generators on the Internet tend to repeat predefined chunks as
+                  necessary, making this the first true generator on the
+                  Internet. It uses a dictionary of over 200 Latin words,
+                  combined with a handful of model sentence structures, to
+                  generate Lorem Ipsum which looks reasonable. The generated
+                  Lorem Ipsum is therefore always free from repetition, injected
+                  humour, or non-characteristic words etc.
+                </p>
+                <div class="case-video">
+                  <h3 class="case-video-title">
+                    <span class="tab-corner-left"></span>видео о проекте<span
+                      class="tab-corner-right"
+                    ></span>
+                  </h3>
+                  <img
+                    class="case-video-media"
+                    src="/assets/images/fish.png"
+                    alt="video"
+                  />
+                </div>
+              </section>
+              <section id="section1" class="case-section">
+                <h2 class="case-section-title heading title-medium">
+                  There are many variations of passages of Lorem Ipsum available
+                </h2>
+                <div class="case-results">
+                  <div class="case-results-item">
+                    <span class="case-results-number accent"> +50% </span>
+                    <span class="case-results-title"> к объему продаж </span>
+                    <p class="case-results-description">
+                      благодаря контролю воронки и повторным касаниям
+                    </p>
+                  </div>
+                  <div class="case-results-item">
+                    <span class="case-results-number accent"> +70% </span>
+                    <span class="case-results-title">
+                      к обороту продукции
+                    </span>
+                    <p class="case-results-description">
+                      после ускорения добавление в APM розничного продавца
+                    </p>
+                  </div>
+                  <div class="case-results-item">
+                    <span class="case-results-number accent"> +100% </span>
+                    <span class="case-results-title">
+                      к скорости обработки
+                    </span>
+                    <p class="case-results-description">
+                      за счет автоматизации системы и внедрения корпоративной
+                      сети
+                    </p>
+                  </div>
+                </div>
+                <ul class="case-list">
+                  <li>Lorem Ipsum is simply dummy text of the printing</li>
+                  <li>Lorem Ipsum is simply dummy text of the printing</li>
+                  <li>Lorem Ipsum is simply dummy text of the printing</li>
+                  <li>Lorem Ipsum is simply dummy text of the printing</li>
+                  <li>Lorem Ipsum is simply dummy text of the printing</li>
+                  <li>Lorem Ipsum is simply dummy text of the printing</li>
+                </ul>
+              </section>
+              <section class="case-section">
+                <iframe
+                  src="https://vkvideo.ru/video_ext.php?oid=-222460653&id=456281483&hash=5da61b5f2cfb7468&hd=3"
+                  width="auto"
+                  height="auto"
+                  allow="
+                    autoplay;
+                    encrypted-media;
+                    fullscreen;
+                    picture-in-picture;
+                    screen-wake-lock;
+                  "
+                  frameborder="0"
+                  allowfullscreen
+                >
+                </iframe>
+              </section>
+              <section class="case-section">
+                <div class="case-section-header">
+                  <h2 class="case-section-title heading title-medium">
+                    Lorem Ipsum is simply dummy text
+                  </h2>
+                  <p class="case-text">
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in some
+                    form, by injected humour, or randomised words which don't
+                    look even slightly believable. If you are going to use a
+                    passage of Lorem Ipsum, you need to be sure there isn't
+                    anything embarrassing hidden in the middle of text.
+                  </p>
+                </div>
+                <blockquote>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable. If you are going to use a passage of
+                  Lorem Ipsum, you need to be sure there isn't anything
+                  embarrassing hidden in the middle of text.
+                </blockquote>
+                <ul class="case-projects-list">
+                  <li class="case-projects-item">
+                    <img
+                      class="case-projects-item-image"
+                      src="/assets/images/flexicore.png"
+                      alt="FLEXICORE"
+                    />
+                    <div class="case-projects-item-content-wrapper">
+                      <div class="case-projects-item-content">
+                        <div class="case-projects-item-icons">
+                          <div class="case-projects-item-icon">
+                            <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                          </div>
+                        </div>
+                        <div class="case-projects-item-info">
+                          <h3 class="case-projects-item-name">FLEXICORE</h3>
+                          <p class="case-projects-item-description">
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry
+                          </p>
+                        </div>
+                        <div class="case-projects-item-details">
+                          <h4 class="case-projects-item-details-title">
+                            Внедренные продукты
+                          </h4>
+                          <ul class="case-projects-item-details-list">
+                            <li>1С:Зарплата и управление персоналом</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <a class="case-projects-item-link btn" href="/"
+                        >Подробнее</a
+                      >
+                    </div>
+                  </li>
+                  <li class="case-projects-item">
+                    <img
+                      class="case-projects-item-image"
+                      src="/assets/images/auto108.png"
+                      alt="Auto 108"
+                    />
+                    <div class="case-projects-item-content-wrapper">
+                      <div class="case-projects-item-content">
+                        <div class="case-projects-item-icons">
+                          <div class="case-projects-item-icon">
+                            <img
+                              src="/assets/icons/logo/bitrix24.svg"
+                              alt="bitrix24"
+                            />
+                          </div>
+                        </div>
+                        <div class="case-projects-item-info">
+                          <h3 class="case-projects-item-name">Auto 108</h3>
+                          <p class="case-projects-item-description">
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry
+                          </p>
+                        </div>
+                        <div class="case-projects-item-details">
+                          <h4 class="case-projects-item-details-title">
+                            Внедренные продукты
+                          </h4>
+                          <ul class="case-projects-item-details-list">
+                            <li>Битрикс24 CRM</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <a class="case-projects-item-link btn" href="/"
+                        >Подробнее</a
+                      >
+                    </div>
+                  </li>
+                  <li class="case-projects-item">
+                    <img
+                      class="case-projects-item-image"
+                      src="/assets/images/cocoloco.png"
+                      alt="cocoloco"
+                    />
+                    <div class="case-projects-item-content-wrapper">
+                      <div class="case-projects-item-content">
+                        <div class="case-projects-item-icons">
+                          <div class="case-projects-item-icon">
+                            <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                          </div>
+                          <div class="case-projects-item-icon">
+                            <img
+                              src="/assets/icons/logo/bitrix24.svg"
+                              alt="bitrix24"
+                            />
+                          </div>
+                        </div>
+                        <div class="case-projects-item-info">
+                          <h3 class="case-projects-item-name">COCOLOCO</h3>
+                          <p class="case-projects-item-description">
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry
+                          </p>
+                        </div>
+                        <div class="case-projects-item-details">
+                          <h4 class="case-projects-item-details-title">
+                            Внедренные продукты
+                          </h4>
+                          <ul class="case-projects-item-details-list">
+                            <li>1С:Зарплата и управление персоналом</li>
+                            <li>Битрикс24 CRM</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <a class="case-projects-item-link btn" href="/"
+                        >Подробнее</a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </section>
+              <section class="case-section">
+                <div class="case-section-header">
+                  <h2 class="case-section-title title-medium heading">
+                    Как выполнялся проект
+                  </h2>
+                  <p class="case-text">
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page when looking at
+                    its layout. The point of using Lorem Ipsum is that it has a
+                    more-or-less normal.
+                  </p>
+                </div>
+                <ul class="case-block-list">
+                  <li class="case-block-item">
+                    <figure class="case-block-item-figure">
+                      <img
+                        src="/assets/images/service-1.png"
+                        alt="Передача сделки в проект"
+                      />
+                      <figcaption>
+                        <h3 class="case-block-item-title">
+                          Передача сделки в проект
+                        </h3>
+                        <p class="case-block-item-description">
+                          После подписания договора создаётся проект с задачами
+                          для команды. Бриф, бюджет и сроки не теряются при
+                          передаче от менеджера к исполнителям.
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="case-block-item">
+                    <figure class="case-block-item-figure">
+                      <img
+                        src="/assets/images/service-2.png"
+                        alt="Загрузка команды и распределение задач"
+                      />
+                      <figcaption>
+                        <h3 class="case-block-item-title">
+                          Загрузка команды и распределение задач
+                        </h3>
+                        <p class="case-block-item-description">
+                          Роли, сроки и приоритеты назначаются внутри проекта.
+                          Руководитель видит загрузку специалистов и может
+                          перераспределить задачи до появления «узких мест».
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="case-block-item">
+                    <figure class="case-block-item-figure">
+                      <img
+                        src="/assets/images/service-3.png"
+                        alt="Документы и согласования"
+                      />
+                      <figcaption>
+                        <h3 class="case-block-item-title">
+                          Документы и согласования
+                        </h3>
+                        <p class="case-block-item-description">
+                          Договоры, счета и акты хранятся централизованно.
+                          Согласование проходит по бизнес-процессу без пересылки
+                          файлов вручную.
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                </ul>
+              </section>
+              <section class="case-section">
+                <div class="case-section-header">
+                  <h2 class="case-section-title title-medium heading">
+                    There are many variations of passages of Lorem Ipsum
+                    available
+                  </h2>
+                  <p class="case-text">
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in some
+                    form, by injected humour, or randomised words which don't
+                    look even slightly believable. If you are going to use a
+                    passage of Lorem Ipsum, you need to be sure there isn't
+                    anything embarrassing hidden in the middle of text.
+                  </p>
+                </div>
+                <figure class="case-image">
+                  <img src="/assets/images/1c-image.png" alt="1c" />
+                </figure>
+              </section>
+            </div>
+          </section>
+          <section class="related">
+            <div class="related-header">
+              <h2 class="related-title title-medium heading">
+                Похожие проекты
+              </h2>
+              <div class="related-slider-conrols">
+                <button
+                  class="related-slider-btn backward btn"
+                  title="Назад"
+                  disabled
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                      fill="currentColor"
+                      fill-opacity="1"
+                    />
+                  </svg>
+                </button>
+                <button class="related-slider-btn forward btn" title="Вперёд">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                      fill="currentColor"
+                      fill-opacity="1"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="related-slider">
+              <ul class="related-list">
+                <li class="related-item">
+                  <img
+                    class="related-item-image"
+                    src="/assets/images/neskuchnye.png"
+                    alt="нескучные финансы"
+                  />
+                  <div class="related-item-content-wrapper">
+                    <div class="related-item-content">
+                      <div class="related-item-icons">
+                        <div class="related-item-icon">
+                          <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                        </div>
+                      </div>
+                      <div class="related-item-info">
+                        <h3 class="related-item-name">Нескучные финансы</h3>
+                        <p class="related-item-description">
+                          Lorem Ipsum is simply dummy text of the printing and
+                          typesetting industry
+                        </p>
+                      </div>
+                      <div class="related-item-details">
+                        <h4 class="related-item-details-title">
+                          Внедренные продукты
+                        </h4>
+                        <ul class="related-item-details-list">
+                          <li>1С: Бухгалтерия 8</li>
+                          <li>1С:Документооборот КОРП</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <a class="related-item-link btn" href="/">Подробнее</a>
+                  </div>
+                </li>
+                <li class="related-item">
+                  <img
+                    class="related-item-image"
+                    src="/assets/images/prosebya.png"
+                    alt="про себя"
+                  />
+                  <div class="related-item-content-wrapper">
+                    <div class="related-item-content">
+                      <div class="related-item-icons">
+                        <div class="related-item-icon">
+                          <img
+                            src="/assets/icons/logo/bitrix24.svg"
+                            alt="bitrix24"
+                          />
+                        </div>
+                      </div>
+                      <div class="related-item-info">
+                        <h3 class="related-item-name">Просебя</h3>
+                        <p class="related-item-description">
+                          Lorem Ipsum is simply dummy text of the printing and
+                          typesetting industry
+                        </p>
+                      </div>
+                      <div class="related-item-details">
+                        <h4 class="related-item-details-title">
+                          Внедренные продукты
+                        </h4>
+                        <ul class="related-item-details-list">
+                          <li>Битрикс24 CRM</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <a class="related-item-link btn" href="/">Подробнее</a>
+                  </div>
+                </li>
+                <li class="related-item">
+                  <img
+                    class="related-item-image"
+                    src="/assets/images/cocoloco.png"
+                    alt="cocoloco"
+                  />
+                  <div class="related-item-content-wrapper">
+                    <div class="related-item-content">
+                      <div class="related-item-icons">
+                        <div class="related-item-icon">
+                          <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                        </div>
+                        <div class="related-item-icon">
+                          <img
+                            src="/assets/icons/logo/bitrix24.svg"
+                            alt="bitrix24"
+                          />
+                        </div>
+                      </div>
+                      <div class="related-item-info">
+                        <h3 class="related-item-name">COCOLOCO</h3>
+                        <p class="related-item-description">
+                          Lorem Ipsum is simply dummy text of the printing and
+                          typesetting industry
+                        </p>
+                      </div>
+                      <div class="related-item-details">
+                        <h4 class="related-item-details-title">
+                          Внедренные продукты
+                        </h4>
+                        <ul class="related-item-details-list">
+                          <li>1С:Зарплата и управление персоналом</li>
+                          <li>Битрикс24 CRM</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <a class="related-item-link btn" href="/">Подробнее</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      <section class="consult">
+        <div class="consult-wrapper container">
+          <div class="consult-content">
+            <div class="consult-info">
+              <h2 class="consult-title heading title-medium">
+                Получите <span class="accent">консультацию</span>
+                <span class="nowrap">по проекту</span>
+              </h2>
+              <div class="consult-phone-wrapper">
+                <div class="consult-phone">
+                  <a class="consult-phone-number" href="tel:+74951515094"
+                    >+7 (495) 151-50-94</a
+                  >
+                  <div class="consult-phone-details">
+                    <div class="consult-phone-city">
+                      <span class="dot"></span>
+                      <span>Москва</span>
+                    </div>
+                    <p class="consult-phone-hours">
+                      пн-пт c <time datetime="09:30">9:30</time> до
+                      <time datetime="18:30">18:30</time>
+                    </p>
+                  </div>
+                </div>
+                <div class="consult-phone">
+                  <a class="consult-phone-number" href="tel:+74872338088"
+                    >+7 (4872) 33-80-88</a
+                  >
+                  <div class="consult-phone-details">
+                    <div class="consult-phone-city">
+                      <span class="dot"></span>
+                      <span>Тула</span>
+                    </div>
+                    <p class="consult-phone-hours">
+                      пн-пт c <time datetime="09:30">9:30</time> до
+                      <time datetime="18:30">18:30</time>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="consult-email-wrapper">
+                <span class="consult-email-label">Email</span>
+                <a class="consult-email-address" href="mailto:info@maxis-it.ru"
+                  >info@maxis-it.ru</a
+                >
+              </div>
+            </div>
+            <div class="consult-details">
+              <p class="consult-details-text">
+                «Хотите узнать, как оптимизировать именно ваш бизнес?
+                <span class="nowrap">Наши специалисты</span>
+                готовы разложить все по полочкам
+                <span class="nowrap">и составить план</span> развития уже
+                сейчас»
+              </p>
+              <div class="consult-manager">
+                <img
+                  class="consult-manager-image"
+                  src="/assets/images/manager.png"
+                  alt="manager"
+                />
+                <div class="consult-manager-content">
+                  <h3 class="consult-manager-name">
+                    Смирнова <br />
+                    Екатерина Александровна
+                  </h3>
+                  <p class="consult-manager-description">Проектный менеджер</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="consult-form-wrapper">
+            <h2 class="consult-form-title">
+              <span class="dark">Оставьте ваши контакты</span> и наш специалист
+              свяжется с вами в ближайшее время
+            </h2>
+            <form class="consult-form">
+              <div class="consult-form-input-wrapper name">
+                <label for="consult-form-name" class="visually-hidden"
+                  >Ваше имя</label
+                >
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  id="consult-form-name"
+                />
+              </div>
+              <div class="consult-form-input-wrapper phone">
+                <label for="consult-form-phone" class="visually-hidden"
+                  >Номер телефона</label
+                >
+                <input
+                  type="tel"
+                  placeholder="Номер телефона"
+                  id="consult-form-phone"
+                />
+              </div>
+              <button
+                id="consult-file-btn"
+                type="button"
+                for="file"
+                class="consult-form-file-label btn"
+              >
+                Прикрепите файл
+              </button>
+              <input
+                type="file"
+                name="file"
+                accept="image/*"
+                id="consult-file"
+              />
+
+              <div class="consult-form-checkbox-wrapper">
+                <input type="checkbox" id="consult-checkbox" />
+                <label for="consult-checkbox">
+                  <span class="consult-form-checkbox-text">
+                    Я ознакомлен и принимаю условия
+                    <a href="/" class="nowrap">обработки персональных данных</a>
+                  </span>
+                </label>
+              </div>
+              <button
+                id="consult-submit"
+                type="submit"
+                class="consult-form-submit-btn btn"
+              >
+                Отправить
+              </button>
+            </form>
+            <p class="consult-form-text">
+              Нажимая кнопку «Отправить», Вы даете согласие на обработку Ваших
+              персональных данных, а также соглашаетесь с условиями
+              <a href="/">Политики конфиденциальности</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-wrapper container">
+        <div class="footer-content">
+          <a href="/" class="footer-logo heading">
+            <img src="/assets/icons/logo.svg" alt="Максис ИТ" />
+            Максис
+          </a>
+          <div class="footer-accreditation">
+            <img
+              class="footer-accreditation-icon"
+              src="/assets/icons/mincifry.svg"
+              alt="Минцифры России"
+            />
+            <span class="footer-accreditation-text"
+              >Аккредитованная IT компания</span
+            >
+            <span class="footer-accreditation-description">
+              Деятельность осуществляется <br />
+              в соответствии с приказами <br />
+              Минцифры России №449 и №511, <br />
+              Имеет запись в реестре №2647 <br />
+              от 15 октября 2013 года.
+            </span>
+          </div>
+          <div class="footer-contacts">
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Москва</span>
+              <a class="footer-contacts-item-value" href="tel:+74951515094"
+                >+7 (495) 151-50-94</a
+              >
+            </div>
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Тула</span>
+              <a class="footer-contacts-item-value" href="tel:+74872338088"
+                >+7 (4872) 33-80-88</a
+              >
+            </div>
+
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label"> Режим работы</span>
+              <span class="footer-contacts-item-value">
+                пн-пт c <time datetime="09:30">9:30</time> до
+                <time datetime="18:30">18:30</time>
+              </span>
+            </div>
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Email</span>
+              <a
+                class="footer-contacts-item-value"
+                href="mailto:info@maxis-it.ru"
+                >info@maxis-it.ru</a
+              >
+            </div>
+          </div>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Меню</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="/">Главная</a>
+              </li>
+              <li>
+                <a href="">О компании</a>
+              </li>
+              <li>
+                <a href=""> Кейсы</a>
+              </li>
+              <li>
+                <a href="">Решения</a>
+              </li>
+              <li>
+                <a href="">Новости</a>
+              </li>
+              <li>
+                <a href="">Контакты</a>
+              </li>
+              <li>
+                <a href="">ИТ деятельность</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Услуги</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="">1C Предприятие</a>
+              </li>
+              <li>
+                <a href="">Битрикс24</a>
+              </li>
+              <li>
+                <a href="">Интеграция 1С и Битрикс 24</a>
+              </li>
+              <li>
+                <a href="">BI-аналитика</a>
+              </li>
+              <li>
+                <a href="">IT-инфраструктура</a>
+              </li>
+              <li>
+                <a href="">Разработки и интеграции</a>
+              </li>
+              <li>
+                <a href="">Искуственный интеллект</a>
+              </li>
+              <li>
+                <a href="">Open Source</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Каталог</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="">Конфигурации</a>
+              </li>
+              <li>
+                <a href="">Лицензии</a>
+              </li>
+              <li>
+                <a href="">ИТС</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-bottom-text">© 2026 ООО «МАКСИС АЙ ТИ»</p>
+          <a href="/" class="footer-bottom-link"
+            >Политика обработки персональных данных</a
+          >
+          <a href="/" class="footer-bottom-link">Политика конфиденциальности</a>
+          <div class="footer-creator">
+            <p class="footer-creator-text">
+              Сайт разработан
+              <a href="https://tolacompany.ru" class="accent" target="_blank">
+                TOLACOMPANY.RU
+              </a>
+            </p>
+            <img src="/assets/icons/tola.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="overlay" class="overlay"></div>
+    <div class="modal">
+      <div class="modal-content">
+        <button type="button" class="modal-close-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6 6L18 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-form-wrapper">
+          <h2 class="modal-form-title">
+            <span class="accent heading">Оставьте ваши контакты</span>
+            <span>и наш специалист свяжется с вами в ближайшее время</span>
+          </h2>
+          <form class="modal-form">
+            <div class="modal-form-input-wrapper name">
+              <label for="modal-form-name" class="visually-hidden"
+                >Ваше имя</label
+              >
+              <input type="text" placeholder="Ваше имя" id="modal-form-name" />
+            </div>
+            <div class="modal-form-input-wrapper phone">
+              <label for="modal-form-phone" class="visually-hidden"
+                >Номер телефона</label
+              >
+              <input
+                type="tel"
+                placeholder="Номер телефона"
+                id="modal-form-phone"
+              />
+            </div>
+            <button
+              type="button"
+              id="modal-file-btn"
+              class="modal-form-file-label btn"
+            >
+              Прикрепите файл
+            </button>
+            <input
+              type="file"
+              name="modal-file"
+              id="modal-file"
+              accept="image/*"
+            />
+
+            <div class="modal-form-checkbox-wrapper">
+              <input type="checkbox" id="modal-checkbox" />
+              <label for="modal-checkbox">
+                <span class="modal-form-checkbox-text">
+                  Я ознакомлен и принимаю условия
+                  <a href="/" class="nowrap">обработки персональных данных</a>
+                </span>
+              </label>
+            </div>
+            <button
+              id="modal-submit"
+              type="submit"
+              class="modal-form-submit-btn btn"
+            >
+              Отправить
+            </button>
+          </form>
+          <p class="modal-form-text">
+            Нажимая кнопку «Отправить», Вы даете согласие на обработку Ваших
+            персональных данных, а также соглашаетесь с условиями
+            <a href="/">Политики конфиденциальности</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="/script/main.js"></script>
+  </body>
+</html>
