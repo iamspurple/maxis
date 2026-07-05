@@ -134,6 +134,10 @@ ol {
   list-style: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 a,
 button {
   cursor: pointer;
