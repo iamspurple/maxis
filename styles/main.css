@@ -145,7 +145,26 @@ button {
 
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* отступ, чтобы якорь не прятался под липкой полосой хедера на десктопе */
+  scroll-padding-top: 80px;
+}
+
+/* на мобайле весь хедер фиксирован и выше — увеличиваем отступ */
+@media screen and (max-width: 850px) {
+  html {
+    scroll-padding-top: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body::before {
