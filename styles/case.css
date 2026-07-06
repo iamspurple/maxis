@@ -138,7 +138,9 @@
 
 .case-sidebar-content.open .case-sidebar-content-list {
   height: auto;
-  max-height: clamp(260px, 25.5vw, 360px);
+  /* max-height проставляется из JS (updateSidebarContentMaxHeight):
+     если содержание влезает во вьюпорт — показываем все пункты,
+     если нет — список скроллится, а весь sidebar остаётся видимым */
   overflow-y: auto;
 }
 
@@ -1849,7 +1851,7 @@ input[type="file"]#consult-file {
 
   .case-sidebar-content-list {
     font-size: clamp(14px, 2.5vw, 21px);
-    max-height: none;
+    max-height: fit-content;
   }
 
   .case-sidebar-content-list li a {

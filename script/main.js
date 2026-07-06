@@ -311,11 +311,33 @@ const initEstimateAccordion = () => {
 const initSidebarContent = () => {
   const opts = { duration: 300, easing: "ease" };
 
+  // .case-sidebar залипает на top: 100px (десктоп). Считаем, сколько высоты
+  // остаётся под списком до низа вьюпорта: если содержание влезает — показываем
+  // все пункты, если нет — ограничиваем и даём списку скроллиться.
+  const STICKY_TOP = 100;
+  const BOTTOM_GAP = 24;
+  const MIN_LIST_H = 120;
+  const isDesktop = () => window.matchMedia("(min-width: 851px)").matches;
+
   document.querySelectorAll(".case-sidebar-content-btn").forEach((btn) => {
     const content = btn.closest(".case-sidebar-content");
     if (!content) return;
     const list = content.querySelector(".case-sidebar-content-list");
     if (!list) return;
+    const sidebar = content.closest(".case-sidebar");
+
+    const updateMaxHeight = () => {
+      if (!sidebar || !isDesktop() || !content.classList.contains("open")) {
+        list.style.maxHeight = "";
+        return;
+      }
+      // смещение списка от верха sidebar не зависит от прокрутки страницы
+      const offsetInSidebar =
+        list.getBoundingClientRect().top - sidebar.getBoundingClientRect().top;
+      const available =
+        window.innerHeight - STICKY_TOP - offsetInSidebar - BOTTOM_GAP;
+      list.style.maxHeight = Math.max(MIN_LIST_H, available) + "px";
+    };
 
     btn.addEventListener("click", () => {
       const listH = list.scrollHeight;
@@ -328,18 +350,24 @@ const initSidebarContent = () => {
           opts,
         ).onfinish = () => {
           list.style.height = "0";
+          list.style.maxHeight = "";
         };
       } else {
         content.classList.add("open");
         btn.setAttribute("aria-expanded", "true");
+        updateMaxHeight();
         list.animate(
           [{ height: "0px" }, { height: listH + "px" }],
           opts,
         ).onfinish = () => {
           list.style.height = "auto";
+          updateMaxHeight();
         };
       }
     });
+
+    updateMaxHeight();
+    window.addEventListener("resize", updateMaxHeight);
   });
 };
 
