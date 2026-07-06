@@ -4591,11 +4591,11 @@ input[type="file"]#consult-file {
       calc(100vw * 16 / 375),
       calc(16px * 580 / 375)
     );
-    padding-block: clamp(
+    /* padding-block: clamp(
       calc(25px * 320 / 375),
       calc(100vw * 25 / 375),
       calc(25px * 580 / 375)
-    );
+    ); */
     width: fit-content;
   }
 
