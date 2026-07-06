@@ -1463,10 +1463,6 @@ input[type="file"]#consult-file {
     height: calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2));
   }
 
-  .related-list {
-    gap: 30px;
-  }
-
   .related-item-content-wrapper {
     gap: 23px;
     padding: 28px;
