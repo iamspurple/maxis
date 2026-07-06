@@ -308,6 +308,41 @@ const initEstimateAccordion = () => {
     });
 };
 
+const initSidebarContent = () => {
+  const opts = { duration: 300, easing: "ease" };
+
+  document.querySelectorAll(".case-sidebar-content-btn").forEach((btn) => {
+    const content = btn.closest(".case-sidebar-content");
+    if (!content) return;
+    const list = content.querySelector(".case-sidebar-content-list");
+    if (!list) return;
+
+    btn.addEventListener("click", () => {
+      const listH = list.scrollHeight;
+
+      if (content.classList.contains("open")) {
+        content.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        list.animate(
+          [{ height: listH + "px" }, { height: "0px" }],
+          opts,
+        ).onfinish = () => {
+          list.style.height = "0";
+        };
+      } else {
+        content.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        list.animate(
+          [{ height: "0px" }, { height: listH + "px" }],
+          opts,
+        ).onfinish = () => {
+          list.style.height = "auto";
+        };
+      }
+    });
+  });
+};
+
 const initHeaderBurger = () => {
   const burgerBtn = document.querySelector(".header-burger-btn");
   const menu = document.querySelector("#menu");
@@ -966,6 +1001,22 @@ document.addEventListener("DOMContentLoaded", () => {
     btnFwd: ".articles-slider-btn.forward",
   });
 
+  initHorizontalSlider(document.querySelector(".case-projects-slider"), {
+    list: ".case-projects-list",
+    item: ".case-projects-item",
+    track: ".case-projects-slider",
+    btnBack: ".case-projects-slider-btn.backward",
+    btnFwd: ".case-projects-slider-btn.forward",
+  });
+
+  initHorizontalSlider(document.querySelector(".related"), {
+    list: ".related-list",
+    item: ".related-item",
+    track: ".related-slider",
+    btnBack: ".related-slider-btn.backward",
+    btnFwd: ".related-slider-btn.forward",
+  });
+
   initHeaderBurger();
   getHeaderHeight();
   initModal();
@@ -974,6 +1025,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStepper();
   initStepSlider();
   initCasesSlider();
+  initSidebarContent();
   initFormValidation();
   initFileBtns();
 });

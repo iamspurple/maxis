@@ -350,8 +350,11 @@
                 </button>
                 <a href="/" class="case-sidebar-link btn"> Смотреть отзыв </a>
               </div>
-              <div class="case-sidebar-content">
-                <button class="case-sidebar-content-btn heading">
+              <div class="case-sidebar-content open">
+                <button
+                  class="case-sidebar-content-btn heading"
+                  aria-expanded="true"
+                >
                   Содержание
                   <svg
                     width="20"
@@ -505,120 +508,161 @@
                   Lorem Ipsum, you need to be sure there isn't anything
                   embarrassing hidden in the middle of text.
                 </blockquote>
-                <ul class="case-projects-list">
-                  <li class="case-projects-item">
-                    <img
-                      class="case-projects-item-image"
-                      src="/assets/images/flexicore.png"
-                      alt="FLEXICORE"
-                    />
-                    <div class="case-projects-item-content-wrapper">
-                      <div class="case-projects-item-content">
-                        <div class="case-projects-item-icons">
-                          <div class="case-projects-item-icon">
-                            <img src="/assets/icons/logo/1c.svg" alt="1c" />
-                          </div>
-                        </div>
-                        <div class="case-projects-item-info">
-                          <h3 class="case-projects-item-name">FLEXICORE</h3>
-                          <p class="case-projects-item-description">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry
-                          </p>
-                        </div>
-                        <div class="case-projects-item-details">
-                          <h4 class="case-projects-item-details-title">
-                            Внедренные продукты
-                          </h4>
-                          <ul class="case-projects-item-details-list">
-                            <li>1С:Зарплата и управление персоналом</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <a class="case-projects-item-link btn" href="/"
-                        >Подробнее</a
+                <div class="case-projects-slider">
+                  <div class="case-projects-slider-controls">
+                    <button
+                      class="case-projects-slider-btn backward btn"
+                      title="Назад"
+                      disabled
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                    </div>
-                  </li>
-                  <li class="case-projects-item">
-                    <img
-                      class="case-projects-item-image"
-                      src="/assets/images/auto108.png"
-                      alt="Auto 108"
-                    />
-                    <div class="case-projects-item-content-wrapper">
-                      <div class="case-projects-item-content">
-                        <div class="case-projects-item-icons">
-                          <div class="case-projects-item-icon">
-                            <img
-                              src="/assets/icons/logo/bitrix24.svg"
-                              alt="bitrix24"
-                            />
-                          </div>
-                        </div>
-                        <div class="case-projects-item-info">
-                          <h3 class="case-projects-item-name">Auto 108</h3>
-                          <p class="case-projects-item-description">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry
-                          </p>
-                        </div>
-                        <div class="case-projects-item-details">
-                          <h4 class="case-projects-item-details-title">
-                            Внедренные продукты
-                          </h4>
-                          <ul class="case-projects-item-details-list">
-                            <li>Битрикс24 CRM</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <a class="case-projects-item-link btn" href="/"
-                        >Подробнее</a
+                        <path
+                          d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                          fill="currentColor"
+                          fill-opacity="1"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="case-projects-slider-btn forward btn"
+                      title="Вперёд"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                    </div>
-                  </li>
-                  <li class="case-projects-item">
-                    <img
-                      class="case-projects-item-image"
-                      src="/assets/images/cocoloco.png"
-                      alt="cocoloco"
-                    />
-                    <div class="case-projects-item-content-wrapper">
-                      <div class="case-projects-item-content">
-                        <div class="case-projects-item-icons">
-                          <div class="case-projects-item-icon">
-                            <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                        <path
+                          d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                          fill="currentColor"
+                          fill-opacity="1"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <ul class="case-projects-list">
+                    <li class="case-projects-item">
+                      <img
+                        class="case-projects-item-image"
+                        src="/assets/images/flexicore.png"
+                        alt="FLEXICORE"
+                      />
+                      <div class="case-projects-item-content-wrapper">
+                        <div class="case-projects-item-content">
+                          <div class="case-projects-item-icons">
+                            <div class="case-projects-item-icon">
+                              <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                            </div>
                           </div>
-                          <div class="case-projects-item-icon">
-                            <img
-                              src="/assets/icons/logo/bitrix24.svg"
-                              alt="bitrix24"
-                            />
+                          <div class="case-projects-item-info">
+                            <h3 class="case-projects-item-name">FLEXICORE</h3>
+                            <p class="case-projects-item-description">
+                              Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry
+                            </p>
+                          </div>
+                          <div class="case-projects-item-details">
+                            <h4 class="case-projects-item-details-title">
+                              Внедренные продукты
+                            </h4>
+                            <ul class="case-projects-item-details-list">
+                              <li>1С:Зарплата и управление персоналом</li>
+                            </ul>
                           </div>
                         </div>
-                        <div class="case-projects-item-info">
-                          <h3 class="case-projects-item-name">COCOLOCO</h3>
-                          <p class="case-projects-item-description">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry
-                          </p>
-                        </div>
-                        <div class="case-projects-item-details">
-                          <h4 class="case-projects-item-details-title">
-                            Внедренные продукты
-                          </h4>
-                          <ul class="case-projects-item-details-list">
-                            <li>1С:Зарплата и управление персоналом</li>
-                            <li>Битрикс24 CRM</li>
-                          </ul>
-                        </div>
+                        <a class="case-projects-item-link btn" href="/"
+                          >Подробнее</a
+                        >
                       </div>
-                      <a class="case-projects-item-link btn" href="/"
-                        >Подробнее</a
-                      >
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                    <li class="case-projects-item">
+                      <img
+                        class="case-projects-item-image"
+                        src="/assets/images/auto108.png"
+                        alt="Auto 108"
+                      />
+                      <div class="case-projects-item-content-wrapper">
+                        <div class="case-projects-item-content">
+                          <div class="case-projects-item-icons">
+                            <div class="case-projects-item-icon">
+                              <img
+                                src="/assets/icons/logo/bitrix24.svg"
+                                alt="bitrix24"
+                              />
+                            </div>
+                          </div>
+                          <div class="case-projects-item-info">
+                            <h3 class="case-projects-item-name">Auto 108</h3>
+                            <p class="case-projects-item-description">
+                              Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry
+                            </p>
+                          </div>
+                          <div class="case-projects-item-details">
+                            <h4 class="case-projects-item-details-title">
+                              Внедренные продукты
+                            </h4>
+                            <ul class="case-projects-item-details-list">
+                              <li>Битрикс24 CRM</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <a class="case-projects-item-link btn" href="/"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </li>
+                    <li class="case-projects-item">
+                      <img
+                        class="case-projects-item-image"
+                        src="/assets/images/cocoloco.png"
+                        alt="cocoloco"
+                      />
+                      <div class="case-projects-item-content-wrapper">
+                        <div class="case-projects-item-content">
+                          <div class="case-projects-item-icons">
+                            <div class="case-projects-item-icon">
+                              <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                            </div>
+                            <div class="case-projects-item-icon">
+                              <img
+                                src="/assets/icons/logo/bitrix24.svg"
+                                alt="bitrix24"
+                              />
+                            </div>
+                          </div>
+                          <div class="case-projects-item-info">
+                            <h3 class="case-projects-item-name">COCOLOCO</h3>
+                            <p class="case-projects-item-description">
+                              Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry
+                            </p>
+                          </div>
+                          <div class="case-projects-item-details">
+                            <h4 class="case-projects-item-details-title">
+                              Внедренные продукты
+                            </h4>
+                            <ul class="case-projects-item-details-list">
+                              <li>1С:Зарплата и управление персоналом</li>
+                              <li>Битрикс24 CRM</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <a class="case-projects-item-link btn" href="/"
+                          >Подробнее</a
+                        >
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </section>
               <section class="case-section">
                 <div class="case-section-header">
@@ -715,7 +759,7 @@
               <h2 class="related-title title-medium heading">
                 Похожие проекты
               </h2>
-              <div class="related-slider-conrols">
+              <div class="related-slider-controls">
                 <button
                   class="related-slider-btn backward btn"
                   title="Назад"
@@ -754,6 +798,113 @@
             </div>
             <div class="related-slider">
               <ul class="related-list">
+                <li class="related-item">
+                  <img
+                    class="related-item-image"
+                    src="/assets/images/neskuchnye.png"
+                    alt="нескучные финансы"
+                  />
+                  <div class="related-item-content-wrapper">
+                    <div class="related-item-content">
+                      <div class="related-item-icons">
+                        <div class="related-item-icon">
+                          <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                        </div>
+                      </div>
+                      <div class="related-item-info">
+                        <h3 class="related-item-name">Нескучные финансы</h3>
+                        <p class="related-item-description">
+                          Lorem Ipsum is simply dummy text of the printing and
+                          typesetting industry
+                        </p>
+                      </div>
+                      <div class="related-item-details">
+                        <h4 class="related-item-details-title">
+                          Внедренные продукты
+                        </h4>
+                        <ul class="related-item-details-list">
+                          <li>1С: Бухгалтерия 8</li>
+                          <li>1С:Документооборот КОРП</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <a class="related-item-link btn" href="/">Подробнее</a>
+                  </div>
+                </li>
+                <li class="related-item">
+                  <img
+                    class="related-item-image"
+                    src="/assets/images/prosebya.png"
+                    alt="про себя"
+                  />
+                  <div class="related-item-content-wrapper">
+                    <div class="related-item-content">
+                      <div class="related-item-icons">
+                        <div class="related-item-icon">
+                          <img
+                            src="/assets/icons/logo/bitrix24.svg"
+                            alt="bitrix24"
+                          />
+                        </div>
+                      </div>
+                      <div class="related-item-info">
+                        <h3 class="related-item-name">Просебя</h3>
+                        <p class="related-item-description">
+                          Lorem Ipsum is simply dummy text of the printing and
+                          typesetting industry
+                        </p>
+                      </div>
+                      <div class="related-item-details">
+                        <h4 class="related-item-details-title">
+                          Внедренные продукты
+                        </h4>
+                        <ul class="related-item-details-list">
+                          <li>Битрикс24 CRM</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <a class="related-item-link btn" href="/">Подробнее</a>
+                  </div>
+                </li>
+                <li class="related-item">
+                  <img
+                    class="related-item-image"
+                    src="/assets/images/cocoloco.png"
+                    alt="cocoloco"
+                  />
+                  <div class="related-item-content-wrapper">
+                    <div class="related-item-content">
+                      <div class="related-item-icons">
+                        <div class="related-item-icon">
+                          <img src="/assets/icons/logo/1c.svg" alt="1c" />
+                        </div>
+                        <div class="related-item-icon">
+                          <img
+                            src="/assets/icons/logo/bitrix24.svg"
+                            alt="bitrix24"
+                          />
+                        </div>
+                      </div>
+                      <div class="related-item-info">
+                        <h3 class="related-item-name">COCOLOCO</h3>
+                        <p class="related-item-description">
+                          Lorem Ipsum is simply dummy text of the printing and
+                          typesetting industry
+                        </p>
+                      </div>
+                      <div class="related-item-details">
+                        <h4 class="related-item-details-title">
+                          Внедренные продукты
+                        </h4>
+                        <ul class="related-item-details-list">
+                          <li>1С:Зарплата и управление персоналом</li>
+                          <li>Битрикс24 CRM</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <a class="related-item-link btn" href="/">Подробнее</a>
+                  </div>
+                </li>
                 <li class="related-item">
                   <img
                     class="related-item-image"
