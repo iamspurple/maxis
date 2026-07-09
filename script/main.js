@@ -476,6 +476,20 @@ const initFiltersModal = () => {
   });
 };
 
+// Сворачивание/разворачивание групп фильтров каталога по клику на заголовок
+// (десктопный сайдбар). Показ списка и поворот шеврона управляются в CSS
+// через атрибут aria-expanded.
+const initCatalogFilterGroups = () => {
+  document
+    .querySelectorAll(".catalog-filter-group-header")
+    .forEach((header) => {
+      header.addEventListener("click", () => {
+        const expanded = header.getAttribute("aria-expanded") === "true";
+        header.setAttribute("aria-expanded", String(!expanded));
+      });
+    });
+};
+
 const initStickyHeaderBottom = () => {
   const header = document.querySelector(".header");
   const headerTop = document.querySelector(".header-top");
@@ -1057,6 +1071,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getHeaderHeight();
   initModal();
   initFiltersModal();
+  initCatalogFilterGroups();
   initStickyHeaderBottom();
   initStepper();
   initStepSlider();
