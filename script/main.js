@@ -447,6 +447,14 @@ const initFiltersModal = () => {
 
   const applyBtn = filtersModal.querySelector(".filters-modal-submit");
 
+  // Внутри модалки опции — это элементы формы (чекбоксы/радио), а не ссылки.
+  // Клик по ним не должен всплывать до .dropdown и схлопывать список.
+  filtersModal
+    .querySelectorAll(".dropdown-content label, .dropdown-content input")
+    .forEach((el) => {
+      el.addEventListener("click", (e) => e.stopPropagation());
+    });
+
   const open = () => {
     filtersModal.classList.add("active");
     document.documentElement.classList.add("noscroll");
