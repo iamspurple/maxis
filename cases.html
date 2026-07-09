@@ -359,7 +359,7 @@
             <ul class="filters-list">
               <li>
                 <div class="dropdown filter">
-                  <button class="dropbtn filter">
+                  <button type="button" class="dropbtn filter">
                     Услуги
                     <svg
                       width="16"
@@ -378,22 +378,60 @@
                   <div class="dropdown-content-wrapper filter">
                     <ul class="dropdown-content filter">
                       <li>
-                        <a href="#">Интеграция 1С и Битрикс24</a>
+                        <label class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            name="service"
+                            value="integration"
+                          />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >Интеграция 1С и Битрикс24</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">BI-аналитика и дашборды</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="service" value="bi" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >BI-аналитика и дашборды</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">IT-инфраструктура</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="service" value="infra" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >IT-инфраструктура</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">Разработки и интеграции</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="service" value="dev" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >Разработки и интеграции</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">Искуственный интеллект</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="service" value="ai" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >Искуственный интеллект</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">Open Source</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="service" value="oss" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label">Open Source</span>
+                        </label>
                       </li>
                     </ul>
                   </div>
@@ -401,7 +439,7 @@
               </li>
               <li>
                 <div class="dropdown filter">
-                  <button class="dropbtn filter">
+                  <button type="button" class="dropbtn filter">
                     Продукты
                     <svg
                       width="16"
@@ -420,22 +458,60 @@
                   <div class="dropdown-content-wrapper filter">
                     <ul class="dropdown-content filter">
                       <li>
-                        <a href="#">Интеграция 1С и Битрикс24</a>
+                        <label class="filter-checkbox">
+                          <input
+                            type="checkbox"
+                            name="product"
+                            value="integration"
+                          />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >Интеграция 1С и Битрикс24</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">BI-аналитика и дашборды</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="product" value="bi" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >BI-аналитика и дашборды</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">IT-инфраструктура</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="product" value="infra" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >IT-инфраструктура</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">Разработки и интеграции</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="product" value="dev" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >Разработки и интеграции</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">Искуственный интеллект</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="product" value="ai" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >Искуственный интеллект</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a href="#">Open Source</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="product" value="oss" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label">Open Source</span>
+                        </label>
                       </li>
                     </ul>
                   </div>
@@ -443,7 +519,7 @@
               </li>
               <li>
                 <div class="dropdown filter">
-                  <button class="dropbtn filter">
+                  <button type="button" class="dropbtn filter">
                     Отрасль
                     <svg
                       width="16"
@@ -462,13 +538,25 @@
                   <div class="dropdown-content-wrapper filter">
                     <ul class="dropdown-content filter">
                       <li>
-                        <a href="#">1</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="industry" value="1" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label">1</span>
+                        </label>
                       </li>
                       <li>
-                        <a href="#">2</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="industry" value="2" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label">2</span>
+                        </label>
                       </li>
                       <li>
-                        <a href="#">3</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="industry" value="3" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label">3</span>
+                        </label>
                       </li>
                     </ul>
                   </div>
@@ -476,7 +564,7 @@
               </li>
               <li>
                 <div class="dropdown filter">
-                  <button class="dropbtn filter">
+                  <button type="button" class="dropbtn filter">
                     Софт
                     <svg
                       width="16"
@@ -495,10 +583,18 @@
                   <div class="dropdown-content-wrapper filter">
                     <ul class="dropdown-content filter">
                       <li>
-                        <a href="#">1С</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="soft" value="1c" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label">1С</span>
+                        </label>
                       </li>
                       <li>
-                        <a href="#">Битрикс24</a>
+                        <label class="filter-checkbox">
+                          <input type="checkbox" name="soft" value="bitrix24" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label">Битрикс24</span>
+                        </label>
                       </li>
                     </ul>
                   </div>
@@ -530,10 +626,34 @@
                   <div class="dropdown-content-wrapper sort">
                     <ul class="dropdown-content sort">
                       <li>
-                        <a>Сначала новые</a>
+                        <label class="filter-checkbox">
+                          <input
+                            type="radio"
+                            name="sort"
+                            value="popular"
+                            checked
+                          />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >По популярности</span
+                          >
+                        </label>
                       </li>
                       <li>
-                        <a>Сначала старые</a>
+                        <label class="filter-checkbox">
+                          <input type="radio" name="sort" value="new" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label">Сначала новые</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="filter-checkbox">
+                          <input type="radio" name="sort" value="old" />
+                          <span class="filter-checkbox-box"></span>
+                          <span class="filter-checkbox-label"
+                            >Сначала старые</span
+                          >
+                        </label>
                       </li>
                     </ul>
                   </div>
@@ -1180,7 +1300,7 @@
       <ul class="filters-modal-list">
         <li>
           <div class="dropdown filter">
-            <button class="dropbtn filter">
+            <button type="button" class="dropbtn filter">
               Услуги
               <svg
                 width="16"
@@ -1199,22 +1319,58 @@
             <div class="dropdown-content-wrapper filter">
               <ul class="dropdown-content filter">
                 <li>
-                  <a href="#">Интеграция 1С и Битрикс24</a>
+                  <label class="filter-checkbox">
+                    <input
+                      type="checkbox"
+                      name="service"
+                      value="integration"
+                    />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Интеграция 1С и Битрикс24</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">BI-аналитика и дашборды</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="bi" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >BI-аналитика и дашборды</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">IT-инфраструктура</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="infra" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">IT-инфраструктура</span>
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Разработки и интеграции</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="dev" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Разработки и интеграции</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Искуственный интеллект</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="ai" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Искуственный интеллект</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Open Source</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="oss" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Open Source</span>
+                  </label>
                 </li>
               </ul>
             </div>
@@ -1222,7 +1378,7 @@
         </li>
         <li>
           <div class="dropdown filter">
-            <button class="dropbtn filter">
+            <button type="button" class="dropbtn filter">
               Продукты
               <svg
                 width="16"
@@ -1241,22 +1397,58 @@
             <div class="dropdown-content-wrapper filter">
               <ul class="dropdown-content filter">
                 <li>
-                  <a href="#">Интеграция 1С и Битрикс24</a>
+                  <label class="filter-checkbox">
+                    <input
+                      type="checkbox"
+                      name="product"
+                      value="integration"
+                    />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Интеграция 1С и Битрикс24</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">BI-аналитика и дашборды</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="bi" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >BI-аналитика и дашборды</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">IT-инфраструктура</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="infra" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">IT-инфраструктура</span>
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Разработки и интеграции</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="dev" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Разработки и интеграции</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Искуственный интеллект</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="ai" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Искуственный интеллект</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Open Source</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="oss" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Open Source</span>
+                  </label>
                 </li>
               </ul>
             </div>
@@ -1264,7 +1456,7 @@
         </li>
         <li>
           <div class="dropdown filter">
-            <button class="dropbtn filter">
+            <button type="button" class="dropbtn filter">
               Отрасль
               <svg
                 width="16"
@@ -1283,22 +1475,58 @@
             <div class="dropdown-content-wrapper filter">
               <ul class="dropdown-content filter">
                 <li>
-                  <a href="#">Интеграция 1С и Битрикс24</a>
+                  <label class="filter-checkbox">
+                    <input
+                      type="checkbox"
+                      name="industry"
+                      value="integration"
+                    />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Интеграция 1С и Битрикс24</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">BI-аналитика и дашборды</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="bi" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >BI-аналитика и дашборды</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">IT-инфраструктура</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="infra" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">IT-инфраструктура</span>
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Разработки и интеграции</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="dev" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Разработки и интеграции</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Искуственный интеллект</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="ai" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Искуственный интеллект</span
+                    >
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Open Source</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="oss" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Open Source</span>
+                  </label>
                 </li>
               </ul>
             </div>
@@ -1306,7 +1534,7 @@
         </li>
         <li>
           <div class="dropdown filter">
-            <button class="dropbtn filter">
+            <button type="button" class="dropbtn filter">
               Софт
               <svg
                 width="16"
@@ -1325,10 +1553,18 @@
             <div class="dropdown-content-wrapper filter">
               <ul class="dropdown-content filter">
                 <li>
-                  <a href="#">1С</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="soft" value="1c" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">1С</span>
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Битрикс24</a>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="soft" value="bitrix24" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Битрикс24</span>
+                  </label>
                 </li>
               </ul>
             </div>
@@ -1336,7 +1572,7 @@
         </li>
         <li>
           <div class="dropdown filter">
-            <button class="dropbtn filter">
+            <button type="button" class="dropbtn filter">
               Сортировать
               <svg
                 width="16"
@@ -1355,13 +1591,30 @@
             <div class="dropdown-content-wrapper filter">
               <ul class="dropdown-content filter">
                 <li>
-                  <a href="#">По популярности</a>
+                  <label class="filter-checkbox">
+                    <input
+                      type="radio"
+                      name="modal-sort"
+                      value="popular"
+                      checked
+                    />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">По популярности</span>
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Сначала новые</a>
+                  <label class="filter-checkbox">
+                    <input type="radio" name="modal-sort" value="new" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Сначала новые</span>
+                  </label>
                 </li>
                 <li>
-                  <a href="#">Сначала старые</a>
+                  <label class="filter-checkbox">
+                    <input type="radio" name="modal-sort" value="old" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Сначала старые</span>
+                  </label>
                 </li>
               </ul>
             </div>
