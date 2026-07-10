@@ -140,7 +140,6 @@
 }
 
 .catalog-tab {
-  display: flex;
   padding: clamp(11px, 1.1vw, 15px) clamp(15px, 1.45vw, 20px);
   border-radius: 10px;
   background-color: var(--color-lightblue-bg);
@@ -328,26 +327,32 @@
   padding-bottom: 0;
 }
 
+.catalog-filter-list-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: minmax(0, 1fr);
+  transition: grid-template-rows 0.3s ease;
+}
+
 .catalog-filter-list {
-  border-top: 1px solid var(--color-grayblue);
+  overflow: hidden;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   font-size: clamp(9px, 0.85vw, 12px);
   gap: clamp(6px, 0.6vw, 10px);
   clear: both;
-  max-height: 1000px;
-  transition: max-height 0.3s ease;
 }
 
 .catalog-filter-list li:first-child {
   padding-top: clamp(6px, 0.6vw, 10px);
+  border-top: 1px solid var(--color-grayblue);
 }
 
 .catalog-filter-group:has(.catalog-filter-group-header[aria-expanded="false"])
-  .catalog-filter-list {
-  border-color: transparent;
-  max-height: 0;
-  overflow: hidden;
+  .catalog-filter-list-wrapper {
+  grid-template-rows: 0fr;
 }
 
 .catalog-checkbox {
@@ -580,6 +585,14 @@
   font-size: clamp(6px, 0.6vw, 10px);
   color: var(--color-dark);
   border-radius: 100px;
+  transition: 0.3s ease;
+}
+
+@media (hover: hover) {
+  .catalog-counter-btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
 }
 
 .catalog-counter-number {
@@ -1301,9 +1314,12 @@ input[type="file"]#consult-file {
   }
 
   .catalog-filter-list {
-    padding-top: 14px;
     font-size: 16px;
     gap: 14px;
+  }
+
+  .catalog-filter-list li:first-child {
+    padding-top: 14px;
   }
 
   .catalog-checkbox {

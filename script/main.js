@@ -443,12 +443,11 @@ const initFiltersModal = () => {
   const filtersModal = document.querySelector(".filters-modal");
   const openBtn = document.getElementById("open-filters");
   const closeBtn = document.getElementById("close-filters");
+  const resetBtn = document.getElementById("reset-filters");
   if (!filtersModal || !openBtn || !closeBtn) return;
 
   const applyBtn = filtersModal.querySelector(".filters-modal-submit");
 
-  // Внутри модалки опции — это элементы формы (чекбоксы/радио), а не ссылки.
-  // Клик по ним не должен всплывать до .dropdown и схлопывать список.
   filtersModal
     .querySelectorAll(".dropdown-content label, .dropdown-content input")
     .forEach((el) => {
@@ -468,6 +467,7 @@ const initFiltersModal = () => {
   openBtn.addEventListener("click", open);
   closeBtn.addEventListener("click", close);
   applyBtn?.addEventListener("click", close);
+  resetBtn.addEventListener("click", close);
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && filtersModal.classList.contains("active")) {
