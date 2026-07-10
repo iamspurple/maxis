@@ -123,6 +123,12 @@
   background: transparent;
 }
 
+@media (hover: hover) {
+  .catalog-sort-option:hover {
+    color: var(--color-primary);
+  }
+}
+
 .catalog-sort-option.is-active {
   color: var(--color-primary);
 }
@@ -134,6 +140,7 @@
 }
 
 .catalog-tab {
+  display: flex;
   padding: clamp(11px, 1.1vw, 15px) clamp(15px, 1.45vw, 20px);
   border-radius: 10px;
   background-color: var(--color-lightblue-bg);
@@ -141,9 +148,6 @@
   font-size: clamp(9px, 0.85vw, 12px);
   font-weight: 600;
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
 }
 
 .catalog-tab-input {
@@ -332,7 +336,7 @@
   gap: clamp(6px, 0.6vw, 10px);
   clear: both;
   max-height: 1000px;
-  transition: all 0.3s ease;
+  transition: max-height 0.3s ease;
 }
 
 .catalog-filter-list li:first-child {
@@ -669,6 +673,13 @@
   font-weight: 700;
   color: var(--color-grayblue);
   background-color: transparent;
+  transition: 0.3s ease;
+}
+
+@media (hover: hover) {
+  .pagination-page:hover {
+    color: var(--color-dark);
+  }
 }
 
 .pagination-page.active {

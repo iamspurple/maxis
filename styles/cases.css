@@ -419,6 +419,13 @@
   font-weight: 700;
   color: var(--color-grayblue);
   background-color: transparent;
+  transition: 0.3s ease;
+}
+
+@media (hover: hover) {
+  .pagination-page:hover {
+    color: var(--color-dark);
+  }
 }
 
 .pagination-page.active {

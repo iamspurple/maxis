@@ -326,10 +326,8 @@
               <li>
                 <a href="/">Главная</a>
               </li>
-              <li>
-                <a href="/cases.html">Кейсы</a>
-              </li>
-              <li aria-current="page">Балтик продукт</li>
+
+              <li aria-current="page">Каталог</li>
             </ul>
           </nav>
           <section class="catalog">
@@ -341,12 +339,10 @@
                     <h2 class="catalog-filters-title">Фильтры</h2>
 
                     <div class="catalog-filters">
-                      <button type="reset" class="catalog-reset-btn">
+                      <button type="reset" class="catalog-reset-btn btn">
                         Сбросить
                       </button>
                       <div class="catalog-sort dropdown">
-                        <!-- значение уходит на сервер через скрытое поле;
-                             видимый дропдаун управляется JS -->
                         <input
                           type="hidden"
                           name="sort"
@@ -415,7 +411,7 @@
                   </div>
 
                   <div class="catalog-toolbar-tabs">
-                    <label class="catalog-tab">
+                    <label class="catalog-tab btn">
                       <input
                         type="radio"
                         name="catalog"
@@ -425,7 +421,7 @@
                       />
                       <span class="catalog-tab-label">1С</span>
                     </label>
-                    <label class="catalog-tab">
+                    <label class="catalog-tab btn">
                       <input
                         type="radio"
                         name="catalog"
@@ -434,7 +430,7 @@
                       />
                       <span class="catalog-tab-label">Битрикс24</span>
                     </label>
-                    <label class="catalog-tab">
+                    <label class="catalog-tab btn">
                       <input
                         type="radio"
                         name="catalog"
@@ -1023,7 +1019,7 @@
 
                 <nav class="pagination" aria-label="Пагинация">
                   <button
-                    class="pagination-btn prev"
+                    class="pagination-btn prev btn"
                     aria-label="Предыдущая страница"
                     disabled
                   >
@@ -1061,7 +1057,7 @@
                   </div>
 
                   <button
-                    class="pagination-btn next"
+                    class="pagination-btn next btn"
                     aria-label="Следующая страница"
                   >
                     <svg
