@@ -1217,7 +1217,8 @@ input[type="file"]#consult-file {
   }
 
   .main-container {
-    gap: 46px 80px;
+    gap: 46px;
+    padding-block: 46px 80px;
   }
 
   .catalog {
