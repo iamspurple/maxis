@@ -1386,6 +1386,7 @@ input[type="file"]#consult-file {
 
   .product-image {
     width: 44vw;
+    margin: 0 auto;
   }
 
   .product-content {
