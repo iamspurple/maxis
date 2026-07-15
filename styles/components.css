@@ -2665,8 +2665,6 @@ input[type="file"]#modal-file {
       calc(100vw * 40 / 640),
       calc(40px * 1024 / 640)
     );
-
-    aspect-ratio: 0.5;
     padding: clamp(
       calc(40px * 580 / 640),
       calc(100vw * 40 / 640),
