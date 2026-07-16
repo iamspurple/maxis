@@ -722,7 +722,7 @@
   );
 }
 
-.achievements-statistic-item dt {
+.achievements-statistic-item .value {
   color: white;
   font-size: clamp(
     calc(36px * 1025 / 1400 * var(--zoom-1)),
@@ -732,7 +732,7 @@
   font-weight: 700;
 }
 
-.achievements-statistic-item dd {
+.achievements-statistic-item .label {
   color: var(--color-white65);
   font-size: clamp(
     calc(20px * 1025 / 1400 * var(--zoom-1)),
@@ -2536,7 +2536,7 @@
     );
   }
 
-  .achievements-statistic-item dt {
+  .achievements-statistic-item .value {
     font-size: clamp(
       calc(36px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 36 / 1400 * var(--zoom-2)),
@@ -2544,7 +2544,7 @@
     );
   }
 
-  .achievements-statistic-item dd {
+  .achievements-statistic-item .label {
     font-size: clamp(
       calc(20px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 20 / 1400 * var(--zoom-2)),
@@ -3547,7 +3547,7 @@
     );
   }
 
-  .achievements-statistic-item dt {
+  .achievements-statistic-item .value {
     font-size: clamp(
       calc(36px * 580 / 640),
       calc(100vw * 36 / 640),
@@ -3555,7 +3555,7 @@
     );
   }
 
-  .achievements-statistic-item dd {
+  .achievements-statistic-item .label {
     font-size: clamp(
       calc(16px * 580 / 640),
       calc(100vw * 16 / 640),
@@ -4510,7 +4510,7 @@
     max-width: 50%;
   }
 
-  .achievements-statistic-item dt {
+  .achievements-statistic-item .value {
     line-height: 100%;
     font-size: clamp(
       calc(36px * 320 / 375),
@@ -4519,7 +4519,7 @@
     );
   }
 
-  .achievements-statistic-item dd {
+  .achievements-statistic-item .label {
     font-size: clamp(
       calc(14px * 320 / 375),
       calc(100vw * 14 / 375),
