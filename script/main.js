@@ -308,6 +308,68 @@ const initEstimateAccordion = () => {
     });
 };
 
+const initCookie = () => {
+  const cookie = document.querySelector(".cookie");
+  if (!cookie) return;
+
+  const opts = { duration: 300, easing: "ease" };
+
+  // switch between compact and manage views
+  cookie.querySelectorAll("[data-cookie-view]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      cookie.classList.toggle("is-manage", btn.dataset.cookieView === "manage");
+    });
+  });
+
+  // accept / decline -> just hide the window (no persistence yet)
+  cookie.querySelectorAll("[data-cookie-close]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      cookie.classList.add("is-hidden");
+    });
+  });
+
+  // category accordions (only one open at a time)
+  const items = cookie.querySelectorAll(".cookie-item");
+
+  const close = (item) => {
+    const body = item.querySelector(".cookie-item-body");
+    const btn = item.querySelector(".cookie-item-toggle");
+    if (!body) return;
+    const h = body.scrollHeight;
+    item.classList.remove("open");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+    body.animate([{ height: h + "px" }, { height: "0px" }], opts).onfinish =
+      () => {
+        body.style.height = "0";
+      };
+  };
+
+  items.forEach((item) => {
+    const btn = item.querySelector(".cookie-item-toggle");
+    const body = item.querySelector(".cookie-item-body");
+    if (!btn || !body) return;
+
+    btn.addEventListener("click", () => {
+      if (item.classList.contains("open")) {
+        close(item);
+        return;
+      }
+
+      items.forEach((other) => {
+        if (other !== item && other.classList.contains("open")) close(other);
+      });
+
+      item.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+      const h = body.scrollHeight;
+      body.animate([{ height: "0px" }, { height: h + "px" }], opts).onfinish =
+        () => {
+          body.style.height = "auto";
+        };
+    });
+  });
+};
+
 const initSidebarContent = () => {
   const opts = { duration: 300, easing: "ease" };
 
@@ -1079,6 +1141,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSidebarContent();
   initFormValidation();
   initFileBtns();
+  initCookie();
 });
 
 window.addEventListener("resize", () => {
