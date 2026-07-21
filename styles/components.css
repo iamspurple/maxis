@@ -3586,6 +3586,10 @@ input[type="file"]#modal-file {
     );
   }
 
+  .consult-wrapper {
+    padding: clamp(12px, 3.7vw, 22px);
+  }
+
   .consult-content {
     padding: clamp(
       calc(10px * 320 / 375),

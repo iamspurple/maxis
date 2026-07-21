@@ -1,0 +1,1677 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <link rel="stylesheet" href="/styles/blog.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <div class="header-logo-wrapper">
+            <a href="/" class="header-logo heading">
+              <img src="/assets/icons/logo.svg" alt="Максис ИТ" />
+              Максис
+            </a>
+            <span class="header-logo-exp">
+              Работаем <br />
+              с 2013 года
+            </span>
+          </div>
+          <div class="header-contacts">
+            <div class="header-phone-wrapper">
+              <div class="header-phone">
+                <a class="header-phone-number" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+                <div class="header-phone-details">
+                  <span class="header-phone-city"> Москва </span>
+                  <p class="header-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+              <div class="header-phone">
+                <a class="header-phone-number" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+                <div class="header-phone-details">
+                  <span class="header-phone-city"> Тула </span>
+                  <p class="header-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="header-buttons-wrapper">
+              <button class="header-callback-btn modal-open-btn btn">
+                Обратный звонок
+              </button>
+              <a href="/" title="Max" class="header-social-link btn">
+                <img src="/assets/icons/max.svg" alt="Max" />
+              </a>
+              <button class="header-burger-btn" title="Открыть меню">
+                <svg
+                  class="open"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="5"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    y="9"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  class="close"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="2"
+                    y="13.3137"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    transform="rotate(-45 2 13.3137)"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="3.41455"
+                    y="2"
+                    width="16"
+                    height="2"
+                    rx="1"
+                    transform="rotate(45 3.41455 2)"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="menu" class="header-bottom">
+          <nav class="header-nav">
+            <ul class="header-nav-list">
+              <li class="header-nav-main">
+                <ul class="header-nav-list-main">
+                  <li>
+                    <a href="/" class="main-link">1C</a>
+                  </li>
+                  <li>
+                    <a href="/" class="main-link">Битрикс24</a>
+                  </li>
+                  <li>
+                    <div class="dropdown">
+                      <button class="dropbtn">
+                        Услуги
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                            fill="currentColor"
+                            fill-opacity="1"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-content-wrapper">
+                        <ul class="dropdown-content">
+                          <li>
+                            <a href="#">Интеграция 1С и Битрикс24</a>
+                          </li>
+                          <li>
+                            <a href="#">BI-аналитика и дашборды</a>
+                          </li>
+                          <li>
+                            <a href="#">IT-инфраструктура</a>
+                          </li>
+                          <li>
+                            <a href="#">Разработки и интеграции</a>
+                          </li>
+                          <li>
+                            <a href="#">Искуственный интеллект</a>
+                          </li>
+                          <li>
+                            <a href="#">Open Source</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    Кейсы
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#">Link 1</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    Каталог
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">1С</a>
+                      </li>
+                      <li>
+                        <a href="#">Битрикс24</a>
+                      </li>
+                      <li>
+                        <a href="#">Прочее ПО</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    О компании
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#">О компании</a>
+                      </li>
+                      <li>
+                        <a href="#">ИТ деятельность</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="/">Новости</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-menu-contacts">
+            <div class="header-menu-phone-wrapper">
+              <div class="header-menu-phone">
+                <a class="header-menu-phone-number" href="tel:+74951515094"
+                  >+7 (495) 151-50-94</a
+                >
+                <div class="header-menu-phone-details">
+                  <div class="header-menu-phone-city">
+                    <span class="dot"></span>
+                    <span>Москва</span>
+                  </div>
+                  <p class="header-menu-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+              <div class="header-menu-phone">
+                <a class="header-menu-phone-number" href="tel:+74872338088"
+                  >+7 (4872) 33-80-88</a
+                >
+                <div class="header-menu-phone-details">
+                  <div class="header-menu-phone-city">
+                    <span class="dot"></span>
+                    <span>Тула</span>
+                  </div>
+                  <p class="header-menu-phone-hours">
+                    пн-пт c <time datetime="09:30">9:30</time> до
+                    <time datetime="18:30">18:30</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="header-menu-buttons-wrapper">
+              <button class="header-menu-callback-btn modal-open-btn">
+                Обратный звонок
+              </button>
+              <a href="/" title="Max" class="header-menu-social-link">
+                <img src="/assets/icons/max.svg" alt="Max" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main-wrapper">
+        <div class="main-container container">
+          <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li>
+                <a href="/">Главная</a>
+              </li>
+
+              <li aria-current="page">Новости</li>
+            </ul>
+          </nav>
+          <h1 class="title heading">Новости и статьи</h1>
+          <section class="blog">
+            <div class="blog-filters">
+              <form action="" class="blog-search">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.1475 15.3525L13.2668 12.4717C14.2298 11.3295 14.8125 9.85725 14.8125 8.25C14.8125 4.63125 11.8687 1.6875 8.25 1.6875C4.63125 1.6875 1.6875 4.63125 1.6875 8.25C1.6875 11.8687 4.63125 14.8125 8.25 14.8125C9.85725 14.8125 11.3295 14.2297 12.4718 13.2667L15.3525 16.1475C15.462 16.257 15.606 16.3125 15.75 16.3125C15.894 16.3125 16.038 16.2577 16.1475 16.1475C16.3673 15.9285 16.3673 15.5723 16.1475 15.3525ZM2.8125 8.25C2.8125 5.2515 5.2515 2.8125 8.25 2.8125C11.2485 2.8125 13.6875 5.2515 13.6875 8.25C13.6875 11.2485 11.2485 13.6875 8.25 13.6875C5.2515 13.6875 2.8125 11.2485 2.8125 8.25Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <input type="text" placeholder="Введите запрос" />
+                <button type="submit" class="blog-search-btn btn">Найти</button>
+              </form>
+              <section class="filters">
+                <div class="filters-header">
+                  <h2 class="filters-title">Фильтры</h2>
+                  <button class="filters-reset btn">Сбросить</button>
+                  <button id="open-filters" class="filters-btn">
+                    <span> Фильтры </span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                        fill="currentColor"
+                        fill-opacity="1"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <ul class="filters-list">
+                  <li>
+                    <div class="dropdown filter">
+                      <button type="button" class="dropbtn filter">
+                        Услуги
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                            fill="currentColor"
+                            fill-opacity="1"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-content-wrapper filter">
+                        <ul class="dropdown-content filter">
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="service"
+                                value="integration"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Интеграция 1С и Битрикс24</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="service"
+                                value="bi"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >BI-аналитика и дашборды</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="service"
+                                value="infra"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >IT-инфраструктура</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="service"
+                                value="dev"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Разработки и интеграции</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="service"
+                                value="ai"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Искуственный интеллект</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="service"
+                                value="oss"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Open Source</span
+                              >
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown filter">
+                      <button type="button" class="dropbtn filter">
+                        Продукты
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                            fill="currentColor"
+                            fill-opacity="1"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-content-wrapper filter">
+                        <ul class="dropdown-content filter">
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="product"
+                                value="integration"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Интеграция 1С и Битрикс24</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="product"
+                                value="bi"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >BI-аналитика и дашборды</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="product"
+                                value="infra"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >IT-инфраструктура</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="product"
+                                value="dev"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Разработки и интеграции</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="product"
+                                value="ai"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Искуственный интеллект</span
+                              >
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="product"
+                                value="oss"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Open Source</span
+                              >
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown filter">
+                      <button type="button" class="dropbtn filter">
+                        Отрасль
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                            fill="currentColor"
+                            fill-opacity="1"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-content-wrapper filter">
+                        <ul class="dropdown-content filter">
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="industry"
+                                value="1"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label">1</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="industry"
+                                value="2"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label">2</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="industry"
+                                value="3"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label">3</span>
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown filter">
+                      <button type="button" class="dropbtn filter">
+                        Софт
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                            fill="currentColor"
+                            fill-opacity="1"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-content-wrapper filter">
+                        <ul class="dropdown-content filter">
+                          <li>
+                            <label class="filter-checkbox">
+                              <input type="checkbox" name="soft" value="1c" />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label">1С</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="filter-checkbox">
+                              <input
+                                type="checkbox"
+                                name="soft"
+                                value="bitrix24"
+                              />
+                              <span class="filter-checkbox-box"></span>
+                              <span class="filter-checkbox-label"
+                                >Битрикс24</span
+                              >
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+            </div>
+            <ul class="blog-list">
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <span class="blog-item-tag relevant">Актуально</span>
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article1.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <span class="blog-item-tag popular">Популярно</span>
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article2.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article3.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <span class="blog-item-tag relevant">Актуально</span>
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article1.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <span class="blog-item-tag popular">Популярно</span>
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article2.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article3.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <span class="blog-item-tag relevant">Актуально</span>
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article1.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <span class="blog-item-tag popular">Популярно</span>
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article2.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="blog-item btn">
+                <a href="/">
+                  <article>
+                    <div class="blog-item-wrapper">
+                      <img
+                        loading="lazy"
+                        class="blog-item-image"
+                        src="/assets/images/article3.webp"
+                        alt="lorem"
+                      />
+                      <div class="blog-item-content">
+                        <h3 class="blog-item-name">
+                          Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="blog-item-description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </p>
+                        <time class="blog-item-date" datetime="01.08.2028"
+                          >01.08.2026</time
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+            </ul>
+            <nav class="pagination" aria-label="Пагинация">
+              <button
+                class="pagination-btn prev btn"
+                aria-label="Предыдущая страница"
+                disabled
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.2733 4.94L7.22 8L10.2733 11.06L9.33334 12L5.33334 8L9.33334 4L10.2733 4.94Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <div class="pagination-content">
+                <ul class="pagination-list">
+                  <li>
+                    <button class="pagination-page active" aria-current="page">
+                      1
+                    </button>
+                  </li>
+                  <li>
+                    <button class="pagination-page">2</button>
+                  </li>
+                  <li>
+                    <button class="pagination-page">3</button>
+                  </li>
+                </ul>
+                <span class="pagination-total">из 8</span>
+              </div>
+
+              <button
+                class="pagination-btn next btn"
+                aria-label="Следующая страница"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.72667 11.06L8.78 8L5.72667 4.94L6.66667 4L10.6667 8L6.66667 12L5.72667 11.06Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </nav>
+          </section>
+        </div>
+      </div>
+      <section class="consult">
+        <div class="consult-wrapper container">
+          <div class="consult-content">
+            <div class="consult-info">
+              <h2 class="consult-title heading title-medium">
+                Получите <span class="accent">консультацию</span>
+                <span class="nowrap">по проекту</span>
+              </h2>
+              <div class="consult-phone-wrapper">
+                <div class="consult-phone">
+                  <a class="consult-phone-number" href="tel:+74951515094"
+                    >+7 (495) 151-50-94</a
+                  >
+                  <div class="consult-phone-details">
+                    <div class="consult-phone-city">
+                      <span class="dot"></span>
+                      <span>Москва</span>
+                    </div>
+                    <p class="consult-phone-hours">
+                      пн-пт c <time datetime="09:30">9:30</time> до
+                      <time datetime="18:30">18:30</time>
+                    </p>
+                  </div>
+                </div>
+                <div class="consult-phone">
+                  <a class="consult-phone-number" href="tel:+74872338088"
+                    >+7 (4872) 33-80-88</a
+                  >
+                  <div class="consult-phone-details">
+                    <div class="consult-phone-city">
+                      <span class="dot"></span>
+                      <span>Тула</span>
+                    </div>
+                    <p class="consult-phone-hours">
+                      пн-пт c <time datetime="09:30">9:30</time> до
+                      <time datetime="18:30">18:30</time>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="consult-email-wrapper">
+                <span class="consult-email-label">Email</span>
+                <a class="consult-email-address" href="mailto:info@maxis-it.ru"
+                  >info@maxis-it.ru</a
+                >
+              </div>
+            </div>
+            <div class="consult-details">
+              <p class="consult-details-text">
+                «Хотите узнать, как оптимизировать именно ваш бизнес?
+                <span class="nowrap">Наши специалисты</span>
+                готовы разложить все по полочкам
+                <span class="nowrap">и составить план</span> развития уже
+                сейчас»
+              </p>
+              <div class="consult-manager">
+                <img
+                  loading="lazy"
+                  class="consult-manager-image"
+                  src="/assets/images/manager.png"
+                  alt="manager"
+                />
+                <div class="consult-manager-content">
+                  <h3 class="consult-manager-name">
+                    Смирнова <br />
+                    Екатерина Александровна
+                  </h3>
+                  <p class="consult-manager-description">Проектный менеджер</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="consult-form-wrapper">
+            <h2 class="consult-form-title">
+              <span class="dark">Оставьте ваши контакты</span> и наш специалист
+              свяжется с вами в ближайшее время
+            </h2>
+            <form class="consult-form">
+              <div class="consult-form-input-wrapper name">
+                <label for="consult-form-name" class="visually-hidden"
+                  >Ваше имя</label
+                >
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  id="consult-form-name"
+                />
+              </div>
+              <div class="consult-form-input-wrapper phone">
+                <label for="consult-form-phone" class="visually-hidden"
+                  >Номер телефона</label
+                >
+                <input
+                  type="tel"
+                  placeholder="Номер телефона"
+                  id="consult-form-phone"
+                />
+              </div>
+              <button
+                id="consult-file-btn"
+                type="button"
+                for="file"
+                class="consult-form-file-label btn"
+              >
+                Прикрепите файл
+              </button>
+              <input
+                type="file"
+                name="file"
+                accept="image/*"
+                id="consult-file"
+              />
+
+              <div class="consult-form-checkbox-wrapper">
+                <input type="checkbox" id="consult-checkbox" />
+                <label for="consult-checkbox">
+                  <span class="consult-form-checkbox-text">
+                    Я ознакомлен и принимаю условия
+                    <a href="/" class="nowrap">обработки персональных данных</a>
+                  </span>
+                </label>
+              </div>
+              <button
+                id="consult-submit"
+                type="submit"
+                class="consult-form-submit-btn btn"
+              >
+                Отправить
+              </button>
+            </form>
+            <p class="consult-form-text">
+              Нажимая кнопку «Отправить», Вы даете согласие на обработку Ваших
+              персональных данных, а также соглашаетесь с условиями
+              <a href="/">Политики конфиденциальности</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-wrapper container">
+        <div class="footer-content">
+          <a href="/" class="footer-logo heading">
+            <img src="/assets/icons/logo.svg" alt="Максис ИТ" loading="lazy" />
+            Максис
+          </a>
+          <div class="footer-accreditation">
+            <img
+              loading="lazy"
+              class="footer-accreditation-icon"
+              src="/assets/icons/mincifry.svg"
+              alt="Минцифры России"
+            />
+            <span class="footer-accreditation-text"
+              >Аккредитованная IT компания</span
+            >
+            <span class="footer-accreditation-description">
+              Деятельность осуществляется <br />
+              в соответствии с приказами <br />
+              Минцифры России №449 и №511, <br />
+              Имеет запись в реестре №2647 <br />
+              от 15 октября 2013 года.
+            </span>
+          </div>
+          <div class="footer-contacts">
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Москва</span>
+              <a class="footer-contacts-item-value" href="tel:+74951515094"
+                >+7 (495) 151-50-94</a
+              >
+            </div>
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Тула</span>
+              <a class="footer-contacts-item-value" href="tel:+74872338088"
+                >+7 (4872) 33-80-88</a
+              >
+            </div>
+
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label"> Режим работы</span>
+              <span class="footer-contacts-item-value">
+                пн-пт c <time datetime="09:30">9:30</time> до
+                <time datetime="18:30">18:30</time>
+              </span>
+            </div>
+            <div class="footer-contacts-item">
+              <span class="footer-contacts-item-label">Email</span>
+              <a
+                class="footer-contacts-item-value"
+                href="mailto:info@maxis-it.ru"
+                >info@maxis-it.ru</a
+              >
+            </div>
+          </div>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Меню</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="/">Главная</a>
+              </li>
+              <li>
+                <a href="">О компании</a>
+              </li>
+              <li>
+                <a href=""> Кейсы</a>
+              </li>
+              <li>
+                <a href="">Решения</a>
+              </li>
+              <li>
+                <a href="">Новости</a>
+              </li>
+              <li>
+                <a href="">Контакты</a>
+              </li>
+              <li>
+                <a href="">ИТ деятельность</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Услуги</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="">1C Предприятие</a>
+              </li>
+              <li>
+                <a href="">Битрикс24</a>
+              </li>
+              <li>
+                <a href="">Интеграция 1С и Битрикс 24</a>
+              </li>
+              <li>
+                <a href="">BI-аналитика</a>
+              </li>
+              <li>
+                <a href="">IT-инфраструктура</a>
+              </li>
+              <li>
+                <a href="">Разработки и интеграции</a>
+              </li>
+              <li>
+                <a href="">Искуственный интеллект</a>
+              </li>
+              <li>
+                <a href="">Open Source</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer-navigation">
+            <h3 class="footer-navigation-title">Каталог</h3>
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="">Конфигурации</a>
+              </li>
+              <li>
+                <a href="">Лицензии</a>
+              </li>
+              <li>
+                <a href="">ИТС</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-bottom-text">© 2026 ООО «МАКСИС АЙ ТИ»</p>
+          <a href="/" class="footer-bottom-link"
+            >Политика обработки персональных данных</a
+          >
+          <a href="/" class="footer-bottom-link">Политика конфиденциальности</a>
+          <div class="footer-creator">
+            <p class="footer-creator-text">
+              Сайт разработан
+              <a href="https://tolacompany.ru" class="accent" target="_blank">
+                TOLACOMPANY.RU
+              </a>
+            </p>
+            <img src="/assets/icons/tola.svg" alt="" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="overlay" class="overlay"></div>
+    <div class="modal">
+      <div class="modal-content">
+        <button type="button" class="modal-close-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6 6L18 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-form-wrapper">
+          <h2 class="modal-form-title">
+            <span class="accent heading">Оставьте ваши контакты</span>
+            <span>и наш специалист свяжется с вами в ближайшее время</span>
+          </h2>
+          <form class="modal-form">
+            <div class="modal-form-input-wrapper name">
+              <label for="modal-form-name" class="visually-hidden"
+                >Ваше имя</label
+              >
+              <input type="text" placeholder="Ваше имя" id="modal-form-name" />
+            </div>
+            <div class="modal-form-input-wrapper phone">
+              <label for="modal-form-phone" class="visually-hidden"
+                >Номер телефона</label
+              >
+              <input
+                type="tel"
+                placeholder="Номер телефона"
+                id="modal-form-phone"
+              />
+            </div>
+            <button
+              type="button"
+              id="modal-file-btn"
+              class="modal-form-file-label btn"
+            >
+              Прикрепите файл
+            </button>
+            <input
+              type="file"
+              name="modal-file"
+              id="modal-file"
+              accept="image/*"
+            />
+
+            <div class="modal-form-checkbox-wrapper">
+              <input type="checkbox" id="modal-checkbox" />
+              <label for="modal-checkbox">
+                <span class="modal-form-checkbox-text">
+                  Я ознакомлен и принимаю условия
+                  <a href="/" class="nowrap">обработки персональных данных</a>
+                </span>
+              </label>
+            </div>
+            <button
+              id="modal-submit"
+              type="submit"
+              class="modal-form-submit-btn btn"
+            >
+              Отправить
+            </button>
+          </form>
+          <p class="modal-form-text">
+            Нажимая кнопку «Отправить», Вы даете согласие на обработку Ваших
+            персональных данных, а также соглашаетесь с условиями
+            <a href="/">Политики конфиденциальности</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="filters-modal">
+      <button class="filters-close-btn" id="close-filters">
+        <img src="/assets/icons/close-blue.svg" alt="" loading="lazy" />
+      </button>
+      <ul class="filters-modal-list">
+        <li>
+          <div class="dropdown filter">
+            <button type="button" class="dropbtn filter">
+              Услуги
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                  fill="currentColor"
+                  fill-opacity="1"
+                />
+              </svg>
+            </button>
+            <div class="dropdown-content-wrapper filter">
+              <ul class="dropdown-content filter">
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="integration" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Интеграция 1С и Битрикс24</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="bi" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >BI-аналитика и дашборды</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="infra" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">IT-инфраструктура</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="dev" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Разработки и интеграции</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="ai" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Искуственный интеллект</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="service" value="oss" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Open Source</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown filter">
+            <button type="button" class="dropbtn filter">
+              Продукты
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                  fill="currentColor"
+                  fill-opacity="1"
+                />
+              </svg>
+            </button>
+            <div class="dropdown-content-wrapper filter">
+              <ul class="dropdown-content filter">
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="integration" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Интеграция 1С и Битрикс24</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="bi" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >BI-аналитика и дашборды</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="infra" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">IT-инфраструктура</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="dev" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Разработки и интеграции</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="ai" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Искуственный интеллект</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="product" value="oss" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Open Source</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown filter">
+            <button type="button" class="dropbtn filter">
+              Отрасль
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                  fill="currentColor"
+                  fill-opacity="1"
+                />
+              </svg>
+            </button>
+            <div class="dropdown-content-wrapper filter">
+              <ul class="dropdown-content filter">
+                <li>
+                  <label class="filter-checkbox">
+                    <input
+                      type="checkbox"
+                      name="industry"
+                      value="integration"
+                    />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Интеграция 1С и Битрикс24</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="bi" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >BI-аналитика и дашборды</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="infra" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">IT-инфраструктура</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="dev" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Разработки и интеграции</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="ai" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label"
+                      >Искуственный интеллект</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="industry" value="oss" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Open Source</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown filter">
+            <button type="button" class="dropbtn filter">
+              Софт
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                  fill="currentColor"
+                  fill-opacity="1"
+                />
+              </svg>
+            </button>
+            <div class="dropdown-content-wrapper filter">
+              <ul class="dropdown-content filter">
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="soft" value="1c" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">1С</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="soft" value="bitrix24" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Битрикс24</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown filter">
+            <button type="button" class="dropbtn filter">
+              Сортировать
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                  fill="currentColor"
+                  fill-opacity="1"
+                />
+              </svg>
+            </button>
+            <div class="dropdown-content-wrapper filter">
+              <ul class="dropdown-content filter">
+                <li>
+                  <label class="filter-checkbox">
+                    <input
+                      type="radio"
+                      name="modal-sort"
+                      value="popular"
+                      checked
+                    />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">По популярности</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="radio" name="modal-sort" value="new" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Сначала новые</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox">
+                    <input type="radio" name="modal-sort" value="old" />
+                    <span class="filter-checkbox-box"></span>
+                    <span class="filter-checkbox-label">Сначала старые</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="filters-modal-buttons">
+        <button type="button" class="filters-modal-submit">
+          Применить фильтры
+        </button>
+        <button type="reset" class="filters-modal-reset" id="reset-filters">
+          Сбросить все фильтры
+        </button>
+      </div>
+    </div>
+    <script src="/script/main.js"></script>
+  </body>
+</html>
