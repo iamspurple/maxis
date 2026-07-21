@@ -1,0 +1,320 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(45px, 4.25vw, 60px);
+  background-color: var(--color-dark);
+}
+
+.main-wrapper {
+  position: relative;
+  z-index: 20;
+  background-color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 3.6vw, 51px);
+  padding-block: clamp(25px, 2.4vw, 36px) clamp(45px, 4.25vw, 60px);
+}
+
+.title {
+  font-weight: 700;
+  font-size: clamp(30px, 3vw, 43px);
+  letter-spacing: -2%;
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: 27% minmax(0, 1fr);
+  flex-direction: column;
+  gap: clamp(16px, 1.6vw, 22px);
+}
+
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 2.2vw, 30px);
+  padding: clamp(28px, 2.8vw, 40px);
+  background-color: #f4f5f7;
+  border-radius: 20px;
+  font-style: normal;
+}
+
+.contacts-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1vw, 14px);
+}
+
+.contacts-info-label {
+  font-size: clamp(9px, 0.85vw, 12px);
+  color: var(--color-gray);
+}
+
+.contacts-info-value {
+  font-size: clamp(11px, 1.1vw, 15px);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+a.contacts-info-value {
+  transition: color 0.2s ease;
+}
+
+.contacts-map {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f5f7;
+}
+
+.contacts-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contacts-requisites {
+  grid-column: -1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.6vw, 22px);
+  padding: clamp(19px, 1.9vw, 27px) clamp(28px, 2.8vw, 40px);
+  background-color: #f4f5f7;
+  border-radius: 20px;
+}
+
+.contacts-requisites-title {
+  font-size: clamp(12px, 1.2vw, 18px);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.contacts-requisites-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(16px, 1.6vw, 22px);
+  align-items: start;
+}
+
+.contacts-requisites-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-requisites-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(16px, 1.6vw, 22px);
+  align-items: start;
+  padding-block: clamp(9px, 0.9vw, 13px);
+  border-top: 1px solid rgba(21, 30, 48, 0.1);
+  font-size: clamp(9px, 0.85vw, 12px);
+  font-weight: 600;
+  letter-spacing: -1%;
+  line-height: 140%;
+}
+
+.contacts-requisites-item:first-child {
+  border: none;
+}
+
+.contacts-requisites-label {
+  color: var(--color-gray);
+}
+
+.contacts-requisites-value {
+  color: var(--color-dark);
+}
+
+@media (hover: hover) {
+  a.contacts-info-value:hover {
+    color: var(--color-primary);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .main {
+    gap: 80px;
+  }
+
+  .main-container {
+    gap: 70px;
+    padding-block: 46px 80px;
+  }
+
+  .title {
+    font-size: 55px;
+  }
+
+  .contacts {
+    gap: 30px;
+  }
+
+  .contacts-info {
+    gap: 40px;
+    padding: 50px;
+  }
+
+  .contacts-info-item {
+    gap: 18px;
+  }
+
+  .contacts-info-label {
+    font-size: 16px;
+  }
+
+  .contacts-info-value {
+    font-size: 20px;
+  }
+
+  .contacts-requisites {
+    gap: 30px;
+    padding: 38px 52px;
+    border-radius: 28px;
+  }
+
+  .contacts-requisites-title {
+    font-size: 23px;
+  }
+
+  .contacts-requisites-grid {
+    column-gap: 30px;
+  }
+
+  .contacts-requisites-item {
+    font-size: 16px;
+    padding-block: 17px;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .main {
+    gap: clamp(45px, 7.8vw, 66px);
+  }
+
+  .main-container {
+    gap: clamp(29px, 5vw, 42px);
+    padding-block: clamp(38px, 6.5vw, 56px);
+  }
+
+  .title {
+    font-size: clamp(38px, 6.5vw, 56px);
+  }
+
+  .contacts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 3.1vw, 26px);
+  }
+
+  .contacts-info {
+    padding: clamp(22px, 3.75vw, 32px);
+    gap: clamp(32px, 5.6vw, 48px);
+  }
+  .contacts-info-item {
+    gap: clamp(13px, 2.2vw, 18px);
+  }
+
+  .contacts-info-label {
+    font-size: clamp(13px, 2.2vw, 18px);
+  }
+
+  .contacts-info-value {
+    font-size: clamp(16px, 2.8vw, 24px);
+  }
+
+  .contacts-requisites {
+    gap: clamp(24px, 4vw, 34px);
+    padding: clamp(28px, 5vw, 40px) clamp(22px, 3.75vw, 32px);
+  }
+
+  .contacts-requisites-title {
+    font-size: clamp(18px, 3.1vw, 26px);
+  }
+
+  .contacts-requisites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-requisites-item {
+    padding-block: clamp(13px, 2.2vw, 18px);
+    gap: clamp(24px, 4vw, 34px);
+    font-size: clamp(13px, 2.2vw, 18px);
+  }
+
+  .contacts-requisites-item:first-child {
+    border-top: 1px solid rgba(21, 30, 48, 0.1);
+  }
+
+  .contacts-requisites-col:first-child .contacts-requisites-item:first-child {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .main {
+    gap: clamp(27px, 8.5vw, 49px);
+  }
+
+  .main-container {
+    gap: clamp(20px, 6.4vw, 37px);
+  }
+
+  .title {
+    font-size: clamp(24px, 7.5vw, 43px);
+  }
+
+  .contacts {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 6.4vw, 37px);
+  }
+
+  .contacts-info {
+    padding: clamp(20px, 6.4vw, 37px);
+    gap: clamp(31px, 9.6vw, 55px);
+  }
+
+  .contacts-info-item {
+    gap: clamp(12px, 3.7vw, 22px);
+  }
+
+  .contacts-info-label {
+    font-size: clamp(12px, 3.7vw, 22px);
+  }
+
+  .contacts-info-value {
+    font-size: clamp(15px, 4.8vw, 28px);
+  }
+
+  .contacts-map {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .contacts-requisites {
+    gap: clamp(22px, 7vw, 40px);
+    padding: clamp(27px, 8.5vw, 49px) clamp(20px, 6.4vw, 37px);
+  }
+
+  .contacts-requisites-title {
+    font-size: clamp(17px, 5.3vw, 30px);
+  }
+
+  .contacts-requisites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-requisites-item {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 6.4vw, 37px);
+    padding-block: clamp(13px, 4vw, 23px);
+    font-size: clamp(12px, 3.7vw, 22px);
+  }
+}
