@@ -276,6 +276,7 @@
 }
 
 .cart-summary-download {
+  text-align: center;
   width: 100%;
   padding-block: clamp(16px, 1.6vw, 22px);
   font-size: clamp(11px, 1.1vw, 15px);
