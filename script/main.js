@@ -552,6 +552,158 @@ const initCatalogFilterGroups = () => {
     });
 };
 
+// Доступная сортировка на основе нативной радиогруппы внутри раскрывающегося блока
+// (кейсы: десктоп + модалка; каталог: модалка). Нативные радио сами дают выбор с
+// клавиатуры и состояние «выбрано»; здесь добавляем семантику раскрытия
+// (aria-expanded), открытие/закрытие с клавиатуры и синхронизацию подписи кнопки.
+const initSortDisclosure = () => {
+  document.querySelectorAll("[data-sort-disclosure]").forEach((dd) => {
+    const btn = dd.querySelector("[data-sort-toggle]");
+    const group = dd.querySelector("[data-sort-group]");
+    if (!btn || !group) return;
+    const radios = [...group.querySelectorAll('input[type="radio"]')];
+    const labelEl = btn.querySelector("[data-sort-label]");
+
+    const isOpen = () => dd.classList.contains("active");
+    const sync = () => btn.setAttribute("aria-expanded", String(isOpen()));
+    new MutationObserver(sync).observe(dd, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    sync();
+
+    const open = () => {
+      dd.classList.add("active");
+      (radios.find((r) => r.checked) || radios[0])?.focus();
+    };
+    const close = (focusBtn) => {
+      dd.classList.remove("active");
+      if (focusBtn) btn.focus();
+    };
+
+    btn.addEventListener("keydown", (e) => {
+      if (["Enter", " ", "ArrowDown", "ArrowUp"].includes(e.key)) {
+        e.preventDefault();
+        isOpen() ? close(false) : open();
+      } else if (e.key === "Escape") {
+        close(true);
+      }
+    });
+
+    // Escape внутри списка возвращает фокус на кнопку; уход фокуса из блока — закрытие.
+    dd.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close(true);
+    });
+    dd.addEventListener("focusout", (e) => {
+      if (!dd.contains(e.relatedTarget)) close(false);
+    });
+
+    // Синхронизация подписи кнопки с выбранным пунктом. change у радио срабатывает
+    // и при навигации стрелками — поэтому здесь только обновляем текст, не закрывая
+    // список (закрытие — по Escape/уходу фокуса/клику вне).
+    radios.forEach((r) =>
+      r.addEventListener("change", () => {
+        if (!labelEl) return;
+        const text = group
+          .querySelector("input:checked")
+          ?.closest("label")
+          ?.querySelector(".filter-checkbox-label")
+          ?.textContent.trim();
+        if (text) labelEl.textContent = text;
+      }),
+    );
+  });
+};
+
+// Доступный кастомный список сортировки каталога (десктоп): кнопка-триггер + список
+// опций-кнопок. Реализует паттерн listbox (role, aria-selected, aria-expanded,
+// управление с клавиатуры) и заодно подключает выбор: обновляет подпись, активную
+// опцию и скрытый input формы (ранее опции были некликабельны).
+const initCatalogSortListbox = () => {
+  const dd = document.querySelector(".catalog-sort.dropdown");
+  if (!dd) return;
+  const btn = dd.querySelector(".catalog-sort-btn");
+  const valueEl = dd.querySelector(".catalog-sort-value");
+  const input = dd.querySelector(".catalog-sort-input");
+  const options = [...dd.querySelectorAll(".catalog-sort-option")];
+  if (!btn || !options.length) return;
+
+  const isOpen = () => dd.classList.contains("active");
+  const sync = () => btn.setAttribute("aria-expanded", String(isOpen()));
+  new MutationObserver(sync).observe(dd, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+  sync();
+
+  const open = () => {
+    dd.classList.add("active");
+    (
+      options.find((o) => o.getAttribute("aria-selected") === "true") ||
+      options[0]
+    ).focus();
+  };
+  const close = (focusBtn) => {
+    dd.classList.remove("active");
+    if (focusBtn) btn.focus();
+  };
+
+  const select = (opt) => {
+    options.forEach((o) => {
+      const on = o === opt;
+      o.setAttribute("aria-selected", String(on));
+      o.classList.toggle("is-active", on);
+    });
+    if (valueEl) valueEl.textContent = opt.textContent.trim();
+    if (input) input.value = opt.dataset.value || "";
+  };
+
+  btn.addEventListener("keydown", (e) => {
+    if (["Enter", " ", "ArrowDown", "ArrowUp"].includes(e.key)) {
+      e.preventDefault();
+      isOpen() ? close(false) : open();
+    } else if (e.key === "Escape") {
+      close(true);
+    }
+  });
+
+  options.forEach((opt, i) => {
+    opt.addEventListener("click", (e) => {
+      // не даём клику всплыть к общему обработчику .dropdown (иначе он снова
+      // переключит .active и список «мигнёт»)
+      e.stopPropagation();
+      select(opt);
+      close(true);
+    });
+    opt.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        options[(i + 1) % options.length].focus();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        options[(i - 1 + options.length) % options.length].focus();
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        options[0].focus();
+      } else if (e.key === "End") {
+        e.preventDefault();
+        options[options.length - 1].focus();
+      } else if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        select(opt);
+        close(true);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        close(true);
+      }
+    });
+  });
+
+  dd.addEventListener("focusout", (e) => {
+    if (!dd.contains(e.relatedTarget)) close(false);
+  });
+};
+
 const initStickyHeaderBottom = () => {
   const header = document.querySelector(".header");
   const headerTop = document.querySelector(".header-top");
@@ -1134,6 +1286,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initModal();
   initFiltersModal();
   initCatalogFilterGroups();
+  initSortDisclosure();
+  initCatalogSortListbox();
   initStickyHeaderBottom();
   initStepper();
   initStepSlider();

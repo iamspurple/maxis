@@ -262,7 +262,7 @@
                         <a href="#">О компании</a>
                       </li>
                       <li>
-                        <a href="#">ИТ деятельность</a>
+                        <a href="#">ИТ-деятельность</a>
                       </li>
                     </ul>
                   </div>
@@ -349,7 +349,13 @@
                           value="popular"
                           class="catalog-sort-input"
                         />
-                        <button type="button" class="catalog-sort-btn dropbtn">
+                        <button
+                          type="button"
+                          class="catalog-sort-btn dropbtn"
+                          aria-haspopup="listbox"
+                          aria-expanded="false"
+                          aria-controls="catalog-sort-list"
+                        >
                           <span class="catalog-sort-value"
                             >По популярности</span
                           >
@@ -367,10 +373,17 @@
                           </svg>
                         </button>
                         <div class="dropdown-content-wrapper">
-                          <ul class="dropdown-content catalog-sort-list">
+                          <ul
+                            class="dropdown-content catalog-sort-list"
+                            id="catalog-sort-list"
+                            role="listbox"
+                            aria-label="Сортировка"
+                          >
                             <li>
                               <button
                                 type="button"
+                                role="option"
+                                aria-selected="true"
                                 class="catalog-sort-option is-active"
                                 data-value="popular"
                               >
@@ -380,6 +393,8 @@
                             <li>
                               <button
                                 type="button"
+                                role="option"
+                                aria-selected="false"
                                 class="catalog-sort-option"
                                 data-value="price-asc"
                               >
@@ -389,6 +404,8 @@
                             <li>
                               <button
                                 type="button"
+                                role="option"
+                                aria-selected="false"
                                 class="catalog-sort-option"
                                 data-value="price-desc"
                               >
@@ -398,6 +415,8 @@
                             <li>
                               <button
                                 type="button"
+                                role="option"
+                                aria-selected="false"
                                 class="catalog-sort-option"
                                 data-value="name"
                               >
@@ -410,7 +429,11 @@
                     </div>
                   </div>
 
-                  <div class="catalog-toolbar-tabs">
+                  <div
+                    class="catalog-toolbar-tabs"
+                    role="radiogroup"
+                    aria-label="Категория товаров"
+                  >
                     <label class="catalog-tab btn">
                       <input
                         type="radio"
@@ -446,7 +469,11 @@
                   <nav class="catalog-categories">
                     <ul class="catalog-categories-list">
                       <li>
-                        <a href="#" class="catalog-category is-active">
+                        <a
+                          href="#"
+                          class="catalog-category is-active"
+                          aria-current="page"
+                        >
                           <span class="catalog-category-num">1</span>
                           <span class="catalog-category-name"
                             >Конфигурации</span
@@ -728,7 +755,7 @@
                       />
                     </div>
                     <div class="catalog-card-badge catalog-card-badge--prof">
-                      ПРОФ ВЕРСИЯ
+                      проф версия
                     </div>
                     <div class="catalog-card-body">
                       <div class="catalog-card-info">
@@ -771,9 +798,9 @@
                             В корзину
                           </button>
                         </div>
-                        <button type="button" class="catalog-card-more btn">
+                        <a href="/" type="button" class="catalog-card-more btn">
                           Подробнее
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -786,7 +813,7 @@
                       />
                     </div>
                     <div class="catalog-card-badge catalog-card-badge--corp">
-                      КОРП ВЕРСИЯ
+                      корп версия
                     </div>
                     <div class="catalog-card-body">
                       <div class="catalog-card-info">
@@ -827,9 +854,9 @@
                             В корзину
                           </button>
                         </div>
-                        <button type="button" class="catalog-card-more btn">
+                        <a href="/" type="button" class="catalog-card-more btn">
                           Подробнее
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -842,7 +869,7 @@
                       />
                     </div>
                     <div class="catalog-card-badge catalog-card-badge--base">
-                      БАЗОВАЯ ВЕРСИЯ
+                      базовая версия
                     </div>
                     <div class="catalog-card-body">
                       <div class="catalog-card-info">
@@ -885,9 +912,9 @@
                             В корзину
                           </button>
                         </div>
-                        <button type="button" class="catalog-card-more btn">
+                        <a href="/" type="button" class="catalog-card-more btn">
                           Подробнее
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -900,7 +927,7 @@
                       />
                     </div>
                     <div class="catalog-card-badge catalog-card-badge--prof">
-                      ПРОФ ВЕРСИЯ
+                      проф версия
                     </div>
                     <div class="catalog-card-badge catalog-card-badge--kit">
                       КОМПЛЕКТ НА 5 ПОЛЬЗОВАТЕЛЕЙ
@@ -946,9 +973,9 @@
                             В корзину
                           </button>
                         </div>
-                        <button type="button" class="catalog-card-more btn">
+                        <a href="/" type="button" class="catalog-card-more btn">
                           Подробнее
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -961,7 +988,7 @@
                       />
                     </div>
                     <div class="catalog-card-badge catalog-card-badge--prof">
-                      ПРОФ ВЕРСИЯ
+                      проф версия
                     </div>
                     <div class="catalog-card-body">
                       <div class="catalog-card-info">
@@ -1004,9 +1031,9 @@
                             В корзину
                           </button>
                         </div>
-                        <button type="button" class="catalog-card-more btn">
+                        <a href="/" type="button" class="catalog-card-more btn">
                           Подробнее
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -1019,7 +1046,7 @@
                       />
                     </div>
                     <div class="catalog-card-badge catalog-card-badge--corp">
-                      КОРП ВЕРСИЯ
+                      корп версия
                     </div>
                     <div class="catalog-card-body">
                       <div class="catalog-card-info">
@@ -1060,9 +1087,9 @@
                             В корзину
                           </button>
                         </div>
-                        <button type="button" class="catalog-card-more btn">
+                        <a href="/" type="button" class="catalog-card-more btn">
                           Подробнее
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -1189,8 +1216,8 @@
                 <img
                   loading="lazy"
                   class="consult-manager-image"
-                  src="/assets/images/manager.png"
-                  alt="manager"
+                  src="/assets/images/manager.webp"
+                  alt="Смирнова Екатерина Александровна"
                 />
                 <div class="consult-manager-content">
                   <h3 class="consult-manager-name">
@@ -1346,7 +1373,7 @@
                 <a href="">Контакты</a>
               </li>
               <li>
-                <a href="">ИТ деятельность</a>
+                <a href="">ИТ-деятельность</a>
               </li>
             </ul>
           </nav>
@@ -1407,7 +1434,11 @@
                 TOLACOMPANY.RU
               </a>
             </p>
-            <img src="/assets/icons/tola.svg" alt="" loading="lazy" />
+            <img
+              src="/assets/icons/tola.svg"
+              alt="«TOLACOMPANY.RU»"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -1506,7 +1537,8 @@
       </button>
       <ul class="filters-modal-list">
         <li>
-          <div class="dropdown filter">
+          <fieldset class="dropdown filter">
+            <legend class="visually-hidden">Конфигурации</legend>
             <button type="button" class="dropbtn filter">
               Конфигурации
               <svg
@@ -1606,10 +1638,11 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </fieldset>
         </li>
         <li>
-          <div class="dropdown filter">
+          <fieldset class="dropdown filter">
+            <legend class="visually-hidden">Версия поставки 1С</legend>
             <button type="button" class="dropbtn filter">
               Версия поставки 1С
               <svg
@@ -1670,11 +1703,18 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </fieldset>
         </li>
         <li>
-          <div class="dropdown filter">
-            <button type="button" class="dropbtn filter">
+          <div class="dropdown filter" data-sort-disclosure>
+            <button
+              type="button"
+              class="dropbtn filter"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="catalog-modal-sort-list"
+              data-sort-toggle
+            >
               Сортировка
               <svg
                 width="16"
@@ -1691,7 +1731,13 @@
               </svg>
             </button>
             <div class="dropdown-content-wrapper filter">
-              <ul class="dropdown-content filter">
+              <ul
+                class="dropdown-content filter"
+                id="catalog-modal-sort-list"
+                role="radiogroup"
+                aria-label="Сортировка"
+                data-sort-group
+              >
                 <li>
                   <label class="catalog-checkbox">
                     <input type="radio" name="sort" value="popular" checked />

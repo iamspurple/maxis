@@ -55,6 +55,7 @@
   width: fit-content;
   padding-inline: clamp(6px, 0.6vw, 10px);
   font-size: clamp(6px, 0.6vw, 10px);
+  text-transform: uppercase;
   line-height: 220%;
   border-radius: 5px;
 }

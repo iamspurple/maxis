@@ -262,7 +262,7 @@
                         <a href="#">О компании</a>
                       </li>
                       <li>
-                        <a href="#">ИТ деятельность</a>
+                        <a href="#">ИТ-деятельность</a>
                       </li>
                     </ul>
                   </div>
@@ -358,7 +358,8 @@
 
             <ul class="filters-list">
               <li>
-                <div class="dropdown filter">
+                <fieldset class="dropdown filter">
+                  <legend class="visually-hidden">Услуги</legend>
                   <button type="button" class="dropbtn filter">
                     Услуги
                     <svg
@@ -435,10 +436,11 @@
                       </li>
                     </ul>
                   </div>
-                </div>
+                </fieldset>
               </li>
               <li>
-                <div class="dropdown filter">
+                <fieldset class="dropdown filter">
+                  <legend class="visually-hidden">Софт</legend>
                   <button type="button" class="dropbtn filter">
                     Софт
                     <svg
@@ -473,10 +475,11 @@
                       </li>
                     </ul>
                   </div>
-                </div>
+                </fieldset>
               </li>
               <li>
-                <div class="dropdown filter">
+                <fieldset class="dropdown filter">
+                  <legend class="visually-hidden">Отрасль</legend>
                   <button type="button" class="dropbtn filter">
                     Отрасль
                     <svg
@@ -518,7 +521,7 @@
                       </li>
                     </ul>
                   </div>
-                </div>
+                </fieldset>
               </li>
             </ul>
           </section>
@@ -526,9 +529,16 @@
             <div class="cases-header">
               <h2 class="cases-title">Показано 190 проектов</h2>
               <div class="cases-sort">
-                <div class="dropdown sort">
-                  <button class="dropbtn sort">
-                    По популярности
+                <div class="dropdown sort" data-sort-disclosure>
+                  <button
+                    type="button"
+                    class="dropbtn sort"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-controls="cases-sort-list"
+                    data-sort-toggle
+                  >
+                    <span data-sort-label>По популярности</span>
                     <svg
                       width="16"
                       height="16"
@@ -544,7 +554,13 @@
                     </svg>
                   </button>
                   <div class="dropdown-content-wrapper sort">
-                    <ul class="dropdown-content sort">
+                    <ul
+                      class="dropdown-content sort"
+                      id="cases-sort-list"
+                      role="radiogroup"
+                      aria-label="Сортировка"
+                      data-sort-group
+                    >
                       <li>
                         <label class="filter-checkbox">
                           <input
@@ -587,7 +603,7 @@
                 <img
                   class="cases-item-image"
                   src="/assets/images/neskuchnye.webp"
-                  alt="нескучные финансы"
+                  alt="«Нескучные финансы»"
                 />
                 <div class="cases-item-content-wrapper">
                   <div class="cases-item-content">
@@ -595,7 +611,7 @@
                       <div class="cases-item-icon">
                         <img
                           src="/assets/icons/logo/1c.svg"
-                          alt="1c"
+                          alt="«1С»"
                           loading="lazy"
                         />
                       </div>
@@ -625,7 +641,7 @@
                   loading="lazy"
                   class="cases-item-image"
                   src="/assets/images/prosebya.webp"
-                  alt="про себя"
+                  alt="«Просебя»"
                 />
                 <div class="cases-item-content-wrapper">
                   <div class="cases-item-content">
@@ -634,7 +650,7 @@
                         <img
                           loading="lazy"
                           src="/assets/icons/logo/bitrix24.svg"
-                          alt="bitrix24"
+                          alt="«Битрикс24»"
                         />
                       </div>
                     </div>
@@ -670,7 +686,7 @@
                       <div class="cases-item-icon">
                         <img
                           src="/assets/icons/logo/1c.svg"
-                          alt="1c"
+                          alt="«1С»"
                           loading="lazy"
                         />
                       </div>
@@ -678,7 +694,7 @@
                         <img
                           loading="lazy"
                           src="/assets/icons/logo/bitrix24.svg"
-                          alt="bitrix24"
+                          alt="«Битрикс24»"
                         />
                       </div>
                     </div>
@@ -715,7 +731,7 @@
                       <div class="cases-item-icon">
                         <img
                           src="/assets/icons/logo/1c.svg"
-                          alt="1c"
+                          alt="«1С»"
                           loading="lazy"
                         />
                       </div>
@@ -752,7 +768,7 @@
                       <div class="cases-item-icon">
                         <img
                           src="/assets/icons/logo/1c.svg"
-                          alt="1c"
+                          alt="«1С»"
                           loading="lazy"
                         />
                       </div>
@@ -790,7 +806,7 @@
                         <img
                           loading="lazy"
                           src="/assets/icons/logo/bitrix24.svg"
-                          alt="bitrix24"
+                          alt="«Битрикс24»"
                         />
                       </div>
                     </div>
@@ -930,8 +946,8 @@
                 <img
                   loading="lazy"
                   class="consult-manager-image"
-                  src="/assets/images/manager.png"
-                  alt="manager"
+                  src="/assets/images/manager.webp"
+                  alt="Смирнова Екатерина Александровна"
                 />
                 <div class="consult-manager-content">
                   <h3 class="consult-manager-name">
@@ -1087,7 +1103,7 @@
                 <a href="">Контакты</a>
               </li>
               <li>
-                <a href="">ИТ деятельность</a>
+                <a href="">ИТ-деятельность</a>
               </li>
             </ul>
           </nav>
@@ -1148,7 +1164,11 @@
                 TOLACOMPANY.RU
               </a>
             </p>
-            <img src="/assets/icons/tola.svg" alt="" loading="lazy" />
+            <img
+              src="/assets/icons/tola.svg"
+              alt="«TOLACOMPANY.RU»"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -1247,7 +1267,8 @@
       </button>
       <ul class="filters-modal-list">
         <li>
-          <div class="dropdown filter">
+          <fieldset class="dropdown filter">
+            <legend class="visually-hidden">Услуги</legend>
             <button type="button" class="dropbtn filter">
               Услуги
               <svg
@@ -1318,10 +1339,11 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </fieldset>
         </li>
         <li>
-          <div class="dropdown filter">
+          <fieldset class="dropdown filter">
+            <legend class="visually-hidden">Софт</legend>
             <button type="button" class="dropbtn filter">
               Софт
               <svg
@@ -1356,10 +1378,11 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </fieldset>
         </li>
         <li>
-          <div class="dropdown filter">
+          <fieldset class="dropdown filter">
+            <legend class="visually-hidden">Отрасль</legend>
             <button type="button" class="dropbtn filter">
               Отрасль
               <svg
@@ -1434,11 +1457,18 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </fieldset>
         </li>
         <li>
-          <div class="dropdown filter">
-            <button type="button" class="dropbtn filter">
+          <div class="dropdown filter" data-sort-disclosure>
+            <button
+              type="button"
+              class="dropbtn filter"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="cases-modal-sort-list"
+              data-sort-toggle
+            >
               Сортировать
               <svg
                 width="16"
@@ -1455,7 +1485,13 @@
               </svg>
             </button>
             <div class="dropdown-content-wrapper filter">
-              <ul class="dropdown-content filter">
+              <ul
+                class="dropdown-content filter"
+                id="cases-modal-sort-list"
+                role="radiogroup"
+                aria-label="Сортировка"
+                data-sort-group
+              >
                 <li>
                   <label class="filter-checkbox">
                     <input

@@ -31,6 +31,13 @@
   flex-direction: column;
 }
 
+/* Обёртка ARIA-таблицы (role="table"): прозрачна для раскладки — шапка и список
+   остаются flex-элементами колонки, как были прямыми детьми .cart */
+.cart-table {
+  display: flex;
+  flex-direction: column;
+}
+
 .cart-head {
   display: grid;
   grid-template-columns: 58% 1fr 1fr;
@@ -106,6 +113,7 @@
   letter-spacing: 0.05em;
   border-radius: 5px;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .cart-item-badge--prof {

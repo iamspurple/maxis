@@ -42,7 +42,7 @@
   gap: clamp(25px, 2.4vw, 36px);
 }
 
-.activity-list > li {
+.activity-list > .activity-item {
   padding-top: clamp(
     calc(40px * 1025 / 1400 * var(--zoom-1)),
     calc(100vw * 40 / 1400 * var(--zoom-1)),
@@ -59,7 +59,7 @@
   font-weight: 700;
 }
 
-.activity-list > li ul > li {
+.activity-list > .activity-item ul > li {
   list-style: disc;
   margin-left: 1em;
 }
@@ -87,7 +87,7 @@
     gap: 46px;
   }
 
-  .activity-list > li {
+  .activity-list > .activity-item {
     padding-top: 46px;
     gap: 30px;
   }
@@ -120,7 +120,7 @@
     gap: clamp(29px, 5vw, 42px);
   }
 
-  .activity-list > li {
+  .activity-list > .activity-item {
     padding-top: clamp(29px, 5vw, 42px);
     gap: clamp(24px, 4vw, 34px);
   }
@@ -152,7 +152,7 @@
     gap: clamp(32px, 10vw, 58px);
   }
 
-  .activity-list > li {
+  .activity-list > .activity-item {
     padding-top: clamp(32px, 10vw, 58px);
     gap: clamp(20px, 6.4vw, 37px);
   }

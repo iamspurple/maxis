@@ -64,8 +64,8 @@
   line-height: 160%;
 }
 
-.policy-content dt,
-.policy-content dd {
+.policy dt,
+.policy dd {
   display: inline;
 }
 
