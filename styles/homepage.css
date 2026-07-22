@@ -4011,7 +4011,7 @@
     overflow: hidden;
     width: 100vw;
     aspect-ratio: 0.565;
-    background: url(/assets/images/trophy-1.png) bottom/cover no-repeat;
+    background: url(/assets/images/trophy-1.webp) bottom/cover no-repeat;
   }
 
   .about-certificates-image img {
