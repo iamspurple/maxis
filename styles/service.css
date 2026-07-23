@@ -276,7 +276,6 @@
   padding: clamp(16px, 1.6vw, 22px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: clamp(25px, 2.4vw, 35px);
   background-color: white;
   border-radius: 20px;
@@ -286,6 +285,7 @@
 
 .solutions-item:nth-child(-n + 2) {
   grid-column: span 3;
+  justify-content: space-between;
 }
 
 .solutions-item-content {
