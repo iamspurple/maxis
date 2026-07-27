@@ -36,6 +36,7 @@
   font-size: clamp(30px, 3vw, 43px);
   letter-spacing: -2%;
   grid-area: title;
+  color: var(--color-text-dark);
 }
 
 .case-sidebar {

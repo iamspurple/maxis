@@ -1589,6 +1589,7 @@ input[type="file"]#modal-file {
 .breadcrumb {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: clamp(
     calc(5px * 1025 / 1400),
     calc(100vw * 5 / 1400),

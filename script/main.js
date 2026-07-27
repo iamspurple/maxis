@@ -370,23 +370,25 @@ const initCookie = () => {
   });
 };
 
-const initSidebarContent = () => {
+// prefix — "case" (страница кейса) или "post" (страница статьи). Разметка и
+// поведение сайдбара идентичны, отличаются только имена классов.
+const initSidebarContent = (prefix = "case") => {
   const opts = { duration: 300, easing: "ease" };
 
-  // .case-sidebar залипает на top: 100px (десктоп). Считаем, сколько высоты
-  // остаётся под списком до низа вьюпорта: если содержание влезает — показываем
-  // все пункты, если нет — ограничиваем и даём списку скроллиться.
+  // .case-sidebar/.post-sidebar залипает на top: 100px (десктоп). Считаем, сколько
+  // высоты остаётся под списком до низа вьюпорта: если содержание влезает —
+  // показываем все пункты, если нет — ограничиваем и даём списку скроллиться.
   const STICKY_TOP = 100;
   const BOTTOM_GAP = 24;
   const MIN_LIST_H = 120;
   const isDesktop = () => window.matchMedia("(min-width: 851px)").matches;
 
-  document.querySelectorAll(".case-sidebar-content-btn").forEach((btn) => {
-    const content = btn.closest(".case-sidebar-content");
+  document.querySelectorAll(`.${prefix}-sidebar-content-btn`).forEach((btn) => {
+    const content = btn.closest(`.${prefix}-sidebar-content`);
     if (!content) return;
-    const list = content.querySelector(".case-sidebar-content-list");
+    const list = content.querySelector(`.${prefix}-sidebar-content-list`);
     if (!list) return;
-    const sidebar = content.closest(".case-sidebar");
+    const sidebar = content.closest(`.${prefix}-sidebar`);
 
     const updateMaxHeight = () => {
       if (!sidebar || !isDesktop() || !content.classList.contains("open")) {
@@ -1281,6 +1283,24 @@ document.addEventListener("DOMContentLoaded", () => {
     btnFwd: ".related-slider-btn.forward",
   });
 
+  // blog-post: слайдер похожих статей (своё именование .related-slider-*)
+  initHorizontalSlider(document.querySelector(".related"), {
+    list: ".related-slider-list",
+    item: ".related-slider-item",
+    track: ".related-slider",
+    btnBack: ".related-slider-btn.backward",
+    btnFwd: ".related-slider-btn.forward",
+  });
+
+  // blog-post: слайдер проектов внутри статьи
+  initHorizontalSlider(document.querySelector(".post-projects-slider"), {
+    list: ".post-projects-list",
+    item: ".post-projects-item",
+    track: ".post-projects-slider",
+    btnBack: ".post-projects-slider-btn.backward",
+    btnFwd: ".post-projects-slider-btn.forward",
+  });
+
   initHeaderBurger();
   getHeaderHeight();
   initModal();
@@ -1292,7 +1312,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initStepper();
   initStepSlider();
   initCasesSlider();
-  initSidebarContent();
+  initSidebarContent("case");
+  initSidebarContent("post");
   initFormValidation();
   initFileBtns();
   initCookie();
