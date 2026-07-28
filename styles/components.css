@@ -1652,6 +1652,7 @@ input[type="file"]#modal-file {
 }
 
 .success-title {
+  text-align: center;
   font-size: 32px;
   line-height: 130%;
   font-weight: 600;
@@ -1673,6 +1674,21 @@ input[type="file"]#modal-file {
   line-height: 130%;
   font-weight: 700;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 580px) {
+  .success-content {
+    width: min(83vw, 375px);
+    padding: 26px;
+  }
+
+  .success-title {
+    font-size: 26px;
+  }
+
+  .success-text {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 2000px) {
