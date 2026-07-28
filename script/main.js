@@ -487,7 +487,7 @@ const initModal = () => {
     });
   });
 
-  modalCloseBtn.addEventListener("click", closeModal());
+  modalCloseBtn.addEventListener("click", closeModal);
 
   modal.addEventListener("click", (e) => {
     if (e.target.closest(".modal-form-wrapper")) return;
@@ -501,6 +501,40 @@ const closeModal = () => {
 
   modal.classList.remove("active");
   document.documentElement.classList.remove("noscroll");
+};
+
+const showSuccess = () => {
+  const success = document.querySelector(".success");
+  if (!success) return;
+  success.classList.add("active");
+  document.documentElement.classList.add("noscroll");
+};
+
+const closeSuccess = () => {
+  const success = document.querySelector(".success");
+  if (!success) return;
+  success.classList.remove("active");
+  document.documentElement.classList.remove("noscroll");
+};
+
+const initSuccess = () => {
+  const success = document.querySelector(".success");
+  if (!success) return;
+
+  const closeBtn = document.getElementById("success-close-btn");
+  closeBtn?.addEventListener("click", closeSuccess);
+
+  // закрытие по клику на внешнюю часть (мимо карточки)
+  success.addEventListener("click", (e) => {
+    if (e.target.closest(".success-content")) return;
+    closeSuccess();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && success.classList.contains("active")) {
+      closeSuccess();
+    }
+  });
 };
 
 const initFiltersModal = () => {
@@ -907,9 +941,7 @@ const initFormValidation = () => {
         "#consult-form-phone",
         "#consult-checkbox",
       ]);
-      setTimeout(() => {
-        alert("Форма успешно отправлена");
-      }, 1000);
+      showSuccess();
     });
   }
 
@@ -931,10 +963,11 @@ const initFormValidation = () => {
 
       if (!isValid) return;
       clearForm(["#modal-form-name", "#modal-form-phone", "#modal-checkbox"]);
-      closeModal();
-      setTimeout(() => {
-        alert("Форма успешно отправлена");
-      }, 1000);
+      // Показываем success поверх модалки и в том же кадре убираем модалку.
+      // Оверлеи с одинаковым фоном, поэтому переход идёт без «моргания».
+      // noscroll уже выставлен showSuccess(), поэтому здесь его не трогаем.
+      showSuccess();
+      modalForm.closest(".modal")?.classList.remove("active");
     });
   }
 };
@@ -1315,6 +1348,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSidebarContent("case");
   initSidebarContent("post");
   initFormValidation();
+  initSuccess();
   initFileBtns();
   initCookie();
 });
