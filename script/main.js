@@ -574,9 +574,6 @@ const initFiltersModal = () => {
   });
 };
 
-// Сворачивание/разворачивание групп фильтров каталога по клику на заголовок
-// (десктопный сайдбар). Показ списка и поворот шеврона управляются в CSS
-// через атрибут aria-expanded.
 const initCatalogFilterGroups = () => {
   document
     .querySelectorAll(".catalog-filter-group-header")
@@ -588,10 +585,6 @@ const initCatalogFilterGroups = () => {
     });
 };
 
-// Доступная сортировка на основе нативной радиогруппы внутри раскрывающегося блока
-// (кейсы: десктоп + модалка; каталог: модалка). Нативные радио сами дают выбор с
-// клавиатуры и состояние «выбрано»; здесь добавляем семантику раскрытия
-// (aria-expanded), открытие/закрытие с клавиатуры и синхронизацию подписи кнопки.
 const initSortDisclosure = () => {
   document.querySelectorAll("[data-sort-disclosure]").forEach((dd) => {
     const btn = dd.querySelector("[data-sort-toggle]");
@@ -626,7 +619,6 @@ const initSortDisclosure = () => {
       }
     });
 
-    // Escape внутри списка возвращает фокус на кнопку; уход фокуса из блока — закрытие.
     dd.addEventListener("keydown", (e) => {
       if (e.key === "Escape") close(true);
     });
@@ -634,9 +626,6 @@ const initSortDisclosure = () => {
       if (!dd.contains(e.relatedTarget)) close(false);
     });
 
-    // Синхронизация подписи кнопки с выбранным пунктом. change у радио срабатывает
-    // и при навигации стрелками — поэтому здесь только обновляем текст, не закрывая
-    // список (закрытие — по Escape/уходу фокуса/клику вне).
     radios.forEach((r) =>
       r.addEventListener("change", () => {
         if (!labelEl) return;
@@ -651,17 +640,13 @@ const initSortDisclosure = () => {
   });
 };
 
-// Доступный кастомный список сортировки каталога (десктоп): кнопка-триггер + список
-// опций-кнопок. Реализует паттерн listbox (role, aria-selected, aria-expanded,
-// управление с клавиатуры) и заодно подключает выбор: обновляет подпись, активную
-// опцию и скрытый input формы (ранее опции были некликабельны).
-const initCatalogSortListbox = () => {
-  const dd = document.querySelector(".catalog-sort.dropdown");
+const initSortListbox = (prefix) => {
+  const dd = document.querySelector(`.${prefix}-sort.dropdown`);
   if (!dd) return;
-  const btn = dd.querySelector(".catalog-sort-btn");
-  const valueEl = dd.querySelector(".catalog-sort-value");
-  const input = dd.querySelector(".catalog-sort-input");
-  const options = [...dd.querySelectorAll(".catalog-sort-option")];
+  const btn = dd.querySelector(`.${prefix}-sort-btn`);
+  const valueEl = dd.querySelector(`.${prefix}-sort-value`);
+  const input = dd.querySelector(`.${prefix}-sort-input`);
+  const options = [...dd.querySelectorAll(`.${prefix}-sort-option`)];
   if (!btn || !options.length) return;
 
   const isOpen = () => dd.classList.contains("active");
@@ -752,10 +737,6 @@ const initStickyHeaderBottom = () => {
   let triggerY = 0;
   let ticking = false;
 
-  // headerTop всегда in-flow (никогда не fixed), поэтому его положение в документе
-  // стабильно и им безопасно мерить порог независимо от sticky-состояния.
-  // triggerY = scrollY, при котором низ headerTop достигает верха вьюпорта —
-  // ровно тогда верх headerBottom оказывается на top:0.
   function measure() {
     triggerY = headerTop.getBoundingClientRect().bottom + window.scrollY;
   }
@@ -765,13 +746,10 @@ const initStickyHeaderBottom = () => {
     isSticky = sticky;
     if (sticky) {
       header.style.paddingBottom = headerBottom.offsetHeight - 4 + "px";
-      // 1. position: fixed + full padding — кадр визуально идентичен in-flow
       headerBottom.classList.add("sticky");
-      // 2. ждём, пока Safari реально отрисует кадр .sticky (двойной rAF),
-      //    только тогда смена padding регистрируется как отдельный transition
+
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          // 3. compact padding → transition анимируется (если ещё sticky)
           if (isSticky) headerBottom.classList.add("compact");
         });
       });
@@ -785,8 +763,6 @@ const initStickyHeaderBottom = () => {
     }
   }
 
-  // Скролл-обработчик читает только window.scrollY (без layout-чтений per-frame),
-  // сравнивая с заранее вычисленным triggerY → пиннинг realtime, без задержки IO.
   function onScroll() {
     if (ticking) return;
     ticking = true;
@@ -963,9 +939,6 @@ const initFormValidation = () => {
 
       if (!isValid) return;
       clearForm(["#modal-form-name", "#modal-form-phone", "#modal-checkbox"]);
-      // Показываем success поверх модалки и в том же кадре убираем модалку.
-      // Оверлеи с одинаковым фоном, поэтому переход идёт без «моргания».
-      // noscroll уже выставлен showSuccess(), поэтому здесь его не трогаем.
       showSuccess();
       modalForm.closest(".modal")?.classList.remove("active");
     });
@@ -1340,7 +1313,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initFiltersModal();
   initCatalogFilterGroups();
   initSortDisclosure();
-  initCatalogSortListbox();
+  initSortListbox("catalog");
+  initSortListbox("blog");
   initStickyHeaderBottom();
   initStepper();
   initStepSlider();

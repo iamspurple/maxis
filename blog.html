@@ -327,252 +327,289 @@
           </nav>
           <h1 class="title heading">Новости и статьи</h1>
           <section class="blog">
-            <div class="blog-filters">
-              <form action="" class="blog-search">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.1475 15.3525L13.2668 12.4717C14.2298 11.3295 14.8125 9.85725 14.8125 8.25C14.8125 4.63125 11.8687 1.6875 8.25 1.6875C4.63125 1.6875 1.6875 4.63125 1.6875 8.25C1.6875 11.8687 4.63125 14.8125 8.25 14.8125C9.85725 14.8125 11.3295 14.2297 12.4718 13.2667L15.3525 16.1475C15.462 16.257 15.606 16.3125 15.75 16.3125C15.894 16.3125 16.038 16.2577 16.1475 16.1475C16.3673 15.9285 16.3673 15.5723 16.1475 15.3525ZM2.8125 8.25C2.8125 5.2515 5.2515 2.8125 8.25 2.8125C11.2485 2.8125 13.6875 5.2515 13.6875 8.25C13.6875 11.2485 11.2485 13.6875 8.25 13.6875C5.2515 13.6875 2.8125 11.2485 2.8125 8.25Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <input type="text" placeholder="Введите запрос" />
-                <button type="submit" class="blog-search-btn btn">Найти</button>
-              </form>
-              <section class="filters">
-                <div class="filters-header">
-                  <h2 class="filters-title">Фильтры</h2>
+            <section class="filters">
+              <div class="filters-header">
+                <h2 class="filters-title">Фильтры</h2>
+                <div class="filters-heaader-right">
                   <button class="filters-reset btn">Сбросить</button>
-                  <button id="open-filters" class="filters-btn">
-                    <span> Фильтры </span>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                  <div class="blog-sort dropdown">
+                    <input
+                      type="hidden"
+                      name="sort"
+                      value="popular"
+                      class="blog-sort-input"
+                    />
+                    <button
+                      type="button"
+                      class="blog-sort-btn dropbtn"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                      aria-controls="blog-sort-list"
                     >
-                      <path
-                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
-                        fill="currentColor"
-                        fill-opacity="1"
-                      />
-                    </svg>
-                  </button>
+                      <span class="blog-sort-value">По популярности</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="dropdown-content-wrapper">
+                      <ul
+                        class="dropdown-content blog-sort-list"
+                        id="blog-sort-list"
+                        role="listbox"
+                        aria-label="Сортировка"
+                      >
+                        <li>
+                          <button
+                            type="button"
+                            role="option"
+                            aria-selected="true"
+                            class="blog-sort-option is-active"
+                            data-value="popular"
+                          >
+                            По популярности
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            role="option"
+                            aria-selected="false"
+                            class="blog-sort-option"
+                            data-value="price-asc"
+                          >
+                            Сначала дешевле
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            role="option"
+                            aria-selected="false"
+                            class="blog-sort-option"
+                            data-value="price-desc"
+                          >
+                            Сначала дороже
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            role="option"
+                            aria-selected="false"
+                            class="blog-sort-option"
+                            data-value="name"
+                          >
+                            По названию
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
+                <button id="open-filters" class="filters-btn">
+                  <span> Фильтры </span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                      fill="currentColor"
+                      fill-opacity="1"
+                    />
+                  </svg>
+                </button>
+              </div>
 
-                <ul class="filters-list">
-                  <li>
-                    <div class="dropdown filter">
-                      <button type="button" class="dropbtn filter">
-                        Услуги
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
-                            fill="currentColor"
-                            fill-opacity="1"
-                          />
-                        </svg>
-                      </button>
-                      <div class="dropdown-content-wrapper filter">
-                        <ul class="dropdown-content filter">
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="service"
-                                value="integration"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label"
-                                >Интеграция 1С и Битрикс24</span
-                              >
-                            </label>
-                          </li>
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="service"
-                                value="bi"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label"
-                                >BI-аналитика и дашборды</span
-                              >
-                            </label>
-                          </li>
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="service"
-                                value="infra"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label"
-                                >IT-инфраструктура</span
-                              >
-                            </label>
-                          </li>
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="service"
-                                value="dev"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label"
-                                >Разработки и интеграции</span
-                              >
-                            </label>
-                          </li>
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="service"
-                                value="ai"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label"
-                                >Искусственный интеллект</span
-                              >
-                            </label>
-                          </li>
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="service"
-                                value="oss"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label"
-                                >Open Source</span
-                              >
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
+              <ul class="filters-list">
+                <li>
+                  <div class="dropdown filter">
+                    <button type="button" class="dropbtn filter">
+                      Услуги
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                          fill="currentColor"
+                          fill-opacity="1"
+                        />
+                      </svg>
+                    </button>
+                    <div class="dropdown-content-wrapper filter">
+                      <ul class="dropdown-content filter">
+                        <li>
+                          <label class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              name="service"
+                              value="integration"
+                            />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label"
+                              >Интеграция 1С и Битрикс24</span
+                            >
+                          </label>
+                        </li>
+                        <li>
+                          <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="bi" />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label"
+                              >BI-аналитика и дашборды</span
+                            >
+                          </label>
+                        </li>
+                        <li>
+                          <label class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              name="service"
+                              value="infra"
+                            />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label"
+                              >IT-инфраструктура</span
+                            >
+                          </label>
+                        </li>
+                        <li>
+                          <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="dev" />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label"
+                              >Разработки и интеграции</span
+                            >
+                          </label>
+                        </li>
+                        <li>
+                          <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="ai" />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label"
+                              >Искусственный интеллект</span
+                            >
+                          </label>
+                        </li>
+                        <li>
+                          <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="oss" />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label"
+                              >Open Source</span
+                            >
+                          </label>
+                        </li>
+                      </ul>
                     </div>
-                  </li>
-                  <li>
-                    <div class="dropdown filter">
-                      <button type="button" class="dropbtn filter">
-                        Софт
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
-                            fill="currentColor"
-                            fill-opacity="1"
-                          />
-                        </svg>
-                      </button>
-                      <div class="dropdown-content-wrapper filter">
-                        <ul class="dropdown-content filter">
-                          <li>
-                            <label class="filter-checkbox">
-                              <input type="checkbox" name="soft" value="1c" />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label">1С</span>
-                            </label>
-                          </li>
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="soft"
-                                value="bitrix24"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label"
-                                >Битрикс24</span
-                              >
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="dropdown filter">
+                    <button type="button" class="dropbtn filter">
+                      Софт
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                          fill="currentColor"
+                          fill-opacity="1"
+                        />
+                      </svg>
+                    </button>
+                    <div class="dropdown-content-wrapper filter">
+                      <ul class="dropdown-content filter">
+                        <li>
+                          <label class="filter-checkbox">
+                            <input type="checkbox" name="soft" value="1c" />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label">1С</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              name="soft"
+                              value="bitrix24"
+                            />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label">Битрикс24</span>
+                          </label>
+                        </li>
+                      </ul>
                     </div>
-                  </li>
-                  <li>
-                    <div class="dropdown filter">
-                      <button type="button" class="dropbtn filter">
-                        Отрасль
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
-                            fill="currentColor"
-                            fill-opacity="1"
-                          />
-                        </svg>
-                      </button>
-                      <div class="dropdown-content-wrapper filter">
-                        <ul class="dropdown-content filter">
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="industry"
-                                value="1"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label">1</span>
-                            </label>
-                          </li>
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="industry"
-                                value="2"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label">2</span>
-                            </label>
-                          </li>
-                          <li>
-                            <label class="filter-checkbox">
-                              <input
-                                type="checkbox"
-                                name="industry"
-                                value="3"
-                              />
-                              <span class="filter-checkbox-box"></span>
-                              <span class="filter-checkbox-label">3</span>
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="dropdown filter">
+                    <button type="button" class="dropbtn filter">
+                      Отрасль
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                          fill="currentColor"
+                          fill-opacity="1"
+                        />
+                      </svg>
+                    </button>
+                    <div class="dropdown-content-wrapper filter">
+                      <ul class="dropdown-content filter">
+                        <li>
+                          <label class="filter-checkbox">
+                            <input type="checkbox" name="industry" value="1" />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label">1</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="filter-checkbox">
+                            <input type="checkbox" name="industry" value="2" />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label">2</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="filter-checkbox">
+                            <input type="checkbox" name="industry" value="3" />
+                            <span class="filter-checkbox-box"></span>
+                            <span class="filter-checkbox-label">3</span>
+                          </label>
+                        </li>
+                      </ul>
                     </div>
-                  </li>
-                </ul>
-              </section>
-            </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
             <ul class="blog-list">
               <li class="blog-item btn">
                 <a href="/">
@@ -1246,12 +1283,17 @@
       </div>
     </div>
     <div class="filters-modal">
-      <button class="filters-close-btn" id="close-filters">
+      <button
+        class="filters-close-btn"
+        id="close-filters"
+        aria-label="Закрыть фильтры"
+      >
         <img src="/assets/icons/close-blue.svg" alt="" loading="lazy" />
       </button>
       <ul class="filters-modal-list">
         <li>
-          <div class="dropdown filter">
+          <fieldset class="dropdown filter">
+            <legend class="visually-hidden">Услуги</legend>
             <button type="button" class="dropbtn filter">
               Услуги
               <svg
@@ -1322,10 +1364,11 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </fieldset>
         </li>
         <li>
-          <div class="dropdown filter">
+          <fieldset class="dropdown filter">
+            <legend class="visually-hidden">Софт</legend>
             <button type="button" class="dropbtn filter">
               Софт
               <svg
@@ -1360,10 +1403,11 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </fieldset>
         </li>
         <li>
-          <div class="dropdown filter">
+          <fieldset class="dropdown filter">
+            <legend class="visually-hidden">Отрасль</legend>
             <button type="button" class="dropbtn filter">
               Отрасль
               <svg
@@ -1438,7 +1482,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </fieldset>
         </li>
         <li>
           <div class="dropdown filter">
