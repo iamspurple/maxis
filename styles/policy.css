@@ -69,49 +69,47 @@
   display: inline;
 }
 
-@media screen and (min-width: 2000px) {
-  .main {
-    gap: 80px;
-  }
+html.big-screen .main {
+  gap: 80px;
+}
 
-  .main-container {
-    gap: 70px;
-    padding-block: 46px 80px;
-  }
+html.big-screen .main-container {
+  gap: 70px;
+  padding-block: 46px 80px;
+}
 
-  .policy-title {
-    font-size: clamp(
-      calc(32px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 32 / 1400 * var(--zoom-2)),
-      calc(32px * 1720 / 1400 * var(--zoom-2))
-    );
-    padding-bottom: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1720 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .policy-title {
+  font-size: clamp(
+    calc(32px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 32 / 1400 * var(--zoom-2)),
+    calc(32px * 1720 / 1400 * var(--zoom-2))
+  );
+  padding-bottom: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1720 / 1400 * var(--zoom-2))
+  );
+}
 
-  .policy {
-    gap: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1720 / 1400 * var(--zoom-2))
-    );
-    font-size: clamp(
-      calc(18px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 18 / 1400 * var(--zoom-2)),
-      calc(18px * 1720 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .policy {
+  gap: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1720 / 1400 * var(--zoom-2))
+  );
+  font-size: clamp(
+    calc(18px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 18 / 1400 * var(--zoom-2)),
+    calc(18px * 1720 / 1400 * var(--zoom-2))
+  );
+}
 
-  .policy-subtitle {
-    font-size: clamp(
-      calc(24px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 24 / 1400 * var(--zoom-2)),
-      calc(24px * 1720 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .policy-subtitle {
+  font-size: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1720 / 1400 * var(--zoom-2))
+  );
 }
 
 @media screen and (max-width: 850px) {

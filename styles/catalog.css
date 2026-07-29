@@ -713,250 +713,246 @@
   opacity: 0.5;
 }
 
-@media screen and (min-width: 2000px) {
-  .main {
-    gap: 80px;
-  }
+html.big-screen .main {
+  gap: 80px;
+}
 
-  .main-container {
-    gap: 46px;
-    padding-block: 46px 80px;
-  }
+html.big-screen .main-container {
+  gap: 46px;
+  padding-block: 46px 80px;
+}
 
-  .catalog {
-    gap: 46px;
-  }
+html.big-screen .catalog {
+  gap: 46px;
+}
 
-  .title {
-    font-size: 55px;
-  }
+html.big-screen .title {
+  font-size: 55px;
+}
 
-  .catalog-wrapper {
-    row-gap: 20px;
-    column-gap: 30px;
-  }
+html.big-screen .catalog-wrapper {
+  row-gap: 20px;
+  column-gap: 30px;
+}
 
-  .catalog-toolbar-left {
-    gap: 18px;
-  }
+html.big-screen .catalog-toolbar-left {
+  gap: 18px;
+}
 
-  .catalog-filters-title {
-    font-size: 28px;
-    gap: 18px;
-  }
+html.big-screen .catalog-filters-title {
+  font-size: 28px;
+  gap: 18px;
+}
 
-  .catalog-filters {
-    gap: 30px;
-  }
+html.big-screen .catalog-filters {
+  gap: 30px;
+}
 
-  .catalog-reset-btn {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
+html.big-screen .catalog-reset-btn {
+  font-size: 16px;
+  padding: 10px 20px;
+}
 
-  .catalog-sort-btn {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
+html.big-screen .catalog-sort-btn {
+  font-size: 16px;
+  padding: 10px 20px;
+}
 
-  .catalog-sort-list {
-    font-size: 16px;
-  }
+html.big-screen .catalog-sort-list {
+  font-size: 16px;
+}
 
-  .catalog-sort-option {
-    padding: 10px 20px;
-  }
+html.big-screen .catalog-sort-option {
+  padding: 10px 20px;
+}
 
-  .catalog-toolbar-tabs {
-    gap: 12px;
-  }
+html.big-screen .catalog-toolbar-tabs {
+  gap: 12px;
+}
 
-  .catalog-tab {
-    padding: 20px 28px;
-    font-size: 16px;
-  }
+html.big-screen .catalog-tab {
+  padding: 20px 28px;
+  font-size: 16px;
+}
 
-  .catalog-sidebar {
-    gap: 18px;
-  }
+html.big-screen .catalog-sidebar {
+  gap: 18px;
+}
 
-  .catalog-categories,
-  .catalog-filter-group {
-    padding: 28px;
-  }
+html.big-screen .catalog-categories, html.big-screen .catalog-filter-group {
+  padding: 28px;
+}
 
-  .catalog-filter-group {
-    display: none;
-  }
+html.big-screen .catalog-filter-group {
+  display: none;
+}
 
-  .catalog-categories-list {
-    gap: 12px;
-  }
+html.big-screen .catalog-categories-list {
+  gap: 12px;
+}
 
-  .catalog-category {
-    gap: 14px;
-    font-size: 16px;
-  }
+html.big-screen .catalog-category {
+  gap: 14px;
+  font-size: 16px;
+}
 
-  .catalog-category-num {
-    width: clamp(
-      calc(36px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 36 / 1400 * var(--zoom-2)),
-      calc(36px * 1440 / 1400 * var(--zoom-2))
-    );
-    height: clamp(
-      calc(36px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 36 / 1400 * var(--zoom-2)),
-      calc(36px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .catalog-category-num {
+  width: clamp(
+    calc(36px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 36 / 1400 * var(--zoom-2)),
+    calc(36px * 1440 / 1400 * var(--zoom-2))
+  );
+  height: clamp(
+    calc(36px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 36 / 1400 * var(--zoom-2)),
+    calc(36px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .catalog-filter-group-header {
-    font-size: 18px;
-    padding-bottom: 14px;
-  }
+html.big-screen .catalog-filter-group-header {
+  font-size: 18px;
+  padding-bottom: 14px;
+}
 
-  .catalog-filter-list {
-    font-size: 16px;
-    gap: 14px;
-  }
+html.big-screen .catalog-filter-list {
+  font-size: 16px;
+  gap: 14px;
+}
 
-  .catalog-filter-list li:first-child {
-    padding-top: 14px;
-  }
+html.big-screen .catalog-filter-list li:first-child {
+  padding-top: 14px;
+}
 
-  .catalog-checkbox {
-    gap: 8px;
-  }
+html.big-screen .catalog-checkbox {
+  gap: 8px;
+}
 
-  .catalog-checkbox-box {
-    width: 18px;
-    height: 18px;
-  }
+html.big-screen .catalog-checkbox-box {
+  width: 18px;
+  height: 18px;
+}
 
-  .catalog-content {
-    gap: 46px;
-  }
+html.big-screen .catalog-content {
+  gap: 46px;
+}
 
-  .catalog-list {
-    gap: 30px;
-  }
+html.big-screen .catalog-list {
+  gap: 30px;
+}
 
-  .catalog-card {
-    padding: 30px 16px 16px;
-  }
+html.big-screen .catalog-card {
+  padding: 30px 16px 16px;
+}
 
-  .catalog-card-image {
-    padding-inline: clamp(
-      calc(30px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 30 / 1400 * var(--zoom-2)),
-      calc(30px * 1440 / 1400 * var(--zoom-2))
-    );
-    margin-bottom: 30px;
-  }
+html.big-screen .catalog-card-image {
+  padding-inline: clamp(
+    calc(30px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 30 / 1400 * var(--zoom-2)),
+    calc(30px * 1440 / 1400 * var(--zoom-2))
+  );
+  margin-bottom: 30px;
+}
 
-  .catalog-card-badge {
-    font-size: 12px;
-  }
+html.big-screen .catalog-card-badge {
+  font-size: 12px;
+}
 
-  .catalog-card-body {
-    gap: 12px;
-  }
+html.big-screen .catalog-card-body {
+  gap: 12px;
+}
 
-  .catalog-card-info,
-  .catalog-card-purchase {
-    gap: 12px;
-  }
+html.big-screen .catalog-card-info, html.big-screen .catalog-card-purchase {
+  gap: 12px;
+}
 
-  .catalog-card-title {
-    padding-top: 16px;
-    font-size: 16px;
-  }
+html.big-screen .catalog-card-title {
+  padding-top: 16px;
+  font-size: 16px;
+}
 
-  .catalog-card-delivery {
-    gap: 12px;
-  }
+html.big-screen .catalog-card-delivery {
+  gap: 12px;
+}
 
-  .catalog-card-price {
-    font-size: 20px;
-  }
+html.big-screen .catalog-card-price {
+  font-size: 20px;
+}
 
-  .catalog-card-actions {
-    gap: 13px;
-  }
+html.big-screen .catalog-card-actions {
+  gap: 13px;
+}
 
-  .catalog-counter-btn {
-    width: clamp(
-      calc(30px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 30 / 1400 * var(--zoom-2)),
-      calc(30px * 1440 / 1400 * var(--zoom-2))
-    );
-    height: clamp(
-      calc(30px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 30 / 1400 * var(--zoom-2)),
-      calc(30px * 1440 / 1400 * var(--zoom-2))
-    );
-    font-size: 14px;
-  }
+html.big-screen .catalog-counter-btn {
+  width: clamp(
+    calc(30px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 30 / 1400 * var(--zoom-2)),
+    calc(30px * 1440 / 1400 * var(--zoom-2))
+  );
+  height: clamp(
+    calc(30px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 30 / 1400 * var(--zoom-2)),
+    calc(30px * 1440 / 1400 * var(--zoom-2))
+  );
+  font-size: 14px;
+}
 
-  .catalog-counter-number {
-    width: clamp(
-      calc(33px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 33 / 1400 * var(--zoom-2)),
-      calc(33px * 1440 / 1400 * var(--zoom-2))
-    );
-    font-size: 14px;
-  }
+html.big-screen .catalog-counter-number {
+  width: clamp(
+    calc(33px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 33 / 1400 * var(--zoom-2)),
+    calc(33px * 1440 / 1400 * var(--zoom-2))
+  );
+  font-size: 14px;
+}
 
-  .catalog-card-cart {
-    font-size: 16px;
-    height: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .catalog-card-cart {
+  font-size: 16px;
+  height: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .catalog-card-more {
-    font-size: 16px;
-    height: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .catalog-card-more {
+  font-size: 16px;
+  height: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .pagination {
-    gap: 28px;
-  }
+html.big-screen .pagination {
+  gap: 28px;
+}
 
-  .pagination-content {
-    gap: 14px;
-  }
+html.big-screen .pagination-content {
+  gap: 14px;
+}
 
-  .pagination-list {
-    gap: 14px;
-  }
+html.big-screen .pagination-list {
+  gap: 14px;
+}
 
-  .pagination-btn {
-    width: 70px;
-    height: 70px;
-  }
+html.big-screen .pagination-btn {
+  width: 70px;
+  height: 70px;
+}
 
-  .pagination-btn svg {
-    width: 28px;
-    height: 28px;
-  }
+html.big-screen .pagination-btn svg {
+  width: 28px;
+  height: 28px;
+}
 
-  .pagination-page {
-    width: 46px;
-    height: 46px;
-    font-size: 16px;
-  }
+html.big-screen .pagination-page {
+  width: 46px;
+  height: 46px;
+  font-size: 16px;
+}
 
-  .pagination-total {
-    font-size: 16px;
-  }
+html.big-screen .pagination-total {
+  font-size: 16px;
 }
 
 @media screen and (max-width: 850px) {

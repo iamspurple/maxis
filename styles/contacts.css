@@ -138,60 +138,58 @@ a.contacts-info-value {
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .main {
-    gap: 80px;
-  }
+html.big-screen .main {
+  gap: 80px;
+}
 
-  .main-container {
-    gap: 70px;
-    padding-block: 46px 80px;
-  }
+html.big-screen .main-container {
+  gap: 70px;
+  padding-block: 46px 80px;
+}
 
-  .title {
-    font-size: 55px;
-  }
+html.big-screen .title {
+  font-size: 55px;
+}
 
-  .contacts {
-    gap: 30px;
-  }
+html.big-screen .contacts {
+  gap: 30px;
+}
 
-  .contacts-info {
-    gap: 40px;
-    padding: 50px;
-  }
+html.big-screen .contacts-info {
+  gap: 40px;
+  padding: 50px;
+}
 
-  .contacts-info-item {
-    gap: 18px;
-  }
+html.big-screen .contacts-info-item {
+  gap: 18px;
+}
 
-  .contacts-info-label {
-    font-size: 16px;
-  }
+html.big-screen .contacts-info-label {
+  font-size: 16px;
+}
 
-  .contacts-info-value {
-    font-size: 20px;
-  }
+html.big-screen .contacts-info-value {
+  font-size: 20px;
+}
 
-  .contacts-requisites {
-    gap: 30px;
-    padding: 38px 52px;
-    border-radius: 28px;
-  }
+html.big-screen .contacts-requisites {
+  gap: 30px;
+  padding: 38px 52px;
+  border-radius: 28px;
+}
 
-  .contacts-requisites-title {
-    font-size: 23px;
-  }
+html.big-screen .contacts-requisites-title {
+  font-size: 23px;
+}
 
-  .contacts-requisites-grid {
-    column-gap: 30px;
-  }
+html.big-screen .contacts-requisites-grid {
+  column-gap: 30px;
+}
 
-  .contacts-requisites-item {
-    font-size: 16px;
-    padding-block: 17px;
-    gap: 30px;
-  }
+html.big-screen .contacts-requisites-item {
+  font-size: 16px;
+  padding-block: 17px;
+  gap: 30px;
 }
 
 @media screen and (max-width: 850px) {

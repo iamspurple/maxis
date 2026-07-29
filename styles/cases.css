@@ -445,155 +445,153 @@
   opacity: 0.5;
 }
 
-@media screen and (min-width: 2000px) {
-  .main {
-    gap: 80px;
-  }
+html.big-screen .main {
+  gap: 80px;
+}
 
-  .main-container {
-    gap: 46px;
-    padding-block: 46px 80px;
-  }
+html.big-screen .main-container {
+  gap: 46px;
+  padding-block: 46px 80px;
+}
 
-  .title {
-    font-size: 55px;
-  }
+html.big-screen .title {
+  font-size: 55px;
+}
 
-  .subtitle {
-    font-size: 23px;
-  }
+html.big-screen .subtitle {
+  font-size: 23px;
+}
 
-  .filters {
-    gap: 46px;
-  }
+html.big-screen .filters {
+  gap: 46px;
+}
 
-  .filters-title {
-    font-size: 28px;
-  }
+html.big-screen .filters-title {
+  font-size: 28px;
+}
 
-  .filters-reset {
-    font-size: 16px;
-    padding: 9px 20px;
-  }
+html.big-screen .filters-reset {
+  font-size: 16px;
+  padding: 9px 20px;
+}
 
-  .filters-list {
-    gap: 18px;
-  }
+html.big-screen .filters-list {
+  gap: 18px;
+}
 
-  .filter.dropbtn {
-    padding: 23px 28px;
-    font-size: 18px;
-  }
+html.big-screen .filter.dropbtn {
+  padding: 23px 28px;
+  font-size: 18px;
+}
 
-  .filter.dropdown-content {
-    padding: 21px 28px;
-    font-size: 16px;
-  }
+html.big-screen .filter.dropdown-content {
+  padding: 21px 28px;
+  font-size: 16px;
+}
 
-  .cases {
-    gap: 46px;
-  }
+html.big-screen .cases {
+  gap: 46px;
+}
 
-  .cases-title {
-    font-size: 28px;
-  }
+html.big-screen .cases-title {
+  font-size: 28px;
+}
 
-  .sort.dropbtn {
-    padding: 9px 21px;
-    gap: 16px;
-    font-size: 16px;
-  }
+html.big-screen .sort.dropbtn {
+  padding: 9px 21px;
+  gap: 16px;
+  font-size: 16px;
+}
 
-  .sort.dropdown-content {
-    font-size: 16px;
-  }
+html.big-screen .sort.dropdown-content {
+  font-size: 16px;
+}
 
-  .sort.dropdown-content .filter-checkbox {
-    padding: 9px 21px;
-  }
+html.big-screen .sort.dropdown-content .filter-checkbox {
+  padding: 9px 21px;
+}
 
-  .cases-list {
-    gap: 30px;
-  }
+html.big-screen .cases-list {
+  gap: 30px;
+}
 
-  .cases-item-content-wrapper {
-    gap: 23px;
-    padding: 28px;
-  }
+html.big-screen .cases-item-content-wrapper {
+  gap: 23px;
+  padding: 28px;
+}
 
-  .cases-item-content {
-    gap: 23px;
-  }
+html.big-screen .cases-item-content {
+  gap: 23px;
+}
 
-  .cases-item-icons {
-    gap: 12px;
-  }
+html.big-screen .cases-item-icons {
+  gap: 12px;
+}
 
-  .cases-item-icon {
-    height: 46px;
-  }
+html.big-screen .cases-item-icon {
+  height: 46px;
+}
 
-  .cases-item-info {
-    gap: 12px;
-  }
+html.big-screen .cases-item-info {
+  gap: 12px;
+}
 
-  .cases-item-name {
-    font-size: 23px;
-  }
+html.big-screen .cases-item-name {
+  font-size: 23px;
+}
 
-  .cases-item-description {
-    font-size: 18px;
-  }
+html.big-screen .cases-item-description {
+  font-size: 18px;
+}
 
-  .cases-item-details {
-    gap: 16px;
-    font-size: 16px;
-  }
+html.big-screen .cases-item-details {
+  gap: 16px;
+  font-size: 16px;
+}
 
-  .cases-item-details-list {
-    gap: 16px;
-  }
+html.big-screen .cases-item-details-list {
+  gap: 16px;
+}
 
-  .cases-item-link {
-    padding-block: 23px;
-    font-size: clamp(
-      calc(16px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 16 / 1400 * var(--zoom-2)),
-      calc(16px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .cases-item-link {
+  padding-block: 23px;
+  font-size: clamp(
+    calc(16px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 16 / 1400 * var(--zoom-2)),
+    calc(16px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .pagination {
-    gap: 28px;
-  }
+html.big-screen .pagination {
+  gap: 28px;
+}
 
-  .pagination-content {
-    gap: 14px;
-  }
+html.big-screen .pagination-content {
+  gap: 14px;
+}
 
-  .pagination-list {
-    gap: 14px;
-  }
+html.big-screen .pagination-list {
+  gap: 14px;
+}
 
-  .pagination-btn {
-    width: 70px;
-    height: 70px;
-  }
+html.big-screen .pagination-btn {
+  width: 70px;
+  height: 70px;
+}
 
-  .pagination-btn svg {
-    width: 28px;
-    height: 28px;
-  }
+html.big-screen .pagination-btn svg {
+  width: 28px;
+  height: 28px;
+}
 
-  .pagination-page {
-    width: 46px;
-    height: 46px;
-    font-size: 16px;
-  }
+html.big-screen .pagination-page {
+  width: 46px;
+  height: 46px;
+  font-size: 16px;
+}
 
-  .pagination-total {
-    font-size: 16px;
-  }
+html.big-screen .pagination-total {
+  font-size: 16px;
 }
 
 @media screen and (max-width: 850px) {

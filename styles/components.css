@@ -314,10 +314,8 @@
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .header-bottom.sticky {
-    padding-inline: calc((100vw - 1470px) / 2);
-  }
+html.big-screen .header-bottom.sticky {
+  padding-inline: calc((100vw - 1470px) / 2);
 }
 
 .header-nav {
@@ -1691,578 +1689,574 @@ input[type="file"]#modal-file {
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .header-top {
-    padding-top: calc(clamp(14px, 1.28vw, 24px) * var(--zoom-2));
-  }
+html.big-screen .header-top {
+  padding-top: calc(clamp(14px, 1.28vw, 24px) * var(--zoom-2));
+}
 
-  .header-logo-wrapper {
-    gap: calc(clamp(16px, 1.42vw, 24px) * var(--zoom-2));
-  }
+html.big-screen .header-logo-wrapper {
+  gap: calc(clamp(16px, 1.42vw, 24px) * var(--zoom-2));
+}
 
-  .header-logo {
-    font-size: calc(clamp(1rem, 1.7vw, 2rem) * var(--zoom-2));
-  }
+html.big-screen .header-logo {
+  font-size: calc(clamp(1rem, 1.7vw, 2rem) * var(--zoom-2));
+}
 
-  .header-logo img {
-    width: calc(clamp(23px, 2.35vw, 46px) * var(--zoom-2));
-  }
+html.big-screen .header-logo img {
+  width: calc(clamp(23px, 2.35vw, 46px) * var(--zoom-2));
+}
 
-  .header-logo-exp {
-    padding-inline: clamp(
-      calc(16px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 16 / 1400 * var(--zoom-2)),
-      calc(16px * 1440 / 1400 * var(--zoom-2))
-    );
+html.big-screen .header-logo-exp {
+  padding-inline: clamp(
+    calc(16px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 16 / 1400 * var(--zoom-2)),
+    calc(16px * 1440 / 1400 * var(--zoom-2))
+  );
 
-    font-size: clamp(
+  font-size: clamp(
+    calc(12px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 12 / 1400 * var(--zoom-2)),
+    calc(12px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .header-contacts, html.big-screen .header-phone-wrapper {
+  gap: calc(clamp(32px, 3vw, 48px) * var(--zoom-2));
+}
+
+html.big-screen .header-phone-number {
+  font-size: clamp(
+    calc(18px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 18 / 1400 * var(--zoom-2)),
+    calc(18px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .header-phone-city {
+  font-size: clamp(
+    calc(12px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 12 / 1400 * var(--zoom-2)),
+    calc(12px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .header-phone-hours {
+  font-size: clamp(
+    calc(10px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 10 / 1400 * var(--zoom-2)),
+    calc(10px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .header-callback-btn {
+  padding: clamp(
       calc(12px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 12 / 1400 * var(--zoom-2)),
       calc(12px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-contacts,
-  .header-phone-wrapper {
-    gap: calc(clamp(32px, 3vw, 48px) * var(--zoom-2));
-  }
-
-  .header-phone-number {
-    font-size: clamp(
-      calc(18px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 18 / 1400 * var(--zoom-2)),
-      calc(18px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-phone-city {
-    font-size: clamp(
-      calc(12px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 12 / 1400 * var(--zoom-2)),
-      calc(12px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-phone-hours {
-    font-size: clamp(
-      calc(10px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 10 / 1400 * var(--zoom-2)),
-      calc(10px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-callback-btn {
-    padding: clamp(
-        calc(12px * 1025 / 1400 * var(--zoom-2)),
-        calc(100vw * 12 / 1400 * var(--zoom-2)),
-        calc(12px * 1440 / 1400 * var(--zoom-2))
-      )
-      clamp(
-        calc(32px * 1025 / 1400 * var(--zoom-2)),
-        calc(100vw * 32 / 1400 * var(--zoom-2)),
-        calc(32px * 1440 / 1400 * var(--zoom-2))
-      );
-    font-size: clamp(
-      calc(14px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-social-link {
-    padding: clamp(
-      calc(12px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 12 / 1400 * var(--zoom-2)),
-      calc(12px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-social-link img {
-    width: clamp(
-      calc(14px * 1025 / 1400 * 1.4 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * 1.4 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * 1.4 * var(--zoom-2))
-    );
-    height: clamp(
-      calc(14px * 1025 / 1400 * 1.4 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * 1.4 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * 1.4 * var(--zoom-2))
-    );
-  }
-
-  .header-bottom {
-    padding-top: clamp(
-      calc(18px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 18 / 1400 * var(--zoom-2)),
-      calc(18px * 1440 / 1400 * var(--zoom-2))
-    );
-    padding-bottom: clamp(
-      calc(18px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 18 / 1400 * var(--zoom-2)),
-      calc(18px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-nav-list {
-    font-size: clamp(
-      calc(14px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-nav-list > li > a {
-    padding-block: clamp(
-      calc(18px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 18 / 1400 * var(--zoom-2)),
-      calc(18px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .header-nav-main {
-    padding-inline: clamp(
+    )
+    clamp(
       calc(32px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 32 / 1400 * var(--zoom-2)),
       calc(32px * 1440 / 1400 * var(--zoom-2))
     );
-  }
+  font-size: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .header-nav-list-main {
-    gap: clamp(
-      calc(32px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 32 / 1400 * var(--zoom-2)),
-      calc(32px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .header-social-link {
+  padding: clamp(
+    calc(12px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 12 / 1400 * var(--zoom-2)),
+    calc(12px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .header-nav-list-main > li > a {
-    padding: calc(clamp(18px, 1.28vw, 22px) * var(--zoom-2))
-      calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2));
-  }
+html.big-screen .header-social-link img {
+  width: clamp(
+    calc(14px * 1025 / 1400 * 1.4 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * 1.4 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * 1.4 * var(--zoom-2))
+  );
+  height: clamp(
+    calc(14px * 1025 / 1400 * 1.4 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * 1.4 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * 1.4 * var(--zoom-2))
+  );
+}
 
-  .dropbtn {
-    padding-block: calc(clamp(18px, 1.28vw, 22px) * var(--zoom-2));
-    padding-left: calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2));
-  }
+html.big-screen .header-bottom {
+  padding-top: clamp(
+    calc(18px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 18 / 1400 * var(--zoom-2)),
+    calc(18px * 1440 / 1400 * var(--zoom-2))
+  );
+  padding-bottom: clamp(
+    calc(18px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 18 / 1400 * var(--zoom-2)),
+    calc(18px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .header-nav-list-main .dropbtn {
-    padding-inline: calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2));
-  }
+html.big-screen .header-nav-list {
+  font-size: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .dropdown-content {
-    padding-top: calc(
-      clamp(
-          calc(18px * 1025 / 1400 * var(--zoom-2)),
-          calc(100vw * 18 / 1400 * var(--zoom-2)),
-          calc(18px * 1440 / 1400 * var(--zoom-2))
-        ) +
-        1px
-    );
-  }
+html.big-screen .header-nav-list > li > a {
+  padding-block: clamp(
+    calc(18px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 18 / 1400 * var(--zoom-2)),
+    calc(18px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .dropdown-content a {
-    padding-bottom: calc(clamp(16px, 1.14vw, 20px) * var(--zoom-2) + 8px);
-    padding-inline: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-2));
-  }
+html.big-screen .header-nav-main {
+  padding-inline: clamp(
+    calc(32px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 32 / 1400 * var(--zoom-2)),
+    calc(32px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .dropdown-content li:first-of-type a {
-    padding-top: calc(clamp(14px, 1.28vw, 20px) * var(--zoom-2) + 8px);
-  }
+html.big-screen .header-nav-list-main {
+  gap: clamp(
+    calc(32px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 32 / 1400 * var(--zoom-2)),
+    calc(32px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .dropdown-content li:last-of-type a {
-    padding-bottom: calc(clamp(14px, 1.14vw, 18px) * var(--zoom-2) + 8px);
-  }
+html.big-screen .header-nav-list-main > li > a {
+  padding: calc(clamp(18px, 1.28vw, 22px) * var(--zoom-2))
+    calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2));
+}
 
-  .consult-wrapper {
-    padding: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1440 / 1400 * var(--zoom-2))
-    );
+html.big-screen .dropbtn {
+  padding-block: calc(clamp(18px, 1.28vw, 22px) * var(--zoom-2));
+  padding-left: calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2));
+}
 
-    gap: clamp(
-      calc(26px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 26 / 1400 * var(--zoom-2)),
-      calc(26px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .header-nav-list-main .dropbtn {
+  padding-inline: calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2));
+}
 
-  .consult-content {
-    gap: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1440 / 1400 * var(--zoom-2))
-    );
-    padding-right: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .dropdown-content {
+  padding-top: calc(
+    clamp(
+        calc(18px * 1025 / 1400 * var(--zoom-2)),
+        calc(100vw * 18 / 1400 * var(--zoom-2)),
+        calc(18px * 1440 / 1400 * var(--zoom-2))
+      ) +
+      1px
+  );
+}
 
-  .consult-info {
-    gap: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .dropdown-content a {
+  padding-bottom: calc(clamp(16px, 1.14vw, 20px) * var(--zoom-2) + 8px);
+  padding-inline: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-2));
+}
 
-  .consult-phone-wrapper {
-    gap: clamp(
-      calc(32px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 32 / 1400 * var(--zoom-2)),
-      calc(32px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .dropdown-content li:first-of-type a {
+  padding-top: calc(clamp(14px, 1.28vw, 20px) * var(--zoom-2) + 8px);
+}
 
-  .consult-phone-number {
-    font-size: clamp(
-      calc(25px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 25 / 1400 * var(--zoom-2)),
-      calc(25px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .dropdown-content li:last-of-type a {
+  padding-bottom: calc(clamp(14px, 1.14vw, 18px) * var(--zoom-2) + 8px);
+}
 
-  .consult-phone-city {
-    font-size: clamp(
-      calc(16px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 16 / 1400 * var(--zoom-2)),
-      calc(16px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-wrapper {
+  padding: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1440 / 1400 * var(--zoom-2))
+  );
 
-  .consult-phone-hours {
-    font-size: clamp(
-      calc(14px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+  gap: clamp(
+    calc(26px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 26 / 1400 * var(--zoom-2)),
+    calc(26px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-email-wrapper {
-    gap: clamp(
-      calc(10px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 10 / 1400 * var(--zoom-2)),
-      calc(10px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-content {
+  gap: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1440 / 1400 * var(--zoom-2))
+  );
+  padding-right: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-email-label {
-    color: var(--color-grayblue);
-    font-size: clamp(
-      calc(12px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 12 / 1400 * var(--zoom-2)),
-      calc(12px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-info {
+  gap: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-email-address {
-    font-size: clamp(
-      calc(24px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 24 / 1400 * var(--zoom-2)),
-      calc(24px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-phone-wrapper {
+  gap: clamp(
+    calc(32px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 32 / 1400 * var(--zoom-2)),
+    calc(32px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-details {
-    gap: clamp(
-      calc(26px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 26 / 1400 * var(--zoom-2)),
-      calc(26px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-phone-number {
+  font-size: clamp(
+    calc(25px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 25 / 1400 * var(--zoom-2)),
+    calc(25px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-details-text {
-    font-size: clamp(
-      calc(16px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 16 / 1400 * var(--zoom-2)),
-      calc(16px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-phone-city {
+  font-size: clamp(
+    calc(16px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 16 / 1400 * var(--zoom-2)),
+    calc(16px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-manager {
-    gap: clamp(
-      calc(24px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 24 / 1400 * var(--zoom-2)),
-      calc(24px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-phone-hours {
+  font-size: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-manager-image {
-    width: clamp(
-      calc(100px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 100 / 1400 * var(--zoom-2)),
-      calc(100px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-email-wrapper {
+  gap: clamp(
+    calc(10px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 10 / 1400 * var(--zoom-2)),
+    calc(10px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-manager-content {
-    gap: clamp(
-      calc(10px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 10 / 1400 * var(--zoom-2)),
-      calc(10px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-email-label {
+  color: var(--color-grayblue);
+  font-size: clamp(
+    calc(12px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 12 / 1400 * var(--zoom-2)),
+    calc(12px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-manager-name {
-    font-size: clamp(
-      calc(16px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 16 / 1400 * var(--zoom-2)),
-      calc(16px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-email-address {
+  font-size: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-manager-description {
-    font-size: clamp(
-      calc(14px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-details {
+  gap: clamp(
+    calc(26px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 26 / 1400 * var(--zoom-2)),
+    calc(26px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-form-wrapper {
-    gap: clamp(
-      calc(24px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 24 / 1400 * var(--zoom-2)),
-      calc(24px * 1440 / 1400 * var(--zoom-2))
-    );
+html.big-screen .consult-details-text {
+  font-size: clamp(
+    calc(16px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 16 / 1400 * var(--zoom-2)),
+    calc(16px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-    padding: clamp(
-      calc(40px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 40 / 1400 * var(--zoom-2)),
-      calc(40px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-manager {
+  gap: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-form-title {
-    font-size: clamp(
-      calc(22px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 22 / 1400 * var(--zoom-2)),
-      calc(22px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-manager-image {
+  width: clamp(
+    calc(100px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 100 / 1400 * var(--zoom-2)),
+    calc(100px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-form {
-    gap: clamp(
-      calc(16px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 16 / 1400 * var(--zoom-2)),
-      calc(16px * 1440 / 1400 * var(--zoom-2))
-    );
-    font-size: clamp(
-      calc(18px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 18 / 1400 * var(--zoom-2)),
-      calc(18px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-manager-content {
+  gap: clamp(
+    calc(10px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 10 / 1400 * var(--zoom-2)),
+    calc(10px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-form-input-wrapper::before {
-    width: clamp(
-      calc(24px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 24 / 1400 * var(--zoom-2)),
-      calc(24px * 1440 / 1400 * var(--zoom-2))
-    );
+html.big-screen .consult-manager-name {
+  font-size: clamp(
+    calc(16px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 16 / 1400 * var(--zoom-2)),
+    calc(16px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-    left: clamp(
-      calc(24px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 24 / 1400 * var(--zoom-2)),
-      calc(24px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-manager-description {
+  font-size: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-form > label,
-  .consult-form button {
-    padding: clamp(
-        calc(20px * 1025 / 1400 * var(--zoom-2)),
-        calc(100vw * 20 / 1400 * var(--zoom-2)),
-        calc(20px * 1440 / 1400 * var(--zoom-2))
-      )
-      clamp(
-        calc(24px * 1025 / 1400 * var(--zoom-2)),
-        calc(100vw * 24 / 1400 * var(--zoom-2)),
-        calc(24px * 1440 / 1400 * var(--zoom-2))
-      );
-  }
+html.big-screen .consult-form-wrapper {
+  gap: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1440 / 1400 * var(--zoom-2))
+  );
 
-  .consult-form input:not([type="file"]):not([type="checkbox"]) {
-    padding: clamp(
-        calc(20px * 1025 / 1400 * var(--zoom-2)),
-        calc(100vw * 20 / 1400 * var(--zoom-2)),
-        calc(20px * 1440 / 1400 * var(--zoom-2))
-      )
-      clamp(
-        calc(24px * 1025 / 1400 * var(--zoom-2)),
-        calc(100vw * 24 / 1400 * var(--zoom-2)),
-        calc(24px * 1440 / 1400 * var(--zoom-2))
-      );
-    padding-left: clamp(
-      calc(64px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 64 / 1400 * var(--zoom-2)),
-      calc(64px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+  padding: clamp(
+    calc(40px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 40 / 1400 * var(--zoom-2)),
+    calc(40px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-form-file-label {
-    gap: clamp(
-      calc(14px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-form-title {
+  font-size: clamp(
+    calc(22px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 22 / 1400 * var(--zoom-2)),
+    calc(22px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-form-file-label::before {
-    width: clamp(
-      calc(24px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 24 / 1400 * var(--zoom-2)),
-      calc(24px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-form {
+  gap: clamp(
+    calc(16px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 16 / 1400 * var(--zoom-2)),
+    calc(16px * 1440 / 1400 * var(--zoom-2))
+  );
+  font-size: clamp(
+    calc(18px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 18 / 1400 * var(--zoom-2)),
+    calc(18px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .consult-form-checkbox-wrapper input[type="checkbox"] {
-    width: clamp(
+html.big-screen .consult-form-input-wrapper::before {
+  width: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1440 / 1400 * var(--zoom-2))
+  );
+
+  left: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .consult-form > label, html.big-screen .consult-form button {
+  padding: clamp(
       calc(20px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 20 / 1400 * var(--zoom-2)),
       calc(20px * 1440 / 1400 * var(--zoom-2))
+    )
+    clamp(
+      calc(24px * 1025 / 1400 * var(--zoom-2)),
+      calc(100vw * 24 / 1400 * var(--zoom-2)),
+      calc(24px * 1440 / 1400 * var(--zoom-2))
     );
-    height: clamp(
+}
+
+html.big-screen .consult-form input:not([type="file"]):not([type="checkbox"]) {
+  padding: clamp(
       calc(20px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 20 / 1400 * var(--zoom-2)),
       calc(20px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .consult-form-checkbox-text {
-    font-size: clamp(
-      calc(13px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 13 / 1400 * var(--zoom-2)),
-      calc(13px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .consult-form-text {
-    font-size: clamp(
-      calc(11px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 11 / 1400 * var(--zoom-2)),
-      calc(11px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
-
-  .footer-wrapper {
-    gap: calc(max(40px, 2.85vw) * var(--zoom-2));
-  }
-
-  .footer-logo {
-    font-size: clamp(
+    )
+    clamp(
       calc(24px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 24 / 1400 * var(--zoom-2)),
       calc(24px * 1440 / 1400 * var(--zoom-2))
     );
-  }
+  padding-left: clamp(
+    calc(64px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 64 / 1400 * var(--zoom-2)),
+    calc(64px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-logo img {
-    width: calc(clamp(23px, 2.35vw, 46px) * var(--zoom-2));
-  }
+html.big-screen .consult-form-file-label {
+  gap: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-accreditation {
-    gap: clamp(
-      calc(24px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 24 / 1400 * var(--zoom-2)),
-      calc(24px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-form-file-label::before {
+  width: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-accreditation-icon {
-    height: calc(max(24px, 1.7vw) * var(--zoom-2));
-  }
+html.big-screen .consult-form-checkbox-wrapper input[type="checkbox"] {
+  width: clamp(
+    calc(20px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 20 / 1400 * var(--zoom-2)),
+    calc(20px * 1440 / 1400 * var(--zoom-2))
+  );
+  height: clamp(
+    calc(20px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 20 / 1400 * var(--zoom-2)),
+    calc(20px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-accreditation-text {
-    font-size: clamp(
-      calc(12px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 12 / 1400 * var(--zoom-2)),
-      calc(12px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-form-checkbox-text {
+  font-size: clamp(
+    calc(13px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 13 / 1400 * var(--zoom-2)),
+    calc(13px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-accreditation-description {
-    font-size: clamp(
-      calc(10px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 10 / 1400 * var(--zoom-2)),
-      calc(10px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .consult-form-text {
+  font-size: clamp(
+    calc(11px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 11 / 1400 * var(--zoom-2)),
+    calc(11px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-contacts {
-    gap: clamp(
-      calc(36px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 36 / 1400 * var(--zoom-2)),
-      calc(36px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .footer-wrapper {
+  gap: calc(max(40px, 2.85vw) * var(--zoom-2));
+}
 
-  .footer-contacts-item {
-    gap: calc(max(12px, 0.85vw) * var(--zoom-2));
-  }
+html.big-screen .footer-logo {
+  font-size: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-contacts-item-label {
-    font-size: clamp(
-      calc(10px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 10 / 1400 * var(--zoom-2)),
-      calc(10px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .footer-logo img {
+  width: calc(clamp(23px, 2.35vw, 46px) * var(--zoom-2));
+}
 
-  .footer-contacts-item-value {
-    font-size: clamp(
-      calc(18px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 18 / 1400 * var(--zoom-2)),
-      calc(18px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .footer-accreditation {
+  gap: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 24 / 1400 * var(--zoom-2)),
+    calc(24px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-navigation {
-    gap: clamp(
-      calc(25px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 25 / 1400 * var(--zoom-2)),
-      calc(25px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .footer-accreditation-icon {
+  height: calc(max(24px, 1.7vw) * var(--zoom-2));
+}
 
-  .footer-navigation-title {
-    font-size: clamp(
-      calc(16px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 16 / 1400 * var(--zoom-2)),
-      calc(16px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .footer-accreditation-text {
+  font-size: clamp(
+    calc(12px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 12 / 1400 * var(--zoom-2)),
+    calc(12px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-navigation-list {
-    font-size: clamp(
-      calc(14px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .footer-accreditation-description {
+  font-size: clamp(
+    calc(10px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 10 / 1400 * var(--zoom-2)),
+    calc(10px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-bottom {
-    font-size: 1.15rem;
-  }
+html.big-screen .footer-contacts {
+  gap: clamp(
+    calc(36px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 36 / 1400 * var(--zoom-2)),
+    calc(36px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .footer-creator {
-    gap: clamp(
-      calc(14px * 1025 / 1400 * var(--zoom-2)),
-      calc(100vw * 14 / 1400 * var(--zoom-2)),
-      calc(14px * 1440 / 1400 * var(--zoom-2))
-    );
-  }
+html.big-screen .footer-contacts-item {
+  gap: calc(max(12px, 0.85vw) * var(--zoom-2));
+}
 
-  .breadcrumb {
-    gap: 8px;
-    font-size: 14px;
-  }
+html.big-screen .footer-contacts-item-label {
+  font-size: clamp(
+    calc(10px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 10 / 1400 * var(--zoom-2)),
+    calc(10px * 1440 / 1400 * var(--zoom-2))
+  );
+}
 
-  .breadcrumb li:not(:last-of-type)::after {
-    margin-inline: 8px;
-  }
+html.big-screen .footer-contacts-item-value {
+  font-size: clamp(
+    calc(18px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 18 / 1400 * var(--zoom-2)),
+    calc(18px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .footer-navigation {
+  gap: clamp(
+    calc(25px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 25 / 1400 * var(--zoom-2)),
+    calc(25px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .footer-navigation-title {
+  font-size: clamp(
+    calc(16px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 16 / 1400 * var(--zoom-2)),
+    calc(16px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .footer-navigation-list {
+  font-size: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .footer-bottom {
+  font-size: 1.15rem;
+}
+
+html.big-screen .footer-creator {
+  gap: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .breadcrumb {
+  gap: 8px;
+  font-size: 14px;
+}
+
+html.big-screen .breadcrumb li:not(:last-of-type)::after {
+  margin-inline: 8px;
 }
 
 @media screen and (max-width: 850px) {
