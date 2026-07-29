@@ -1719,7 +1719,8 @@ html.big-screen .header-logo-exp {
   );
 }
 
-html.big-screen .header-contacts, html.big-screen .header-phone-wrapper {
+html.big-screen .header-contacts,
+html.big-screen .header-phone-wrapper {
   gap: calc(clamp(32px, 3vw, 48px) * var(--zoom-2));
 }
 
@@ -2066,7 +2067,8 @@ html.big-screen .consult-form-input-wrapper::before {
   );
 }
 
-html.big-screen .consult-form > label, html.big-screen .consult-form button {
+html.big-screen .consult-form > label,
+html.big-screen .consult-form button {
   padding: clamp(
       calc(20px * 1025 / 1400 * var(--zoom-2)),
       calc(100vw * 20 / 1400 * var(--zoom-2)),
@@ -3193,7 +3195,6 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
 
   .modal-content {
     width: 100%;
-    zoom: 0.85;
   }
 
   .modal-form-wrapper {
@@ -3201,186 +3202,188 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     padding: clamp(
-      calc(40px * 580 / 640),
-      calc(100vw * 40 / 640),
-      calc(40px * 1024 / 640)
+      calc(40px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 40 / 640 * var(--zoom-1)),
+      calc(40px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-close-btn {
     width: clamp(
-      calc(40px * 580 / 640),
-      calc(100vw * 40 / 640),
-      calc(40px * 1024 / 640)
+      calc(40px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 40 / 640 * var(--zoom-1)),
+      calc(40px * 1024 / 640 * var(--zoom-1))
     );
     height: clamp(
-      calc(40px * 580 / 640),
-      calc(100vw * 40 / 640),
-      calc(40px * 1024 / 640)
+      calc(40px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 40 / 640 * var(--zoom-1)),
+      calc(40px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-close-btn svg {
     width: clamp(
-      calc(16px * 580 / 640),
-      calc(100vw * 16 / 640),
-      calc(16px * 1024 / 640)
+      calc(16px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 16 / 640 * var(--zoom-1)),
+      calc(16px * 1024 / 640 * var(--zoom-1))
     );
     height: clamp(
-      calc(16px * 580 / 640),
-      calc(100vw * 16 / 640),
-      calc(16px * 1024 / 640)
+      calc(16px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 16 / 640 * var(--zoom-1)),
+      calc(16px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-title {
     font-size: clamp(
-      calc(18px * 580 / 640),
-      calc(100vw * 18 / 640),
-      calc(18px * 1024 / 640)
+      calc(18px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 18 / 640 * var(--zoom-1)),
+      calc(18px * 1024 / 640 * var(--zoom-1))
+    );
+    gap: clamp(
+      calc(10px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 10 / 640 * var(--zoom-1)),
+      calc(10px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-title .accent {
     font-size: clamp(
-      calc(28px * 580 / 640),
-      calc(100vw * 28 / 640),
-      calc(28px * 1024 / 640)
+      calc(28px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 28 / 640 * var(--zoom-1)),
+      calc(28px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form {
     font-size: clamp(
-      calc(18px * 580 / 640),
-      calc(100vw * 18 / 640),
-      calc(18px * 1024 / 640)
+      calc(18px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 18 / 640 * var(--zoom-1)),
+      calc(18px * 1024 / 640 * var(--zoom-1))
+    );
+    gap: clamp(
+      calc(16px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 16 / 640 * var(--zoom-1)),
+      calc(16px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form > label,
   .modal-form > button {
     padding: clamp(
-        calc(20px * 580 / 640),
-        calc(100vw * 20 / 640),
-        calc(20px * 1024 / 640)
+        calc(20px * 580 / 640 * var(--zoom-1)),
+        calc(100vw * 20 / 640 * var(--zoom-1)),
+        calc(20px * 1024 / 640 * var(--zoom-1))
       )
       clamp(
-        calc(24px * 580 / 640),
-        calc(100vw * 24 / 640),
-        calc(24px * 1024 / 640)
+        calc(24px * 580 / 640 * var(--zoom-1)),
+        calc(100vw * 24 / 640 * var(--zoom-1)),
+        calc(24px * 1024 / 640 * var(--zoom-1))
       );
   }
 
   .modal-form input:not([type="file"]):not([type="checkbox"]) {
     padding: clamp(
-        calc(20px * 580 / 640),
-        calc(100vw * 20 / 640),
-        calc(20px * 1024 / 640)
+        calc(20px * 580 / 640 * var(--zoom-1)),
+        calc(100vw * 20 / 640 * var(--zoom-1)),
+        calc(20px * 1024 / 640 * var(--zoom-1))
       )
       clamp(
-        calc(24px * 580 / 640),
-        calc(100vw * 24 / 640),
-        calc(24px * 1024 / 640)
+        calc(24px * 580 / 640 * var(--zoom-1)),
+        calc(100vw * 24 / 640 * var(--zoom-1)),
+        calc(24px * 1024 / 640 * var(--zoom-1))
       );
     padding-left: clamp(
-      calc(64px * 580 / 640),
-      calc(100vw * 64 / 640),
-      calc(64px * 1024 / 640)
+      calc(64px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 64 / 640 * var(--zoom-1)),
+      calc(64px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-file-label {
     gap: clamp(
-      calc(14px * 580 / 640),
-      calc(100vw * 14 / 640),
-      calc(14px * 1024 / 640)
+      calc(14px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 14 / 640 * var(--zoom-1)),
+      calc(14px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-file-label::before {
     width: clamp(
-      calc(24px * 580 / 640),
-      calc(100vw * 24 / 640),
-      calc(24px * 1024 / 640)
+      calc(24px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 24 / 640 * var(--zoom-1)),
+      calc(24px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-text {
     font-size: clamp(
-      calc(11px * 580 / 640),
-      calc(100vw * 11 / 640),
-      calc(11px * 1024 / 640)
+      calc(11px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 11 / 640 * var(--zoom-1)),
+      calc(11px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-input-wrapper {
     font-size: clamp(
-      calc(18px * 580 / 640),
-      calc(100vw * 18 / 640),
-      calc(18px * 1024 / 640)
+      calc(18px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 18 / 640 * var(--zoom-1)),
+      calc(18px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-input-wrapper::before {
     width: clamp(
-      calc(24px * 580 / 640),
-      calc(100vw * 24 / 640),
-      calc(24px * 1024 / 640)
-    );
-  }
-
-  .modal-form-input-wrapper::before {
-    width: clamp(
-      calc(24px * 580 / 640),
-      calc(100vw * 24 / 640),
-      calc(24px * 1024 / 640)
+      calc(24px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 24 / 640 * var(--zoom-1)),
+      calc(24px * 1024 / 640 * var(--zoom-1))
     );
     left: clamp(
-      calc(24px * 580 / 640),
-      calc(100vw * 24 / 640),
-      calc(24px * 1024 / 640)
+      calc(24px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 24 / 640 * var(--zoom-1)),
+      calc(24px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-checkbox-wrapper {
     gap: clamp(
-      calc(10px * 580 / 640),
-      calc(100vw * 10 / 640),
-      calc(10px * 1024 / 640)
+      calc(10px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 10 / 640 * var(--zoom-1)),
+      calc(10px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-checkbox-wrapper input[type="checkbox"] {
     width: clamp(
-      calc(20px * 580 / 640),
-      calc(100vw * 20 / 640),
-      calc(20px * 1024 / 640)
+      calc(20px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 20 / 640 * var(--zoom-1)),
+      calc(20px * 1024 / 640 * var(--zoom-1))
     );
     height: clamp(
-      calc(20px * 580 / 640),
-      calc(100vw * 20 / 640),
-      calc(20px * 1024 / 640)
+      calc(20px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 20 / 640 * var(--zoom-1)),
+      calc(20px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-checkbox-wrapper input[type="checkbox"]:checked::before {
     width: clamp(
-      calc(10px * 580 / 640),
-      calc(100vw * 10 / 640),
-      calc(10px * 1024 / 640)
+      calc(10px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 10 / 640 * var(--zoom-1)),
+      calc(10px * 1024 / 640 * var(--zoom-1))
     );
     height: clamp(
-      calc(10px * 580 / 640),
-      calc(100vw * 10 / 640),
-      calc(10px * 1024 / 640)
+      calc(10px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 10 / 640 * var(--zoom-1)),
+      calc(10px * 1024 / 640 * var(--zoom-1))
     );
   }
 
   .modal-form-checkbox-text {
     font-size: clamp(
-      calc(13px * 580 / 640),
-      calc(100vw * 13 / 640),
-      calc(13px * 1024 / 640)
+      calc(13px * 580 / 640 * var(--zoom-1)),
+      calc(100vw * 13 / 640 * var(--zoom-1)),
+      calc(13px * 1024 / 640 * var(--zoom-1))
     );
     margin-bottom: 0;
   }
@@ -4122,49 +4125,49 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
 
   .modal-form-wrapper {
     padding: clamp(
-      calc(20px * 320 / 375),
-      calc(100vw * 20 / 375),
-      calc(20px * 580 / 375)
+      calc(20px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 20 / 375 * var(--zoom-1)),
+      calc(20px * 580 / 375 * var(--zoom-1))
     );
 
     padding-bottom: clamp(
-      calc(40px * 320 / 375),
-      calc(100vw * 40 / 375),
-      calc(40px * 580 / 375)
+      calc(40px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 40 / 375 * var(--zoom-1)),
+      calc(40px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-close-btn {
     width: clamp(
-      calc(40px * 320 / 375),
-      calc(100vw * 40 / 375),
-      calc(40px * 580 / 375)
+      calc(40px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 40 / 375 * var(--zoom-1)),
+      calc(40px * 580 / 375 * var(--zoom-1))
     );
     height: clamp(
-      calc(40px * 320 / 375),
-      calc(100vw * 40 / 375),
-      calc(40px * 580 / 375)
+      calc(40px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 40 / 375 * var(--zoom-1)),
+      calc(40px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-close-btn svg {
     width: clamp(
-      calc(16px * 320 / 375),
-      calc(100vw * 16 / 375),
-      calc(16px * 580 / 375)
+      calc(16px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 16 / 375 * var(--zoom-1)),
+      calc(16px * 580 / 375 * var(--zoom-1))
     );
     height: clamp(
-      calc(16px * 320 / 375),
-      calc(100vw * 16 / 375),
-      calc(16px * 580 / 375)
+      calc(16px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 16 / 375 * var(--zoom-1)),
+      calc(16px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-title {
     font-size: clamp(
-      calc(16px * 320 / 375),
-      calc(100vw * 16 / 375),
-      calc(16px * 580 / 375)
+      calc(16px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 16 / 375 * var(--zoom-1)),
+      calc(16px * 580 / 375 * var(--zoom-1))
     );
     text-wrap: wrap;
     max-width: 80%;
@@ -4173,144 +4176,136 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
 
   .modal-form-title .accent {
     font-size: clamp(
-      calc(24px * 320 / 375),
-      calc(100vw * 24 / 375),
-      calc(24px * 580 / 375)
+      calc(24px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 24 / 375 * var(--zoom-1)),
+      calc(24px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form {
     font-size: clamp(
-      calc(16px * 320 / 375),
-      calc(100vw * 16 / 375),
-      calc(16px * 580 / 375)
+      calc(16px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 16 / 375 * var(--zoom-1)),
+      calc(16px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form > label,
   .modal-form > button {
     padding: clamp(
-        calc(20px * 320 / 375),
-        calc(100vw * 20 / 375),
-        calc(20px * 580 / 375)
+        calc(20px * 320 / 375 * var(--zoom-1)),
+        calc(100vw * 20 / 375 * var(--zoom-1)),
+        calc(20px * 580 / 375 * var(--zoom-1))
       )
       clamp(
-        calc(24px * 320 / 375),
-        calc(100vw * 24 / 375),
-        calc(24px * 580 / 375)
+        calc(24px * 320 / 375 * var(--zoom-1)),
+        calc(100vw * 24 / 375 * var(--zoom-1)),
+        calc(24px * 580 / 375 * var(--zoom-1))
       );
   }
 
   .modal-form input:not([type="file"]):not([type="checkbox"]) {
     padding: clamp(
-        calc(20px * 320 / 375),
-        calc(100vw * 20 / 375),
-        calc(20px * 580 / 375)
+        calc(20px * 320 / 375 * var(--zoom-1)),
+        calc(100vw * 20 / 375 * var(--zoom-1)),
+        calc(20px * 580 / 375 * var(--zoom-1))
       )
       clamp(
-        calc(24px * 320 / 375),
-        calc(100vw * 24 / 375),
-        calc(24px * 580 / 375)
+        calc(24px * 320 / 375 * var(--zoom-1)),
+        calc(100vw * 24 / 375 * var(--zoom-1)),
+        calc(24px * 580 / 375 * var(--zoom-1))
       );
     padding-left: clamp(
-      calc(64px * 320 / 375),
-      calc(100vw * 64 / 375),
-      calc(64px * 580 / 375)
+      calc(64px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 64 / 375 * var(--zoom-1)),
+      calc(64px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-file-label {
     gap: clamp(
-      calc(14px * 320 / 375),
-      calc(100vw * 14 / 375),
-      calc(14px * 580 / 375)
+      calc(14px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 14 / 375 * var(--zoom-1)),
+      calc(14px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-file-label::before {
     width: clamp(
-      calc(24px * 320 / 375),
-      calc(100vw * 24 / 375),
-      calc(24px * 580 / 375)
+      calc(24px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 24 / 375 * var(--zoom-1)),
+      calc(24px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-text {
     font-size: clamp(
-      calc(11px * 320 / 375),
-      calc(100vw * 11 / 375),
-      calc(11px * 580 / 375)
+      calc(11px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 11 / 375 * var(--zoom-1)),
+      calc(11px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-input-wrapper {
     font-size: clamp(
-      calc(18px * 320 / 375),
-      calc(100vw * 18 / 375),
-      calc(18px * 580 / 375)
+      calc(18px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 18 / 375 * var(--zoom-1)),
+      calc(18px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-input-wrapper::before {
     width: clamp(
-      calc(24px * 320 / 375),
-      calc(100vw * 24 / 375),
-      calc(24px * 580 / 375)
-    );
-  }
-
-  .modal-form-input-wrapper::before {
-    width: clamp(
-      calc(24px * 320 / 375),
-      calc(100vw * 24 / 375),
-      calc(24px * 580 / 375)
+      calc(24px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 24 / 375 * var(--zoom-1)),
+      calc(24px * 580 / 375 * var(--zoom-1))
     );
     left: clamp(
-      calc(24px * 320 / 375),
-      calc(100vw * 24 / 375),
-      calc(24px * 580 / 375)
+      calc(24px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 24 / 375 * var(--zoom-1)),
+      calc(24px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-checkbox-wrapper {
     gap: clamp(
-      calc(10px * 320 / 375),
-      calc(100vw * 10 / 375),
-      calc(10px * 580 / 375)
+      calc(10px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 10 / 375 * var(--zoom-1)),
+      calc(10px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-checkbox-wrapper input[type="checkbox"] {
     width: clamp(
-      calc(20px * 320 / 375),
-      calc(100vw * 20 / 375),
-      calc(20px * 580 / 375)
+      calc(20px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 20 / 375 * var(--zoom-1)),
+      calc(20px * 580 / 375 * var(--zoom-1))
     );
     height: clamp(
-      calc(20px * 320 / 375),
-      calc(100vw * 20 / 375),
-      calc(20px * 580 / 375)
+      calc(20px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 20 / 375 * var(--zoom-1)),
+      calc(20px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-checkbox-wrapper input[type="checkbox"]:checked::before {
     width: clamp(
-      calc(10px * 320 / 375),
-      calc(100vw * 10 / 375),
-      calc(10px * 580 / 375)
+      calc(10px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 10 / 375 * var(--zoom-1)),
+      calc(10px * 580 / 375 * var(--zoom-1))
     );
     height: clamp(
-      calc(10px * 320 / 375),
-      calc(100vw * 10 / 375),
-      calc(10px * 580 / 375)
+      calc(10px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 10 / 375 * var(--zoom-1)),
+      calc(10px * 580 / 375 * var(--zoom-1))
     );
   }
 
   .modal-form-checkbox-text {
     font-size: clamp(
-      calc(10px * 320 / 375),
-      calc(100vw * 10 / 375),
-      calc(10px * 580 / 375)
+      calc(10px * 320 / 375 * var(--zoom-1)),
+      calc(100vw * 10 / 375 * var(--zoom-1)),
+      calc(10px * 580 / 375 * var(--zoom-1))
     );
   }
 
