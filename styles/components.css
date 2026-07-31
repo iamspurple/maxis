@@ -1087,7 +1087,7 @@ input[type="file"]#consult-file {
 }
 
 .footer-accreditation-icon {
-  height: calc(max(24px, 1.7vw) * var(--zoom-1));
+  height: calc(clamp(17px, 1.7vw, 24px) * var(--zoom-1));
   width: fit-content;
 }
 
@@ -1120,7 +1120,7 @@ input[type="file"]#consult-file {
     calc(100vw * 36 / 1400 * var(--zoom-1)),
     calc(36px * 1440 / 1400 * var(--zoom-1))
   );
-  margin-right: 10.8vw;
+  margin-right: clamp(105px, 10.8vw, 150px);
 }
 
 .footer-contacts-item {
@@ -2169,7 +2169,7 @@ html.big-screen .footer-accreditation {
 }
 
 html.big-screen .footer-accreditation-icon {
-  height: calc(max(24px, 1.7vw) * var(--zoom-2));
+  height: calc(clamp(17px, 1.7vw, 24px) * var(--zoom-2));
 }
 
 html.big-screen .footer-accreditation-text {
