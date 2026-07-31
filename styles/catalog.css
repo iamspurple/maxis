@@ -629,6 +629,9 @@
 }
 
 .catalog-card-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: clamp(9px, 0.85vw, 12px);
   height: clamp(
     calc(40px * 1025 / 1400 * var(--zoom-1)),
@@ -779,7 +782,8 @@ html.big-screen .catalog-sidebar {
   gap: 18px;
 }
 
-html.big-screen .catalog-categories, html.big-screen .catalog-filter-group {
+html.big-screen .catalog-categories,
+html.big-screen .catalog-filter-group {
   padding: 28px;
 }
 
@@ -861,7 +865,8 @@ html.big-screen .catalog-card-body {
   gap: 12px;
 }
 
-html.big-screen .catalog-card-info, html.big-screen .catalog-card-purchase {
+html.big-screen .catalog-card-info,
+html.big-screen .catalog-card-purchase {
   gap: 12px;
 }
 
