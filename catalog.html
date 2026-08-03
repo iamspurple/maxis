@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/catalog.css" />
+    <link rel="stylesheet" href="/styles/cookie.css" />
   </head>
   <body>
     <header class="header">
@@ -1776,6 +1777,240 @@
         <button type="reset" class="filters-modal-reset" id="reset-filters">
           Сбросить все фильтры
         </button>
+      </div>
+    </div>
+    <div class="cookie">
+      <div class="cookie-card">
+        <div class="cookie-view cookie-view--compact">
+          <h2 class="cookie-title">Уведомление о конфиденциальности данных</h2>
+          <p class="cookie-text">
+            Мы и третьи лица используем файлы cookie и другие технологии для
+            улучшения вашего опыта. Нажав «Принять», вы соглашаетесь на
+            использование всех файлов cookie и технологий, включая маркетинговые
+            файлы cookie для персонализации рекламы, которую вы видите.<br />
+            Подробнее в нашей
+            <a href="/policy.html" class="accent">Политике конфиденциальности</a
+            >.
+          </p>
+          <div class="cookie-buttons">
+            <div class="cookie-actions">
+              <button
+                type="button"
+                class="cookie-btn cookie-btn--decline"
+                data-cookie-close
+              >
+                Отклонить
+              </button>
+              <button
+                type="button"
+                class="cookie-btn cookie-btn--accept"
+                data-cookie-close
+              >
+                Принять
+              </button>
+            </div>
+            <button
+              type="button"
+              class="cookie-toggle"
+              data-cookie-view="manage"
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
+                  fill="currentColor"
+                />
+              </svg>
+              Управление файлами cookie
+            </button>
+          </div>
+        </div>
+
+        <div class="cookie-view cookie-view--manage">
+          <h2 class="cookie-title">Управление файлами cookie</h2>
+          <p class="cookie-text">
+            Определите, какие файлы cookie и технологии будут активированы,
+            когда вы находитесь на нашем сайте. Ознакомиться с подробной
+            информацией и изменить настройки можно в
+            <a href="/policy.html" class="accent">Политике конфиденциальности</a
+            >.
+          </p>
+          <ul class="cookie-list">
+            <li class="cookie-item">
+              <div class="cookie-item-head">
+                <label class="cookie-check">
+                  <input type="checkbox" class="cookie-check-input" checked />
+                  <span class="cookie-check-label">Необходимые</span>
+                </label>
+                <button
+                  type="button"
+                  class="cookie-item-toggle"
+                  aria-expanded="false"
+                  aria-label="Подробнее"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="cookie-item-body">
+                <p class="cookie-item-text">
+                  Эти файлы cookie необходимы для правильной работы нашего
+                  сайта, чтобы вы могли пользоваться наиболее важными функциями
+                  и беспрепятственно перемещаться по нему. Сюда входят основные
+                  функции безопасности и доступности, а также выбранные вами
+                  настройки, например, интерфейс и язык переводчика.
+                </p>
+              </div>
+            </li>
+            <li class="cookie-item">
+              <div class="cookie-item-head">
+                <label class="cookie-check">
+                  <input type="checkbox" class="cookie-check-input" />
+                  <span class="cookie-check-label">Показатели</span>
+                </label>
+                <button
+                  type="button"
+                  class="cookie-item-toggle"
+                  aria-expanded="false"
+                  aria-label="Подробнее"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="cookie-item-body">
+                <p class="cookie-item-text">
+                  Эти файлы cookie измеряют, как используется наш сайт. Мы
+                  используем эту информацию для улучшения нашего сайта и услуг.
+                  С помощью этих файлов cookie мы измеряем, например, частоту
+                  возвращения пользователей и используемые ими функции.
+                </p>
+              </div>
+            </li>
+            <li class="cookie-item">
+              <div class="cookie-item-head">
+                <label class="cookie-check">
+                  <input type="checkbox" class="cookie-check-input" />
+                  <span class="cookie-check-label">Функциональные</span>
+                </label>
+                <button
+                  type="button"
+                  class="cookie-item-toggle"
+                  aria-expanded="false"
+                  aria-label="Подробнее"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="cookie-item-body">
+                <p class="cookie-item-text">
+                  Эти файлы cookie позволяют сайту обеспечивать расширенный
+                  функционал и персонализацию. Например, запоминать, какие
+                  страницы вы посещали, и на основе этого персонализировать ваш
+                  опыт.
+                </p>
+              </div>
+            </li>
+            <li class="cookie-item">
+              <div class="cookie-item-head">
+                <label class="cookie-check">
+                  <input type="checkbox" class="cookie-check-input" />
+                  <span class="cookie-check-label">Маркетинг</span>
+                </label>
+                <button
+                  type="button"
+                  class="cookie-item-toggle"
+                  aria-expanded="false"
+                  aria-label="Подробнее"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="cookie-item-body">
+                <p class="cookie-item-text">
+                  Эти файлы cookie и запросы к сторонним сервисам используются
+                  для отображения рекламы, которая в большей степени
+                  соответствует вам и вашим интересам. Выбирая эту категорию, вы
+                  также даете согласие на то, что МАКСИС будет отправлять ваши
+                  данные третьим лицам (например, Яндекс), включая обмен
+                  хэшированными адресами электронной почты.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="cookie-buttons">
+            <div class="cookie-actions">
+              <button
+                type="button"
+                class="cookie-btn cookie-btn--decline"
+                data-cookie-close
+              >
+                Отклонить
+              </button>
+              <button
+                type="button"
+                class="cookie-btn cookie-btn--accept"
+                data-cookie-close
+              >
+                Принять
+              </button>
+            </div>
+            <button
+              type="button"
+              class="cookie-toggle"
+              data-cookie-view="compact"
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
+                  fill="currentColor"
+                />
+              </svg>
+              Скрыть настройки cookie
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="success">
