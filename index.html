@@ -351,23 +351,35 @@
         <div class="hero-video-wrapper desktop">
           <video
             class="hero-video desktop"
-            src="/assets/video/owl-home-desktop.mp4"
+            poster="/assets/video/owl-home-desktop-poster.webp"
             autoplay
             muted
             loop
             playsinline
-          ></video>
+          >
+            <source
+              src="/assets/video/owl-home-desktop.mp4"
+              media="(min-width: 851px)"
+              type="video/mp4"
+            />
+          </video>
           <canvas class="hero-video-canvas desktop"></canvas>
         </div>
         <div class="hero-video-wrapper mobile">
           <video
             class="hero-video mobile"
-            src="/assets/video/owl-home-mobile.mp4"
+            poster="/assets/video/owl-home-mobile-poster.webp"
             autoplay
             muted
             loop
             playsinline
-          ></video>
+          >
+            <source
+              src="/assets/video/owl-home-mobile.mp4"
+              media="(max-width: 850px)"
+              type="video/mp4"
+            />
+          </video>
           <canvas class="hero-video-canvas mobile"></canvas>
         </div>
       </section>
