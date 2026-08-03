@@ -2001,9 +2001,9 @@
       </div>
     </footer>
     <div id="overlay" class="overlay"></div>
-    <div class="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-form-title" tabindex="-1">
       <div class="modal-content">
-        <button type="button" class="modal-close-btn">
+        <button type="button" class="modal-close-btn" aria-label="Закрыть">
           <svg
             width="24"
             height="24"
@@ -2028,7 +2028,7 @@
           </svg>
         </button>
         <div class="modal-form-wrapper">
-          <h2 class="modal-form-title">
+          <h2 class="modal-form-title" id="modal-form-title">
             <span class="accent heading">Оставьте ваши контакты</span>
             <span>и наш специалист свяжется с вами в ближайшее время</span>
           </h2>

@@ -463,6 +463,14 @@ const getHeaderHeight = () => {
   }
 };
 
+/** Видимые фокусируемые элементы внутри контейнера. */
+const getFocusable = (container) =>
+  [...container.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  )].filter((el) => el.offsetParent !== null);
+
+let modalLastFocused = null;
+
 const initModal = () => {
   const modal = document.querySelector(".modal");
   const menu = document.getElementById("menu");
@@ -476,31 +484,63 @@ const initModal = () => {
   const closeMenu = () => {
     menu.classList.remove("active");
     overlay.classList.remove("active");
-    burgerBtn.classList.remove("active");
+    burgerBtn?.classList.remove("active");
+  };
+
+  const openModal = (e) => {
+    // запоминаем триггер, чтобы вернуть на него фокус после закрытия
+    modalLastFocused = e?.currentTarget || document.activeElement;
+    modal.classList.add("active");
+    document.documentElement.classList.add("noscroll");
+    closeMenu();
+    const target =
+      modal.querySelector(".modal-form input, .modal-form textarea") ||
+      getFocusable(modal)[0] ||
+      modal;
+    target.focus();
   };
 
   modalOpenBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      modal.classList.add("active");
-      document.documentElement.classList.add("noscroll");
-      closeMenu();
-    });
+    btn.addEventListener("click", openModal);
   });
 
-  modalCloseBtn.addEventListener("click", closeModal);
+  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
 
   modal.addEventListener("click", (e) => {
     if (e.target.closest(".modal-form-wrapper")) return;
-    modal.classList.remove("active");
-    document.documentElement.classList.remove("noscroll");
+    closeModal();
+  });
+
+  // Escape закрывает, Tab не выпускает фокус за пределы окна
+  document.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("active")) return;
+    if (e.key === "Escape") {
+      closeModal();
+    } else if (e.key === "Tab") {
+      const focusable = getFocusable(modal);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 };
 
 const closeModal = () => {
   const modal = document.querySelector(".modal");
-
+  if (!modal) return;
   modal.classList.remove("active");
   document.documentElement.classList.remove("noscroll");
+  if (modalLastFocused) {
+    modalLastFocused.focus();
+    modalLastFocused = null;
+  }
 };
 
 const showSuccess = () => {
