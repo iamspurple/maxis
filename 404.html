@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/styles/cookie.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
     <header class="header">
       <div class="container">
         <div class="header-top">
@@ -58,7 +59,7 @@
                 <img width="21" height="20" src="/assets/icons/max.svg" alt="Max" />
               </a>
               <button class="header-burger-btn" title="Открыть меню">
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   class="open"
                   width="16"
                   height="16"
@@ -81,7 +82,7 @@
                     fill="currentColor"
                   />
                 </svg>
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   class="close"
                   width="16"
                   height="16"
@@ -127,7 +128,7 @@
                     <div class="dropdown">
                       <button class="dropbtn">
                         Услуги
-                        <svg
+                        <svg aria-hidden="true" focusable="false"
                           width="16"
                           height="16"
                           viewBox="0 0 16 16"
@@ -171,7 +172,7 @@
                 <div class="dropdown">
                   <button class="dropbtn">
                     Кейсы
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       width="16"
                       height="16"
                       viewBox="0 0 16 16"
@@ -204,7 +205,7 @@
                 <div class="dropdown">
                   <button class="dropbtn">
                     Каталог
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       width="16"
                       height="16"
                       viewBox="0 0 16 16"
@@ -237,7 +238,7 @@
                 <div class="dropdown">
                   <button class="dropbtn">
                     О компании
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       width="16"
                       height="16"
                       viewBox="0 0 16 16"
@@ -313,7 +314,7 @@
         </div>
       </div>
     </header>
-    <main class="main notfound">
+    <main class="main notfound" id="main" tabindex="-1">
       <div class="main-wrapper notfound">
         <div class="main-container container notfound">
           <nav aria-label="breadcrumb">
@@ -606,7 +607,7 @@
           <div class="footer-creator">
             <p class="footer-creator-text">
               Сайт разработан
-              <a href="https://tolacompany.ru" class="accent" target="_blank">
+              <a rel="noopener" href="https://tolacompany.ru" class="accent" target="_blank">
                 TOLACOMPANY.RU
               </a>
             </p>
@@ -623,7 +624,7 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-form-title" tabindex="-1">
       <div class="modal-content">
         <button type="button" class="modal-close-btn" aria-label="Закрыть">
-          <svg
+          <svg aria-hidden="true" focusable="false"
             width="24"
             height="24"
             viewBox="0 0 24 24"

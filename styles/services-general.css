@@ -2472,7 +2472,7 @@ html.big-screen .consult {
   }
 
   .process-slider-progress {
-    --percent: 1%;
+    --percent: 10%;
     padding: 1vw 2vw 1vw 1vw;
     background-color: var(--color-primary);
     border-radius: 50px;

@@ -149,6 +149,23 @@ body::before {
   border: 0;
 }
 
+/* Ссылка «Перейти к содержимому»: скрыта, пока не получит фокус с клавиатуры. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 20px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 10px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 .container {
   margin-inline: 12.5vw;
   width: 75vw;
