@@ -42,6 +42,11 @@ const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    video.removeAttribute("autoplay");
+    video.pause();
+  }
+
   const updateCanvasSize = () => {
     const width = wrapper.offsetWidth;
     const height = wrapper.offsetHeight;
@@ -59,14 +64,51 @@ const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
   resizeObserver.observe(wrapper);
   updateCanvasSize();
 
-  function update() {
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    requestAnimationFrame(update);
-  }
+  let rafId = null;
+  let onScreen = true;
 
-  video.addEventListener("play", () => {
-    update();
+  const draw = () => {
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    rafId = requestAnimationFrame(draw);
+  };
+
+  const startLoop = () => {
+    if (
+      rafId === null &&
+      !video.paused &&
+      !video.ended &&
+      onScreen &&
+      !document.hidden
+    ) {
+      rafId = requestAnimationFrame(draw);
+    }
+  };
+
+  const stopLoop = () => {
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  };
+
+  video.addEventListener("play", startLoop);
+  video.addEventListener("pause", stopLoop);
+  video.addEventListener("ended", stopLoop);
+
+  const visObserver = new IntersectionObserver(
+    (entries) => {
+      onScreen = entries[0].isIntersecting;
+      onScreen ? startLoop() : stopLoop();
+    },
+    { threshold: 0 },
+  );
+  visObserver.observe(wrapper);
+
+  document.addEventListener("visibilitychange", () => {
+    document.hidden ? stopLoop() : startLoop();
   });
+
+  if (!video.paused) startLoop();
 };
 
 /**
@@ -465,9 +507,11 @@ const getHeaderHeight = () => {
 
 /** Видимые фокусируемые элементы внутри контейнера. */
 const getFocusable = (container) =>
-  [...container.querySelectorAll(
-    'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
-  )].filter((el) => el.offsetParent !== null);
+  [
+    ...container.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ),
+  ].filter((el) => el.offsetParent !== null);
 
 let modalLastFocused = null;
 
@@ -605,7 +649,7 @@ const initFiltersModal = () => {
   openBtn.addEventListener("click", open);
   closeBtn.addEventListener("click", close);
   applyBtn?.addEventListener("click", close);
-  resetBtn.addEventListener("click", close);
+  resetBtn?.addEventListener("click", close);
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && filtersModal.classList.contains("active")) {
@@ -828,7 +872,7 @@ const initStickyHeaderBottom = () => {
 class Progress {
   constructor(
     currentStep = 1,
-    totalStep = 7,
+    totalStep = document.querySelectorAll(".process-steps-item").length || 1,
     progressElement = document.querySelector(".process-slider-progress"),
     progressCurrentStepElement = document.querySelector(".current-step"),
     totalStepElement = document.querySelector(".total-step"),
@@ -861,6 +905,41 @@ class Progress {
   }
 }
 
+const FIELD_WRAPPERS =
+  ".modal-form-input-wrapper, .modal-form-checkbox-wrapper, .consult-form-input-wrapper, .consult-form-checkbox-wrapper";
+
+const setFieldError = (input, message) => {
+  const wrapper = input.closest(FIELD_WRAPPERS) || input.parentElement;
+  if (!wrapper) return;
+  let err = wrapper.querySelector(".field-error");
+  const errId = input.id ? `${input.id}-error` : "";
+  if (message) {
+    if (!err) {
+      err = document.createElement("span");
+      err.className = "field-error";
+      err.setAttribute("role", "alert");
+      if (errId) {
+        err.id = errId;
+        const db = input.getAttribute("aria-describedby");
+        input.setAttribute("aria-describedby", db ? `${db} ${errId}` : errId);
+      }
+      wrapper.appendChild(err);
+    }
+    err.textContent = message;
+  } else if (err) {
+    err.remove();
+    if (errId) {
+      const rest = (input.getAttribute("aria-describedby") || "")
+        .split(" ")
+        .filter((id) => id && id !== errId)
+        .join(" ");
+      rest
+        ? input.setAttribute("aria-describedby", rest)
+        : input.removeAttribute("aria-describedby");
+    }
+  }
+};
+
 const validateForm = ({ nameSelector, phoneSelector, checkboxSelector }) => {
   const nameInput = document.querySelector(nameSelector);
   const phoneInput = document.querySelector(phoneSelector);
@@ -868,26 +947,33 @@ const validateForm = ({ nameSelector, phoneSelector, checkboxSelector }) => {
 
   let isValid = true;
 
-  const validate = (input, condition) => {
-    if (condition) {
-      input.classList.add("error");
-      isValid = false;
-    } else {
-      input.classList.remove("error");
-    }
+  const validate = (input, condition, message) => {
+    const invalid = Boolean(condition);
+    input.classList.toggle("error", invalid);
+    input.setAttribute("aria-invalid", invalid ? "true" : "false");
+    setFieldError(input, invalid ? message : "");
+    if (invalid) isValid = false;
   };
 
   if (nameInput) {
-    validate(nameInput, !nameInput.value.trim());
+    validate(nameInput, !nameInput.value.trim(), "Введите ваше имя");
   }
 
   if (phoneInput) {
     const digits = phoneInput.value.replace(/\D/g, "");
-    validate(phoneInput, digits.length < 10);
+    validate(
+      phoneInput,
+      digits.length < 10,
+      "Введите номер телефона — минимум 10 цифр",
+    );
   }
 
   if (checkbox) {
-    validate(checkbox, !checkbox.checked);
+    validate(
+      checkbox,
+      !checkbox.checked,
+      "Отметьте согласие, чтобы продолжить",
+    );
   }
 
   return isValid;
@@ -897,8 +983,13 @@ const clearErrorOnInput = (selectors) => {
   selectors.forEach((selector) => {
     const el = document.querySelector(selector);
     if (!el) return;
-    el.addEventListener("input", () => el.classList.remove("error"));
-    el.addEventListener("change", () => el.classList.remove("error"));
+    const clear = () => {
+      el.classList.remove("error");
+      el.setAttribute("aria-invalid", "false");
+      setFieldError(el, "");
+    };
+    el.addEventListener("input", clear);
+    el.addEventListener("change", clear);
   });
 };
 
@@ -1008,8 +1099,12 @@ const initStepper = () => {
     setStep((currentIndex + 1) % buttons.length);
   };
 
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  );
+
   const startAuto = () => {
-    if (autoInterval) return;
+    if (autoInterval || prefersReducedMotion.matches) return;
     autoInterval = setInterval(nextStep, 3000);
   };
 
@@ -1061,10 +1156,10 @@ const initStepSlider = () => {
   const controls = document.querySelector(".process-slider-controls");
   const content = document.querySelector(".process-steps-content");
 
-  if (!nextBtn || !prevBtn) return;
+  if (!nextBtn || !prevBtn || !steps.length) return;
 
   let currentStep = 1;
-  let totalStep = 7;
+  let totalStep = steps.length;
   let autoInterval = null;
   let pauseTimeout = null;
 
@@ -1092,8 +1187,12 @@ const initStepSlider = () => {
     setStep((currentStep % totalStep) + 1);
   };
 
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  );
+
   const startAuto = () => {
-    if (autoInterval) return;
+    if (autoInterval || prefersReducedMotion.matches) return;
     autoInterval = setInterval(nextStep, 3000);
   };
 
