@@ -380,7 +380,8 @@ html.big-screen .cart-summary-total {
   gap: 80px;
 }
 
-html.big-screen .cart-summary-label, html.big-screen .cart-summary-value {
+html.big-screen .cart-summary-label,
+html.big-screen .cart-summary-value {
   font-size: 28px;
 }
 
@@ -388,7 +389,8 @@ html.big-screen .cart-summary-buttons {
   gap: 20px;
 }
 
-html.big-screen .cart-summary-btn, html.big-screen .cart-summary-download {
+html.big-screen .cart-summary-btn,
+html.big-screen .cart-summary-download {
   padding-block: 30px;
   font-size: 20px;
 }
@@ -467,8 +469,8 @@ html.big-screen .cart-summary-btn, html.big-screen .cart-summary-download {
   }
 
   .cart-item-remove {
-    width: clamp(22px, 3.75vw, 32px);
-    height: clamp(22px, 3.75vw, 32px);
+    width: clamp(24px, 3.75vw, 32px);
+    height: clamp(24px, 3.75vw, 32px);
   }
 
   .cart-item-total {
@@ -572,8 +574,8 @@ html.big-screen .cart-summary-btn, html.big-screen .cart-summary-download {
   }
 
   .cart-item-remove {
-    width: clamp(20px, 6.4vw, 37px);
-    height: clamp(20px, 6.4vw, 37px);
+    width: clamp(24px, 6.4vw, 37px);
+    height: clamp(24px, 6.4vw, 37px);
   }
 
   .cart-item-total {
