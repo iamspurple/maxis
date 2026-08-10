@@ -39,8 +39,8 @@
     calc(100vw * 16 / 1400 * var(--zoom-header-1)),
     calc(16px * 1440 / 1400 * var(--zoom-header-1))
   );
-  border-left: 1px solid var(--color-grayblue);
-  color: var(--color-grayblue);
+  border-left: 1px solid var(--color-gray);
+  color: var(--color-gray);
   letter-spacing: -2%;
   font-weight: 500;
   font-size: clamp(
@@ -132,7 +132,7 @@
 
 .header-phone-hours {
   line-height: 1em;
-  color: var(--color-grayblue);
+  color: var(--color-gray);
   font-size: clamp(
     calc(10px * 1025 / 1400 * var(--zoom-header-1)),
     calc(100vw * 10 / 1400 * var(--zoom-header-1)),
@@ -2725,7 +2725,7 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
   }
 
   .header-menu-phone-hours {
-    color: var(--color-grayblue);
+    color: var(--color-gray);
     font-size: clamp(
       calc(10px * 580 / 640),
       calc(100vw * 10 / 640),
