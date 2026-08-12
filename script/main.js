@@ -513,6 +513,22 @@ const getFocusable = (container) =>
     ),
   ].filter((el) => el.offsetParent !== null);
 
+/** Удерживает Tab-фокус внутри контейнера. Вызывать из обработчика keydown. */
+const trapTab = (container, e) => {
+  if (e.key !== "Tab") return;
+  const focusable = getFocusable(container);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
+};
+
 let modalLastFocused = null;
 
 const initModal = () => {
@@ -587,11 +603,17 @@ const closeModal = () => {
   }
 };
 
+let successLastFocused = null;
+
 const showSuccess = () => {
   const success = document.querySelector(".success");
   if (!success) return;
+  // запоминаем триггер, чтобы вернуть на него фокус после закрытия
+  successLastFocused = document.activeElement;
   success.classList.add("active");
   document.documentElement.classList.add("noscroll");
+  const target = getFocusable(success)[0] || success;
+  target.focus();
 };
 
 const closeSuccess = () => {
@@ -599,6 +621,10 @@ const closeSuccess = () => {
   if (!success) return;
   success.classList.remove("active");
   document.documentElement.classList.remove("noscroll");
+  if (successLastFocused) {
+    successLastFocused.focus();
+    successLastFocused = null;
+  }
 };
 
 const initSuccess = () => {
@@ -614,9 +640,13 @@ const initSuccess = () => {
     closeSuccess();
   });
 
+  // Escape закрывает, Tab не выпускает фокус за пределы окна
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && success.classList.contains("active")) {
+    if (!success.classList.contains("active")) return;
+    if (e.key === "Escape") {
       closeSuccess();
+    } else {
+      trapTab(success, e);
     }
   });
 };
@@ -629,6 +659,7 @@ const initFiltersModal = () => {
   if (!filtersModal || !openBtn || !closeBtn) return;
 
   const applyBtn = filtersModal.querySelector(".filters-modal-submit");
+  let filtersLastFocused = null;
 
   filtersModal
     .querySelectorAll(".dropdown-content label, .dropdown-content input")
@@ -637,13 +668,21 @@ const initFiltersModal = () => {
     });
 
   const open = () => {
+    // запоминаем триггер, чтобы вернуть на него фокус после закрытия
+    filtersLastFocused = document.activeElement;
     filtersModal.classList.add("active");
     document.documentElement.classList.add("noscroll");
+    const target = getFocusable(filtersModal)[0] || filtersModal;
+    target.focus();
   };
 
   const close = () => {
     filtersModal.classList.remove("active");
     document.documentElement.classList.remove("noscroll");
+    if (filtersLastFocused) {
+      filtersLastFocused.focus();
+      filtersLastFocused = null;
+    }
   };
 
   openBtn.addEventListener("click", open);
@@ -651,9 +690,13 @@ const initFiltersModal = () => {
   applyBtn?.addEventListener("click", close);
   resetBtn?.addEventListener("click", close);
 
+  // Escape закрывает, Tab не выпускает фокус за пределы окна
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && filtersModal.classList.contains("active")) {
+    if (!filtersModal.classList.contains("active")) return;
+    if (e.key === "Escape") {
       close();
+    } else {
+      trapTab(filtersModal, e);
     }
   });
 };
