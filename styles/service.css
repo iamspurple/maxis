@@ -828,6 +828,12 @@ html.big-screen .hero-video-canvas.desktop {
   background: url(/assets/icons/plus-blue.svg) center/contain no-repeat;
 }
 
+.estimate {
+  position: relative;
+  z-index: 10;
+  background: white;
+}
+
 .estimate-wrapper {
   display: flex;
   flex-direction: column;
@@ -2180,7 +2186,8 @@ html.big-screen .faq-wrapper {
   gap: calc(clamp(40px, 2.85vw, 49px) * var(--zoom-2));
 }
 
-html.big-screen .faq-content, html.big-screen .faq-list {
+html.big-screen .faq-content,
+html.big-screen .faq-list {
   gap: calc(clamp(26px, 1.85vw, 32px) * var(--zoom-2));
 }
 

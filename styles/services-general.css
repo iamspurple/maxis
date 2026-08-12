@@ -1213,6 +1213,8 @@ html.big-screen .hero-video-canvas.desktop {
 .warning {
   background-color: white;
   padding-top: clamp(56px, 5.5vw, 77px);
+  position: relative;
+  z-index: 10;
 }
 
 .warning-wrapper {
@@ -1252,6 +1254,8 @@ html.big-screen .hero-video-canvas.desktop {
 .articles {
   background-color: white;
   padding-block: calc(min(92px, 6.42vw) * var(--zoom-1));
+  position: relative;
+  z-index: 10;
 }
 
 .articles-wrapper {
@@ -1976,7 +1980,8 @@ html.big-screen .cases-slider-item-btn.forward {
     );
 }
 
-html.big-screen .configuration, html.big-screen .services1c {
+html.big-screen .configuration,
+html.big-screen .services1c {
   padding-top: 103px;
 }
 
@@ -1984,36 +1989,44 @@ html.big-screen .services1c {
   padding-bottom: 103px;
 }
 
-html.big-screen .configuration-wrapper, html.big-screen .services1c-wrapper {
+html.big-screen .configuration-wrapper,
+html.big-screen .services1c-wrapper {
   gap: 70px;
 }
 
-html.big-screen .configuration-subtitle, html.big-screen .services1c-subtitle {
+html.big-screen .configuration-subtitle,
+html.big-screen .services1c-subtitle {
   font-size: 23px;
 }
 
-html.big-screen .configuration-content, html.big-screen .services1c-content {
+html.big-screen .configuration-content,
+html.big-screen .services1c-content {
   gap: 30px;
 }
 
-html.big-screen .configuration-list, html.big-screen .services1c-list {
+html.big-screen .configuration-list,
+html.big-screen .services1c-list {
   gap: 30px;
 }
 
-html.big-screen .configuration-item, html.big-screen .services1c-item {
+html.big-screen .configuration-item,
+html.big-screen .services1c-item {
   gap: 46px;
   padding: 30px;
 }
 
-html.big-screen .configuration-item-content, html.big-screen .services1c-item-content {
+html.big-screen .configuration-item-content,
+html.big-screen .services1c-item-content {
   gap: 18px;
 }
 
-html.big-screen .configuration-item-name, html.big-screen .services1c-item-name {
+html.big-screen .configuration-item-name,
+html.big-screen .services1c-item-name {
   font-size: 23px;
 }
 
-html.big-screen .configuration-item-description, html.big-screen .services1c-item-description {
+html.big-screen .configuration-item-description,
+html.big-screen .services1c-item-description {
   font-size: 18px;
 }
 
@@ -2127,7 +2140,8 @@ html.big-screen .faq-wrapper {
   gap: calc(clamp(40px, 2.85vw, 49px) * var(--zoom-2));
 }
 
-html.big-screen .faq-content, html.big-screen .faq-list {
+html.big-screen .faq-content,
+html.big-screen .faq-list {
   gap: calc(clamp(26px, 1.85vw, 32px) * var(--zoom-2));
 }
 
