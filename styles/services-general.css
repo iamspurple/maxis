@@ -1063,6 +1063,8 @@ html.big-screen .hero-video-canvas.desktop {
 .services1c {
   background: #f3f8ff;
   padding-top: clamp(56px, 5.5vw, 77px);
+  position: relative;
+  z-index: 10;
 }
 
 .services1c {
