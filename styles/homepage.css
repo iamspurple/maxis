@@ -830,6 +830,7 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .solutions-subtitle::before {
+  flex-shrink: 0;
   content: "";
   display: inline-block;
   width: clamp(
@@ -1533,7 +1534,10 @@ html.big-screen .about-team-slider-controls {
   }
 }
 
-html.big-screen .about-team-slider-list li:first-of-type .about-team-slider-item {
+html.big-screen
+  .about-team-slider-list
+  li:first-of-type
+  .about-team-slider-item {
   margin-left: calc((100vw - 1470px) / 2);
 }
 
@@ -2369,9 +2373,7 @@ html.big-screen .achievements-clients-item {
 }
 
 html.big-screen .achievements-clients-item:not(:first-of-type) {
-  margin-left: calc(
-    (clamp(46px, 3.28vw, 56px) / 11.5) * (-1) * var(--zoom-2)
-  );
+  margin-left: calc((clamp(46px, 3.28vw, 56px) / 11.5) * (-1) * var(--zoom-2));
 }
 
 html.big-screen .achievements-title {
@@ -2927,7 +2929,8 @@ html.big-screen .about-video-title {
   );
 }
 
-html.big-screen .tab-corner-left, html.big-screen .tab-corner-right {
+html.big-screen .tab-corner-left,
+html.big-screen .tab-corner-right {
   width: calc(21px * var(--zoom-2));
   height: calc(20px * var(--zoom-2));
 }
@@ -3102,7 +3105,8 @@ html.big-screen .faq-wrapper {
   gap: calc(clamp(40px, 2.85vw, 49px) * var(--zoom-2));
 }
 
-html.big-screen .faq-content, html.big-screen .faq-list {
+html.big-screen .faq-content,
+html.big-screen .faq-list {
   gap: calc(clamp(26px, 1.85vw, 32px) * var(--zoom-2));
 }
 
