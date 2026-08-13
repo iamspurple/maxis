@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1С:Предприятие — Maxis IT</title>
-    <script>!function(){const u=()=>document.documentElement.classList.toggle("big-screen",screen.width>=2000&&innerWidth>=2000);u();addEventListener("resize",u)}()</script>
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Manrope-Medium.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Manrope-SemiBold.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Unbounded-Bold.woff2" crossorigin />
+    <script>
+      !(function () {
+        const u = () =>
+          document.documentElement.classList.toggle(
+            "big-screen",
+            screen.width >= 2000 && innerWidth >= 2000,
+          );
+        u();
+        addEventListener("resize", u);
+      })();
+    </script>
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Manrope-Medium.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Manrope-SemiBold.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Unbounded-Bold.woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/services-general.css" />
@@ -346,67 +374,71 @@
       </div>
     </header>
     <main class="main" id="main" tabindex="-1">
-      <section class="hero">
-        <div class="hero-wrapper container">
-          <nav aria-label="breadcrumb">
-            <ul class="breadcrumb">
-              <li>
-                <a href="/">Главная</a>
-              </li>
-              <li aria-current="page">1С</li>
-            </ul>
-          </nav>
-          <div class="hero-content">
-            <h1 class="hero-title heading">1С:Предприятие</h1>
-            <p class="hero-description">
-              Автоматизация и контроль
-              <span class="nowrap">вашего бизнеса в одной экосистеме</span>
-            </p>
-            <button class="hero-button modal-open-btn btn">
-              Записаться на консультацию
-            </button>
-            <ul class="hero-details">
-              <li>Официальный франчайзи 1С</li>
-              <li>Работаем с 2013 года</li>
-              <li>25 сертифицированных специалистов</li>
-            </ul>
+      <div class="hero-white">
+        <section class="hero">
+          <div class="hero-wrapper container">
+            <nav aria-label="breadcrumb">
+              <ul class="breadcrumb">
+                <li>
+                  <a href="/">Главная</a>
+                </li>
+                <li aria-current="page">1С</li>
+              </ul>
+            </nav>
+            <div class="hero-content">
+              <h1 class="hero-title heading">1С:Предприятие</h1>
+              <p class="hero-description">
+                Автоматизация и контроль
+                <span class="nowrap">вашего бизнеса в одной экосистеме</span>
+              </p>
+              <button class="hero-button modal-open-btn btn">
+                Записаться на консультацию
+              </button>
+              <ul class="hero-details">
+                <li>Официальный франчайзи 1С</li>
+                <li>Работаем с 2013 года</li>
+                <li>25 сертифицированных специалистов</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="hero-video-wrapper desktop">
-          <video
-            class="hero-video desktop"
-            poster="/assets/video/owl-services-general-desktop-poster.webp" preload="metadata"
-            autoplay
-            muted
-            loop
-            playsinline
-          >
-            <source
-              src="/assets/video/owl-services-general-desktop.mp4"
-              media="(min-width: 851px)"
-              type="video/mp4"
-            />
-          </video>
-          <canvas class="hero-video-canvas desktop"></canvas>
-        </div>
-        <div class="hero-video-wrapper mobile">
-          <video
-            class="hero-video mobile"
-            poster="/assets/video/owl-services-general-mobile-poster.webp" preload="metadata"
-            autoplay
-            muted
-            loop
-            playsinline
-          >
-            <source
-              src="/assets/video/owl-services-general-mobile.mp4"
-              media="(max-width: 850px)"
-              type="video/mp4"
-            />
-          </video>
-          <canvas class="hero-video-canvas mobile"></canvas>
-        </div>
-      </section>
+          <div class="hero-video-wrapper desktop">
+            <video
+              class="hero-video desktop"
+              poster="/assets/video/owl-services-general-desktop-poster.webp"
+              preload="metadata"
+              autoplay
+              muted
+              loop
+              playsinline
+            >
+              <source
+                src="/assets/video/owl-services-general-desktop.mp4"
+                media="(min-width: 851px)"
+                type="video/mp4"
+              />
+            </video>
+            <canvas class="hero-video-canvas desktop"></canvas>
+          </div>
+          <div class="hero-video-wrapper mobile">
+            <video
+              class="hero-video mobile"
+              poster="/assets/video/owl-services-general-mobile-poster.webp"
+              preload="metadata"
+              autoplay
+              muted
+              loop
+              playsinline
+            >
+              <source
+                src="/assets/video/owl-services-general-mobile.mp4"
+                media="(max-width: 850px)"
+                type="video/mp4"
+              />
+            </video>
+            <canvas class="hero-video-canvas mobile"></canvas>
+          </div>
+        </section>
+      </div>
       <section class="services">
         <div class="services-wrapper container">
           <div class="services-header">
@@ -2185,7 +2217,9 @@
           <a href="/personal.html" class="footer-bottom-link"
             >Политика обработки персональных данных</a
           >
-          <a href="/policy.html" class="footer-bottom-link">Политика конфиденциальности</a>
+          <a href="/policy.html" class="footer-bottom-link"
+            >Политика конфиденциальности</a
+          >
           <div class="footer-creator">
             <p class="footer-creator-text">
               Сайт разработан
@@ -2541,7 +2575,13 @@
         </div>
       </div>
     </div>
-    <div class="success" role="dialog" aria-modal="true" aria-label="Заявка отправлена" tabindex="-1">
+    <div
+      class="success"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Заявка отправлена"
+      tabindex="-1"
+    >
       <div class="success-content">
         <p class="success-title">Благодарим за отклик!</p>
         <p class="success-text">

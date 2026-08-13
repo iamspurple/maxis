@@ -697,6 +697,8 @@
   align-items: center;
   overflow: hidden;
   width: 100%;
+  max-width: 2560px;
+  margin-inline: auto;
 }
 
 .achievements-brands-list {
@@ -706,7 +708,7 @@
 }
 
 .achievements-brands-item {
-  width: 20vw;
+  width: min(20vw, 500px);
   aspect-ratio: 1.5;
   margin-right: 10%;
 }
@@ -1380,7 +1382,10 @@ html.big-screen .about-team-slider-controls {
   }
 }
 
-html.big-screen .about-team-slider-list li:first-of-type .about-team-slider-item {
+html.big-screen
+  .about-team-slider-list
+  li:first-of-type
+  .about-team-slider-item {
   margin-left: calc((100vw - 1470px) / 2);
 }
 
@@ -1514,6 +1519,8 @@ html.big-screen .about-team-slider-list li:first-of-type .about-team-slider-item
       ) *
       (-1)
   );
+  max-width: 2560px;
+  margin-inline: auto;
 }
 
 .about-certificates-wrapper {
@@ -1643,8 +1650,8 @@ html.big-screen .about-certificates-slider-controls {
 
 .about-certificates-slider-item {
   flex-shrink: 0;
-  width: max(231px, 16.5vw);
-  height: max(330px, 23.57vw);
+  width: clamp(231px, 16.5vw, 400px);
+  height: clamp(330px, 23.57vw, 600px);
   aspect-ratio: 0.7;
   border-radius: 8px;
   overflow: hidden;
@@ -1678,7 +1685,7 @@ html.big-screen .about-certificates-slider-item:first-of-type {
 }
 
 .about-certificates-image {
-  width: 36%;
+  width: min(36%, 920px);
   height: 100%;
   position: relative;
   z-index: -1;
@@ -1742,6 +1749,14 @@ html.big-screen .about-certificates-slider-item:first-of-type {
           calc(90px * 1440 / 1400 * var(--zoom-1))
         )
     );
+  margin-top: calc(
+    clamp(
+        calc(42px * 1025 / 1400 * var(--zoom-1)),
+        calc(100vw * 42 / 1400 * var(--zoom-1)),
+        calc(42px * 1440 / 1400 * var(--zoom-1))
+      ) *
+      (-1)
+  );
   background-color: #f3f8ff;
 }
 
@@ -1750,6 +1765,7 @@ html.big-screen .about-certificates-slider-item:first-of-type {
     padding-bottom: calc(
       (1090px / 4) + calc(90px * 1440 / 1400 * var(--zoom-1))
     );
+    margin-top: max(-9%, -130px);
   }
 }
 
@@ -2036,9 +2052,7 @@ html.big-screen .achievements-clients-item {
 }
 
 html.big-screen .achievements-clients-item:not(:first-of-type) {
-  margin-left: calc(
-    (clamp(46px, 3.28vw, 56px) / 11.5) * (-1) * var(--zoom-2)
-  );
+  margin-left: calc((clamp(46px, 3.28vw, 56px) / 11.5) * (-1) * var(--zoom-2));
 }
 
 html.big-screen .achievements-title {
@@ -2514,7 +2528,8 @@ html.big-screen .about-video-title {
   );
 }
 
-html.big-screen .tab-corner-left, html.big-screen .tab-corner-right {
+html.big-screen .tab-corner-left,
+html.big-screen .tab-corner-right {
   width: calc(21px * var(--zoom-2));
   height: calc(20px * var(--zoom-2));
 }
@@ -2584,8 +2599,8 @@ html.big-screen .about-certificates-slider-btn svg {
 }
 
 html.big-screen .about-certificates-slider-item {
-  width: calc(max(231px, 16.5vw) * var(--zoom-2));
-  height: calc(max(330px, 23.57vw) * var(--zoom-2));
+  width: calc(clamp(231px, 16.5vw, 400px) * var(--zoom-2));
+  height: calc(clamp(330px, 23.57vw, 600px) * var(--zoom-2));
 }
 
 html.big-screen .faq {
@@ -2602,13 +2617,22 @@ html.big-screen .faq {
           calc(90px * 1440 / 1400 * var(--zoom-2))
         )
     );
+  margin-top: calc(
+    clamp(
+        calc(42px * 1025 / 1400 * var(--zoom-2)),
+        calc(100vw * 42 / 1400 * var(--zoom-2)),
+        calc(42px * 1440 / 1400 * var(--zoom-2))
+      ) *
+      (-6)
+  );
 }
 
 html.big-screen .faq-wrapper {
   gap: calc(clamp(40px, 2.85vw, 49px) * var(--zoom-2));
 }
 
-html.big-screen .faq-content, html.big-screen .faq-list {
+html.big-screen .faq-content,
+html.big-screen .faq-list {
   gap: calc(clamp(26px, 1.85vw, 32px) * var(--zoom-2));
 }
 

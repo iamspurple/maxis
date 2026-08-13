@@ -33,7 +33,7 @@
 }
 
 .product-image {
-  width: 26vw;
+  width: min(26vw, 660px);
   aspect-ratio: 1/1;
   height: auto;
 }

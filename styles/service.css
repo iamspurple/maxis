@@ -3,6 +3,8 @@
   position: relative;
   overflow: hidden;
   display: flex;
+  max-width: 2560px;
+  margin-inline: auto;
 }
 
 .hero-video-wrapper.desktop {

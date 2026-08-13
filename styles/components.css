@@ -996,9 +996,10 @@ input[type="file"]#consult-file {
 .footer {
   overflow: hidden;
   position: relative;
-  margin-top: calc(((100vw - 11vw) / 2) * (-1));
+  margin-top: calc(min((100vw - 11vw) / 2, 850px) * (-1));
   background-color: var(--color-dark);
-  padding-block: calc((100vw - 11vw) / 2 + max(90px, 6.42vw)) max(40px, 2.85vw);
+  padding-block: calc(min((100vw - 11vw) / 2, 850px) + max(90px, 6.42vw))
+    max(40px, 2.85vw);
 }
 
 .footer a {
