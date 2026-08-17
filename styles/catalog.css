@@ -253,7 +253,7 @@
 .catalog-category {
   display: flex;
   align-items: center;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
   padding: 6px;
   border-radius: 12px;
   color: var(--color-gray);
@@ -305,7 +305,7 @@
   justify-content: space-between;
   width: 100%;
   background: transparent;
-  padding-bottom: clamp(6px, 0.6vw, 10px);
+  padding-bottom: clamp(7px, 0.7vw, 10px);
   font-size: clamp(10px, 1vw, 14px);
   transition: padding-bottom 0.3s ease;
 }
@@ -346,12 +346,12 @@
   display: flex;
   flex-direction: column;
   font-size: clamp(9px, 0.85vw, 12px);
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
   clear: both;
 }
 
 .catalog-filter-list li:first-child {
-  padding-top: clamp(6px, 0.6vw, 10px);
+  padding-top: clamp(7px, 0.7vw, 10px);
   border-top: 1px solid var(--color-grayblue);
 }
 
@@ -561,7 +561,7 @@
 .catalog-card-actions {
   display: flex;
   align-items: center;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
 }
 
 .catalog-counter {
@@ -588,7 +588,7 @@
   align-items: center;
   justify-content: center;
   background: #dfe1e380;
-  font-size: clamp(6px, 0.6vw, 10px);
+  font-size: clamp(7px, 0.7vw, 10px);
   color: var(--color-dark);
   border-radius: 100px;
   transition: 0.3s ease;
@@ -608,7 +608,7 @@
     calc(33px * 1440 / 1400 * var(--zoom-1))
   );
   display: inline-block;
-  font-size: clamp(6px, 0.6vw, 10px);
+  font-size: clamp(7px, 0.7vw, 10px);
   line-height: 150%;
   text-align: center;
   font-weight: 600;
@@ -653,13 +653,13 @@
 .pagination-content {
   display: flex;
   align-items: center;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
 }
 
 .pagination-list {
   display: flex;
   align-items: center;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
 }
 
 .pagination-btn {

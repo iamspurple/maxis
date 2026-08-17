@@ -67,7 +67,7 @@ b {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
   background-color: var(--color-primary);
   color: white;
 }
@@ -181,7 +181,7 @@ b {
 .post-author-text {
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
 }
 
 .post-author-name {
@@ -1147,7 +1147,8 @@ html.big-screen .post-video-title {
   );
 }
 
-html.big-screen .tab-corner-left, html.big-screen .tab-corner-right {
+html.big-screen .tab-corner-left,
+html.big-screen .tab-corner-right {
   width: calc(21px * var(--zoom-2));
   height: calc(20px * var(--zoom-2));
 }

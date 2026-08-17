@@ -382,13 +382,13 @@
 .pagination-content {
   display: flex;
   align-items: center;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
 }
 
 .pagination-list {
   display: flex;
   align-items: center;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
 }
 
 .pagination-btn {

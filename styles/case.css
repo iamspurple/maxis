@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
   border: 2px solid var(--color-primary);
   background-color: white;
   color: var(--color-primary);
@@ -1029,7 +1029,8 @@ html.big-screen .case-sidebar-buttons {
   gap: 18px;
 }
 
-html.big-screen .case-sidebar-btn, html.big-screen .case-sidebar-link {
+html.big-screen .case-sidebar-btn,
+html.big-screen .case-sidebar-link {
   padding: 30px 37px;
   font-size: 20px;
   gap: 12px;
@@ -1086,7 +1087,8 @@ html.big-screen .case-video-title {
   );
 }
 
-html.big-screen .tab-corner-left, html.big-screen .tab-corner-right {
+html.big-screen .tab-corner-left,
+html.big-screen .tab-corner-right {
   width: calc(21px * var(--zoom-2));
   height: calc(20px * var(--zoom-2));
 }

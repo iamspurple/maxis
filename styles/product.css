@@ -53,8 +53,8 @@
 
 .product-badge {
   width: fit-content;
-  padding-inline: clamp(6px, 0.6vw, 10px);
-  font-size: clamp(6px, 0.6vw, 10px);
+  padding-inline: clamp(7px, 0.7vw, 10px);
+  font-size: clamp(7px, 0.7vw, 10px);
   text-transform: uppercase;
   line-height: 220%;
   border-radius: 5px;
@@ -100,11 +100,11 @@
 .product-actions {
   display: flex;
   align-items: stretch;
-  gap: clamp(6px, 0.6vw, 10px);
+  gap: clamp(7px, 0.7vw, 10px);
 }
 
 .product-counter {
-  padding: clamp(6px, 0.6vw, 10px);
+  padding: clamp(7px, 0.7vw, 10px);
   display: flex;
   align-items: center;
   border: 1px solid rgba(21, 30, 48, 0.12);

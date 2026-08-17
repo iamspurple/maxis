@@ -106,7 +106,7 @@
 }
 
 .cart-item-badge {
-  padding: 4px clamp(6px, 0.6vw, 10px);
+  padding: 4px clamp(7px, 0.7vw, 10px);
   font-size: clamp(7px, 0.65vw, 9px);
   line-height: 160%;
   font-weight: 600;
@@ -149,7 +149,7 @@
 }
 
 .cart-item-unit {
-  font-size: clamp(6px, 0.6vw, 10px);
+  font-size: clamp(7px, 0.7vw, 10px);
   color: var(--color-gray);
 }
 
