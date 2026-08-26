@@ -725,8 +725,8 @@ html.big-screen .hero-video-canvas.desktop {
 .price-item-details {
   width: 100%;
   display: flex;
-  align-items: center;
-  gap: clamp(10px, 1vw, 14px);
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .price-item-price {
@@ -1894,10 +1894,6 @@ html.big-screen .price-item-description {
   font-size: 18px;
 }
 
-html.big-screen .price-item-details {
-  gap: 18px;
-}
-
 html.big-screen .price-item-price {
   font-size: 41px;
 }
@@ -2637,10 +2633,6 @@ html.big-screen .consult {
     font-size: clamp(14px, 2.5vw, 21px);
   }
 
-  .price-item-details {
-    gap: clamp(14px, 2.5vw, 21px);
-  }
-
   .price-item-price {
     font-size: clamp(32px, 5.6vw, 48px);
   }
@@ -3346,8 +3338,6 @@ html.big-screen .consult {
   }
 
   .price-item-details {
-    flex-direction: column;
-    align-items: flex-start;
     gap: clamp(14px, 4.2vw, 25px);
   }
 
