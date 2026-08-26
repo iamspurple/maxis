@@ -1329,6 +1329,34 @@ const initStepSlider = () => {
   }
 };
 
+const initProcessColumns = () => {
+  const lists = document.querySelectorAll(".process-list");
+  if (!lists.length) return;
+
+  lists.forEach((list) => {
+    const items = list.querySelectorAll(".process-item");
+    const count = items.length;
+
+    if (!count) {
+      list.style.removeProperty("--process-rows");
+      return;
+    }
+
+    const firstColumnCount = Math.ceil(count / 2);
+
+    list.style.setProperty("--process-rows", firstColumnCount);
+
+    items.forEach((item, index) => {
+      const isLastInFirstColumn = index === firstColumnCount - 1;
+      const isLastInSecondColumn = index === count - 1;
+      item.classList.toggle(
+        "process-item--no-border",
+        isLastInFirstColumn || isLastInSecondColumn,
+      );
+    });
+  });
+};
+
 const initCasesSlider = () => {
   document.querySelectorAll(".cases-slider").forEach((root) => {
     const list = root.querySelector(".cases-slider-list");
@@ -1501,6 +1529,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStepper();
   initStepSlider();
   initCasesSlider();
+  initProcessColumns();
   initSidebarContent("case");
   initSidebarContent("post");
   initFormValidation();

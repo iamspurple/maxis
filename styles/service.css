@@ -5,6 +5,13 @@
   display: flex;
   max-width: 2560px;
   margin-inline: auto;
+  height: 38vw;
+  min-height: 388px;
+  max-height: 553px;
+}
+
+html.big-screen .hero {
+  max-height: 717px;
 }
 
 .hero-video-wrapper.desktop {
@@ -598,6 +605,7 @@ html.big-screen .hero-video-canvas.desktop {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(var(--process-rows, 4), auto);
   column-gap: clamp(45px, 4.5vw, 65px);
   row-gap: clamp(16px, 1.6vw, 22px);
 }
@@ -615,18 +623,7 @@ html.big-screen .hero-video-canvas.desktop {
   border-bottom: 1px solid rgba(21, 30, 48, 0.1);
 }
 
-.process-item:nth-child(-n + 4) {
-  grid-column: 1;
-}
-
-.process-item:nth-child(n + 5) {
-  grid-column: 2;
-}
-
-.process-item:nth-child(4) {
-  border-bottom: none;
-}
-.process-item:nth-child(7) {
+.process-item--no-border {
   border-bottom: none;
 }
 
@@ -2269,6 +2266,9 @@ html.big-screen .consult {
   .hero {
     flex-direction: column;
     padding-bottom: 100vw;
+    height: auto;
+    min-height: 0;
+    max-height: none;
   }
 
   .hero-video-wrapper.desktop {
@@ -2576,7 +2576,9 @@ html.big-screen .consult {
   }
 
   .process-list {
+    grid-auto-flow: row;
     grid-template-columns: 1fr;
+    grid-template-rows: none;
     gap: clamp(24px, 4vw, 34px);
   }
 
@@ -2586,12 +2588,12 @@ html.big-screen .consult {
     row-gap: clamp(22px, 3.75vw, 32px);
   }
 
-  .process-item:nth-child(-n + 100) {
-    grid-column: 1;
+  .process-item--no-border {
+    border-bottom: 1px solid rgba(21, 30, 48, 0.1);
   }
 
-  .process-item:nth-child(4) {
-    border-bottom: 1px solid rgba(21, 30, 48, 0.1);
+  .process-item:last-child {
+    border-bottom: none;
   }
   .process-item-number {
     font-size: clamp(13px, 2.2vw, 18px);
