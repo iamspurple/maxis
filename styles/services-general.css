@@ -13,6 +13,13 @@
   display: flex;
   max-width: 2560px;
   margin-inline: auto;
+  height: 38vw;
+  min-height: 388px;
+  max-height: 553px;
+}
+
+html.big-screen .hero {
+  max-height: 717px;
 }
 
 .hero-video-wrapper.desktop {
@@ -132,7 +139,6 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .hero-content {
-  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: clamp(20px, 2vw, 29px);
@@ -2230,6 +2236,9 @@ html.big-screen .consult {
   .hero {
     flex-direction: column;
     padding-bottom: 100vw;
+    height: auto;
+    min-height: 0;
+    max-height: none;
   }
 
   .hero-video-wrapper.desktop {
