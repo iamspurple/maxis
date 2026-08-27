@@ -144,7 +144,7 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .hero-description {
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   color: var(--color-gray);
   line-height: 140%;
   max-width: 40%;
@@ -315,7 +315,7 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .solutions-item-name {
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   font-weight: 700;
   line-height: 160%;
   color: var(--color-dark);

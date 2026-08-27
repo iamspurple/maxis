@@ -90,7 +90,7 @@ a.contacts-info-value {
 }
 
 .contacts-requisites-title {
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   font-weight: 500;
   color: var(--color-dark);
 }

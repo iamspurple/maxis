@@ -151,7 +151,7 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .hero-description {
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   color: var(--color-gray);
   line-height: 140%;
   max-width: 70%;
@@ -310,7 +310,7 @@ html.big-screen .hero-video-canvas.desktop {
 
 .services-subtitle {
   color: var(--color-grayblue);
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   text-align: right;
 }
 
@@ -376,7 +376,7 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .services-item-name {
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   font-weight: 700;
   line-height: 160%;
   color: var(--color-primary);
@@ -641,7 +641,7 @@ html.big-screen .hero-video-canvas.desktop {
 
 .automation-subtitle {
   color: var(--color-grayblue);
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   text-align: right;
   display: flex;
   gap: clamp(15px, 1.45vw, 20px);
@@ -780,7 +780,7 @@ html.big-screen .hero-video-canvas.desktop {
 
 .task-item-name {
   font-weight: 700;
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
 }
 
 .task-item-description {
@@ -1099,7 +1099,7 @@ html.big-screen .hero-video-canvas.desktop {
 .configuration-subtitle,
 .services1c-subtitle {
   color: var(--color-grayblue);
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   text-align: right;
   width: 24%;
 }
@@ -1152,7 +1152,7 @@ html.big-screen .hero-video-canvas.desktop {
 
 .configuration-item-name,
 .services1c-item-name {
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   font-weight: 700;
 }
 
