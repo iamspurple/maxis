@@ -263,14 +263,14 @@
 
 .case-results-item {
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   padding: clamp(22px, 2.18vw, 30px);
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: clamp(12px, 1.2vw, 18px);
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--color-lightblue-bg);
   border-radius: 20px;
 }
