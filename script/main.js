@@ -42,10 +42,49 @@ const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (reducedMotion) {
     video.removeAttribute("autoplay");
     video.pause();
   }
+
+  const source = video.querySelector("source");
+
+  let gestureHooked = false;
+  const gestureEvents = ["pointerdown", "touchstart", "keydown", "scroll"];
+  const hookGesture = () => {
+    if (gestureHooked) return;
+    gestureHooked = true;
+    const retry = () => {
+      gestureEvents.forEach((ev) => window.removeEventListener(ev, retry));
+      gestureHooked = false;
+      ensurePlay();
+    };
+    gestureEvents.forEach((ev) =>
+      window.addEventListener(ev, retry, { passive: true }),
+    );
+  };
+
+  const ensurePlay = () => {
+    if (reducedMotion) return;
+    if (video.offsetParent === null) return;
+
+    if (source && !source.getAttribute("src") && source.dataset.src) {
+      source.setAttribute("src", source.dataset.src);
+      video.load();
+    }
+
+    if (video.paused) {
+      const p = video.play();
+      if (p && typeof p.catch === "function") p.catch(() => hookGesture());
+    }
+  };
+
+  video.addEventListener("loadeddata", ensurePlay);
+  video.addEventListener("canplay", ensurePlay);
 
   const updateCanvasSize = () => {
     const width = wrapper.offsetWidth;
@@ -98,17 +137,43 @@ const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
   const visObserver = new IntersectionObserver(
     (entries) => {
       onScreen = entries[0].isIntersecting;
-      onScreen ? startLoop() : stopLoop();
+      if (onScreen) {
+        ensurePlay();
+        startLoop();
+      } else {
+        stopLoop();
+        video.pause();
+      }
     },
     { threshold: 0 },
   );
   visObserver.observe(wrapper);
 
   document.addEventListener("visibilitychange", () => {
-    document.hidden ? stopLoop() : startLoop();
+    if (document.hidden) {
+      stopLoop();
+    } else {
+      ensurePlay();
+      startLoop();
+    }
   });
 
-  if (!video.paused) startLoop();
+  let resizeTid = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTid);
+    resizeTid = setTimeout(() => {
+      if (video.offsetParent === null) {
+        stopLoop();
+        video.pause();
+      } else {
+        ensurePlay();
+        startLoop();
+      }
+    }, 200);
+  });
+
+  ensurePlay();
+  startLoop();
 };
 
 /**
