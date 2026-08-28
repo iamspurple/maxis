@@ -1073,13 +1073,13 @@ html.big-screen .hero-video-canvas.desktop {
 .configuration,
 .services1c {
   background: #f3f8ff;
-  padding-top: clamp(56px, 5.5vw, 77px);
+  padding-block: clamp(56px, 5.5vw, 77px);
   position: relative;
   z-index: 10;
 }
 
 .services1c {
-  padding-bottom: clamp(56px, 5.5vw, 77px);
+  padding-top: 0;
 }
 
 .configuration-wrapper,
@@ -1995,11 +1995,11 @@ html.big-screen .cases-slider-item-btn.forward {
 
 html.big-screen .configuration,
 html.big-screen .services1c {
-  padding-top: 103px;
+  padding-block: 103px;
 }
 
 html.big-screen .services1c {
-  padding-bottom: 103px;
+  padding-top: 0;
 }
 
 html.big-screen .configuration-wrapper,
@@ -2858,11 +2858,11 @@ html.big-screen .consult {
   }
 
   .configuration {
-    padding-top: clamp(54px, 9.4vw, 80px);
+    padding-block: clamp(54px, 9.4vw, 80px);
   }
 
   .services1c {
-    padding-block: clamp(54px, 9.4vw, 80px);
+    padding-bottom: clamp(54px, 9.4vw, 80px);
   }
 
   .configuration-wrapper,
@@ -3574,11 +3574,11 @@ html.big-screen .consult {
   }
 
   .configuration {
-    padding-top: clamp(50px, 16vw, 80px);
+    padding-block: clamp(50px, 16vw, 80px);
   }
 
   .services1c {
-    padding-block: clamp(50px, 16vw, 80px);
+    padding-bottom: clamp(50px, 16vw, 80px);
   }
 
   .configuration-wrapper,
