@@ -993,6 +993,7 @@ html.big-screen .pagination-total {
   .pagination {
     width: 100%;
     justify-content: space-between;
+    gap: 10px;
   }
 
   .pagination-btn {
@@ -1001,11 +1002,14 @@ html.big-screen .pagination-total {
   }
 
   .pagination-content {
+    flex-grow: 1;
     gap: clamp(10px, 3.2vw, 18px);
   }
 
   .pagination-list {
-    gap: clamp(10px, 3.2vw, 18px);
+    width: 100%;
+    gap: 0;
+    justify-content: space-between;
   }
 
   .pagination-page {
@@ -1014,7 +1018,12 @@ html.big-screen .pagination-total {
     font-size: clamp(12px, 3.7vw, 22px);
   }
 
+  .pagination-page.dots {
+    width: auto;
+    min-width: 0;
+  }
+
   .pagination-total {
-    font-size: clamp(12px, 3.7vw, 22px);
+    display: none;
   }
 }
