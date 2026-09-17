@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Балтик продукт — кейс — Maxis IT</title>
-    <script>!function(){const u=()=>document.documentElement.classList.toggle("big-screen",screen.width>=2000&&innerWidth>=2000);u();addEventListener("resize",u)}()</script>
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Manrope-Medium.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Manrope-SemiBold.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Unbounded-Bold.woff2" crossorigin />
+    <script>
+      !(function () {
+        const u = () =>
+          document.documentElement.classList.toggle(
+            "big-screen",
+            screen.width >= 2000 && innerWidth >= 2000,
+          );
+        u();
+        addEventListener("resize", u);
+      })();
+    </script>
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Manrope-Medium.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Manrope-SemiBold.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Unbounded-Bold.woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/case.css" />
@@ -461,7 +489,7 @@
                   humour, or non-characteristic words etc.
                 </p>
                 <div class="case-video">
-                  <h2 class="case-video-title">
+                  <h2 class="case-video-title nowrap">
                     <span class="tab-corner-left"></span>видео о проекте<span
                       class="tab-corner-right"
                     ></span>
@@ -1448,7 +1476,9 @@
           <a href="/personal.html" class="footer-bottom-link"
             >Политика обработки персональных данных</a
           >
-          <a href="/policy.html" class="footer-bottom-link">Политика конфиденциальности</a>
+          <a href="/policy.html" class="footer-bottom-link"
+            >Политика конфиденциальности</a
+          >
           <div class="footer-creator">
             <p class="footer-creator-text">
               Сайт разработан
@@ -1804,7 +1834,13 @@
         </div>
       </div>
     </div>
-    <div class="success" role="dialog" aria-modal="true" aria-label="Заявка отправлена" tabindex="-1">
+    <div
+      class="success"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Заявка отправлена"
+      tabindex="-1"
+    >
       <div class="success-content">
         <p class="success-title">Благодарим за отклик!</p>
         <p class="success-text">

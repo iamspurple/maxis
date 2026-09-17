@@ -173,6 +173,8 @@
 }
 
 .case-video {
+  width: 100%;
+  aspect-ratio: 1.78;
   position: relative;
   border-radius: 30px;
   overflow: hidden;
@@ -211,8 +213,16 @@
     calc(100vw * 14 / 1400 * var(--zoom-1)),
     calc(14px * 1440 / 1400 * var(--zoom-1))
   );
-  border-bottom-right-radius: 24px;
-  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-1)),
+    calc(100vw * 24 / 1400 * var(--zoom-1)),
+    calc(24px * 1440 / 1400 * var(--zoom-1))
+  );
+  border-bottom-left-radius: clamp(
+    calc(24px * 1025 / 1400 * var(--zoom-1)),
+    calc(100vw * 24 / 1400 * var(--zoom-1)),
+    calc(24px * 1440 / 1400 * var(--zoom-1))
+  );
 }
 
 .case-video-title::before {
@@ -228,19 +238,41 @@
   content: "";
   position: absolute;
   top: 0;
-  width: calc(21px * var(--zoom-1));
-  height: calc(20px * var(--zoom-1));
+  width: clamp(
+    calc(21px * 1025 / 1400 * var(--zoom-1)),
+    calc(100vw * 21 / 1400 * var(--zoom-1)),
+    calc(21px * 1440 / 1400 * var(--zoom-1))
+  );
+  height: clamp(
+    calc(20px * 1025 / 1400 * var(--zoom-1)),
+    calc(100vw * 20 / 1400 * var(--zoom-1)),
+    calc(20px * 1440 / 1400 * var(--zoom-1))
+  );
   background: white;
 }
 
 .tab-corner-left {
-  left: calc(-21px * var(--zoom-1));
+  left: calc(
+    -1 *
+      clamp(
+        calc(20px * 1025 / 1400 * var(--zoom-1)),
+        calc(100vw * 20 / 1400 * var(--zoom-1)),
+        calc(20px * 1440 / 1400 * var(--zoom-1))
+      )
+  );
   -webkit-mask: radial-gradient(circle at 0% 100%, transparent 68%, black 71%);
   mask: radial-gradient(circle at 0% 100%, transparent 68%, black 71%);
 }
 
 .tab-corner-right {
-  right: calc(-20px * var(--zoom-1));
+  right: calc(
+    -1 *
+      clamp(
+        calc(20px * 1025 / 1400 * var(--zoom-1)),
+        calc(100vw * 20 / 1400 * var(--zoom-1)),
+        calc(20px * 1440 / 1400 * var(--zoom-1))
+      )
+  );
   -webkit-mask: radial-gradient(
     circle at 100% 100%,
     transparent 70%,
@@ -1093,7 +1125,7 @@ html.big-screen .tab-corner-right {
 }
 
 html.big-screen .tab-corner-left {
-  left: calc(-21px * var(--zoom-2));
+  left: calc(-20px * var(--zoom-2));
 }
 
 html.big-screen .tab-corner-right {
@@ -1984,6 +2016,10 @@ html.big-screen .cases-slider-item-btn.forward {
   .case-section blockquote {
     font-size: clamp(12px, 3.7vw, 22px);
     padding-left: clamp(31px, 9.6vw, 55px);
+  }
+
+  .case-video {
+    border-radius: 0;
   }
 
   .case-section iframe {
