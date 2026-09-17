@@ -131,7 +131,6 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .hero-content {
-  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: clamp(20px, 2vw, 29px);
