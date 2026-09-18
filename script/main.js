@@ -1590,6 +1590,15 @@ document.addEventListener("DOMContentLoaded", () => {
     btnFwd: ".post-projects-slider-btn.forward",
   });
 
+  // слайдер позиций внутри страницы услуги
+  initHorizontalSlider(document.querySelector(".products"), {
+    list: ".products-list",
+    item: ".products-card",
+    track: ".products-slider",
+    btnBack: ".products-slider-btn.backward",
+    btnFwd: ".products-slider-btn.forward",
+  });
+
   initHeaderBurger();
   getHeaderHeight();
   initModal();

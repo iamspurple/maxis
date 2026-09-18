@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BI-аналитика — Maxis IT</title>
-    <script>!function(){const u=()=>document.documentElement.classList.toggle("big-screen",screen.width>=2000&&innerWidth>=2000);u();addEventListener("resize",u)}()</script>
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Manrope-Medium.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Manrope-SemiBold.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Unbounded-Bold.woff2" crossorigin />
+    <script>
+      !(function () {
+        const u = () =>
+          document.documentElement.classList.toggle(
+            "big-screen",
+            screen.width >= 2000 && innerWidth >= 2000,
+          );
+        u();
+        addEventListener("resize", u);
+      })();
+    </script>
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Manrope-Medium.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Manrope-SemiBold.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/Unbounded-Bold.woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/service.css" />
@@ -371,7 +399,8 @@
         <div class="hero-video-wrapper desktop">
           <video
             class="hero-video desktop"
-            poster="/assets/video/owl-service-desktop-poster.webp" preload="metadata"
+            poster="/assets/video/owl-service-desktop-poster.webp"
+            preload="metadata"
             autoplay
             muted
             loop
@@ -387,7 +416,8 @@
         <div class="hero-video-wrapper mobile">
           <video
             class="hero-video mobile"
-            poster="/assets/video/owl-service-mobile-poster.webp" preload="metadata"
+            poster="/assets/video/owl-service-mobile-poster.webp"
+            preload="metadata"
             autoplay
             muted
             loop
@@ -706,6 +736,399 @@
               <li>Требуется регулярная управленческая отчётность</li>
             </ul>
           </section>
+        </div>
+      </section>
+      <section class="products">
+        <div class="products-wrapper container">
+          <h2 class="products-title title-medium heading">
+            Позиции 1С:Бухгалтерия
+          </h2>
+          <div class="products-slider-controls">
+            <button
+              class="products-slider-btn backward btn"
+              title="Назад"
+              disabled=""
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                  fill="currentColor"
+                  fill-opacity="1"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="products-slider-btn forward btn"
+              title="Вперёд"
+              disabled=""
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                  fill="currentColor"
+                  fill-opacity="1"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="products-slider">
+            <ul class="products-list">
+              <li class="products-card">
+                <div class="products-card-image">
+                  <img
+                    width="800"
+                    height="800"
+                    src="/assets/images/catalog/img-1.webp"
+                    alt="1С:Зарплата и управление персоналом 8 ПРОФ"
+                  />
+                </div>
+                <div class="products-card-badge products-card-badge--prof">
+                  проф версия
+                </div>
+                <div class="products-card-body">
+                  <div class="products-card-info">
+                    <p class="products-card-title">
+                      1С:Зарплата и управление персоналом 8 ПРОФ
+                    </p>
+                    <p class="products-card-delivery">Электронная поставка</p>
+                  </div>
+                  <div class="products-card-purchase">
+                    <p class="products-card-price">39 700 ₽</p>
+                    <div class="products-card-actions">
+                      <div class="products-counter">
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Уменьшить"
+                        >
+                          −
+                        </button>
+                        <span
+                          class="products-counter-number"
+                          role="spinbutton"
+                          aria-label="Количество"
+                          aria-valuenow="1"
+                          aria-valuemin="1"
+                          aria-live="polite"
+                          >1</span
+                        >
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Увеличить"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <button type="button" class="products-card-cart">
+                        В корзину
+                      </button>
+                    </div>
+                    <a href="/" class="products-card-more btn"> Подробнее </a>
+                  </div>
+                </div>
+              </li>
+              <li class="products-card">
+                <div class="products-card-image">
+                  <img
+                    width="800"
+                    height="800"
+                    loading="lazy"
+                    src="/assets/images/catalog/img-2.webp"
+                    alt="1С:Бухгалтерия 8 КОРП"
+                  />
+                </div>
+                <div class="products-card-badge products-card-badge--corp">
+                  корп версия
+                </div>
+                <div class="products-card-body">
+                  <div class="products-card-info">
+                    <p class="products-card-title">1С:Бухгалтерия 8 КОРП</p>
+                    <p class="products-card-delivery">Электронная поставка</p>
+                  </div>
+                  <div class="products-card-purchase">
+                    <p class="products-card-price">59 000 ₽</p>
+                    <div class="products-card-actions">
+                      <div class="products-counter">
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Уменьшить"
+                        >
+                          −
+                        </button>
+                        <span
+                          class="products-counter-number"
+                          role="spinbutton"
+                          aria-label="Количество"
+                          aria-valuenow="1"
+                          aria-valuemin="1"
+                          aria-live="polite"
+                          >1</span
+                        >
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Увеличить"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <button type="button" class="products-card-cart">
+                        В корзину
+                      </button>
+                    </div>
+                    <a href="/" class="products-card-more btn"> Подробнее </a>
+                  </div>
+                </div>
+              </li>
+              <li class="products-card">
+                <div class="products-card-image">
+                  <img
+                    width="800"
+                    height="800"
+                    loading="lazy"
+                    src="/assets/images/catalog/img-3.webp"
+                    alt="1С:Зарплата и управление персоналом 8"
+                  />
+                </div>
+                <div class="products-card-badge products-card-badge--base">
+                  базовая версия
+                </div>
+                <div class="products-card-body">
+                  <div class="products-card-info">
+                    <p class="products-card-title">
+                      1С:Зарплата и управление персоналом 8
+                    </p>
+                    <p class="products-card-delivery">Электронная поставка</p>
+                  </div>
+                  <div class="products-card-purchase">
+                    <p class="products-card-price">11 100 ₽</p>
+                    <div class="products-card-actions">
+                      <div class="products-counter">
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Уменьшить"
+                        >
+                          −
+                        </button>
+                        <span
+                          class="products-counter-number"
+                          role="spinbutton"
+                          aria-label="Количество"
+                          aria-valuenow="1"
+                          aria-valuemin="1"
+                          aria-live="polite"
+                          >1</span
+                        >
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Увеличить"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <button type="button" class="products-card-cart">
+                        В корзину
+                      </button>
+                    </div>
+                    <a href="/" class="products-card-more btn"> Подробнее </a>
+                  </div>
+                </div>
+              </li>
+              <li class="products-card">
+                <div class="products-card-image">
+                  <img
+                    width="800"
+                    height="800"
+                    loading="lazy"
+                    src="/assets/images/catalog/img-4.webp"
+                    alt="1С:Управление нашей фирмой 8 ПРОФ"
+                  />
+                </div>
+                <div class="products-card-badge products-card-badge--prof">
+                  проф версия
+                </div>
+                <div class="products-card-badge products-card-badge--kit">
+                  КОМПЛЕКТ НА 5 ПОЛЬЗОВАТЕЛЕЙ
+                </div>
+                <div class="products-card-body">
+                  <div class="products-card-info">
+                    <p class="products-card-title">
+                      1С:Управление нашей фирмой 8 ПРОФ
+                    </p>
+                    <p class="products-card-delivery">Электронная поставка</p>
+                  </div>
+                  <div class="products-card-purchase">
+                    <p class="products-card-price">55 900 ₽</p>
+                    <div class="products-card-actions">
+                      <div class="products-counter">
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Уменьшить"
+                        >
+                          −
+                        </button>
+                        <span
+                          class="products-counter-number"
+                          role="spinbutton"
+                          aria-label="Количество"
+                          aria-valuenow="1"
+                          aria-valuemin="1"
+                          aria-live="polite"
+                          >1</span
+                        >
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Увеличить"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <button type="button" class="products-card-cart">
+                        В корзину
+                      </button>
+                    </div>
+                    <a href="/" class="products-card-more btn"> Подробнее </a>
+                  </div>
+                </div>
+              </li>
+              <li class="products-card">
+                <div class="products-card-image">
+                  <img
+                    width="800"
+                    height="800"
+                    loading="lazy"
+                    src="/assets/images/catalog/img-5.webp"
+                    alt="1С:Зарплата и управление персоналом 8 ПРОФ"
+                  />
+                </div>
+                <div class="products-card-badge products-card-badge--prof">
+                  проф версия
+                </div>
+                <div class="products-card-body">
+                  <div class="products-card-info">
+                    <p class="products-card-title">
+                      1С:Зарплата и управление персоналом 8 ПРОФ
+                    </p>
+                    <p class="products-card-delivery">Электронная поставка</p>
+                  </div>
+                  <div class="products-card-purchase">
+                    <p class="products-card-price">39 700 ₽</p>
+                    <div class="products-card-actions">
+                      <div class="products-counter">
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Уменьшить"
+                        >
+                          −
+                        </button>
+                        <span
+                          class="products-counter-number"
+                          role="spinbutton"
+                          aria-label="Количество"
+                          aria-valuenow="1"
+                          aria-valuemin="1"
+                          aria-live="polite"
+                          >1</span
+                        >
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Увеличить"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <button type="button" class="products-card-cart">
+                        В корзину
+                      </button>
+                    </div>
+                    <a href="/" class="products-card-more btn"> Подробнее </a>
+                  </div>
+                </div>
+              </li>
+              <li class="products-card">
+                <div class="products-card-image">
+                  <img
+                    width="800"
+                    height="800"
+                    loading="lazy"
+                    src="/assets/images/catalog/img-6.webp"
+                    alt="1С:Бухгалтерия 8 КОРП"
+                  />
+                </div>
+                <div class="products-card-badge products-card-badge--corp">
+                  корп версия
+                </div>
+                <div class="products-card-body">
+                  <div class="products-card-info">
+                    <p class="products-card-title">1С:Бухгалтерия 8 КОРП</p>
+                    <p class="products-card-delivery">Электронная поставка</p>
+                  </div>
+                  <div class="products-card-purchase">
+                    <p class="products-card-price">59 000 ₽</p>
+                    <div class="products-card-actions">
+                      <div class="products-counter">
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Уменьшить"
+                        >
+                          −
+                        </button>
+                        <span
+                          class="products-counter-number"
+                          role="spinbutton"
+                          aria-label="Количество"
+                          aria-valuenow="1"
+                          aria-valuemin="1"
+                          aria-live="polite"
+                          >1</span
+                        >
+                        <button
+                          type="button"
+                          class="products-counter-btn"
+                          aria-label="Увеличить"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <button type="button" class="products-card-cart">
+                        В корзину
+                      </button>
+                    </div>
+                    <a href="/" class="products-card-more btn"> Подробнее </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <a href="/catalog.html" class="hero-button products-more-link btn"
+            >Смотреть весь каталог</a
+          >
         </div>
       </section>
       <section class="block">
@@ -2008,7 +2431,9 @@
           <a href="/personal.html" class="footer-bottom-link"
             >Политика обработки персональных данных</a
           >
-          <a href="/policy.html" class="footer-bottom-link">Политика конфиденциальности</a>
+          <a href="/policy.html" class="footer-bottom-link"
+            >Политика конфиденциальности</a
+          >
           <div class="footer-creator">
             <p class="footer-creator-text">
               Сайт разработан
@@ -2364,7 +2789,13 @@
         </div>
       </div>
     </div>
-    <div class="success" role="dialog" aria-modal="true" aria-label="Заявка отправлена" tabindex="-1">
+    <div
+      class="success"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Заявка отправлена"
+      tabindex="-1"
+    >
       <div class="success-content">
         <p class="success-title">Благодарим за отклик!</p>
         <p class="success-text">
