@@ -31,6 +31,14 @@ const toggleActive = () => {
       }
     });
   }
+
+  document.querySelectorAll(".mega-col-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      if (window.innerWidth >= 850) return;
+      e.stopPropagation();
+      btn.closest(".mega-col")?.classList.toggle("open");
+    });
+  });
 };
 
 const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
