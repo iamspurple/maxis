@@ -627,6 +627,16 @@
   background-color: var(--color-primary);
   color: #fff;
   font-weight: 600;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+
+@media (hover: hover) {
+  .catalog-card-cart:hover {
+    background-color: white;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
 }
 
 .catalog-card-more {
