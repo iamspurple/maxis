@@ -486,106 +486,207 @@
                     </div>
                   </div>
 
-                  <div
-                    class="catalog-toolbar-tabs"
-                    role="radiogroup"
-                    aria-label="Категория товаров"
-                  >
-                    <label class="catalog-tab btn">
-                      <input
-                        type="radio"
-                        name="catalog"
-                        value="1c"
-                        class="catalog-tab-input"
-                        checked
-                      />
-                      <span class="catalog-tab-label">1С</span>
-                    </label>
-                    <label class="catalog-tab btn">
-                      <input
-                        type="radio"
-                        name="catalog"
-                        value="bitrix24"
-                        class="catalog-tab-input"
-                      />
-                      <span class="catalog-tab-label">Битрикс24</span>
-                    </label>
-                    <label class="catalog-tab btn">
-                      <input
-                        type="radio"
-                        name="catalog"
-                        value="other"
-                        class="catalog-tab-input"
-                      />
-                      <span class="catalog-tab-label">Прочее ПО</span>
-                    </label>
-                  </div>
+                  <fieldset class="catalog-search">
+                    <input
+                      name="search"
+                      type="text"
+                      placeholder="Поиск по каталогу"
+                    />
+                    <button type="submit" class="catalog-search-btn btn">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16.1475 15.3525L13.2668 12.4717C14.2298 11.3295 14.8125 9.85725 14.8125 8.25C14.8125 4.63125 11.8687 1.6875 8.25 1.6875C4.63125 1.6875 1.6875 4.63125 1.6875 8.25C1.6875 11.8687 4.63125 14.8125 8.25 14.8125C9.85725 14.8125 11.3295 14.2297 12.4718 13.2667L15.3525 16.1475C15.462 16.257 15.606 16.3125 15.75 16.3125C15.894 16.3125 16.038 16.2577 16.1475 16.1475C16.3673 15.9285 16.3673 15.5723 16.1475 15.3525ZM2.8125 8.25C2.8125 5.2515 5.2515 2.8125 8.25 2.8125C11.2485 2.8125 13.6875 5.2515 13.6875 8.25C13.6875 11.2485 11.2485 13.6875 8.25 13.6875C5.2515 13.6875 2.8125 11.2485 2.8125 8.25Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                  </fieldset>
                 </div>
 
                 <aside id="catalog-sidebar" class="catalog-sidebar">
                   <nav class="catalog-categories">
                     <ul class="catalog-categories-list">
-                      <li>
-                        <a
-                          href="#"
-                          class="catalog-category is-active"
-                          aria-current="page"
+                      <li class="catalog-category-item">
+                        <a href="#" class="catalog-category">
+                          <span class="catalog-category-name"
+                            >Все категории</span
+                          >
+                        </a>
+                      </li>
+                      <li class="catalog-category-item is-active">
+                        <button
+                          type="button"
+                          class="catalog-category"
+                          aria-expanded="true"
+                          aria-controls="subcategories-products"
                         >
-                          <span class="catalog-category-num">1</span>
-                          <span class="catalog-category-name"
-                            >Конфигурации</span
+                          <span class="catalog-category-name">Продукты 1С</span>
+                          <svg
+                            class="catalog-category-chevron"
+                            aria-hidden="true"
+                            focusable="false"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" class="catalog-category">
-                          <span class="catalog-category-num">2</span>
-                          <span class="catalog-category-name"
-                            >Клиентские лицензии</span
+                            <path
+                              d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </button>
+                        <div class="catalog-subcategories-wrapper">
+                          <ul
+                            id="subcategories-products"
+                            class="catalog-subcategories"
                           >
-                        </a>
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >Смотреть все</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="catalog-subcategory is-active"
+                                aria-current="page"
+                                >Конфигурации</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >Лицензии 1С</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >1С ИТС и КП</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >1С:Фреш</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
                       </li>
-                      <li>
-                        <a href="#" class="catalog-category">
-                          <span class="catalog-category-num">3</span>
-                          <span class="catalog-category-name"
-                            >Серверные лицензии</span
+                      <li class="catalog-category-item">
+                        <button
+                          type="button"
+                          class="catalog-category"
+                          aria-expanded="false"
+                          aria-controls="subcategories-bitrix"
+                        >
+                          <span class="catalog-category-name">Битрикс24</span>
+                          <svg
+                            class="catalog-category-chevron"
+                            aria-hidden="true"
+                            focusable="false"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                        </a>
+                            <path
+                              d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </button>
+                        <div class="catalog-subcategories-wrapper">
+                          <ul
+                            id="subcategories-bitrix"
+                            class="catalog-subcategories"
+                          >
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >Смотреть все</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >Лицензии Битрикс24</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >Коробочная версия</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="catalog-subcategory">Облако</a>
+                            </li>
+                          </ul>
+                        </div>
                       </li>
-                      <li>
-                        <a href="#" class="catalog-category">
-                          <span class="catalog-category-num">4</span>
-                          <span class="catalog-category-name">ИТС</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" class="catalog-category">
-                          <span class="catalog-category-num">5</span>
-                          <span class="catalog-category-name">Сервисы</span>
-                        </a>
+                      <li class="catalog-category-item">
+                        <button
+                          type="button"
+                          class="catalog-category"
+                          aria-expanded="false"
+                          aria-controls="subcategories-other"
+                        >
+                          <span class="catalog-category-name">Прочее ПО</span>
+                          <svg
+                            class="catalog-category-chevron"
+                            aria-hidden="true"
+                            focusable="false"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </button>
+                        <div class="catalog-subcategories-wrapper">
+                          <ul
+                            id="subcategories-other"
+                            class="catalog-subcategories"
+                          >
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >Смотреть все</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >Антивирусы</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="catalog-subcategory"
+                                >ОС и офис</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
                       </li>
                     </ul>
                   </nav>
 
-                  <button type="button" id="open-filters" class="filters-btn">
-                    <span> Фильтры </span>
-                    <svg
-                      aria-hidden="true"
-                      focusable="false"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4.94 5.72665L8 8.77999L11.06 5.72665L12 6.66665L8 10.6667L4 6.66665L4.94 5.72665Z"
-                        fill="currentColor"
-                        fill-opacity="1"
-                      />
-                    </svg>
-                  </button>
+                  <div class="filters-buttons">
+                    <button type="button" id="open-filters" class="filters-btn">
+                      <span> Фильтры </span>
+                    </button>
+                    <button type="reset" class="filters-reset">
+                      Сбросить все
+                    </button>
+                  </div>
 
                   <fieldset class="catalog-filter-group">
                     <legend class="catalog-filter-group-legend">
@@ -803,6 +904,85 @@
                           </label>
                         </li>
                       </ul>
+                    </div>
+                  </fieldset>
+                  <fieldset class="catalog-filter-group">
+                    <legend class="catalog-filter-group-legend">Цена</legend>
+                    <div class="catalog-filter-price">
+                      <input
+                        type="number"
+                        name="min-price"
+                        id="min-price"
+                        placeholder="От 0₽"
+                        inputmode="numeric"
+                      />
+                      <input
+                        type="number"
+                        name="max-price"
+                        id="max-price"
+                        placeholder="До 100.000₽"
+                        inputmode="numeric"
+                      />
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="catalog-filter-group catalog-range"
+                    data-range
+                    data-min="1"
+                    data-max="350"
+                    data-from="0"
+                    data-to="350"
+                  >
+                    <legend class="catalog-filter-group-legend">
+                      Количество пользователей
+                    </legend>
+                    <div class="catalog-range-fields">
+                      <label class="catalog-range-field">
+                        <span class="catalog-range-field-label">От</span>
+                        <input
+                          type="number"
+                          class="catalog-range-input"
+                          data-range-min
+                          name="users-min"
+                          inputmode="numeric"
+                          placeholder="0"
+                        />
+                      </label>
+                      <label class="catalog-range-field">
+                        <span class="catalog-range-field-label">До</span>
+                        <input
+                          type="number"
+                          class="catalog-range-input"
+                          data-range-max
+                          name="users-max"
+                          inputmode="numeric"
+                          placeholder="350"
+                        />
+                      </label>
+                    </div>
+                    <div class="catalog-range-slider">
+                      <div class="catalog-range-track">
+                        <div
+                          class="catalog-range-track-fill"
+                          data-range-fill
+                        ></div>
+                      </div>
+                      <input
+                        type="range"
+                        class="catalog-range-thumb"
+                        data-range-thumb-min
+                        aria-label="Минимальное количество пользователей"
+                      />
+                      <input
+                        type="range"
+                        class="catalog-range-thumb"
+                        data-range-thumb-max
+                        aria-label="Максимальное количество пользователей"
+                      />
+                    </div>
+                    <div class="catalog-range-scale" aria-hidden="true">
+                      <span data-range-scale-min>1</span>
+                      <span data-range-scale-max>350</span>
                     </div>
                   </fieldset>
                 </aside>
@@ -1900,6 +2080,86 @@
               </ul>
             </div>
           </div>
+        </li>
+        <li>
+          <fieldset class="modal-filter-group">
+            <legend class="modal-filter-group-legend">Цена</legend>
+            <div class="modal-filter-price">
+              <input
+                type="number"
+                name="min-price"
+                id="modal-min-price"
+                placeholder="От 0₽"
+                inputmode="numeric"
+              />
+              <input
+                type="number"
+                name="max-price"
+                id="modal-max-price"
+                placeholder="До 100.000₽"
+                inputmode="numeric"
+              />
+            </div>
+          </fieldset>
+        </li>
+        <li>
+          <fieldset
+            class="modal-filter-group modal-range"
+            data-range
+            data-min="1"
+            data-max="350"
+            data-from="0"
+            data-to="350"
+          >
+            <legend class="modal-filter-group-legend">
+              Количество пользователей
+            </legend>
+            <div class="modal-range-fields">
+              <label class="modal-range-field">
+                <span class="modal-range-field-label">От</span>
+                <input
+                  type="number"
+                  class="modal-range-input"
+                  data-range-min
+                  name="users-min"
+                  inputmode="numeric"
+                  placeholder="0"
+                />
+              </label>
+              <label class="modal-range-field">
+                <span class="modal-range-field-label">До</span>
+                <input
+                  type="number"
+                  class="modal-range-input"
+                  data-range-max
+                  name="users-max"
+                  inputmode="numeric"
+                  placeholder="350"
+                />
+              </label>
+            </div>
+            <div class="modal-range-slider">
+              <div class="modal-range-track">
+                <div class="modal-range-track-fill" data-range-fill></div>
+              </div>
+              <input
+                type="range"
+                class="modal-range-thumb"
+                data-range-thumb-min
+                aria-label="Минимальное количество пользователей"
+              />
+              <input
+                type="range"
+                class="modal-range-thumb"
+                data-range-thumb-max
+                aria-label="Максимальное количество пользователей"
+              />
+            </div>
+            <div class="modal-range-scale" aria-hidden="true">
+              <span data-range-scale-min>1</span>
+              <span data-range-scale-max>350</span>
+            </div>
+          </fieldset>
         </li>
       </ul>
       <div class="filters-modal-buttons">

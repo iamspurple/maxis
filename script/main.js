@@ -785,6 +785,111 @@ const initCatalogFilterGroups = () => {
     });
 };
 
+const initCatalogCategories = () => {
+  const items = [...document.querySelectorAll(".catalog-category-item")];
+  if (!items.length) return;
+
+  items.forEach((item) => {
+    const toggle = item.querySelector("button.catalog-category");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", () => {
+      const willOpen = !item.classList.contains("is-active");
+
+      items.forEach((other) => {
+        if (other === item) return;
+        other.classList.remove("is-active");
+        other
+          .querySelector("button.catalog-category")
+          ?.setAttribute("aria-expanded", "false");
+      });
+
+      item.classList.toggle("is-active", willOpen);
+      toggle.setAttribute("aria-expanded", String(willOpen));
+    });
+  });
+};
+
+const initCatalogRange = (root) => {
+  const min = Number(root.dataset.min ?? 0);
+  const max = Number(root.dataset.max ?? 100);
+  if (!(max > min)) return;
+
+  const thumbMin = root.querySelector("[data-range-thumb-min]");
+  const thumbMax = root.querySelector("[data-range-thumb-max]");
+  const inputMin = root.querySelector("[data-range-min]");
+  const inputMax = root.querySelector("[data-range-max]");
+  const fill = root.querySelector("[data-range-fill]");
+  if (!thumbMin || !thumbMax || !inputMin || !inputMax || !fill) return;
+
+  const scaleMin = root.querySelector("[data-range-scale-min]");
+  const scaleMax = root.querySelector("[data-range-scale-max]");
+  if (scaleMin) scaleMin.textContent = String(min);
+  if (scaleMax) scaleMax.textContent = String(max);
+
+  const clamp = (val) => Math.min(max, Math.max(min, val));
+  const gap = 0;
+
+  [thumbMin, thumbMax].forEach((thumb) => {
+    thumb.min = String(min);
+    thumb.max = String(max);
+    thumb.step = "1";
+  });
+
+  const from = clamp(Number(root.dataset.from ?? min));
+  const to = clamp(Number(root.dataset.to ?? max));
+  thumbMin.value = String(Math.min(from, to));
+  thumbMax.value = String(Math.max(from, to));
+
+  const render = () => {
+    let lo = Number(thumbMin.value);
+    let hi = Number(thumbMax.value);
+
+    if (lo > hi - gap) {
+      if (document.activeElement === thumbMin) {
+        lo = Math.min(lo, hi - gap);
+        thumbMin.value = String(lo);
+      } else {
+        hi = Math.max(hi, lo + gap);
+        thumbMax.value = String(hi);
+      }
+    }
+    const span = max - min;
+    const loPct = ((lo - min) / span) * 100;
+    const hiPct = ((hi - min) / span) * 100;
+    fill.style.left = loPct + "%";
+    fill.style.right = 100 - hiPct + "%";
+    inputMin.value = String(lo);
+    inputMax.value = String(hi);
+
+    thumbMin.style.zIndex = lo > max - (max - min) / 10 ? "4" : "3";
+  };
+
+  thumbMin.addEventListener("input", render);
+  thumbMax.addEventListener("input", render);
+
+  const syncFromInput = (input, thumb, isMin) => {
+    input.addEventListener("change", () => {
+      const raw =
+        input.value === "" ? (isMin ? min : max) : Number(input.value);
+      if (Number.isNaN(raw)) {
+        render();
+        return;
+      }
+      thumb.value = String(clamp(raw));
+      render();
+    });
+  };
+  syncFromInput(inputMin, thumbMin, true);
+  syncFromInput(inputMax, thumbMax, false);
+
+  render();
+};
+
+const initCatalogRanges = () => {
+  document.querySelectorAll("[data-range]").forEach(initCatalogRange);
+};
+
 const initSortDisclosure = () => {
   document.querySelectorAll("[data-sort-disclosure]").forEach((dd) => {
     const btn = dd.querySelector("[data-sort-toggle]");
@@ -1604,6 +1709,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initModal();
   initFiltersModal();
   initCatalogFilterGroups();
+  initCatalogCategories();
+  initCatalogRanges();
   initSortDisclosure();
   initSortListbox("catalog");
   initSortListbox("blog");
