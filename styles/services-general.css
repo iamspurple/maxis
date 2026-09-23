@@ -660,6 +660,7 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .automation-content {
+  width: 100%;
   background: linear-gradient(
     186deg,
     rgba(50, 131, 255, 1) 0%,
@@ -670,6 +671,7 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .automation-list {
+  width: 100%;
   background-color: var(--color-dark);
   border-radius: 20px;
   position: relative;
