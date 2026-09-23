@@ -870,8 +870,9 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .instruments-item {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
   gap: clamp(10px, 1vw, 14px);
   padding: clamp(16px, 1.6vw, 22px);
   background-color: white;

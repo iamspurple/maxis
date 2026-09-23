@@ -676,7 +676,7 @@ html.big-screen .hero-video-canvas.desktop {
   overflow: hidden;
   padding-block: clamp(31px, 3vw, 42px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: clamp(25px, 2.4vw, 35px);
 }
