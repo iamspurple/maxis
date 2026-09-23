@@ -752,6 +752,8 @@ html.big-screen .hero-video-canvas.desktop {
 .task-item {
   grid-column: span 2;
   display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
   justify-items: center;
   text-align: center;
   grid-template-columns: 1fr;
