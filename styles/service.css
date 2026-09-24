@@ -1838,13 +1838,6 @@ html.big-screen .hero-video-canvas.desktop {
     calc(24px * 1440 / 1400 * var(--zoom-1))
   );
   line-height: 170%;
-  max-width: 65%;
-}
-
-@media screen and (max-width: 1280px) {
-  .faq-item-text {
-    max-width: 80%;
-  }
 }
 
 .consult {
@@ -4279,6 +4272,11 @@ html.big-screen .consult {
       calc(24px * 320 / 375),
       calc(100vw * 24 / 375),
       calc(24px * 580 / 375)
+    );
+    font-size: clamp(
+      calc(14px * 320 / 375),
+      calc(100vw * 14 / 375),
+      calc(14px * 580 / 375)
     );
   }
 
