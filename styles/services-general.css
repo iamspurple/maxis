@@ -3403,6 +3403,7 @@ html.big-screen .consult {
 
   .task-item-name {
     font-size: clamp(15px, 4.8vw, 28px);
+    text-align: left;
   }
 
   .task-item-description {

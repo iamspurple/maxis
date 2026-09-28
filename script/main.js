@@ -309,8 +309,12 @@ const initHorizontalSlider = (root, selectors) => {
     { passive: true },
   );
 
+  const wheelThreshold = 40;
   let wheelTimeout = null;
   let wheelAccum = 0;
+  let wheelLocked = false;
+  let wheelLockedAt = 0;
+  let wheelLastAbs = 0;
 
   track.addEventListener(
     "wheel",
@@ -319,25 +323,43 @@ const initHorizontalSlider = (root, selectors) => {
 
       e.preventDefault();
 
-      wheelAccum += e.deltaX;
+      const abs = Math.abs(e.deltaX);
 
       clearTimeout(wheelTimeout);
       wheelTimeout = setTimeout(() => {
         wheelAccum = 0;
-      }, 300);
+        wheelLocked = false;
+        wheelLastAbs = 0;
+      }, 150);
 
-      if (wheelAccum > 300) {
+      // После переключения гасим инерцию тачпада; новый жест узнаём по резкому росту delta
+      if (wheelLocked) {
+        const isNewGesture =
+          performance.now() - wheelLockedAt > 250 &&
+          abs > 10 &&
+          abs > wheelLastAbs * 1.5;
+        wheelLastAbs = abs;
+        if (!isNewGesture) return;
+        wheelLocked = false;
         wheelAccum = 0;
-        if (currentIndex < getMaxIndex()) {
-          currentIndex++;
-          updateSlider();
-        }
-      } else if (wheelAccum < -300) {
-        wheelAccum = 0;
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateSlider();
-        }
+      }
+      wheelLastAbs = abs;
+
+      wheelAccum += e.deltaX;
+
+      if (Math.abs(wheelAccum) < wheelThreshold) return;
+
+      const dir = wheelAccum > 0 ? 1 : -1;
+      wheelAccum = 0;
+      wheelLocked = true;
+      wheelLockedAt = performance.now();
+
+      if (dir > 0 && currentIndex < getMaxIndex()) {
+        currentIndex++;
+        updateSlider();
+      } else if (dir < 0 && currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
       }
     },
     { passive: false },
