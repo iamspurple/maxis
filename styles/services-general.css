@@ -742,7 +742,7 @@ html.big-screen .hero-video-canvas.desktop {
 }
 
 .task-title {
-  width: 50%;
+  width: 100%;
 }
 
 .task-list {
@@ -2649,10 +2649,6 @@ html.big-screen .consult {
     gap: clamp(36px, 6.25vw, 53px);
   }
 
-  .task-title {
-    width: 100%;
-  }
-
   .task-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(12px, 2.2vw, 18px);
@@ -3373,10 +3369,6 @@ html.big-screen .consult {
 
   .task-wrapper {
     gap: clamp(22px, 7vw, 40px);
-  }
-
-  .task-title {
-    width: 75%;
   }
 
   .task-list {
