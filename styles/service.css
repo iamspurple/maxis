@@ -285,6 +285,7 @@ html.big-screen .hero-video-canvas.desktop {
   border-radius: 20px;
   grid-column: span 2;
   box-shadow: 0 30px 100px 0 rgba(21, 30, 48, 0.05);
+  align-content: space-between;
 }
 
 .solutions-item-content {
