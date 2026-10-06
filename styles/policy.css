@@ -69,6 +69,14 @@
   display: inline;
 }
 
+.policy ul {
+  padding-left: 1em;
+}
+
+.policy ul li {
+  list-style: disc;
+}
+
 html.big-screen .main {
   gap: 80px;
 }
