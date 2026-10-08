@@ -43,9 +43,11 @@ const toggleActive = () => {
 
 const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
   const video = document.querySelector(videoSelector);
+  if (!(video instanceof HTMLVideoElement)) return;
+
   const canvas = document.querySelector(canvasSelector);
   const wrapper = document.querySelector(wrapperSelector);
-  if (!video || !canvas || !wrapper) return;
+  if (!canvas || !wrapper) return;
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
