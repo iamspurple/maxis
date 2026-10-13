@@ -4,9 +4,45 @@ const toggleActive = () => {
   ).matches;
 
   const dropDowns = document.querySelectorAll(".dropdown, .main-link");
+  const menuItems = document.querySelectorAll(
+    ".header-nav .dropdown, .header-nav .main-link",
+  );
+  const keepOnlyActiveMenuItem = (current) => {
+    menuItems.forEach((item) => {
+      if (item !== current) item.classList.remove("active");
+    });
+  };
+  const closeOtherMenuItems = (current) => {
+    if (current.closest(".header-nav")) keepOnlyActiveMenuItem(current);
+  };
+
+  // Защита от одновременного открытия пунктов сторонними скриптами.
+  const menuObserver = new MutationObserver((records) => {
+    const activated = records.filter(
+      ({ target, oldValue }) =>
+        target.classList.contains("active") &&
+        !(oldValue || "").split(/\s+/).includes("active"),
+    );
+    if (activated.length) {
+      keepOnlyActiveMenuItem(activated[activated.length - 1].target);
+    }
+  });
+  menuItems.forEach((item) => {
+    menuObserver.observe(item, {
+      attributes: true,
+      attributeFilter: ["class"],
+      attributeOldValue: true,
+    });
+  });
+  const initiallyActive = Array.from(menuItems).find((item) =>
+    item.classList.contains("active"),
+  );
+  if (initiallyActive) keepOnlyActiveMenuItem(initiallyActive);
+
   dropDowns.forEach((btn) => {
     if (isHover) {
       btn.addEventListener("mouseenter", () => {
+        closeOtherMenuItems(btn);
         btn.classList.add("active");
       });
 
@@ -15,6 +51,7 @@ const toggleActive = () => {
       });
     } else {
       btn.addEventListener("click", () => {
+        closeOtherMenuItems(btn);
         btn.classList.toggle("active");
       });
     }
