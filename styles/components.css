@@ -1941,7 +1941,7 @@ html.big-screen .header-nav-list > li > a {
 }
 
 html.big-screen .header-nav-main {
-  padding-inline: clamp(
+  padding-right: clamp(
     calc(32px * 1025 / 1400 * var(--zoom-2)),
     calc(100vw * 32 / 1400 * var(--zoom-2)),
     calc(32px * 1440 / 1400 * var(--zoom-2))
@@ -1970,6 +1970,17 @@ html.big-screen .header-nav-list-main .dropbtn {
   padding-inline: calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2));
 }
 
+html.big-screen .header-nav-list-main > li:first-of-type .dropbtn {
+  padding-left: calc(
+    clamp(
+        calc(32px * 1025 / 1400 * var(--zoom-2)),
+        calc(100vw * 32 / 1400 * var(--zoom-2)),
+        calc(32px * 1440 / 1400 * var(--zoom-2))
+      ) +
+      calc(clamp(24px, 1.7vw, 30px) * var(--zoom-2))
+  );
+}
+
 html.big-screen .dropdown-content {
   padding-top: calc(
     clamp(
@@ -1982,8 +1993,21 @@ html.big-screen .dropdown-content {
 }
 
 html.big-screen .dropdown-content a {
+  font-size: clamp(
+    calc(13px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 13 / 1400 * var(--zoom-2)),
+    calc(13px * 1440 / 1400 * var(--zoom-2))
+  );
   padding-bottom: calc(clamp(16px, 1.14vw, 20px) * var(--zoom-2) + 8px);
   padding-inline: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-2));
+}
+
+html.big-screen .dropdown-content a.dropdown-main-link {
+  font-size: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
 }
 
 html.big-screen .dropdown-content li:first-of-type a {
@@ -1992,6 +2016,53 @@ html.big-screen .dropdown-content li:first-of-type a {
 
 html.big-screen .dropdown-content li:last-of-type a {
   padding-bottom: calc(clamp(14px, 1.14vw, 18px) * var(--zoom-2) + 8px);
+}
+
+html.big-screen .dropdown-content-mega .dropdown-main-link {
+  font-size: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+  padding-top: calc(clamp(14px, 1.28vw, 20px) * var(--zoom-2) + 8px);
+  padding-bottom: calc(clamp(16px, 1.14vw, 20px) * var(--zoom-2));
+}
+
+html.big-screen .dropdown-content-mega .dropdown-main-link::after {
+  width: calc(100% - clamp(36px, 3.7vw, 64px) * var(--zoom-2));
+  left: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-2));
+}
+
+html.big-screen .mega-columns {
+  column-gap: calc(clamp(28px, 3vw, 56px) * var(--zoom-2));
+  padding: calc(clamp(14px, 1.14vw, 18px) * var(--zoom-2))
+    calc(clamp(18px, 1.85vw, 32px) * var(--zoom-2))
+    calc(clamp(16px, 1.28vw, 22px) * var(--zoom-2));
+}
+
+html.big-screen .mega-col-btn {
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-2));
+  font-size: clamp(
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+/* Keep generic dropdown spacing out of the mega menu columns. */
+html.big-screen .dropdown-content-mega .mega-col-list > li > a {
+  padding-inline: 0;
+  padding-top: 0;
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-2));
+  font-size: clamp(
+    calc(13px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 13 / 1400 * var(--zoom-2)),
+    calc(13px * 1440 / 1400 * var(--zoom-2))
+  );
+}
+
+html.big-screen .dropdown-content-mega .mega-col-list > li:last-of-type > a {
+  padding-bottom: 0;
 }
 
 html.big-screen .consult-wrapper {
