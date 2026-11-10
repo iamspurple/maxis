@@ -4125,6 +4125,12 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     );
   }
 
+  .mega-col-list > li:last-of-type > a {
+    padding-bottom: calc(
+      clamp(14px, 1.14vw, 18px) * var(--zoom-header-1) + 8px
+    );
+  }
+
   .header-menu-contacts {
     display: flex;
     flex-direction: column;
