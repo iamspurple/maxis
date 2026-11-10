@@ -89,18 +89,67 @@
               </div>
             </div>
             <div class="header-buttons-wrapper">
-              <button class="header-callback-btn modal-open-btn btn">
+              <button
+                type="button"
+                class="header-callback-btn modal-open-btn btn"
+              >
                 Обратный звонок
               </button>
-              <a href="/" title="Max" class="header-social-link btn">
+              <a
+                href="https://max.ru/u/f9LHodD0cOJZGIxJ2dYAFTobrfeiyn70VsVzzIuWasU6gwIUTaeH5LV6DiA"
+                title="Max"
+                class="header-social-link btn"
+              >
                 <img
                   width="21"
                   height="20"
-                  src="/assets/icons/max.svg"
+                  src="https://new.maxis-it.ru/wp-content/themes/maxis/assets/icons/max.svg"
                   alt="Max"
                 />
               </a>
-              <button class="header-burger-btn" title="Открыть меню">
+              <a
+                href="https://t.me/maxis_it"
+                title="Telegram"
+                class="header-social-link btn"
+              >
+                <img
+                  width="20"
+                  height="20"
+                  src="https://new.maxis-it.ru/wp-content/themes/maxis/assets/icons/telegram.svg"
+                  alt="Telegram"
+                />
+              </a>
+              <a
+                href="https://new.maxis-it.ru/cart/"
+                class="header-cart-link header-social-link btn"
+                title="Корзина"
+              >
+                <svg
+                  focusable="false"
+                  width="25"
+                  height="27"
+                  viewBox="3 3 25 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M27.9466 11.1467L26.5999 19.3867C26.2533 21.28 25.4667 22.6667 22.6667 22.6667H11.64C10.3066 22.6667 9.18667 21.6933 9 20.3733L6.9987 6.44267C6.8787 5.60267 6.18535 5 5.34668 5H5C4.448 5 4 4.552 4 4C4 3.448 4.448 3 5 3H5.34668C7.19068 3 8.71738 4.32533 8.97738 6.152L9.25602 8H25.3333C26.9867 8 28.2533 9.50667 27.9466 11.1467ZM12.028 29.6667C11.1093 29.6667 10.3547 28.92 10.3547 28C10.3547 27.08 11.0946 26.3333 12.0146 26.3333H12.028C12.948 26.3333 13.6947 27.08 13.6947 28C13.6947 28.92 12.948 29.6667 12.028 29.6667ZM24.3613 28C24.3613 27.08 23.6147 26.3333 22.6947 26.3333H22.6813C21.7613 26.3333 21.0213 27.08 21.0213 28C21.0213 28.92 21.7747 29.6667 22.6947 29.6667C23.6147 29.6667 24.3613 28.92 24.3613 28Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <span class="visually-hidden">Корзина</span>
+                <span class="header-cart-count" data-cart-count="" hidden=""
+                  >0</span
+                >
+              </a>
+              <button
+                type="button"
+                class="header-burger-btn"
+                aria-label="Открыть меню"
+                aria-expanded="false"
+                aria-controls="menu"
+              >
                 <svg
                   aria-hidden="true"
                   focusable="false"
@@ -117,14 +166,14 @@
                     height="2"
                     rx="1"
                     fill="currentColor"
-                  />
+                  ></rect>
                   <rect
                     y="9"
                     width="16"
                     height="2"
                     rx="1"
                     fill="currentColor"
-                  />
+                  ></rect>
                 </svg>
                 <svg
                   aria-hidden="true"
@@ -144,7 +193,7 @@
                     rx="1"
                     transform="rotate(-45 2 13.3137)"
                     fill="currentColor"
-                  />
+                  ></rect>
                   <rect
                     x="3.41455"
                     y="2"
@@ -153,7 +202,7 @@
                     rx="1"
                     transform="rotate(45 3.41455 2)"
                     fill="currentColor"
-                  />
+                  ></rect>
                 </svg>
               </button>
             </div>
@@ -462,19 +511,13 @@
                       <div class="dropdown-content-wrapper">
                         <ul class="dropdown-content">
                           <li>
+                            <a href="#">Все решения и IT-услуги</a>
+                          </li>
+                          <li>
                             <a href="#">Интеграция 1С и Битрикс24</a>
                           </li>
                           <li>
                             <a href="#">BI-аналитика и дашборды</a>
-                          </li>
-                          <li>
-                            <a href="#">IT-инфраструктура</a>
-                          </li>
-                          <li>
-                            <a href="#">Разработки и интеграции</a>
-                          </li>
-                          <li>
-                            <a href="#">Искусственный интеллект</a>
                           </li>
                           <li>
                             <a href="#">Open Source</a>
@@ -605,6 +648,18 @@
                   height="20"
                   src="/assets/icons/max.svg"
                   alt="Max"
+                />
+              </a>
+              <a
+                href="https://t.me/maxis_it"
+                title="Telegram"
+                class="header-menu-social-link"
+              >
+                <img
+                  width="20"
+                  height="20"
+                  src="https://new.maxis-it.ru/wp-content/themes/maxis/assets/icons/telegram.svg"
+                  alt="Telegram"
                 />
               </a>
             </div>
@@ -1039,3 +1094,50 @@
     <script src="/script/main.js"></script>
   </body>
 </html>
+
+<style>
+  .header-cart-link {
+    position: relative;
+    color: #1c6ae3;
+  }
+
+  .header-cart-link svg {
+    width: clamp(
+      calc(14px * 1025 / 1400 * 1.4 * var(--zoom-header-1)),
+      calc(100vw * 14 / 1400 * 1.4 * var(--zoom-header-1)),
+      calc(14px * 1440 / 1400 * 1.4 * var(--zoom-header-1))
+    );
+    height: clamp(
+      calc(14px * 1025 / 1400 * 1.4 * var(--zoom-header-1)),
+      calc(100vw * 14 / 1400 * 1.4 * var(--zoom-header-1)),
+      calc(14px * 1440 / 1400 * 1.4 * var(--zoom-header-1))
+    );
+    aspect-ratio: 1;
+  }
+
+  html.big-screen .header-cart-link svg {
+    width: clamp(
+      calc(14px * 1025 / 1400 * 1.4 * var(--zoom-2)),
+      calc(100vw * 14 / 1400 * 1.4 * var(--zoom-2)),
+      calc(14px * 1440 / 1400 * 1.4 * var(--zoom-2))
+    );
+    height: clamp(
+      calc(14px * 1025 / 1400 * 1.4 * var(--zoom-2)),
+      calc(100vw * 14 / 1400 * 1.4 * var(--zoom-2)),
+      calc(14px * 1440 / 1400 * 1.4 * var(--zoom-2))
+    );
+  }
+
+  @media screen and (max-width: 850px) {
+    .header-cart-link svg {
+      width: clamp(17.7625px, 3.0625vw, 31.36px);
+      height: clamp(17.7625px, 3.0625vw, 31.36px);
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .header-cart-link {
+      display: flex;
+    }
+  }
+</style>
