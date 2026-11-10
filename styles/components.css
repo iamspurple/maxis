@@ -2874,6 +2874,10 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     opacity: 0;
   }
 
+  .dropdown-content-wrapper:has(> .dropdown-content-development) {
+    transition-property: opacity;
+  }
+
   .dropdown-content-wrapper > * {
     overflow: hidden;
     min-height: 0;
