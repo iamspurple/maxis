@@ -39,6 +39,21 @@ const toggleActive = () => {
   );
   if (initiallyActive) keepOnlyActiveMenuItem(initiallyActive);
 
+  const developmentContent = document.querySelector(
+    ".header-nav .dropdown-content-development",
+  );
+  if (developmentContent) {
+    const wrapper = developmentContent.parentElement;
+    const updateHeight = () => {
+      wrapper.style.setProperty(
+        "--development-menu-height",
+        `${developmentContent.getBoundingClientRect().height}px`,
+      );
+    };
+    updateHeight();
+    new ResizeObserver(updateHeight).observe(developmentContent);
+  }
+
   dropDowns.forEach((btn) => {
     if (isHover) {
       btn.addEventListener("mouseenter", () => {
