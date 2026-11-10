@@ -614,17 +614,13 @@ html.big-screen .header-bottom.sticky {
 }
 
 .dropdown-content.dropdown-content-development > .mega-columns {
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-header-1));
   padding-top: 0;
   padding-inline: 0;
 }
 
-.dropdown-content-development > .mega-columns div:first-of-type .mega-col-list {
-  padding-left: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-header-1));
-}
-
-.dropdown-content-development > .mega-columns div:last-of-type .mega-col-list {
+.dropdown-content-development > .mega-columns .mega-col-list {
   padding-inline: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-header-1));
 }
 
