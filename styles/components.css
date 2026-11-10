@@ -2925,10 +2925,6 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     font-weight: 500;
   }
 
-  .dropdown-content > li:last-of-type > a {
-    border-bottom: none;
-  }
-
   .dropdown-content a.dropdown-main-link {
     font-size: clamp(
       calc(15px * 580 / 640),
@@ -3007,6 +3003,7 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     padding-bottom: calc(
       clamp(14px, 1.14vw, 18px) * var(--zoom-header-1) + 8px
     );
+    border-bottom: none;
   }
 
   .dropdown-content-mega {
