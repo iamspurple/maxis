@@ -3000,6 +3000,10 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     min-width: 0;
   }
 
+  .dropdown-content-development {
+    filter: none;
+  }
+
   .dropdown-content-mega a {
     background-color: transparent;
     border-inline: 0;
