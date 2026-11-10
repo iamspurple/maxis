@@ -2905,6 +2905,10 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     position: static;
   }
 
+  .header-nav .dropdown-content {
+    filter: none;
+  }
+
   .dropdown-content > li > a {
     background-color: transparent;
     padding: clamp(
@@ -3008,10 +3012,6 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
 
   .dropdown-content-mega {
     min-width: 0;
-  }
-
-  .dropdown-content-development {
-    filter: none;
   }
 
   .dropdown-content-mega a {
