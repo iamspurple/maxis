@@ -2882,7 +2882,8 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     transition-property: height, opacity;
   }
 
-  .dropdown.active .dropdown-content-wrapper:has(> .dropdown-content-development) {
+  .dropdown.active
+    .dropdown-content-wrapper:has(> .dropdown-content-development) {
     height: var(--development-menu-height, auto);
   }
 
@@ -2922,6 +2923,10 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
       calc(14px * 1024 / 640)
     );
     font-weight: 500;
+  }
+
+  .dropdown-content > li:last-of-type > a {
+    border-bottom: none;
   }
 
   .dropdown-content a.dropdown-main-link {
@@ -3128,6 +3133,10 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
         calc(100vw * 24 / 640),
         calc(24px * 1024 / 640)
       );
+
+    padding-bottom: calc(
+      clamp(14px, 1.14vw, 18px) * var(--zoom-header-1) + 8px
+    );
   }
 
   .header-nav:has(.dropdown.active) .dropdown:not(.active) .dropbtn,
