@@ -513,7 +513,6 @@ html.big-screen .header-bottom.sticky {
 
   .dropdown-content a:hover {
     color: var(--color-primary);
-    /* background-color: transparent; */
   }
 }
 
@@ -646,6 +645,7 @@ html.big-screen .header-bottom.sticky {
   background-color: var(--color-lightblue);
   padding: calc(clamp(18px, 1.85vw, 32px) / 3 * var(--zoom-header-1));
   padding-inline: calc(clamp(18px, 1.85vw, 32px) / 2 * var(--zoom-header-1));
+  transition: 0.2s ease;
 }
 
 .dropdown-content a.dropdown-main-link:focus-visible::before {
@@ -660,17 +660,8 @@ html.big-screen .header-bottom.sticky {
 }
 
 @media (any-hover: hover) and (prefers-reduced-motion: no-preference) {
-  .dropdown-content a.dropdown-main-link > .main-link-wrapper span,
-  .dropdown-content a.dropdown-main-link .main-link-wrapper::after {
-    transition: transform 0.2s ease;
-  }
-
-  .dropdown-content a.dropdown-main-link:hover span {
-    transform: translateX(3px);
-  }
-
-  .dropdown-content a.dropdown-main-link:hover .main-link-wrapper::after {
-    transform: translate(2px, -2px);
+  .dropdown-content a.dropdown-main-link:hover .main-link-wrapper {
+    background-color: rgba(50, 132, 255, 0.17);
   }
 }
 
