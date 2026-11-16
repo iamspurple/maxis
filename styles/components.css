@@ -2093,6 +2093,19 @@ html.big-screen .dropdown-content > li:last-of-type a:not(.dropdown-main-link) {
   padding-bottom: calc(clamp(14px, 1.14vw, 18px) * var(--zoom-2) + 8px);
 }
 
+html.big-screen .dropdown-content .dropdown-list > li > a:not(.dropdown-main-link) {
+  padding-top: 0;
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-2));
+}
+
+html.big-screen
+  .dropdown-content
+  .dropdown-list
+  > li:last-of-type
+  > a:not(.dropdown-main-link) {
+  padding-bottom: calc(clamp(14px, 1.28vw, 20px) * var(--zoom-2));
+}
+
 html.big-screen .mega-columns {
   column-gap: calc(clamp(28px, 3vw, 56px) * var(--zoom-2));
   padding: calc(clamp(14px, 1.14vw, 18px) * var(--zoom-2))
