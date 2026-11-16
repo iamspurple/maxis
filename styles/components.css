@@ -455,8 +455,8 @@ html.big-screen .header-bottom.sticky {
 /* Links inside the dropdown */
 .dropdown-content a {
   font-weight: 600;
-  padding-top: 8px;
-  padding-bottom: calc(clamp(16px, 1.14vw, 20px) * var(--zoom-header-1) + 8px);
+  padding-top: 0;
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-header-1));
   text-wrap: nowrap;
   color: var(--color-dark);
   padding-inline: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-header-1));
@@ -480,7 +480,8 @@ html.big-screen .header-bottom.sticky {
 }
 
 .dropdown-list > li > a {
-  padding-block: 7px;
+  padding-top: 0;
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-header-1));
   font-size: clamp(
     calc(13px * 1025 / 1400 * var(--zoom-header-1)),
     calc(100vw * 13 / 1400 * var(--zoom-header-1)),
@@ -513,6 +514,28 @@ html.big-screen .header-bottom.sticky {
 
   .dropdown-content a:hover {
     color: var(--color-primary);
+  }
+}
+
+@media (min-width: 851px) and (hover: hover) {
+  .header-nav .dropdown-content a:not(.dropdown-main-link) {
+    display: grid;
+    grid-template-areas: "label";
+    position: relative;
+    isolation: isolate;
+  }
+
+  .header-nav
+    .dropdown-content
+    a:not(.dropdown-main-link):is(:hover, :focus-visible)::before {
+    content: "";
+    position: absolute;
+    grid-area: label;
+    inset: -0.35em -0.65em;
+    z-index: -1;
+    border-radius: 0.55em;
+    box-shadow: inset 0 0 0 2em var(--color-lightblue);
+    pointer-events: none;
   }
 }
 
@@ -556,13 +579,16 @@ html.big-screen .header-bottom.sticky {
   width: 100%;
   text-align: left;
   font-weight: 700;
-  color: var(--color-dark);
+  color: var(--color-gray);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-grayblue);
   cursor: default;
-  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-header-1));
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) / 2 * var(--zoom-header-1));
+  margin-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-header-1));
   font-size: clamp(
-    calc(14px * 1025 / 1400 * var(--zoom-header-1)),
-    calc(100vw * 14 / 1400 * var(--zoom-header-1)),
-    calc(14px * 1440 / 1400 * var(--zoom-header-1))
+    calc(12px * 1025 / 1400 * var(--zoom-header-1)),
+    calc(100vw * 12 / 1400 * var(--zoom-header-1)),
+    calc(12px * 1440 / 1400 * var(--zoom-header-1))
   );
 }
 
@@ -588,22 +614,14 @@ html.big-screen .header-bottom.sticky {
 }
 
 .dropdown-content.dropdown-content-development > .mega-columns {
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-header-1));
   padding-top: 0;
   padding-inline: 0;
 }
 
-.dropdown-content-development > .mega-columns div:first-of-type .mega-col-list {
-  padding-left: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-header-1));
-}
-
-.dropdown-content-development > .mega-columns div:last-of-type .mega-col-list {
+.dropdown-content-development > .mega-columns .mega-col-list {
   padding-inline: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-header-1));
-}
-
-:where(.dropdown-content-development) .mega-col-list a {
-  padding-block: 7px;
 }
 
 .dropdown-content.dropdown-content-development a.dropdown-main-link {
@@ -624,6 +642,7 @@ html.big-screen .header-bottom.sticky {
   background-color: var(--color-lightblue);
   padding: calc(clamp(18px, 1.85vw, 32px) / 3 * var(--zoom-header-1));
   padding-inline: calc(clamp(18px, 1.85vw, 32px) / 2 * var(--zoom-header-1));
+  transition: 0.2s ease;
 }
 
 .dropdown-content a.dropdown-main-link:focus-visible::before {
@@ -638,17 +657,8 @@ html.big-screen .header-bottom.sticky {
 }
 
 @media (any-hover: hover) and (prefers-reduced-motion: no-preference) {
-  .dropdown-content a.dropdown-main-link > .main-link-wrapper span,
-  .dropdown-content a.dropdown-main-link .main-link-wrapper::after {
-    transition: transform 0.2s ease;
-  }
-
-  .dropdown-content a.dropdown-main-link:hover span {
-    transform: translateX(3px);
-  }
-
-  .dropdown-content a.dropdown-main-link:hover .main-link-wrapper::after {
-    transform: translate(2px, -2px);
+  .dropdown-content a.dropdown-main-link:hover .main-link-wrapper {
+    background-color: rgba(50, 132, 255, 0.17);
   }
 }
 
@@ -1388,10 +1398,10 @@ input[type="file"]#consult-file {
 .modal {
   display: none;
   position: fixed;
-  top: 0;
+  top: var(--modal-viewport-top, 0px);
   left: 0;
   width: 100%;
-  height: 100%;
+  height: var(--modal-viewport-height, 100%);
   z-index: 1000;
   background-color: rgba(21, 30, 48, 0.6);
   backdrop-filter: blur(7px);
@@ -1417,13 +1427,22 @@ input[type="file"]#consult-file {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  max-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-behavior: auto;
+  scroll-padding-block: 16px;
   gap: clamp(
     calc(14px * 1025 / 1400),
     calc(100vw * 14 / 1400),
     calc(14px * 1440 / 1400)
   );
   width: 100%;
+}
+
+.modal-content > * {
+  flex-shrink: 0;
 }
 
 .modal-close-btn {
@@ -2050,22 +2069,42 @@ html.big-screen .dropdown-content {
   );
 }
 
-html.big-screen .dropdown-content a:not(:where(.dropdown-main-link)) {
+html.big-screen .dropdown-content > li > a:not(:where(.dropdown-main-link)) {
   font-size: clamp(
-    calc(13px * 1025 / 1400 * var(--zoom-2)),
-    calc(100vw * 13 / 1400 * var(--zoom-2)),
-    calc(13px * 1440 / 1400 * var(--zoom-2))
+    calc(14px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 14 / 1400 * var(--zoom-2)),
+    calc(14px * 1440 / 1400 * var(--zoom-2))
   );
-  padding-bottom: calc(clamp(16px, 1.14vw, 20px) * var(--zoom-2) + 8px);
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-2));
   padding-inline: calc(clamp(18px, 1.85vw, 32px) * var(--zoom-2));
 }
 
-html.big-screen .dropdown-content li:first-of-type a:not(.dropdown-main-link) {
+html.big-screen
+  .dropdown-content
+  > li:first-of-type
+  a:not(.dropdown-main-link) {
   padding-top: calc(clamp(14px, 1.28vw, 20px) * var(--zoom-2) + 8px);
 }
 
-html.big-screen .dropdown-content li:last-of-type a:not(.dropdown-main-link) {
+html.big-screen .dropdown-content > li:last-of-type a:not(.dropdown-main-link) {
   padding-bottom: calc(clamp(14px, 1.14vw, 18px) * var(--zoom-2) + 8px);
+}
+
+html.big-screen
+  .dropdown-content
+  .dropdown-list
+  > li
+  > a:not(.dropdown-main-link) {
+  padding-top: 0;
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-2));
+}
+
+html.big-screen
+  .dropdown-content
+  .dropdown-list
+  > li:last-of-type
+  > a:not(.dropdown-main-link) {
+  padding-bottom: calc(clamp(14px, 1.28vw, 20px) * var(--zoom-2));
 }
 
 html.big-screen .mega-columns {
@@ -2076,11 +2115,12 @@ html.big-screen .mega-columns {
 }
 
 html.big-screen .mega-col-btn {
-  padding-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-2));
+  padding-bottom: calc(clamp(10px, 0.85vw, 14px) / 2 * var(--zoom-2));
+  margin-bottom: calc(clamp(10px, 0.85vw, 14px) * var(--zoom-2));
   font-size: clamp(
-    calc(14px * 1025 / 1400 * var(--zoom-2)),
-    calc(100vw * 14 / 1400 * var(--zoom-2)),
-    calc(14px * 1440 / 1400 * var(--zoom-2))
+    calc(12px * 1025 / 1400 * var(--zoom-2)),
+    calc(100vw * 12 / 1400 * var(--zoom-2)),
+    calc(12px * 1440 / 1400 * var(--zoom-2))
   );
 }
 
@@ -2098,6 +2138,44 @@ html.big-screen .dropdown-content-mega .mega-col-list > li > a {
 
 html.big-screen .dropdown-content-mega .mega-col-list > li:last-of-type > a {
   padding-bottom: 0;
+}
+
+@media screen and (min-width: 851px) {
+  ul.dropdown-content:not(:has(.dropdown-list)) {
+    --dropdown-side-padding: calc(
+      clamp(14px, 1.5vw, 26px) * var(--zoom-header-1)
+    );
+    --dropdown-edge-padding: calc(
+      clamp(12px, 1vw, 16px) * var(--zoom-header-1)
+    );
+  }
+
+  ul.dropdown-content:not(:has(.dropdown-list))
+    > li
+    > a:not(.dropdown-main-link) {
+    padding-inline: var(--dropdown-side-padding);
+  }
+
+  ul.dropdown-content:not(:has(.dropdown-list))
+    > li:first-of-type
+    > a:not(.dropdown-main-link) {
+    padding-top: var(--dropdown-edge-padding);
+  }
+
+  ul.dropdown-content:not(:has(.dropdown-list))
+    > li:last-of-type
+    > a:not(.dropdown-main-link) {
+    padding-bottom: var(--dropdown-edge-padding);
+  }
+
+  ul.dropdown-content:not(:has(.dropdown-list)) > li > a.dropdown-main-link {
+    padding-top: var(--dropdown-edge-padding);
+    padding-inline: calc(var(--dropdown-side-padding) / 2);
+  }
+
+  ul.dropdown-content:not(:has(.dropdown-list)) .main-link-wrapper {
+    padding-inline: calc(var(--dropdown-side-padding) / 2);
+  }
 }
 
 html.big-screen .consult-wrapper {
@@ -2836,7 +2914,7 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     fill: var(--color-primary);
   }
 
-  .dropdown.active .dropbtn {
+  .header-nav .dropdown.active .dropbtn {
     padding-bottom: clamp(
       calc(10px * 580 / 640),
       calc(100vw * 10 / 640),
@@ -3049,6 +3127,8 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
   .mega-col-btn {
     cursor: pointer;
     color: var(--color-dark);
+    text-transform: none;
+    border: none;
     font-weight: 500;
     padding: clamp(
         calc(12px * 580 / 640),
@@ -3989,7 +4069,7 @@ html.big-screen .breadcrumb li:not(:last-of-type)::after {
     );
   }
 
-  .dropdown.active .dropbtn {
+  .header-nav .dropdown.active .dropbtn {
     padding-bottom: clamp(
       calc(10px * 320 / 375),
       calc(100vw * 10 / 375),
