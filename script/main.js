@@ -93,6 +93,33 @@ const toggleActive = () => {
   });
 };
 
+const initAboutVideo = () => {
+  document.querySelectorAll(".about-video-preview").forEach((preview) => {
+    const video = preview.querySelector("video");
+    const button = preview.querySelector(".about-video-play");
+    if (!video || !button) return;
+
+    button.addEventListener("click", async () => {
+      try {
+        await video.play();
+      } catch {
+        button.hidden = false;
+      }
+    });
+
+    video.addEventListener("playing", () => {
+      button.hidden = true;
+      video.controls = true;
+      video.focus();
+    });
+
+    video.addEventListener("ended", () => {
+      video.controls = false;
+      button.hidden = false;
+    });
+  });
+};
+
 const initVideoBlur = (videoSelector, canvasSelector, wrapperSelector) => {
   const video = document.querySelector(videoSelector);
   if (!(video instanceof HTMLVideoElement)) return;
@@ -1780,6 +1807,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnFwd: ".products-slider-btn.forward",
   });
 
+  initAboutVideo();
   initHeaderBurger();
   getHeaderHeight();
   initModal();

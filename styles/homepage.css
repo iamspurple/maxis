@@ -1687,6 +1687,45 @@ html.big-screen
   mask: radial-gradient(circle at 100% 100%, transparent 68%, black 71%);
 }
 
+.about-video-preview {
+  position: relative;
+}
+
+.about-video:has(.about-video-preview) .about-video-title {
+  z-index: 1;
+}
+
+.about-video-preview .about-video-media {
+  display: block;
+  aspect-ratio: 1246 / 700;
+  object-fit: contain;
+  background-color: black;
+}
+
+.about-video-play[hidden] {
+  display: none;
+}
+
+.about-video-play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+.about-video-play svg {
+  width: clamp(56px, 6vw, 88px);
+  height: auto;
+}
+
+.about-video-play:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: -3px;
+}
+
 .about-video-media {
   width: 100%;
   height: 100%;
