@@ -1546,14 +1546,23 @@
               class="tab-corner-right"
             ></span>
           </h2>
-          <img
-            width="1246"
-            height="700"
-            loading="lazy"
-            class="about-video-media"
-            src="/assets/images/video-preview.webp"
-            alt="video"
-          />
+          <div class="about-video-preview">
+            <video
+              width="1246"
+              height="700"
+              class="about-video-media"
+              src="/video.mov"
+              preload="metadata"
+              playsinline
+              aria-label="Видео о компании Максис"
+            ></video>
+            <button class="about-video-play" type="button" aria-label="Воспроизвести видео о компании">
+              <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <rect width="88" height="88" rx="44" fill="#F7F7F7"/>
+                <path d="M60.5676 41.4862C62.4775 42.6112 62.4775 45.3888 60.5676 46.5138L38.3582 59.5964C36.428 60.7334 34 59.3329 34 57.0826L34 30.9174C34 28.6671 36.428 27.2666 38.3582 28.4036L60.5676 41.4862Z" fill="#3283FF"/>
+              </svg>
+            </button>
+          </div>
         </div>
         <div class="about-certificates">
           <div class="about-certificates-image">
