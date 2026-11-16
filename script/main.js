@@ -690,6 +690,52 @@ const initModal = () => {
   const modalCloseBtn = document.querySelector(".modal-close-btn");
   const burgerBtn = document.querySelector(".header-burger-btn");
 
+  const modalContent = modal.querySelector(".modal-content");
+  // Временно отключено для проверки модалки только с CSS на iOS.
+  /*
+  const viewport = window.visualViewport;
+  let viewportFrame = null;
+
+  const updateModalViewport = () => {
+    if (!modal.classList.contains("active")) return;
+
+    // Клавиатура iOS меняет видимую область, но не высоту fixed-окна.
+    modal.style.setProperty(
+      "--modal-viewport-height",
+      `${viewport?.height ?? window.innerHeight}px`,
+    );
+    modal.style.setProperty(
+      "--modal-viewport-top",
+      `${viewport?.offsetTop ?? 0}px`,
+    );
+
+    const focused = document.activeElement;
+    if (!modalContent || !modalContent.contains(focused)) return;
+
+    const contentRect = modalContent.getBoundingClientRect();
+    const fieldRect = focused.getBoundingClientRect();
+    const margin = 16;
+    if (fieldRect.top < contentRect.top + margin) {
+      modalContent.scrollTop += fieldRect.top - contentRect.top - margin;
+    } else if (fieldRect.bottom > contentRect.bottom - margin) {
+      modalContent.scrollTop += fieldRect.bottom - contentRect.bottom + margin;
+    }
+  };
+
+  const scheduleModalViewportUpdate = () => {
+    if (viewportFrame !== null) return;
+    viewportFrame = requestAnimationFrame(() => {
+      viewportFrame = null;
+      updateModalViewport();
+    });
+  };
+
+  viewport?.addEventListener("resize", scheduleModalViewportUpdate);
+  viewport?.addEventListener("scroll", scheduleModalViewportUpdate);
+  window.addEventListener("resize", scheduleModalViewportUpdate);
+  modal.addEventListener("focusin", scheduleModalViewportUpdate);
+  */
+
   const closeMenu = () => {
     menu.classList.remove("active");
     overlay.classList.remove("active");
@@ -702,11 +748,15 @@ const initModal = () => {
     modal.classList.add("active");
     document.documentElement.classList.add("noscroll");
     closeMenu();
+    if (modalContent) modalContent.scrollTop = 0;
+    // updateModalViewport();
     const target =
       modal.querySelector(".modal-form input, .modal-form textarea") ||
       getFocusable(modal)[0] ||
       modal;
+    // target.focus({ preventScroll: true });
     target.focus();
+    // scheduleModalViewportUpdate();
   };
 
   modalOpenBtns.forEach((btn) => {
