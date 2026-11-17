@@ -717,6 +717,59 @@ const initModal = () => {
   const modalCloseBtn = document.querySelector(".modal-close-btn");
   const burgerBtn = document.querySelector(".header-burger-btn");
 
+  const content = modal.querySelector(".modal-content");
+  const viewport = window.visualViewport;
+  let viewportFrame = null;
+  let revealFocusedField = false;
+
+  const updateViewport = () => {
+    modal.style.setProperty(
+      "--modal-viewport-height",
+      `${viewport?.height ?? window.innerHeight}px`,
+    );
+    modal.style.setProperty(
+      "--modal-viewport-top",
+      `${viewport?.offsetTop ?? 0}px`,
+    );
+  };
+
+  const scheduleViewportUpdate = (reveal = false) => {
+    if (!modal.classList.contains("active")) return;
+    revealFocusedField ||= reveal;
+    if (viewportFrame !== null) return;
+    viewportFrame = requestAnimationFrame(() => {
+      viewportFrame = null;
+      if (!modal.classList.contains("active")) {
+        revealFocusedField = false;
+        return;
+      }
+      updateViewport();
+
+      // Прокручиваем только форму, не страницу за ней. Обычные жесты не перехватываем.
+      const field = document.activeElement;
+      if (
+        revealFocusedField &&
+        content &&
+        field?.matches("input:not([type='checkbox']):not([type='file']), textarea, select") &&
+        content.contains(field)
+      ) {
+        const bounds = content.getBoundingClientRect();
+        const fieldBounds = field.getBoundingClientRect();
+        if (fieldBounds.bottom > bounds.bottom - 16) {
+          content.scrollTop += fieldBounds.bottom - bounds.bottom + 16;
+        } else if (fieldBounds.top < bounds.top + 16) {
+          content.scrollTop += fieldBounds.top - bounds.top - 16;
+        }
+      }
+      revealFocusedField = false;
+    });
+  };
+
+  viewport?.addEventListener("resize", () => scheduleViewportUpdate(true));
+  viewport?.addEventListener("scroll", () => scheduleViewportUpdate());
+  window.addEventListener("resize", () => scheduleViewportUpdate(true));
+  modal.addEventListener("focusin", () => scheduleViewportUpdate(true));
+
   const closeMenu = () => {
     menu.classList.remove("active");
     overlay.classList.remove("active");
@@ -726,14 +779,21 @@ const initModal = () => {
   const openModal = (e) => {
     // запоминаем триггер, чтобы вернуть на него фокус после закрытия
     modalLastFocused = e?.currentTarget || document.activeElement;
+    updateViewport();
     modal.classList.add("active");
     document.documentElement.classList.add("noscroll");
     closeMenu();
-    const target =
-      modal.querySelector(".modal-form input, .modal-form textarea") ||
-      getFocusable(modal)[0] ||
-      modal;
-    target.focus();
+    if (content) content.scrollTop = 0;
+    // На сенсорных устройствах не открываем клавиатуру вместе с модалкой.
+    const touchLayout = window.matchMedia(
+      "(max-width: 850px), (pointer: coarse)",
+    ).matches;
+    const target = touchLayout
+      ? modal
+      : modal.querySelector(".modal-form input, .modal-form textarea") ||
+        getFocusable(modal)[0] ||
+        modal;
+    target.focus({ preventScroll: true });
   };
 
   modalOpenBtns.forEach((btn) => {

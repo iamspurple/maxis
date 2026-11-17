@@ -1429,6 +1429,7 @@ input[type="file"]#consult-file {
   align-items: center;
   justify-content: flex-start;
   max-height: 100%;
+  min-height: 0;
   overflow-y: auto;
   overscroll-behavior-y: contain;
   scroll-behavior: auto;
@@ -1443,6 +1444,18 @@ input[type="file"]#consult-file {
 
 .modal-content > * {
   flex-shrink: 0;
+}
+
+@media (max-width: 850px), (pointer: coarse) {
+  .modal.active {
+    animation: none;
+  }
+
+  .modal-form input:not([type="file"]):not([type="checkbox"]),
+  .modal-form textarea,
+  .modal-form select {
+    font-size: max(16px, 1em);
+  }
 }
 
 .modal-close-btn {
